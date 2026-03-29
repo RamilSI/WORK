@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Коммерческое предложение по ТЗ (ЛКМ) | Tonaly</title>
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --accent: #27ae60;
+            --light: #ecf0f1;
+            --text: #333;
+            --border: #bdc3c7;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background: #f9f9f9;
+            margin: 0;
+            padding: 20px;
+        }
+        .document-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.05);
+            border-radius: 8px;
+        }
+        /* Header */
+        header {
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo-area h1 { margin: 0; color: var(--primary); font-size: 24px; }
+        .logo-area p { margin: 5px 0 0; color: #7f8c8d; font-size: 14px; }
+        .status-badge {
+            background: var(--accent);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        /* Summary Cards */
+        .summary {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        .card {
+            background: var(--light);
+            padding: 20px;
+            border-radius: 6px;
+            border-left: 4px solid var(--primary);
+        }
+        .card h3 { margin-top: 0; font-size: 16px; color: var(--primary); }
+        .card p { margin: 0; font-size: 14px; }
+
+        /* Table */
+        table { width: 100%; border-collapse: collapse; margin-bottom: 30px; font-size: 14px; }
+        th, td { padding: 12px 15px; border: 1px solid var(--border); vertical-align: top; }
+        th { background-color: var(--primary); color: white; text-align: left; }
+        
+        /* Columns */
+        .col-req { width: 35%; background: #fafafa; font-weight: 600; }
+        .col-market { width: 30%; color: #7f8c8d; }
+        .col-tonaly { width: 35%; background: #e8f8f5; border-left: 2px solid var(--accent); font-weight: 500; }
+        
+        .highlight { color: var(--accent); font-weight: bold; }
+        .check { color: var(--accent); margin-right: 5px; }
+
+        /* Docs Section */
+        .docs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .doc-item {
+            display: flex;
+            align-items: center;
+            font-size: 13px;
+        }
+        .doc-item span { color: var(--accent); margin-right: 8px; font-weight: bold; }
+
+        /* Controls */
+        .controls {
+            text-align: right;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+        }
+        .btn {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .btn:hover { background: #34495e; }
+
+        /* Print Styles */
+        @media print {
+            body { background: white; padding: 0; }
+            .document-container { box-shadow: none; padding: 0; width: 100%; max-width: 100%; }
+            .controls { display: none; }
+            .col-tonaly { background: white !important; border: 1px solid #000; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="document-container">
+    <header>
+        <div class="logo-area">
+            <h1>TONALY / DETALYSTALY</h1>
+            <p>Ответ на Техническое Задание на поставку ЛКМ</p>
+        </div>
+        <div class="status-badge">100% Соответствие ТЗ</div>
+    </header>
+
+    <!-- Ключевые преимущества (Саммари) -->
+    <div class="summary">
+        <div class="card">
+            <h3>🚀 Экономия времени</h3>
+            <p>Нанесение 300 мкм за <strong>1 слой</strong>. Сокращение трудозатрат на 40% по сравнению с аналогами.</p>
+        </div>
+        <div class="card">
+            <h3>🛡️ Надежность</h3>
+            <p>Стойкость в солевом тумане до <strong>1440 часов</strong>. Категория C5-M.</p>
+        </div>
+        <div class="card">
+            <h3>📄 Документация</h3>
+            <p>Полный пакет (ТУ, Протоколы, Референс 2024-2026) готов к выдаче в день запроса.</p>
+        </div>
+    </div>
+
+    <h2>Техническая матрица соответствия</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Требование Заказчика</th>
+                <th>Рыночное предложение (Среднее)</th>
+                <th>Предложение Tonaly</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="col-req">Категория коррозии (ISO 12944-2)</td>
+                <td class="col-market">Часто только C3-C4</td>
+                <td class="col-tonaly"><span class="check">✔</span> Полное покрытие: <strong>C3, C4, C5-I, C5-M</strong></td>
+            </tr>
+            <tr>
+                <td class="col-req">Стойкость в солевом тумане (с надрезом)</td>
+                <td class="col-market">460 - 720 часов</td>
+                <td class="col-tonaly"><span class="check">✔</span> Гарантированно <strong>до 1440 часов</strong></td>
+            </tr>
+            <tr>
+                <td class="col-req">Толщина мокрого слоя (за 1 раз)</td>
+                <td class="col-market">150-200 мкм (нужно 2 слоя)</td>
+                <td class="col-tonaly"><span class="check">✔</span> <strong>Не менее 300 мкм</strong> без подтеков (1 слой)</td>
+            </tr>
+            <tr>
+                <td class="col-req">Время сушки на отлип</td>
+                <td class="col-market">4 часа при 50-60°C</td>
+                <td class="col-tonaly"><span class="check">✔</span> <strong>35 минут</strong> при 60-80°C (Ускоренный цикл)</td>
+            </tr>
+            <tr>
+                <td class="col-req">Сухой остаток (объем)</td>
+                <td class="col-market">50-60%</td>
+                <td class="col-tonaly"><span class="check">✔</span> <strong>Не менее 65%</strong></td>
+            </tr>
+            <tr>
+                <td class="col-req">Адгезия</td>
+                <td class="col-market">1-2 балл</td>
+                <td class="col-tonaly"><span class="check">✔</span> <strong>0 балл</strong> (Отрыв по металлу), >4 МПа</td>
+            </tr>
+            <tr>
+                <td class="col-req">Температура эксплуатации</td>
+                <td class="col-market">-40 … +80°C</td>
+                <td class="col-tonaly"><span class="check">✔</span> <strong>-60 … +120°C</strong></td>
+            </tr>
+            <tr>
+                <td class="col-req">Совместимость с грунтом</td>
+                <td class="col-market">Требуют свои грунты</td>
+                <td class="col-tonaly"><span class="check">✔</span> Совместимо с <strong>ВКФ-093</strong></td>
+            </tr>
+            <tr>
+                <td class="col-req">Разбавитель</td>
+                <td class="col-market">Специфические №</td>
+                <td class="col-tonaly"><span class="check">✔</span> Стандартный <strong>Р-4</strong></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>Пакет документации и логистика</h2>
+    <div class="docs-grid">
+        <div class="doc-item"><span>✔</span> Сертификаты и ТУ</div>
+        <div class="doc-item"><span>✔</span> Паспорт безопасности (MSDS)</div>
+        <div class="doc-item"><span>✔</span> Протоколы испытаний (аккр. лаб.)</div>
+        <div class="doc-item"><span>✔</span> Референс-лист (2024-2026)</div>
+        <div class="doc-item"><span>✔</span> Протокол расхода на 1 м²</div>
+        <div class="doc-item"><span>✔</span> Цвета по каталогу RAL (полный спектр)</div>
+        <div class="doc-item"><span>✔</span> Срок хранения: 24 месяца</div>
+        <div class="doc-item"><span>✔</span> Тара: 1, 5, 20 кг</div>
+    </div>
+
+    <div class="controls">
+        <p style="font-size: 12px; color: #999; margin-bottom: 10px;">Нажмите кнопку, чтобы сохранить этот документ в PDF или распечатать.</p>
+        <button class="btn" onclick="window.print()">🖨️ Распечатать / Сохранить в PDF</button>
+        <a href="https://tonaly.ru" class="btn" style="background-color: #27ae60;">Перейти на сайт Tonaly.ru</a>
+    </div>
+</div>
+
+</body>
+</html>

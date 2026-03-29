@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>КП: Антикоррозионная защита | Tonaly</title>
+    <style>
+        :root {
+            --primary: #003366;
+            --secondary: #d35400;
+            --success: #27ae60;
+            --light: #f8f9fa;
+            --text: #2c3e50;
+            --border: #dee2e6;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.5;
+            color: var(--text);
+            background: #555;
+            margin: 0;
+            padding: 40px 20px;
+        }
+        .document-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 0 30px rgba(0,0,0,0.3);
+            position: relative;
+        }
+        
+        /* LETTERHEAD */
+        .letterhead {
+            background: var(--primary);
+            color: white;
+            padding: 30px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo-area h1 { margin: 0; font-size: 32px; text-transform: uppercase; letter-spacing: 2px; }
+        .logo-area p { margin: 5px 0 0; opacity: 0.8; font-size: 14px; }
+        .contact-area { text-align: right; font-size: 13px; }
+        .contact-area a { color: white; text-decoration: none; }
+        
+        /* CONTENT */
+        .content { padding: 40px; }
+        
+        .doc-title {
+            text-align: center;
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        .doc-title h2 { margin: 0; color: var(--primary); font-size: 24px; }
+        .doc-title .ref { color: #7f8c8d; font-size: 14px; margin-top: 5px; }
+
+        /* PRODUCTS */
+        .products-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        .product-card {
+            background: var(--light);
+            border: 1px solid var(--border);
+            border-left: 4px solid var(--secondary);
+            padding: 20px;
+            border-radius: 4px;
+        }
+        .product-name { font-size: 18px; font-weight: bold; color: var(--primary); margin-bottom: 8px; display: block; }
+        .product-desc { font-size: 13px; color: #555; margin-bottom: 10px; }
+        .product-code { font-family: monospace; background: #eee; padding: 2px 6px; border-radius: 3px; font-size: 12px; }
+
+        /* ADVANTAGE BOX */
+        .advantage-box {
+            background: #fff3cd;
+            border-left: 5px solid var(--secondary);
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 4px;
+        }
+        .advantage-box h3 { margin-top: 0; color: #856404; font-size: 16px; }
+        .advantage-list { margin: 0; padding-left: 20px; font-size: 14px; color: #856404; }
+        .advantage-list li { margin-bottom: 5px; }
+
+        /* TABLE */
+        table { width: 100%; border-collapse: collapse; margin-bottom: 30px; font-size: 13px; }
+        th, td { padding: 12px; border: 1px solid var(--border); vertical-align: top; }
+        th { background-color: var(--primary); color: white; text-align: left; }
+        .col-req { width: 40%; background: #fafafa; font-weight: 600; }
+        .col-val { width: 60%; }
+        .match { color: var(--success); font-weight: bold; font-size: 12px; border: 1px solid var(--success); padding: 2px 6px; border-radius: 3px; display: inline-block; margin-left: 10px; }
+
+        /* RAL PALETTE */
+        .ral-section { margin-bottom: 30px; }
+        .ral-section h3 { color: var(--primary); border-bottom: 1px solid var(--border); padding-bottom: 10px; margin-bottom: 20px; }
+        .ral-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+            gap: 10px;
+        }
+        .ral-item {
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            overflow: hidden;
+            font-size: 11px;
+            text-align: center;
+        }
+        .ral-color { height: 50px; width: 100%; }
+        .ral-name { padding: 8px 4px; background: #fff; font-weight: 600; }
+
+        /* LOGISTICS */
+        .logistics {
+            background: #e8f4f8;
+            padding: 15px;
+            border-radius: 4px;
+            margin-bottom: 30px;
+            font-size: 13px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .logistics-icon { font-size: 24px; }
+
+        /* FOOTER */
+        .footer {
+            background: #f8f9fa;
+            border-top: 2px solid var(--primary);
+            padding: 30px 40px;
+            font-size: 12px;
+            color: #666;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+        .footer h4 { margin: 0 0 10px; color: var(--primary); font-size: 14px; }
+        .samara-branch {
+            background: white;
+            padding: 15px;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            border-left: 3px solid var(--success);
+        }
+        .samara-branch strong { color: var(--success); }
+
+        /* CONTROLS */
+        .controls {
+            text-align: center;
+            padding: 20px;
+            background: #333;
+            color: white;
+        }
+        .btn {
+            background: var(--success);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: bold;
+            margin: 0 10px;
+        }
+        .btn:hover { background: #219150; }
+
+        @media print {
+            body { background: white; padding: 0; }
+            .document-container { box-shadow: none; width: 100%; max-width: 100%; }
+            .controls { display: none; }
+            .letterhead { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .ral-color { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+        }
+        @media (max-width: 700px) {
+            .products-grid, .footer-grid { grid-template-columns: 1fr; }
+            .letterhead { flex-direction: column; text-align: center; }
+            .contact-area { text-align: center; margin-top: 15px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="document-container">
+    <!-- LETTERHEAD -->
+    <div class="letterhead">
+        <div class="logo-area">
+            <h1>TONALY</h1>
+            <p>detalystaly.ru | tonaly.ru</p>
+        </div>
+        <div class="contact-area">
+            <div>📞 +7 (XXX) XXX-XX-XX</div>
+            <div>✉️ info@tonaly.ru</div>
+            <div>🌐 tonaly.ru</div>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="doc-title">
+            <h2>КОММЕРЧЕСКОЕ ПРЕДЛОЖЕНИЕ</h2>
+            <div class="ref">Тема: Поставка лакокрасочных материалов для АО «Электрощит»</div>
+        </div>
+
+        <!-- PRODUCTS -->
+        <div class="products-grid">
+            <div class="product-card">
+                <span class="product-name">REM-POX 0607 HS</span>
+                <p class="product-desc">Двухкомпонентная грунт-эмаль на эпоксидной основе. Высокий сухой остаток.</p>
+                <span class="product-code">Тип: 2К Эпоксид</span>
+            </div>
+            <div class="product-card">
+                <span class="product-name">REM-PUR 1604</span>
+                <p class="product-desc">Двухкомпонентная полиуретановая эмаль. Атмосферостойкое финишное покрытие.</p>
+                <span class="product-code">Тип: 2К Полиуретан</span>
+            </div>
+        </div>
+
+        <!-- ADVANTAGE -->
+        <div class="advantage-box">
+            <h3>⚡ Техническое превосходство</h3>
+            <ul class="advantage-list">
+                <li>Перекрывают 100% требований вашего ТЗ.</li>
+                <li>Допускают эксплуатацию в условиях <strong>полного погружения (Im1, Im2, Im3)</strong>.</li>
+                <li>Срок службы системы: <strong>от 15 до 30 лет</strong>.</li>
+                <li>Все характеристики подтверждены протоколами сертифицированных институтов.</li>
+            </ul>
+        </div>
+
+        <!-- LOGISTICS -->
+        <div class="logistics">
+            <div class="logistics-icon">🚚</div>
+            <div>
+                <strong>Оперативная логистика:</strong> Складская программа в г. Самара. 
+                Быстрая отгрузка всех цветов RAL для АО «Электрощит».
+            </div>
+        </div>
+
+        <!-- TABLE -->
+        <h3>Сравнительная таблица соответствия ТЗ</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Требование Заказчика</th>
+                    <th>Решение REM-POX + REM-PUR</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="col-req">Категория коррозии (ISO 12944)</td>
+                    <td class="col-val">C3, C4, C5-I, C5-M <span class="match">СОВПАДАЕТ</span><br><small>+ Im1, Im2, Im3 (Погружение)</small></td>
+                </tr>
+                <tr>
+                    <td class="col-req">Стойкость в солевом тумане</td>
+                    <td class="col-val">До 1440 часов с надрезом <span class="match">ВЫШЕ ТЗ</span></td>
+                </tr>
+                <tr>
+                    <td class="col-req">Нанесение за 1 слой (300 мкм)</td>
+                    <td class="col-val">REM-POX 0607 HS: до 300-400 мкм без подтеков <span class="match">СОВПАДАЕТ</span></td>
+                </tr>
+                <tr>
+                    <td class="col-req">Сушка на отлип</td>
+                    <td class="col-val">35 мин при 60-80°C <span class="match">СОВПАДАЕТ</span></td>
+                </tr>
+                <tr>
+                    <td class="col-req">Сухой остаток (объем)</td>
+                    <td class="col-val">Не менее 65% (фактически ~70-80%) <span class="match">ВЫШЕ ТЗ</span></td>
+                </tr>
+                <tr>
+                    <td class="col-req">Адгезия</td>
+                    <td class="col-val">0 балл, >4 МПа <span class="match">СОВПАДАЕТ</span></td>
+                </tr>
+                <tr>
+                    <td class="col-req">Температура эксплуатации</td>
+                    <td class="col-val">-60 … +120°C <span class="match">СОВПАДАЕТ</span></td>
+                </tr>
+                <tr>
+                    <td class="col-req">Грунт ВКФ-093</td>
+                    <td class="col-val">Совместимость подтверждена <span class="match">СОВПАДАЕТ</span></td>
+                </tr>
+                <tr>
+                    <td class="col-req">Разбавитель</td>
+                    <td class="col-val">Р-4 <span class="match">СОВПАДАЕТ</span></td>
+                </tr>
+                <tr>
+                    <td class="col-req">Срок хранения</td>
+                    <td class="col-val">Не менее 24 месяцев <span class="match">СОВПАДАЕТ</span></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- RAL PALETTE -->
+        <div class="ral-section">
+            <h3>🎨 Доступные цвета (складская программа)</h3>
+            <div class="ral-grid">
+                <!-- Желтые -->
+                <div class="ral-item"><div class="ral-color" style="background: #D6C858;"></div><div class="ral-name">RAL 1014</div></div>
+                <div class="ral-item"><div class="ral-color" style="background: #E8D66E;"></div><div class="ral-name">RAL 1018</div></div>
+                <div class="ral-item"><div class="ral-color" style="background: #B59D2E;"></div><div class="ral-name">RAL 1021</div></div>
+                <!-- Красные -->
+                <div class="ral-item"><div class="ral-color" style="background: #9E2525;"></div><div class="ral-name">RAL 3001</div></div>
+                <div class="ral-item"><div class="ral-color" style="background: #7A1B1B;"></div><div class="ral-name">RAL 3003</div></div>
+                <div class="ral-item"><div class="ral-color" style="background: #C41E3A;"></div><div class="ral-name">RAL 3020</div></div>
+                <!-- Синие -->
+                <div class="ral-item"><div class="ral-color" style="background: #1C3F6E;"></div><div class="ral-name">RAL 5002</div></div>
+                <div class="ral-item"><div class="ral-color" style="background: #8B1C4E;"></div><div class="ral-name">RAL 5005</div></div>
+                <div class="ral-item"><div class="ral-color" style="background: #1E4E7A;"></div><div class="ral-name">RAL 5010</div></div>
+                <div class="ral-item"><div class="ral-color" style="background: #3B6FA3;"></div><div class="ral-name">RAL 5012</div></div>
+                <div class="ral-item"><div class="ral-color" style="background: #4B6E91;"></div><div class="ral-name">RAL 5019</div></div>
+                <div class="ral-item"><div class="ral-color" style="background: #5D7FA3;"></div><div class="ral-name">RAL 5024</div></div>
+                <!-- Зеленые -->
+                <div class="ral-item"><div class="ral-color" style="background: #4C6E4C;"></div><div class="ral-name">RAL 6016</div></div>
+                <div class="ral-item"><div class="ral-color" style="background: #3E5C4A;"></div><div class="ral-name">RAL 6029</div></div>
+                <!-- Серые -->
+                <div class="ral-item"><div class="ral-color" style="background: #B5B9A8;"></div><div class="ral-name">RAL 7004</div></div>
+                <div class="ral-item"><div class="ral-color" style="background: #9C9B7A;"></div><div class="ral-name">RAL 7032</div></div>
+                <div class="ral-item"><div class="ral-color" style="background: #C4C6C2;"></div><div class="ral-name">RAL 7035</div></div>
+                <div class="ral-item"><div class="ral-color" style="background: #7A7A7A;"></div><div class="ral-name">RAL 7036</div></div>
+                <div class="ral-item"><div class="ral-color" style="background: #9DA3A3;"></div><div class="ral-name">RAL 7040</div></div>
+                <div class="ral-item"><div class="ral-color" style="background: #6D7575;"></div><div class="ral-name">RAL 7042</div></div>
+                <div class="ral-item"><div class="ral-color" style="background: #B3B5B5;"></div><div class="ral-name">RAL 7047</div></div>
+                <!-- Белые/Черные -->
+                <div class="ral-item"><div class="ral-color" style="background: #F0F0F0;"></div><div class="ral-name">RAL 9003</div></div>
+                <div class="ral-item"><div class="ral-color" style="background: #1A1A1A;"></div><div class="ral-name">RAL 9005</div></div>
+                <div class="ral-item"><div class="ral-color" style="background: #999999;"></div><div class="ral-name">RAL 9006</div></div>
+                <div class="ral-item"><div class="ral-color" style="background: #0F0F0F;"></div><div class="ral-name">RAL 9011</div></div>
+                <div class="ral-item"><div class="ral-color" style="background: #E8E8E8;"></div><div class="ral-name">RAL 9016</div></div>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 30px; font-size: 13px; color: #666;">
+            <p>Готовы предоставить образцы выкрасов и протоколы испытаний по первому запросу.</p>
+        </div>
+    </div>
+
+    <!-- FOOTER WITH REQUISITES -->
+    <div class="footer">
+        <div class="footer-grid">
+            <div>
+                <h4>ООО «ТОНАЛЬ»</h4>
+                <p>ИНН / КПП: [Вставить ИНН] / [Вставить КПП]</p>
+                <p>ОГРН: [Вставить ОГРН]</p>
+                <p>Юр. адрес: [Вставить Юр. Адрес]</p>
+                <p>Банковские реквизиты: [Вставить Банк и счет]</p>
+            </div>
+            <div class="samara-branch">
+                <h4>📍 Филиал в г. Самара</h4>
+                <p><strong>Адрес склада:</strong> [Вставить Адрес Склада]</p>
+                <p><strong>Телефон:</strong> [Вставить Телефон]</p>
+                <p><strong>Контактное лицо:</strong> [Вставить Имя]</p>
+                <p style="margin-top: 10px; font-size: 11px; color: #888;">
+                    * Для АО «Электрощит» действует приоритетная отгрузка со склада в Самаре.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="controls">
+    <button class="btn" onclick="window.print()">🖨️ Печать / Сохранить в PDF</button>
+</div>
+
+</body>
+</html>

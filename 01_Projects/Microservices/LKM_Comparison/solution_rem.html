@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Техническое решение: Rem-Rokh & Rem-Pur | Tonaly</title>
+    <style>
+        :root {
+            --primary: #003366; /* Строгий синий */
+            --accent: #d35400; /* Индустриальный оранжевый */
+            --success: #27ae60;
+            --light: #f4f6f7;
+            --text: #2c3e50;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background: #eef2f3;
+            margin: 0;
+            padding: 20px;
+        }
+        .document-container {
+            max-width: 950px;
+            margin: 0 auto;
+            background: white;
+            padding: 50px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-radius: 4px;
+            border-top: 6px solid var(--primary);
+        }
+        
+        /* Header */
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 20px;
+        }
+        h1 { color: var(--primary); margin: 0; font-size: 28px; text-transform: uppercase; letter-spacing: 1px; }
+        .subtitle { color: #7f8c8d; font-size: 16px; margin-top: 10px; }
+        .tz-ref { background: #eee; display: inline-block; padding: 4px 10px; border-radius: 4px; font-size: 12px; margin-top: 10px; font-weight: bold; }
+
+        /* Product Showcase */
+        .products-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+        .product-card {
+            background: var(--light);
+            border: 1px solid #dcdcdc;
+            padding: 20px;
+            border-radius: 6px;
+            position: relative;
+            overflow: hidden;
+        }
+        .product-card::before {
+            content: "ОСНОВНОЙ ПРОДУКТ";
+            position: absolute;
+            top: 0; right: 0;
+            background: var(--primary);
+            color: white;
+            font-size: 10px;
+            padding: 4px 8px;
+            border-bottom-left-radius: 6px;
+        }
+        .product-name { font-size: 18px; font-weight: bold; color: var(--primary); margin-bottom: 10px; display: block; }
+        .product-desc { font-size: 14px; color: #555; margin-bottom: 15px; }
+        .product-tags { display: flex; gap: 10px; flex-wrap: wrap; }
+        .tag { background: white; border: 1px solid #ccc; padding: 2px 8px; border-radius: 12px; font-size: 12px; }
+
+        /* Advantage Box */
+        .advantage-box {
+            background: #fff8e1;
+            border-left: 5px solid var(--accent);
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 4px;
+        }
+        .advantage-box h3 { margin-top: 0; color: #d35400; display: flex; align-items: center; }
+        .advantage-box h3 svg { margin-right: 10px; width: 24px; height: 24px; fill: #d35400; }
+        .advantage-list { margin: 0; padding-left: 20px; }
+        .advantage-list li { margin-bottom: 8px; font-size: 14px; }
+
+        /* Compliance Table */
+        table { width: 100%; border-collapse: collapse; margin-bottom: 30px; font-size: 13px; }
+        th, td { padding: 12px; border: 1px solid #ddd; vertical-align: top; }
+        th { background-color: var(--primary); color: white; text-align: left; font-weight: 600; }
+        
+        .col-req { width: 30%; background: #fafafa; font-weight: 600; color: #444; }
+        .col-val { width: 70%; color: #333; }
+        
+        .match-badge { 
+            display: inline-block; 
+            background: #e8f8f5; 
+            color: var(--success); 
+            padding: 2px 6px; 
+            border-radius: 4px; 
+            font-size: 11px; 
+            font-weight: bold; 
+            border: 1px solid var(--success);
+            margin-left: 10px;
+        }
+
+        /* Documents Section */
+        .docs-section {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 6px;
+            border: 1px dashed #ccc;
+        }
+        .docs-title { font-weight: bold; margin-bottom: 15px; display: block; }
+        .doc-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; }
+        .doc-item { display: flex; align-items: flex-start; font-size: 13px; }
+        .doc-icon { color: var(--success); margin-right: 10px; font-weight: bold; font-size: 16px; }
+
+        /* Footer / Action */
+        .controls {
+            margin-top: 40px;
+            text-align: center;
+            border-top: 2px solid #eee;
+            padding-top: 20px;
+        }
+        .btn {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            text-decoration: none;
+            display: inline-block;
+            transition: background 0.3s;
+        }
+        .btn:hover { background: #002244; }
+        .btn-secondary { background: white; color: var(--primary); border: 2px solid var(--primary); margin-left: 10px; }
+        
+        @media print {
+            body { background: white; padding: 0; }
+            .document-container { box-shadow: none; border: none; width: 100%; max-width: 100%; padding: 0; }
+            .controls { display: none; }
+            .advantage-box { border: 1px solid #ccc; background: white; }
+        }
+        @media (max-width: 700px) {
+            .products-grid { grid-template-columns: 1fr; }
+            th, td { display: block; width: 100%; box-sizing: border-box; }
+            .col-req { background: #eee; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="document-container">
+    <header>
+        <h1>Комплексное решение по антикоррозионной защите</h1>
+        <div class="subtitle">На основе материалов системы Rem-Coat</div>
+        <div class="tz-ref">Ответ на Техническое Задание (ЛКМ)</div>
+    </header>
+
+    <!-- Карточки продуктов -->
+    <div class="products-grid">
+        <div class="product-card">
+            <span class="product-name">Грунт-эмаль «Rem-Rokh 0607 HS» 2К</span>
+            <p class="product-desc">Высоконаполненная эпоксидная грунт-эмаль. Идеальна для создания барьерного слоя и выравнивания поверхности.</p>
+            <div class="product-tags">
+                <span class="tag">Высокий сухой остаток</span>
+                <span class="tag">Антикоррозия</span>
+                <span class="tag">1 слой = 300 мкм</span>
+            </div>
+        </div>
+        <div class="product-card">
+            <span class="product-name">Эмаль «Rem-Pur 1604» 2К</span>
+            <p class="product-desc">Полиуретановая эмаль для финишного покрытия. Обеспечивает стойкость к УФ и агрессивным средам.</p>
+            <div class="product-tags">
+                <span class="tag">Стойкость к УФ</span>
+                <span class="tag">Глянец 45-70%</span>
+                <span class="tag">Химостойкость</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Блок "Запас прочности" -->
+    <div class="advantage-box">
+        <h3>
+            <svg viewBox="0 0 24 24"><path d="M12 2L1 21h22L12 2zm0 3.99L19.53 19H4.47L12 5.99zM11 16h2v2h-2zm0-6h2v4h-2z"/></svg>
+            Решение с запасом прочности (Premium Class)
+        </h3>
+        <ul class="advantage-list">
+            <li><strong>Расширенная защита:</strong> Система подходит не только для атмосферы (C2-C5-M), но и для <strong>условий полного погружения (Im1, Im2, Im3)</strong>.</li>
+            <li><strong>Срок службы:</strong> Гарантированный ресурс системы <strong>от 15 до 30 лет</strong> и более (в зависимости от схемы).</li>
+            <li><strong>Универсальность:</strong> Данные продукты позволяют закрыть 100% требований вашего ТЗ и предложить альтернативы для более сложных узлов.</li>
+        </ul>
+    </div>
+
+    <h2>Таблица соответствия Техническому Заданию</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Параметр ТЗ</th>
+                <th>Решение Tonaly (Rem-Rokh + Rem-Pur)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="col-req">Категория коррозии (ISO 12944)</td>
+                <td class="col-val">
+                    <strong>C3, C4, C5-I, C5-M</strong> <span class="match-badge">СОВПАДАЕТ</span><br>
+                    <small>Дополнительно: Im1, Im2, Im3 (Погружение)</small>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-req">Стойкость в солевом тумане</td>
+                <td class="col-val">
+                    Система выдерживает <strong>1440+ часов</strong> (протоколы испытаний прилагаются). <span class="match-badge">ВЫШЕ ТЗ</span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-req">Нанесение за 1 слой (300 мкм)</td>
+                <td class="col-val">
+                    <strong>Rem-Rokh 0607 HS</strong> позволяет наносить до 300-400 мкм за один проход без подтеков. <span class="match-badge">СОВПАДАЕТ</span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-req">Сушка на отлип (35 мин при 60-80°C)</td>
+                <td class="col-val">
+                    При форсированной сушке материал готов к обработке через <strong>30-40 минут</strong>. <span class="match-badge">СОВПАДАЕТ</span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-req">Сухой остаток (объем)</td>
+                <td class="col-val">
+                    Rem-Rokh: ~70-80% (зависит от цвета). <span class="match-badge">ВЫШЕ ТЗ (65%)</span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-req">Адгезия (0 балл, >4 МПа)</td>
+                <td class="col-val">
+                    Адгезия к стали Sa2.5: <strong>0 баллов (отрыв по бетону/металлу)</strong>, прочность на отрыв >5 МПа. <span class="match-badge">СОВПАДАЕТ</span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-req">Температура эксплуатации</td>
+                <td class="col-val">
+                    Рабочий диапазон: <strong>-60 … +120°C</strong> (кратковременно до 150°C). <span class="match-badge">СОВПАДАЕТ</span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-req">Совместимость с грунтом ВКФ-093</td>
+                <td class="col-val">
+                    Полная совместимость. Система может наноситься поверх ВКФ-093 или заменять его (в зависимости от схемы). <span class="match-badge">СОВПАДАЕТ</span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-req">Разбавитель</td>
+                <td class="col-val">
+                    Допускается использование <strong>Р-4</strong> (до 5% для распыления). <span class="match-badge">СОВПАДАЕТ</span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-req">Срок хранения</td>
+                <td class="col-val">
+                    12-24 месяца в заводской таре (при соблюдении условий). <span class="match-badge">СОВПАДАЕТ</span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="docs-section">
+        <span class="docs-title">📂 Подтверждающая документация (готовы предоставить):</span>
+        <div class="doc-grid">
+            <div class="doc-item"><span class="doc-icon">✔</span> Протоколы испытаний из сертифицированных институтов (солевой туман, адгезия)</div>
+            <div class="doc-item"><span class="doc-icon">✔</span> Сертификаты соответствия и ТУ</div>
+            <div class="doc-item"><span class="doc-icon">✔</span> Паспорта безопасности (MSDS)</div>
+            <div class="doc-item"><span class="doc-icon">✔</span> Референс-лист 2024-2026 (объекты с погружением и атмосферой)</div>
+            <div class="doc-item"><span class="doc-icon">✔</span> Расчет расхода на 1 м² для схемы "Грунт + Эмаль"</div>
+        </div>
+    </div>
+
+    <div class="controls">
+        <button class="btn" onclick="window.print()">🖨️ Распечатать КП</button>
+        <a href="https://tonaly.ru" class="btn btn-secondary">На сайт Tonaly.ru</a>
+    </div>
+</div>
+
+</body>
+</html>

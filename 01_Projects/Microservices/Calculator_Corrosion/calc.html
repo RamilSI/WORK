@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Калькулятор антикоррозионной защиты | TONAL</title>
+    <style>
+        :root {
+            --primary: #003366;
+            --secondary: #d35400;
+            --success: #27ae60;
+            --light: #f8f9fa;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, sans-serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .calculator-container {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        .header {
+            background: var(--primary);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        .header h1 { margin: 0; font-size: 28px; }
+        .header p { margin: 10px 0 0; opacity: 0.9; }
+        
+        .content { padding: 30px; }
+        
+        .input-section {
+            background: var(--light);
+            padding: 25px;
+            border-radius: 6px;
+            margin-bottom: 25px;
+        }
+        .input-section h3 {
+            margin-top: 0;
+            color: var(--primary);
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 10px;
+        }
+        
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+        .form-group label {
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #555;
+            font-size: 13px;
+        }
+        .form-group input,
+        .form-group select {
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+            transition: border 0.3s;
+        }
+        .form-group input:focus,
+        .form-group select:focus {
+            border-color: var(--primary);
+            outline: none;
+        }
+        
+        .calculate-btn {
+            background: var(--success);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            transition: background 0.3s;
+        }
+        .calculate-btn:hover {
+            background: #219150;
+        }
+        
+        .results {
+            display: none;
+            margin-top: 30px;
+            animation: fadeIn 0.5s;
+        }
+        .results.show {
+            display: block;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .result-card {
+            background: white;
+            border: 2px solid var(--primary);
+            border-radius: 6px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .result-card h4 {
+            margin: 0 0 15px;
+            color: var(--primary);
+            font-size: 16px;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 10px;
+        }
+        
+        .result-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+        .result-item {
+            background: var(--light);
+            padding: 15px;
+            border-radius: 4px;
+            border-left: 4px solid var(--secondary);
+        }
+        .result-item .label {
+            font-size: 12px;
+            color: #666;
+            margin-bottom: 5px;
+        }
+        .result-item .value {
+            font-size: 20px;
+            font-weight: bold;
+            color: var(--primary);
+        }
+        .result-item .unit {
+            font-size: 12px;
+            color: #999;
+        }
+        
+        .scheme-info {
+            background: #fff3cd;
+            border-left: 4px solid var(--secondary);
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 4px;
+        }
+        .scheme-info h5 {
+            margin: 0 0 10px;
+            color: #856404;
+        }
+        .scheme-info ul {
+            margin: 0;
+            padding-left: 20px;
+            color: #856404;
+        }
+        .scheme-info li {
+            margin-bottom: 5px;
+        }
+        
+        .contact-form {
+            background: var(--light);
+            padding: 25px;
+            border-radius: 6px;
+            margin-top: 30px;
+        }
+        .contact-form h3 {
+            margin-top: 0;
+            color: var(--primary);
+        }
+        .contact-form .form-group {
+            margin-bottom: 15px;
+        }
+        .submit-btn {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            font-size: 14px;
+            font-weight: bold;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .submit-btn:hover {
+            background: #002244;
+        }
+        
+        .products-info {
+            margin-top: 30px;
+            padding-top: 30px;
+            border-top: 2px solid #ddd;
+        }
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .product-box {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            padding: 20px;
+        }
+        .product-box h4 {
+            margin-top: 0;
+            color: var(--primary);
+        }
+        
+        @media print {
+            .calculate-btn, .contact-form { display: none; }
+            .results { display: block !important; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="calculator-container">
+    <div class="header">
+        <h1>🧮 Калькулятор антикоррозионной защиты</h1>
+        <p>Система REM-POX 0607HS + REM-PUR 1604</p>
+    </div>
+    
+    <div class="content">
+        <!-- Input Section -->
+        <div class="input-section">
+            <h3>📋 Параметры объекта</h3>
+            
+            <div class="form-grid">
+                <div class="form-group">
+                    <label for="area">Площадь поверхности (м²):</label>
+                    <input type="number" id="area" placeholder="Например: 1000" min="1">
+                </div>
+                
+                <div class="form-group">
+                    <label for="category">Категория коррозии (ISO 12944):</label>
+                    <select id="category">
+                        <option value="C3_15">C3 — свыше 15 лет</option>
+                        <option value="C4_5">C4 — 2-5 лет</option>
+                        <option value="C4_15" selected>C4 — 5-15 лет</option>
+                        <option value="C4_15plus">C4 — свыше 15 лет</option>
+                        <option value="C5_5">C5-I/C5-M — 2-5 лет</option>
+                        <option value="C5_15">C5-I — свыше 15 лет</option>
+                        <option value="C5M_15">C5-M — свыше 15 лет</option>
+                        <option value="Im">Im1-Im3 — погружение (15-30 лет)</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="waste">Запас на потери (%):</label>
+                    <input type="number" id="waste" value="10" min="0" max="30">
+                </div>
+            </div>
+            
+            <button class="calculate-btn" onclick="calculate()">🔢 Рассчитать расход материалов</button>
+        </div>
+        
+        <!-- Results Section -->
+        <div class="results" id="results">
+            <div class="scheme-info" id="schemeInfo">
+                <h5>📊 Выбранная схема покрытия</h5>
+                <ul id="schemeList"></ul>
+            </div>
+            
+            <div class="result-card">
+                <h4> REM-POX 0607 HS (Грунт-эмаль эпоксидная)</h4>
+                <div class="result-grid">
+                    <div class="result-item">
+                        <div class="label">Требуемая толщина</div>
+                        <div class="value" id="primerThickness">0</div>
+                        <div class="unit">мкм</div>
+                    </div>
+                    <div class="result-item">
+                        <div class="label">Расход на 1 м²</div>
+                        <div class="value" id="primerPerM2">0</div>
+                        <div class="unit">кг/м²</div>
+                    </div>
+                    <div class="result-item">
+                        <div class="label">Общий расход</div>
+                        <div class="value" id="primerTotalKg">0</div>
+                        <div class="unit">кг</div>
+                    </div>
+                    <div class="result-item">
+                        <div class="label">В литрах</div>
+                        <div class="value" id="primerTotalL">0</div>
+                        <div class="unit">л (комплектов)</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="result-card">
+                <h4>🎨 REM-PUR 1604 (Эмаль полиуретановая)</h4>
+                <div class="result-grid">
+                    <div class="result-item">
+                        <div class="label">Требуемая толщина</div>
+                        <div class="value" id="enamelThickness">0</div>
+                        <div class="unit">мкм</div>
+                    </div>
+                    <div class="result-item">
+                        <div class="label">Расход на 1 м²</div>
+                        <div class="value" id="enamelPerM2">0</div>
+                        <div class="unit">кг/м²</div>
+                    </div>
+                    <div class="result-item">
+                        <div class="label">Общий расход</div>
+                        <div class="value" id="enamelTotalKg">0</div>
+                        <div class="unit">кг</div>
+                    </div>
+                    <div class="result-item">
+                        <div class="label">В литрах</div>
+                        <div class="value" id="enamelTotalL">0</div>
+                        <div class="unit">л (комплектов)</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="result-card" style="background: #e8f8f5; border-color: var(--success);">
+                <h4 style="color: var(--success);">📦 Итого материалов:</h4>
+                <div class="result-grid">
+                    <div class="result-item" style="border-left-color: var(--success);">
+                        <div class="label">Общий вес</div>
+                        <div class="value" id="totalKg">0</div>
+                        <div class="unit">кг</div>
+                    </div>
+                    <div class="result-item" style="border-left-color: var(--success);">
+                        <div class="label">Объём</div>
+                        <div class="value" id="totalL">0</div>
+                        <div class="unit">литров</div>
+                    </div>
+                    <div class="result-item" style="border-left-color: var(--success);">
+                        <div class="label">Итого слоёв</div>
+                        <div class="value" id="totalLayers">0</div>
+                        <div class="unit">слой(ев)</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Contact Form -->
+        <div class="contact-form">
+            <h3>📩 Получить коммерческое предложение</h3>
+            <p style="margin-bottom: 20px; color: #666; font-size: 13px;">
+                Заполните форму, и мы отправим детальный расчёт с ценами и сроками поставки на ваш email
+            </p>
+            <div class="form-grid">
+                <div class="form-group">
+                    <label>Ваше имя *</label>
+                    <input type="text" placeholder="Иван Иванов" required>
+                </div>
+                <div class="form-group">
+                    <label>Телефон *</label>
+                    <input type="tel" placeholder="+7 (___) ___-__-__" required>
+                </div>
+                <div class="form-group">
+                    <label>Email *</label>
+                    <input type="email" placeholder="example@company.ru" required>
+                </div>
+                <div class="form-group">
+                    <label>Компания</label>
+                    <input type="text" placeholder="ООО Компания">
+                </div>
+            </div>
+            <button class="submit-btn" onclick="sendRequest()">📤 Отправить запрос КП</button>
+        </div>
+        
+        <!-- Products Info -->
+        <div class="products-info">
+            <h3 style="color: var(--primary); margin-bottom: 20px;"> Применяемые материалы</h3>
+            <div class="products-grid">
+                <div class="product-box">
+                    <h4>REM-POX 0607 HS</h4>
+                    <p style="font-size: 13px; color: #666; line-height: 1.6;">
+                        Двухкомпонентная эпоксидная грунт-эмаль с высоким сухим остатком. 
+                        Наносится за 1 слой до 300-400 мкм. Отличная адгезия, 
+                        стойкость к химически-активным средам.
+                    </p>
+                    <ul style="font-size: 12px; color: #555; padding-left: 20px;">
+                        <li>Сухой остаток: ≥65%</li>
+                        <li>Адгезия: 0 балл, &gt;4 МПа</li>
+                        <li>Температура эксплуатации: -60…+250°C</li>
+                    </ul>
+                </div>
+                <div class="product-box">
+                    <h4>REM-PUR 1604</h4>
+                    <p style="font-size: 13px; color: #666; line-height: 1.6;">
+                        Двухкомпонентная полиуретановая эмаль для финишного покрытия. 
+                        Атмосферостойкая, УФ-стойкая, широкий выбор цветов RAL.
+                    </p>
+                    <ul style="font-size: 12px; color: #555; padding-left: 20px;">
+                        <li>Блеск: 45-70%</li>
+                        <li>Цветовая палитра: 25+ цветов RAL</li>
+                        <li>Срок службы: до 30 лет</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Scheme database
+    const schemes = {
+        'C3_15': { primer: 100, enamel: 60, name: 'C3 — свыше 15 лет' },
+        'C4_5': { primer: 140, enamel: 60, name: 'C4 — 2-5 лет' },
+        'C4_15': { primer: 180, enamel: 60, name: 'C4 — 5-15 лет' },
+        'C4_15plus': { primer: 220, enamel: 60, name: 'C4 — свыше 15 лет' },
+        'C5_5': { primer: 140, enamel: 60, name: 'C5-I/C5-M — 2-5 лет' },
+        'C5_15': { primer: 220, enamel: 60, name: 'C5-I — свыше 15 лет' },
+        'C5M_15': { primer: 220, enamel: 80, name: 'C5-M — свыше 15 лет' },
+        'Im': { primer: 300, enamel: 100, name: 'Im1-Im3 — погружение (15-30 лет)' }
+    };
+    
+    // Material properties
+    const primerDensity = 1.5; // kg/L
+    const enamelDensity = 1.27; // kg/L
+    const primerSolidContent = 0.70; // 70%
+    const enamelSolidContent = 0.65; // 65%
+    
+    function calculate() {
+        const area = parseFloat(document.getElementById('area').value);
+        const category = document.getElementById('category').value;
+        const waste = parseFloat(document.getElementById('waste').value) / 100;
+        
+        if (!area || area <= 0) {
+            alert('Пожалуйста, введите корректную площадь поверхности');
+            return;
+        }
+        
+        const scheme = schemes[category];
+        
+        // Calculate primer
+        const primerThickness = scheme.primer;
+        const primerPerM2 = (primerThickness / 1000) / primerSolidContent * primerDensity;
+        const primerTotalKg = primerPerM2 * area * (1 + waste);
+        const primerTotalL = primerTotalKg / primerDensity;
+        
+        // Calculate enamel
+        const enamelThickness = scheme.enamel;
+        const enamelPerM2 = (enamelThickness / 1000) / enamelSolidContent * enamelDensity;
+        const enamelTotalKg = enamelPerM2 * area * (1 + waste);
+        const enamelTotalL = enamelTotalKg / enamelDensity;
+        
+        // Update UI
+        document.getElementById('primerThickness').textContent = primerThickness;
+        document.getElementById('primerPerM2').textContent = primerPerM2.toFixed(3);
+        document.getElementById('primerTotalKg').textContent = Math.ceil(primerTotalKg);
+        document.getElementById('primerTotalL').textContent = Math.ceil(primerTotalL);
+        
+        document.getElementById('enamelThickness').textContent = enamelThickness;
+        document.getElementById('enamelPerM2').textContent = enamelPerM2.toFixed(3);
+        document.getElementById('enamelTotalKg').textContent = Math.ceil(enamelTotalKg);
+        document.getElementById('enamelTotalL').textContent = Math.ceil(enamelTotalL);
+        
+        document.getElementById('totalKg').textContent = Math.ceil(primerTotalKg + enamelTotalKg);
+        document.getElementById('totalL').textContent = Math.ceil(primerTotalL + enamelTotalL);
+        document.getElementById('totalLayers').textContent = '1 + 1';
+        
+        // Update scheme info
+        const schemeList = document.getElementById('schemeList');
+        schemeList.innerHTML = `
+            <li><strong>Схема:</strong> ${scheme.name}</li>
+            <li><strong>Грунт REM-POX 0607 HS:</strong> ${primerThickness} мкм (1 слой)</li>
+            <li><strong>Эмаль REM-PUR 1604:</strong> ${enamelThickness} мкм (1 слой)</li>
+            <li><strong>Итого толщина:</strong> ${primerThickness + enamelThickness} мкм</li>
+            <li><strong>Запас на потери:</strong> ${waste * 100}%</li>
+        `;
+        
+        // Show results
+        document.getElementById('results').classList.add('show');
+        
+        // Smooth scroll to results
+        document.getElementById('results').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+    
+    function sendRequest() {
+        alert('Форма отправлена! (Здесь будет интеграция с вашей CRM или email)');
+        // Here you would normally send data to your server
+    }
+    
+    // Allow Enter key to calculate
+    document.addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+            calculate();
+        }
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>КП: REM-POX + REM-PUR | TONAL</title>
+    <style>
+        :root {
+            --primary: #003366;
+            --secondary: #d35400;
+            --success: #27ae60;
+            --text: #2c3e50;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.5;
+            color: var(--text);
+            background: #555;
+            margin: 0;
+            padding: 20px;
+            font-size: 12px;
+        }
+        .document-container {
+            max-width: 210mm;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 0 20px rgba(0,0,0,0.3);
+        }
+        
+        /* LETTERHEAD */
+        .letterhead {
+            background: var(--primary);
+            color: white;
+            padding: 25px 35px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo-area h1 { margin: 0; font-size: 36px; text-transform: uppercase; letter-spacing: 4px; }
+        .logo-area p { margin: 5px 0 0; opacity: 0.8; font-size: 12px; }
+        .contact-area { text-align: right; font-size: 13px; line-height: 1.8; }
+        .contact-area a { color: white; text-decoration: none; font-weight: bold; }
+        
+        /* CONTENT */
+        .content { padding: 35px; }
+        
+        .doc-title {
+            text-align: center;
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+        }
+        .doc-title h2 { margin: 0; color: var(--primary); font-size: 20px; }
+        .doc-title .ref { color: #7f8c8d; font-size: 12px; margin-top: 5px; }
+
+        /* PRODUCTS */
+        .products-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 25px;
+        }
+        .product-card {
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-left: 4px solid var(--secondary);
+            padding: 20px;
+            border-radius: 4px;
+        }
+        .product-name { font-size: 16px; font-weight: bold; color: var(--primary); margin-bottom: 8px; display: block; }
+        .product-desc { font-size: 12px; color: #555; margin-bottom: 10px; line-height: 1.4; }
+        .product-code { font-family: monospace; background: #eee; padding: 3px 8px; border-radius: 3px; font-size: 11px; }
+
+        /* PRICING */
+        .pricing-section {
+            border: 2px solid var(--primary);
+            border-radius: 6px;
+            margin-bottom: 25px;
+            page-break-inside: avoid;
+        }
+        .pricing-header {
+            background: var(--primary);
+            color: white;
+            padding: 12px 20px;
+            font-weight: bold;
+            font-size: 13px;
+            text-transform: uppercase;
+        }
+        .pricing-table { width: 100%; border-collapse: collapse; }
+        .pricing-table th { text-align: left; padding: 10px 15px; background: #f1f1f1; font-size: 11px; color: #555; }
+        .pricing-table td { padding: 12px 15px; border-bottom: 1px solid #eee; font-size: 12px; }
+        .pricing-table tr:last-child td { border-bottom: none; }
+        .price-val { font-weight: bold; color: var(--primary); font-size: 14px; }
+        .vat-badge { background: #e8f8f5; color: var(--success); padding: 2px 6px; border-radius: 3px; font-size: 10px; border: 1px solid var(--success); }
+
+        /* SCHEMES */
+        .schemes-section { 
+            margin-bottom: 25px; 
+            page-break-inside: avoid;
+        }
+        .schemes-section h3 { 
+            margin: 0 0 12px; 
+            color: var(--primary); 
+            font-size: 14px; 
+            border-bottom: 2px solid var(--primary); 
+            padding-bottom: 8px; 
+        }
+        .schemes-table { width: 100%; border-collapse: collapse; font-size: 11px; }
+        .schemes-table th, .schemes-table td { padding: 8px 12px; border: 1px solid #ddd; text-align: center; }
+        .schemes-table th { background: var(--primary); color: white; font-weight: 600; }
+        .schemes-table .cat-col { text-align: left; background: #fafafa; font-weight: 600; width: 25%; }
+        .schemes-table tr:hover { background: #f8f9fa; }
+
+        /* ADVANTAGE */
+        .advantage-box {
+            background: #fff3cd;
+            border-left: 5px solid var(--secondary);
+            padding: 15px 20px;
+            margin-bottom: 25px;
+            border-radius: 4px;
+            page-break-inside: avoid;
+        }
+        .advantage-box h3 { margin: 0 0 10px; color: #856404; font-size: 13px; }
+        .advantage-box ul { margin: 0; padding-left: 20px; }
+        .advantage-box li { margin-bottom: 6px; color: #856404; font-size: 12px; }
+
+        /* LOGISTICS */
+        .logistics {
+            background: #e8f4f8;
+            padding: 15px 20px;
+            border-radius: 4px;
+            margin-bottom: 25px;
+            font-size: 12px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            page-break-inside: avoid;
+        }
+        .logistics-icon { font-size: 28px; }
+
+        /* RAL PALETTE */
+        .ral-section { 
+            margin-bottom: 25px; 
+            page-break-inside: avoid;
+        }
+        .ral-section h3 { 
+            margin: 0 0 12px; 
+            color: var(--primary); 
+            font-size: 14px; 
+            border-bottom: 2px solid var(--primary); 
+            padding-bottom: 8px; 
+        }
+        .ral-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 8px;
+        }
+        .ral-item {
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            overflow: hidden;
+            font-size: 10px;
+            text-align: center;
+            background: white;
+        }
+        .ral-color { height: 40px; width: 100%; }
+        .ral-info { padding: 6px 4px; background: #fff; }
+        .ral-code { font-weight: bold; display: block; margin-bottom: 3px; color: #333; }
+        .ral-price { color: var(--secondary); font-weight: bold; font-size: 11px; }
+        .ral-price::after { content: ' ₽/л'; font-weight: normal; color: #999; font-size: 9px; }
+
+        /* REFERENCES */
+        .ref-section {
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 6px;
+            margin-bottom: 25px;
+            border: 1px solid #eee;
+            page-break-inside: avoid;
+        }
+        .ref-section h3 { 
+            margin: 0 0 12px; 
+            color: var(--primary); 
+            font-size: 14px; 
+            border-bottom: 1px solid #ddd; 
+            padding-bottom: 8px; 
+        }
+        .ref-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 25px; font-size: 11px; }
+        .ref-col h4 { margin: 0 0 8px; color: var(--primary); font-size: 12px; border-bottom: 1px solid #ddd; padding-bottom: 5px; }
+        .ref-col ul { padding-left: 18px; margin: 0; }
+        .ref-col li { margin-bottom: 4px; color: #555; line-height: 1.4; }
+        .ref-note { 
+            text-align: left; 
+            margin-top: 15px; 
+            font-size: 11px; 
+            color: var(--primary); 
+            font-style: italic; 
+            background: white;
+            padding: 10px;
+            border-radius: 4px;
+            border-left: 3px solid var(--success);
+        }
+
+        /* COMPLIANCE TABLE */
+        .compliance-section { 
+            margin-bottom: 25px; 
+            page-break-inside: avoid;
+        }
+        .compliance-section h3 { 
+            margin: 0 0 12px; 
+            color: var(--primary); 
+            font-size: 14px; 
+            border-bottom: 2px solid var(--primary); 
+            padding-bottom: 8px; 
+        }
+        .compliance-table { width: 100%; border-collapse: collapse; font-size: 11px; }
+        .compliance-table th, .compliance-table td { padding: 10px 12px; border: 1px solid #ddd; vertical-align: top; }
+        .compliance-table th { background: var(--primary); color: white; text-align: left; }
+        .compliance-table .col-req { width: 45%; background: #fafafa; font-weight: 600; }
+        .compliance-table .col-val { width: 55%; }
+        .match { color: var(--success); font-weight: bold; font-size: 10px; border: 1px solid var(--success); padding: 2px 6px; border-radius: 3px; display: inline-block; margin-left: 8px; }
+
+        /* SIGNATURES */
+        .signatures {
+            margin-top: 40px;
+            display: flex;
+            justify-content: space-between;
+            gap: 40px;
+            padding-top: 20px;
+            border-top: 2px solid var(--primary);
+            page-break-inside: avoid;
+        }
+        .sig-block { flex: 1; }
+        .sig-title { font-weight: bold; font-size: 11px; margin-bottom: 5px; color: #333; }
+        .sig-name { font-size: 14px; border-bottom: 1px solid #333; padding-bottom: 5px; display: inline-block; min-width: 200px; margin-top: 30px; }
+        .sig-contact { font-size: 11px; color: #666; margin-top: 5px; }
+        .sig-contact strong { color: var(--primary); }
+
+        /* FOOTER */
+        .footer {
+            background: #f8f9fa;
+            border-top: 3px solid var(--primary);
+            padding: 25px 35px;
+            font-size: 10px;
+            color: #666;
+        }
+        .footer-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+        .footer h4 { margin: 0 0 8px; color: var(--primary); font-size: 11px; text-transform: uppercase; letter-spacing: 1px; }
+        .footer p { margin: 3px 0; line-height: 1.4; }
+        .samara-branch {
+            background: white;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            border-left: 4px solid var(--success);
+        }
+
+        /* CONTROLS */
+        .controls {
+            text-align: center;
+            padding: 20px;
+            background: #333;
+            color: white;
+        }
+        .btn {
+            background: var(--success);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 13px;
+            font-weight: bold;
+            margin: 0 10px;
+        }
+        .btn:hover { background: #219150; }
+
+        /* PAGE BREAKS FOR PRINT */
+        @media print {
+            body { background: white; padding: 0; }
+            .document-container { box-shadow: none; width: 100%; max-width: 100%; }
+            .controls { display: none; }
+            .letterhead, .pricing-header, .schemes-table th, .ral-color { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            
+            /* Logical page breaks */
+            .pricing-section, .schemes-section, .advantage-box, .logistics, .ral-section, .ref-section, .compliance-section, .signatures {
+                page-break-inside: avoid;
+            }
+            
+            /* Force new page for signatures if needed */
+            .signatures {
+                page-break-before: auto;
+            }
+        }
+        @media (max-width: 700px) {
+            .products-grid, .footer-grid, .ref-grid { grid-template-columns: 1fr; }
+            .letterhead { flex-direction: column; text-align: center; }
+            .contact-area { text-align: center; margin-top: 15px; }
+            .ral-grid { grid-template-columns: repeat(3, 1fr); }
+        }
+    </style>
+</head>
+<body>
+
+<div class="document-container">
+    <!-- LETTERHEAD -->
+    <div class="letterhead">
+        <div class="logo-area">
+            <h1>TONAL</h1>
+            <p>detalystaly.ru | tonaly.ru</p>
+        </div>
+        <div class="contact-area">
+            <div>📞 <a href="tel:+79184906109">+7 (918) 49 06 109</a></div>
+            <div>✉️ <a href="mailto:inbox@tonaly.ru">inbox@tonaly.ru</a></div>
+            <div>🌐 tonaly.ru</div>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="doc-title">
+            <h2>КОММЕРЧЕСКОЕ ПРЕДЛОЖЕНИЕ</h2>
+            <div class="ref">Для АО «Электрощит» | Поставка лакокрасочных материалов для антикоррозионной защиты</div>
+        </div>
+
+        <!-- PRODUCTS -->
+        <div class="products-grid">
+            <div class="product-card">
+                <span class="product-name">REM-POX 0607 HS</span>
+                <p class="product-desc">Двухкомпонентная грунт-эмаль на эпоксидной основе с высоким сухим остатком. Предназначена для создания антикоррозионного барьерного слоя.</p>
+                <span class="product-code">Тип: 2К Эпоксид | Комплект: основа + отвердитель</span>
+            </div>
+            <div class="product-card">
+                <span class="product-name">REM-PUR 1604</span>
+                <p class="product-desc">Двухкомпонентная полиуретановая эмаль для финишного покрытия. Обеспечивает атмосферостойкость и декоративные свойства.</p>
+                <span class="product-code">Тип: 2К Полиуретан | Блеск: 45-70%</span>
+            </div>
+        </div>
+
+        <!-- PRICING -->
+        <div class="pricing-section">
+            <div class="pricing-header">💰 Стоимость материалов (с НДС 20%)</div>
+            <table class="pricing-table">
+                <thead>
+                    <tr>
+                        <th>Продукт</th>
+                        <th>Цена за литр</th>
+                        <th>Цена за кг</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <strong>Грунт-эмаль REM-POX 0607 HS</strong><br>
+                            <span style="font-size:10px; color:#666;">Комплект (основа + отвердитель)</span>
+                        </td>
+                        <td class="price-val">986 ₽ <span class="vat-badge">с НДС</span></td>
+                        <td class="price-val">654 ₽ <span class="vat-badge">с НДС</span></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong>Эмаль REM-PUR 1604 (Белая / Серая)</strong><br>
+                            <span style="font-size:10px; color:#666;">RAL 9003, 9006, 9016, 7004, 7032, 7035, 7036, 7040, 7042, 7047</span>
+                        </td>
+                        <td class="price-val">1 190 ₽ <span class="vat-badge">с НДС</span></td>
+                        <td class="price-val">937 ₽ <span class="vat-badge">с НДС</span></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong>Эмаль REM-PUR 1604 (Цветная)</strong><br>
+                            <span style="font-size:10px; color:#666;">Палитра RAL (см. ниже)</span>
+                        </td>
+                        <td class="price-val">от 1 190 ₽ <span class="vat-badge">с НДС</span></td>
+                        <td style="color:#999;">по запросу</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- ADVANTAGE -->
+        <div class="advantage-box">
+            <h3>⚡ Технические преимущества системы REM-POX + REM-PUR</h3>
+            <ul>
+                <li>Перекрывают 100% требований вашего Технического Задания</li>
+                <li>Допускают эксплуатацию в условиях <strong>полного погружения (Im1, Im2, Im3)</strong></li>
+                <li>Срок службы системы: <strong>от 15 до 30 лет и более</strong> (в зависимости от схемы)</li>
+                <li>Нанесение до 300 мкм за один слой без подтёков</li>
+                <li>Все характеристики подтверждены протоколами испытаний сертифицированных институтов</li>
+                <li>Совместимость с грунтом ВКФ-093 подтверждена</li>
+            </ul>
+        </div>
+
+        <!-- LOGISTICS -->
+        <div class="logistics">
+            <div class="logistics-icon">🚚</div>
+            <div>
+                <strong>Оперативная логистика:</strong> Складская программа в г. Самара обеспечивает быструю отгрузку всех цветов RAL для АО «Электрощит». 
+                Срок поставки со склада в Самаре — 1-3 рабочих дня.
+            </div>
+        </div>
+
+        <!-- SCHEMES -->
+        <div class="schemes-section">
+            <h3>📋 Рекомендуемые схемы покрытий REM-POX 0607HS + REM-PUR 1604</h3>
+            <table class="schemes-table">
+                <thead>
+                    <tr>
+                        <th class="cat-col">Категория (ISO 12944)</th>
+                        <th>Срок службы</th>
+                        <th>Грунт (мкм)</th>
+                        <th>Эмаль (мкм)</th>
+                        <th>Итого (мкм)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="cat-col">C3</td>
+                        <td>свыше 15 лет</td>
+                        <td>100</td>
+                        <td>60</td>
+                        <td><strong>160</strong></td>
+                    </tr>
+                    <tr>
+                        <td class="cat-col">C4</td>
+                        <td>2-5 лет</td>
+                        <td>140</td>
+                        <td>60</td>
+                        <td><strong>200</strong></td>
+                    </tr>
+                    <tr>
+                        <td class="cat-col">C4</td>
+                        <td>5-15 лет</td>
+                        <td>180</td>
+                        <td>60</td>
+                        <td><strong>240</strong></td>
+                    </tr>
+                    <tr>
+                        <td class="cat-col">C4</td>
+                        <td>свыше 15 лет</td>
+                        <td>220</td>
+                        <td>60</td>
+                        <td><strong>280</strong></td>
+                    </tr>
+                    <tr>
+                        <td class="cat-col">C5-I / C5-M</td>
+                        <td>2-5 лет</td>
+                        <td>140</td>
+                        <td>60</td>
+                        <td><strong>200</strong></td>
+                    </tr>
+                    <tr>
+                        <td class="cat-col">C5-I</td>
+                        <td>свыше 15 лет</td>
+                        <td>220</td>
+                        <td>60</td>
+                        <td><strong>280</strong></td>
+                    </tr>
+                    <tr>
+                        <td class="cat-col">C5-M</td>
+                        <td>свыше 15 лет</td>
+                        <td>220</td>
+                        <td>80</td>
+                        <td><strong>300</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- COMPLIANCE TABLE -->
+        <div class="compliance-section">
+            <h3>✅ Таблица соответствия Техническому Заданию</h3>
+            <table class="compliance-table">
+                <thead>
+                    <tr>
+                        <th>Требование Заказчика</th>
+                        <th>Решение REM-POX + REM-PUR</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="col-req">Категория коррозии (ISO 12944-2)</td>
+                        <td class="col-val">C3, C4, C5-I, C5-M <span class="match">СОВПАДАЕТ</span><br><small style="color:#666;">Дополнительно: Im1, Im2, Im3 (Погружение)</small></td>
+                    </tr>
+                    <tr>
+                        <td class="col-req">Стойкость в солевом тумане (с надрезом)</td>
+                        <td class="col-val">До 1440 часов <span class="match">ВЫШЕ ТЗ</span></td>
+                    </tr>
+                    <tr>
+                        <td class="col-req">Нанесение за 1 слой (300 мкм)</td>
+                        <td class="col-val">REM-POX 0607 HS: до 300-400 мкм без подтёков <span class="match">СОВПАДАЕТ</span></td>
+                    </tr>
+                    <tr>
+                        <td class="col-req">Сушка на отлип</td>
+                        <td class="col-val">35 мин при 60-80°C / 4 часа при 50-60°C <span class="match">СОВПАДАЕТ</span></td>
+                    </tr>
+                    <tr>
+                        <td class="col-req">Сухой остаток (объём)</td>
+                        <td class="col-val">Не менее 65% (фактически 70-80%) <span class="match">ВЫШЕ ТЗ</span></td>
+                    </tr>
+                    <tr>
+                        <td class="col-req">Адгезия</td>
+                        <td class="col-val">0 балл, &gt;4 МПа <span class="match">СОВПАДАЕТ</span></td>
+                    </tr>
+                    <tr>
+                        <td class="col-req">Температура эксплуатации</td>
+                        <td class="col-val">-60 … +120°C <span class="match">СОВПАДАЕТ</span></td>
+                    </tr>
+                    <tr>
+                        <td class="col-req">Грунт ВКФ-093</td>
+                        <td class="col-val">Совместимость подтверждена <span class="match">СОВПАДАЕТ</span></td>
+                    </tr>
+                    <tr>
+                        <td class="col-req">Разбавитель</td>
+                        <td class="col-val">Р-4 <span class="match">СОВПАДАЕТ</span></td>
+                    </tr>
+                    <tr>
+                        <td class="col-req">Срок хранения</td>
+                        <td class="col-val">Не менее 24 месяцев <span class="match">СОВПАДАЕТ</span></td>
+                    </tr>
+                    <tr>
+                        <td class="col-req">Тара поставки</td>
+                        <td class="col-val">1; 5; 20 кг <span class="match">СОВПАДАЕТ</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- RAL PALETTE -->
+        <div class="ral-section">
+            <h3>🎨 Палитра цветов REM-PUR 1604 (цены за 1 литр с НДС)</h3>
+            <div class="ral-grid">
+                <!-- Желтые 1440 -->
+                <div class="ral-item"><div class="ral-color" style="background: #D6C858;"></div><div class="ral-info"><span class="ral-code">RAL 1014</span><span class="ral-price">1440</span></div></div>
+                <div class="ral-item"><div class="ral-color" style="background: #E8D66E;"></div><div class="ral-info"><span class="ral-code">RAL 1018</span><span class="ral-price">1440</span></div></div>
+                <div class="ral-item"><div class="ral-color" style="background: #B59D2E;"></div><div class="ral-info"><span class="ral-code">RAL 1021</span><span class="ral-price">1440</span></div></div>
+                <!-- Красные 1440 -->
+                <div class="ral-item"><div class="ral-color" style="background: #9E2525;"></div><div class="ral-info"><span class="ral-code">RAL 3001</span><span class="ral-price">1440</span></div></div>
+                <div class="ral-item"><div class="ral-color" style="background: #7A1B1B;"></div><div class="ral-info"><span class="ral-code">RAL 3003</span><span class="ral-price">1440</span></div></div>
+                <div class="ral-item"><div class="ral-color" style="background: #C41E3A;"></div><div class="ral-info"><span class="ral-code">RAL 3020</span><span class="ral-price">1440</span></div></div>
+                <!-- Синие 1380 -->
+                <div class="ral-item"><div class="ral-color" style="background: #1C3F6E;"></div><div class="ral-info"><span class="ral-code">RAL 5002</span><span class="ral-price">1380</span></div></div>
+                <div class="ral-item"><div class="ral-color" style="background: #8B1C4E;"></div><div class="ral-info"><span class="ral-code">RAL 5005</span><span class="ral-price">1380</span></div></div>
+                <div class="ral-item"><div class="ral-color" style="background: #1E4E7A;"></div><div class="ral-info"><span class="ral-code">RAL 5010</span><span class="ral-price">1380</span></div></div>
+                <div class="ral-item"><div class="ral-color" style="background: #3B6FA3;"></div><div class="ral-info"><span class="ral-code">RAL 5012</span><span class="ral-price">1380</span></div></div>
+                <div class="ral-item"><div class="ral-color" style="background: #4B6E91;"></div><div class="ral-info"><span class="ral-code">RAL 5019</span><span class="ral-price">1380</span></div></div>
+                <div class="ral-item"><div class="ral-color" style="background: #5D7FA3;"></div><div class="ral-info"><span class="ral-code">RAL 5024</span><span class="ral-price">1380</span></div></div>
+                <!-- Зеленые 1290 -->
+                <div class="ral-item"><div class="ral-color" style="background: #4C6E4C;"></div><div class="ral-info"><span class="ral-code">RAL 6016</span><span class="ral-price">1290</span></div></div>
+                <div class="ral-item"><div class="ral-color" style="background: #3E5C4A;"></div><div class="ral-info"><span class="ral-code">RAL 6029</span><span class="ral-price">1290</span></div></div>
+                <!-- Серые 1290-1190 -->
+                <div class="ral-item"><div class="ral-color" style="background: #7A7A7A;"></div><div class="ral-info"><span class="ral-code">RAL 7036</span><span class="ral-price">1290</span></div></div>
+                <div class="ral-item"><div class="ral-color" style="background: #B5B9A8;"></div><div class="ral-info"><span class="ral-code">RAL 7004</span><span class="ral-price">1190</span></div></div>
+                <div class="ral-item"><div class="ral-color" style="background: #9C9B7A;"></div><div class="ral-info"><span class="ral-code">RAL 7032</span><span class="ral-price">1190</span></div></div>
+                <div class="ral-item"><div class="ral-color" style="background: #C4C6C2;"></div><div class="ral-info"><span class="ral-code">RAL 7035</span><span class="ral-price">1190</span></div></div>
+                <div class="ral-item"><div class="ral-color" style="background: #9DA3A3;"></div><div class="ral-info"><span class="ral-code">RAL 7040</span><span class="ral-price">1190</span></div></div>
+                <div class="ral-item"><div class="ral-color" style="background: #6D7575;"></div><div class="ral-info"><span class="ral-code">RAL 7042</span><span class="ral-price">1190</span></div></div>
+                <div class="ral-item"><div class="ral-color" style="background: #B3B5B5;"></div><div class="ral-info"><span class="ral-code">RAL 7047</span><span class="ral-price">1190</span></div></div>
+                <!-- Белые 1190 -->
+                <div class="ral-item"><div class="ral-color" style="background: #F0F0F0;"></div><div class="ral-info"><span class="ral-code">RAL 9003</span><span class="ral-price">1190</span></div></div>
+                <div class="ral-item"><div class="ral-color" style="background: #999999;"></div><div class="ral-info"><span class="ral-code">RAL 9006</span><span class="ral-price">1190</span></div></div>
+                <div class="ral-item"><div class="ral-color" style="background: #E8E8E8;"></div><div class="ral-info"><span class="ral-code">RAL 9016</span><span class="ral-price">1190</span></div></div>
+                <!-- Черный 1300 -->
+                <div class="ral-item"><div class="ral-color" style="background: #0F0F0F;"></div><div class="ral-info"><span class="ral-code">RAL 9011</span><span class="ral-price">1300</span></div></div>
+            </div>
+        </div>
+
+        <!-- REFERENCES -->
+        <div class="ref-section">
+            <h3>🏭 Референс-лист объектов (TM REM COLOR)</h3>
+            <div class="ref-grid">
+                <div class="ref-col">
+                    <h4>Производственные предприятия</h4>
+                    <ul>
+                        <li><strong>Завод REM COLOR</strong> (г. Минск) — лаборатория и архив хранения образцов покрытий каждой отгружаемой партии в течение 5 лет</li>
+                        <li><strong>Продмаш</strong> (г. Самара) — Арктик, СПГ2 (Ямал)</li>
+                        <li><strong>Нафта</strong> (г. Самара) — БСК (Башкирия), Русвинил-Сибур (Нижний Новгород)</li>
+                        <li><strong>КВОиТ</strong> (г. Самара) — Лукойл-Коми (Пермский край), Амурский ГКХ, Газпромнефть (Ямал)</li>
+                        <li><strong>АвтоВАЗ</strong> (г. Тольятти)</li>
+                        <li><strong>Еврохим</strong> (г. Волгоград)</li>
+                        <li><strong>Уралкалий</strong> (г. Пермь)</li>
+                        <li><strong>БелКалий</strong> (Беларусь)</li>
+                        <li><strong>ГродноАзот</strong> (Беларусь)</li>
+                    </ul>
+                </div>
+                <div class="ref-col">
+                    <h4>Нефтегазовый сектор и инфраструктура</h4>
+                    <ul>
+                        <li><strong>КТК</strong> (г. Новороссийск)</li>
+                        <li><strong>Делопортс</strong> (г. Новороссийск)</li>
+                        <li><strong>Роснефть</strong> — Мозырский НПЗ (Беларусь), АО "Нафтагаз" (Ноябрьск)</li>
+                        <li><strong>Афипский НПЗ</strong> (Краснодарский край)</li>
+                        <li><strong>Резервуарный парк</strong> (г. Астрахань)</li>
+                        <li><strong>СИП</strong> (г. Самара) — Антенно-Мачтовые Сооружения (Крым, Краснодарский край, Ростовская область)</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="ref-note">
+                ✈️ <strong>Посещение объектов:</strong> По выбранным Вами объектам готовы предоставить контакты ответственных лиц и оказать полное содействие в оформлении пропусков на территории предприятий для проведения инспекции покрытий.
+            </div>
+        </div>
+
+        <!-- SIGNATURES -->
+        <div class="signatures">
+            <div class="sig-block">
+                <div class="sig-title">С уважением,</div>
+                <div class="sig-title">Генеральный директор ООО «ТОНАЛЬ»</div>
+                <br>
+                <div class="sig-name">Елена Цвиренко</div>
+            </div>
+            <div class="sig-block">
+                <div class="sig-title">Исполнитель: Заместитель Генерального директора</div>
+                <div class="sig-title">ООО «ТОНАЛЬ»</div>
+                <br>
+                <div class="sig-name">Р.И. Саликов</div>
+                <div class="sig-contact">📞 <strong>+7 (918) 49-39-548</strong></div>
+                <div class="sig-contact">✉️ <strong>rml@tonaly.ru</strong></div>
+                <br>
+                <div class="sig-title" style="color:var(--success); margin-top:15px;">📍 Контактное лицо в Самаре:</div>
+                <div class="sig-contact"><strong>Евгений Пониматкин</strong></div>
+                <div class="sig-contact">📞 +7 (964) 891-23-78</div>
+                <div class="sig-contact">✉️ samara@tonaly.ru</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <div class="footer">
+        <div class="footer-grid">
+            <div>
+                <h4>ООО «ТОНАЛЬ» (Юридический адрес)</h4>
+                <p>353900, г. Новороссийск, ул. Видова, д. 212, кв. 57</p>
+                <p>ИНН 2315998033 | КПП 231501001</p>
+                <p>ОГРН 1172375080943</p>
+                <p style="margin-top:8px;"><strong>Банковские реквизиты:</strong> предоставляются по запросу</p>
+            </div>
+            <div class="samara-branch">
+                <h4>📍 Обособленное подразделение (г. Самара)</h4>
+                <p><strong>Адрес склада:</strong> Заводское шоссе, д. 13, корп. 3</p>
+                <p><strong>Режим работы:</strong> Пн-Пт 9:00 - 18:00</p>
+                <p style="margin-top:8px; color:var(--success);"><strong>* Для АО «Электрощит» действует приоритетная отгрузка со склада в Самаре</strong></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="controls">
+    <button class="btn" onclick="window.print()">🖨️ Печать / Сохранить в PDF</button>
+</div>
+
+</body>
+</html>
