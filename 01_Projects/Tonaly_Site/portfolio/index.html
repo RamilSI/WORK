@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Портфолио выполненных работ TONAL. Антикоррозионная защита промышленных объектов покрытиями REM COLOR.">
+    <title>Портфолио | TONAL - Антикоррозионная защита</title>
+    
+    <!-- Подключаем внешний CSS -->
+    <link rel="stylesheet" href="css/portfolio.css">
+    
+    <!-- Иконки (опционально) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="portfolio-header">
+        <h1>🏭 Наши проекты</h1>
+        <p>Опыт применения покрытий REM COLOR на промышленных объектах России и СНГ</p>
+    </header>
+
+    <!-- Filters -->
+    <div class="filter-container">
+        <div class="filter-buttons">
+            <button class="filter-btn active" data-filter="all">Все проекты</button>
+            <button class="filter-btn" data-filter="oil-gas">Нефтегаз</button>
+            <button class="filter-btn" data-filter="industrial">Промышленность</button>
+            <button class="filter-btn" data-filter="infrastructure">Инфраструктура</button>
+            <button class="filter-btn" data-filter="marine">Морские объекты</button>
+            <button class="filter-btn" data-filter="energy">Энергетика</button>
+        </div>
+    </div>
+
+    <!-- Gallery -->
+    <div class="gallery-container">
+        <div class="gallery-grid" id="galleryGrid">
+            
+            <!-- Project 1 -->
+            <div class="project-card" data-category="oil-gas" 
+                 data-title="Резервуарный парк Астрахань"
+                 data-description="Антикоррозионная защита резервуаров РВС-50000. Покрытие REM-POX 0607HS + REM-PUR 1604. Срок службы: 15+ лет."
+                 data-location="Астрахань"
+                 data-year="2024"
+                 data-area="15000 м²"
+                 onclick="openLightbox(this)">
+                
+                <div class="project-thumbnail">
+                    <img src="images/projects/tank-astrakhan/thumb.jpg" alt="Резервуары Астрахань">
+                    <div class="project-overlay">
+                        <span class="view-project">Смотреть проект</span>
+                    </div>
+                </div>
+                
+                <div class="project-info">
+                    <div class="project-category">Нефтегаз</div>
+                    <h3 class="project-title">Резервуарный парк в Астрахани</h3>
+                    <p class="project-description">
+                        Комплексная антикоррозионная защита резервуаров РВС-50000 
+                        для хранения нефти и нефтепродуктов
+                    </p>
+                    <div class="project-meta">
+                        <span><i class="fas fa-map-marker-alt"></i> Астрахань</span>
+                        <span><i class="fas fa-calendar"></i> 2024</span>
+                        <span><i class="fas fa-ruler-combined"></i> 15000 м²</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="project-card" data-category="industrial"
+                 data-title="Завод Продмаш Самара"
+                 data-description="Защита металлоконструкций цеха. Система REM-POX + REM-PUR для условий C5-I."
+                 data-location="Самара"
+                 data-year="2024"
+                 data-area="8500 м²"
+                 onclick="openLightbox(this)">
+                
+                <div class="project-thumbnail">
+                    <img src="images/projects/prodmash/thumb.jpg" alt="Продмаш Самара">
+                    <div class="project-overlay">
+                        <span class="view-project">Смотреть проект</span>
+                    </div>
+                </div>
+                
+                <div class="project-info">
+                    <div class="project-category">Промышленность</div>
+                    <h3 class="project-title">Завод «Продмаш» (Самара)</h3>
+                    <p class="project-description">
+                        Антикоррозионная защита металлоконструкций производственного цеха. 
+                        Условия эксплуатации: C5-I (промышленная атмосфера)
+                    </p>
+                    <div class="project-meta">
+                        <span><i class="fas fa-map-marker-alt"></i> Самара</span>
+                        <span><i class="fas fa-calendar"></i> 2024</span>
+                        <span><i class="fas fa-ruler-combined"></i> 8500 м²</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 3 - With Video -->
+            <div class="project-card" data-category="marine"
+                 data-title="КТК Новороссийск"
+                 data-description="Защита причальных сооружений. Погружение Im2. Видео процесса нанесения."
+                 data-location="Новороссийск"
+                 data-year="2023"
+                 data-area="3200 м²"
+                 data-video="https://www.youtube.com/embed/VIDEO_ID"
+                 onclick="openLightbox(this)">
+                
+                <div class="project-thumbnail">
+                    <img src="images/projects/ktk/thumb.jpg" alt="КТК Новороссийск">
+                    <div class="project-overlay">
+                        <span class="view-project"><i class="fas fa-play"></i> Смотреть видео</span>
+                    </div>
+                </div>
+                
+                <div class="project-info">
+                    <div class="project-category">Морские объекты</div>
+                    <h3 class="project-title">КТК (Новороссийск)</h3>
+                    <p class="project-description">
+                        Антикоррозионная защита причальных сооружений Каспийского 
+                        трубопроводного консорциума. Условия полного погружения Im2.
+                    </p>
+                    <div class="project-meta">
+                        <span><i class="fas fa-map-marker-alt"></i> Новороссийск</span>
+                        <span><i class="fas fa-calendar"></i> 2023</span>
+                        <span><i class="fas fa-video"></i> Есть видео</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Add more projects... -->
+
+        </div>
+    </div>
+
+    <!-- Lightbox Modal -->
+    <div class="lightbox" id="lightbox">
+        <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+        <div class="lightbox-content">
+            <div id="lightboxMedia"></div>
+            <div class="lightbox-info">
+                <h2 id="lightboxTitle"></h2>
+                <p id="lightboxDescription"></p>
+                <div id="lightboxDetails"></div>
+                <div class="lightbox-gallery" id="lightboxGallery"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Подключаем JavaScript -->
+    <script src="js/portfolio.js"></script>
+</body>
+</html>
