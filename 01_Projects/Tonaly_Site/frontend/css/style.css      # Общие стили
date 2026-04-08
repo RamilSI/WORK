@@ -1,0 +1,17 @@
+/* css/style.css */
+:root {
+    --primary: #003366;
+    --secondary: #d35400;
+    --success: #27ae60;
+    --font-main: 'Segoe UI', Tahoma, sans-serif;
+}
+
+body {
+    font-family: var(--font-main);
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* Базовые классы */
+.container { max-width: 1200px; margin: 0 auto; }
+.btn { /* общие стили кнопок */ }

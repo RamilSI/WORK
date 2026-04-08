@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Отчёт по окраске эталонной зоны | TONAL</title>
+    <link rel="stylesheet" href="css/reports.css">
+    <style>
+        /* Дополнительные стили для отчёта эталонной зоны */
+        .report-number {
+            font-size: 18px;
+            font-weight: bold;
+            color: var(--primary);
+            text-align: center;
+            margin: 20px 0;
+            padding: 10px;
+            background: #e8f4f8;
+            border-radius: 4px;
+        }
+        
+        .info-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            font-size: 11px;
+        }
+        
+        .info-table td {
+            padding: 8px 12px;
+            border: 1px solid #ddd;
+            vertical-align: top;
+        }
+        
+        .info-table .label {
+            background: #f8f9fa;
+            font-weight: 600;
+            width: 35%;
+            color: #555;
+        }
+        
+        .info-table .value {
+            width: 65%;
+        }
+        
+        .info-table input,
+        .info-table textarea {
+            width: 100%;
+            border: none;
+            background: transparent;
+            padding: 4px;
+            font-size: 11px;
+            font-family: inherit;
+            box-sizing: border-box;
+        }
+        
+        .info-table textarea {
+            resize: vertical;
+            min-height: 60px;
+        }
+        
+        .measurements-grid {
+            display: grid;
+            grid-template-columns: repeat(15, 1fr);
+            gap: 4px;
+            margin: 10px 0;
+        }
+        
+        .measurement-cell {
+            text-align: center;
+            border: 1px solid #ddd;
+            padding: 6px 2px;
+            font-size: 10px;
+        }
+        
+        .measurement-cell input {
+            width: 100%;
+            border: none;
+            text-align: center;
+            font-size: 10px;
+            padding: 4px 2px;
+        }
+        
+        .measurement-header {
+            background: var(--primary);
+            color: white;
+            font-weight: 600;
+        }
+        
+        .layer-section {
+            background: #f8f9fa;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        
+        .layer-title {
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 10px;
+            font-size: 12px;
+        }
+        
+        .batch-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 10px 0;
+            font-size: 11px;
+        }
+        
+        .batch-table th,
+        .batch-table td {
+            padding: 8px 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        
+        .batch-table th {
+            background: var(--primary);
+            color: white;
+            font-size: 10px;
+        }
+        
+        .batch-table tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+        
+        .photo-section {
+            border: 2px dashed #ddd;
+            border-radius: 4px;
+            padding: 20px;
+            text-align: center;
+            margin: 10px 0;
+            background: #fafafa;
+        }
+        
+        .photo-section img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin: 10px 0;
+        }
+        
+        .signature-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin: 30px 0;
+            page-break-inside: avoid;
+        }
+        
+        .signature-box {
+            border-top: 1px solid #333;
+            padding-top: 5px;
+        }
+        
+        .signature-box .position {
+            font-size: 11px;
+            color: #666;
+            margin-bottom: 5px;
+        }
+        
+        .signature-box .name {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--primary);
+        }
+        
+        .signature-box .company {
+            font-size: 11px;
+            color: #666;
+        }
+        
+        .header-block {
+            background: #f8f9fa;
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin-bottom: 20px;
+            font-size: 10px;
+            color: #666;
+            text-align: center;
+            line-height: 1.6;
+        }
+        
+        @media print {
+            .photo-section {
+                border: 1px solid #ddd;
+            }
+            
+            .measurements-grid {
+                grid-template-columns: repeat(15, 1fr);
+            }
+        }
+        
+        @media (max-width: 1000px) {
+            .measurements-grid {
+                grid-template-columns: repeat(5, 1fr);
+            }
+            
+            .signature-row {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="report-container">
+    <!-- HEADER BLOCK -->
+    <div class="header-block">
+        <strong>ООО «ТОНАЛЬ»</strong><br>
+        Новороссийск, 353900, ул. Видова 212-57 | Самара, Заводское шоссе 14к3<br>
+        тел. +7 (918) 49-06-109 | inbox@tonaly.ru | для тендеров: info@tonaly.ru<br>
+        ИНН 2315998033 КПП 231501001 р/сч 0702810004550000073 в ФИЛИАЛЕ "ЦЕНТРАЛЬНЫЙ" БАНКА ВТБ (ПАО) г. Москва
+    </div>
+
+    <!-- REPORT HEADER -->
+    <div class="report-header">
+        <div>
+            <h1>TONAL</h1>
+            <p class="subtitle">Отчёт по окраске эталонной зоны</p>
+        </div>
+        <div class="contact">
+            <div>📞 <a href="tel:+79184906109">+7 (918) 49 06 109</a></div>
+            <div>✉️ <a href="mailto:inbox@tonaly.ru">inbox@tonaly.ru</a></div>
+            <div>🌐 tonaly.ru</div>
+        </div>
+    </div>
+
+    <div class="report-content">
+        <!-- REPORT NUMBER -->
+        <div class="report-number">
+            № <input type="text" id="reportNumber" value="1-АС" style="width: 100px; text-align: center; font-weight: bold; border: none; background: transparent;">
+            &nbsp;&nbsp;|&nbsp;&nbsp;
+            <input type="date" id="reportDate" style="text-align: center; border: none; background: transparent;">
+            &nbsp;&nbsp;|&nbsp;&nbsp;
+            <input type="text" id="reportLocation" value="пгт. Афипский" style="text-align: center; border: none; background: transparent;">
+        </div>
+
+        <!-- PROJECT INFO -->
+        <h2 class="section-title">📋 Информация о проекте</h2>
+        <table class="info-table">
+            <tr>
+                <td class="label">Проект:</td>
+                <td class="value"><input type="text" id="project" value="Афипский НПЗ"></td>
+            </tr>
+            <tr>
+                <td class="label">Заказчик:</td>
+                <td class="value"><input type="text" id="client" value="АФИПСКИЙ НЕФТЕПЕРЕРАБАТЫВАЮЩИЙ ЗАВОД"></td>
+            </tr>
+            <tr>
+                <td class="label">Поставщик ЛКМ:</td>
+                <td class="value"><input type="text" id="supplier" value="ООО «ТОНАЛЬ»"></td>
+            </tr>
+            <tr>
+                <td class="label">Генеральный Подрядчик:</td>
+                <td class="value"><input type="text" id="generalContractor" value="ЮЖТЕХМОНТАЖ"></td>
+            </tr>
+            <tr>
+                <td class="label">Субподрядчик по АКЗ (ОГЗ):</td>
+                <td class="value"><input type="text" id="subcontractor" value="АЛЬПСЕРВИС"></td>
+            </tr>
+            <tr>
+                <td class="label">Производитель работ по АКЗ:</td>
+                <td class="value"><input type="text" id="workPerformer" value="АЛЬПСЕРВИС"></td>
+            </tr>
+            <tr>
+                <td class="label">Местоположение площадки:</td>
+                <td class="value"><input type="text" id="location" value="Краснодарский край, пгт. Афипский, промзона"></td>
+            </tr>
+            <tr>
+                <td class="label">Расположение конструкции:</td>
+                <td class="value"><textarea id="structureLocation">Объекты ОЗХ Комплекса глубокой переработки ООО «Афипский НПЗ». Эстакады межцеховых коммуникаций Южной Площадки, титул 81600. Участок 1, ТК3". Шифр РД 90651-81600-КМ3-07-001-ОД изм. 5, АО "НЕФТЕХИМПРОЕКТ". КМД 90651-81600-КМ3-07-001, ООО "ПСМ" Металлоконструкции в осях А-Б, 8-9: колонна ось Б, 9 с отм. 32,286 до 39,710 (поз. 3 по КМД) балка Б3 ось Б, 8-9 на отм. 39,710 участок длиной 3 м (поз.79 по КМД) подкос ось Б, 9 с отм. 36,710 до 39,710 (поз. 122 по КМД)</textarea></td>
+            </tr>
+            <tr>
+                <td class="label">Чертеж №:</td>
+                <td class="value"><input type="text" id="drawingNumber" value="90651-81600-КМ3-07-001"></td>
+            </tr>
+            <tr>
+                <td class="label">Площадь эталонного участка (м²):</td>
+                <td class="value"><input type="number" id="area" value="50"></td>
+            </tr>
+        </table>
+
+        <!-- SURFACE PREPARATION -->
+        <h2 class="section-title">🔧 Подготовка поверхности</h2>
+        <table class="info-table">
+            <tr>
+                <td class="label">Стандарт подготовки поверхности:</td>
+                <td class="value"><input type="text" id="surfaceStandard" value="Sa 2,5"></td>
+            </tr>
+            <tr>
+                <td class="label">Профиль по спецификации (мкм):</td>
+                <td class="value"><input type="text" id="profileSpec" value="40 - 75"></td>
+            </tr>
+            <tr>
+                <td class="label">Фактический профиль (мкм):</td>
+                <td class="value"><input type="text" id="profileActual" value="Grit - острый"></td>
+            </tr>
+            <tr>
+                <td class="label">Тип абразива:</td>
+                <td class="value"><input type="text" id="abrasiveType" value="шлак негранулированный"></td>
+            </tr>
+            <tr>
+                <td class="label">Фракционный состав частиц:</td>
+                <td class="value"><input type="text" id="particleSize" value="0,2 - 1,6 мм"></td>
+            </tr>
+            <tr>
+                <td class="label">ISO 8502-3 Степень обеспыливания:</td>
+                <td class="value"><input type="text" id="dustLevel" value="Не более 2"></td>
+            </tr>
+        </table>
+
+        <!-- APPLICATION LAYERS -->
+        <h2 class="section-title">🎨 Нанесение покрытий</h2>
+        
+        <!-- Layer 1 -->
+        <div class="layer-section">
+            <div class="layer-title">Слой 1: Грунтовка</div>
+            <table class="info-table">
+                <tr>
+                    <td class="label">Продукт:</td>
+                    <td class="value"><input type="text" id="layer1Product" value="Грунтовка Рем-Покс 2К ЭП-0607 HS"></td>
+                </tr>
+                <tr>
+                    <td class="label">НТСП (мкм):</td>
+                    <td class="value"><input type="number" id="layer1NTSP" value="100"></td>
+                </tr>
+                <tr>
+                    <td class="label">Температура воздуха (°C):</td>
+                    <td class="value"><input type="number" id="layer1AirTemp" value="32"></td>
+                </tr>
+                <tr>
+                    <td class="label">Влажность RH (%):</td>
+                    <td class="value"><input type="number" id="layer1Humidity" value="38.5"></td>
+                </tr>
+                <tr>
+                    <td class="label">Температура стали (°C):</td>
+                    <td class="value"><input type="number" id="layer1SteelTemp" value="31.3"></td>
+                </tr>
+                <tr>
+                    <td class="label">Температура росы (°C):</td>
+                    <td class="value"><input type="number" id="layer1DewTemp" value="16.1"></td>
+                </tr>
+                <tr>
+                    <td class="label">Начало нанесения:</td>
+                    <td class="value"><input type="datetime-local" id="layer1Start" value="2025-05-27T10:00"></td>
+                </tr>
+                <tr>
+                    <td class="label">Окончание:</td>
+                    <td class="value"><input type="datetime-local" id="layer1End" value="2025-05-27T14:00"></td>
+                </tr>
+                <tr>
+                    <td class="label">Передаточное число:</td>
+                    <td class="value"><input type="text" id="layer1Ratio" value="63:1"></td>
+                </tr>
+                <tr>
+                    <td class="label">Размер сопла:</td>
+                    <td class="value"><input type="text" id="layer1Nozzle" value="315"></td>
+                </tr>
+                <tr>
+                    <td class="label">Давление на выходе (bar):</td>
+                    <td class="value"><input type="number" id="layer1Pressure" value="220"></td>
+                </tr>
+                <tr>
+                    <td class="label">Разбавление (%):</td>
+                    <td class="value"><input type="number" id="layer1Dilution" value="20"></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Layer 2 -->
+        <div class="layer-section">
+            <div class="layer-title">Слой 2: Эмаль</div>
+            <table class="info-table">
+                <tr>
+                    <td class="label">Продукт:</td>
+                    <td class="value"><input type="text" id="layer2Product" value="Эмаль Рем-Пур 2К УР-1604"></td>
+                </tr>
+                <tr>
+                    <td class="label">НТСП (мкм):</td>
+                    <td class="value"><input type="number" id="layer2NTSP" value="60"></td>
+                </tr>
+                <tr>
+                    <td class="label">Температура воздуха (°C):</td>
+                    <td class="value"><input type="number" id="layer2AirTemp" value="24"></td>
+                </tr>
+                <tr>
+                    <td class="label">Влажность RH (%):</td>
+                    <td class="value"><input type="number" id="layer2Humidity" value="33"></td>
+                </tr>
+                <tr>
+                    <td class="label">Температура стали (°C):</td>
+                    <td class="value"><input type="number" id="layer2SteelTemp" value="23.2"></td>
+                </tr>
+                <tr>
+                    <td class="label">Температура росы (°C):</td>
+                    <td class="value"><input type="number" id="layer2DewTemp" value="6.9"></td>
+                </tr>
+                <tr>
+                    <td class="label">Начало нанесения:</td>
+                    <td class="value"><input type="datetime-local" id="layer2Start" value="2025-08-16T09:45"></td>
+                </tr>
+                <tr>
+                    <td class="label">Окончание:</td>
+                    <td class="value"><input type="datetime-local" id="layer2End" value="2025-08-16T11:45"></td>
+                </tr>
+                <tr>
+                    <td class="label">Передаточное число:</td>
+                    <td class="value"><input type="text" id="layer2Ratio" value="63:1"></td>
+                </tr>
+                <tr>
+                    <td class="label">Размер сопла:</td>
+                    <td class="value"><input type="text" id="layer2Nozzle" value="315"></td>
+                </tr>
+                <tr>
+                    <td class="label">Давление на выходе (bar):</td>
+                    <td class="value"><input type="number" id="layer2Pressure" value="140"></td>
+                </tr>
+                <tr>
+                    <td class="label">Разбавление (%):</td>
+                    <td class="value"><input type="number" id="layer2Dilution" value="20"></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- BATCH NUMBERS -->
+        <h2 class="section-title">📦 Номера партий материалов</h2>
+        <table class="batch-table">
+            <thead>
+                <tr>
+                    <th style="width: 10%;">№ п.п.</th>
+                    <th style="width: 60%;">Позиция</th>
+                    <th style="width: 30%;">Партия</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td><input type="text" value="Грунтовка Рем-Покс 2К ЭП-0607 HS Компонент 1" style="width: 100%; border: none; background: transparent;"></td>
+                    <td><input type="text" value="6305" style="width: 100%; border: none; background: transparent; font-weight: bold;"></td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td><input type="text" value="Грунтовка Рем-Покс 2К ЭП-0607 HS Компонент 2" style="width: 100%; border: none; background: transparent;"></td>
+                    <td><input type="text" value="6306" style="width: 100%; border: none; background: transparent; font-weight: bold;"></td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td><input type="text" value="Эмаль Рем-Пур 2К УР-1604 Компонент 1" style="width: 100%; border: none; background: transparent;"></td>
+                    <td><input type="text" value="6541" style="width: 100%; border: none; background: transparent; font-weight: bold;"></td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td><input type="text" value="Эмаль Рем-Пур 2К УР-1604 Компонент 2" style="width: 100%; border: none; background: transparent;"></td>
+                    <td><input type="text" value="6308" style="width: 100%; border: none; background: transparent; font-weight: bold;"></td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td><input type="text" value="Растворитель Рем-Сол-2" style="width: 100%; border: none; background: transparent;"></td>
+                    <td><input type="text" value="3149" style="width: 100%; border: none; background: transparent; font-weight: bold;"></td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td><input type="text" value="Растворитель Рем-Сол-3" style="width: 100%; border: none; background: transparent;"></td>
+                    <td><input type="text" value="3736" style="width: 100%; border: none; background: transparent; font-weight: bold;"></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- THICKNESS MEASUREMENTS -->
+        <h2 class="section-title">📏 Измерения ТСП по каждому слою (мкм)</h2>
+        
+        <!-- Layer 1 Measurements -->
+        <div class="layer-section">
+            <div class="layer-title">Первый слой: Грунтовка Рем-Покс 2К ЭП-0607 HS</div>
+            <div class="measurements-grid">
+                <div class="measurement-cell measurement-header">1</div>
+                <div class="measurement-cell measurement-header">2</div>
+                <div class="measurement-cell measurement-header">3</div>
+                <div class="measurement-cell measurement-header">4</div>
+                <div class="measurement-cell measurement-header">5</div>
+                <div class="measurement-cell measurement-header">6</div>
+                <div class="measurement-cell measurement-header">7</div>
+                <div class="measurement-cell measurement-header">8</div>
+                <div class="measurement-cell measurement-header">9</div>
+                <div class="measurement-cell measurement-header">10</div>
+                <div class="measurement-cell measurement-header">11</div>
+                <div class="measurement-cell measurement-header">12</div>
+                <div class="measurement-cell measurement-header">13</div>
+                <div class="measurement-cell measurement-header">14</div>
+                <div class="measurement-cell measurement-header">15</div>
+                
+                <div class="measurement-cell"><input type="number" class="thickness-layer1" value="122"></div>
+                <div class="measurement-cell"><input type="number" class="thickness-layer1" value="103"></div>
+                <div class="measurement-cell"><input type="number" class="thickness-layer1" value="94"></div>
+                <div class="measurement-cell"><input type="number" class="thickness-layer1" value="118"></div>
+                <div class="measurement-cell"><input type="number" class="thickness-layer1" value="123"></div>
+                <div class="measurement-cell"><input type="number" class="thickness-layer1" value="91"></div>
+                <div class="measurement-cell"><input type="number" class="thickness-layer1" value="103"></div>
+                <div class="measurement-cell"><input type="number" class="thickness-layer1" value="94"></div>
+                <div class="measurement-cell"><input type="number" class="thickness-layer1" value="98"></div>
+                <div class="measurement-cell"><input type="number" class="thickness-layer1" value="167"></div>
+                <div class="measurement-cell"><input type="number" class="thickness-layer1" value="153"></div>
+                <div class="measurement-cell"><input type="number" class="thickness-layer1" value="116"></div>
+                <div class="measurement-cell"><input type="number" class="thickness-layer1" value="107"></div>
+                <div class="measurement-cell"><input type="number" class="thickness-layer1" value="107"></div>
+                <div class="measurement-cell"><input type="number" class="thickness-layer1" value="134"></div>
+            </div>
+            <div style="text-align: right; font-size: 11px; margin-top: 10px;">
+                <strong>Среднее: </strong><span id="avg1">—</span> мкм | 
+                <strong>Мин: </strong><span id="min1">—</span> мкм | 
+                <strong>Макс: </strong><span id="max1">—</span> мкм
+            </div>
+        </div>
+
+        <!-- Layer 2 Measurements -->
+        <div class="layer-section">
+            <div class="layer-title">Второй слой: Эмаль Рем-Пур 2К УР-1604</div>
+            <div class="measurements-grid">
+                <div class="measurement-cell measurement-header">1</div>
+                <div class="measurement-cell measurement-header">2</div>
+                <div class="measurement-cell measurement-header">3</div>
+                <div class="measurement-cell measurement-header">4</div>
+                <div class="measurement-cell measurement-header">5</div>
+                <div class="measurement-cell measurement-header">6</div>
+                <div class="measurement-cell measurement-header">7</div>
+                <div class="measurement-cell measurement-header">8</div>
+                <div class="measurement-cell measurement-header">9</div>
+                <div class="measurement-cell measurement-header">10</div>
+                <div class="measurement-cell measurement-header">11</div>
+                <div class="measurement-cell measurement-header">12</div>
+                <div class="measurement-cell measurement-header">13</div>
+                <div class="measurement-cell measurement-header">14</div>
+                <div class="measurement-cell measurement-header">15</div>
+                
+                <div class="measurement-cell"><input type="number" class="thickness-layer2" value="186"></div>
+                <div class="measurement-cell"><input type="number" class="thickness-layer2" value="165"></div>
+                <div class="measurement-cell"><input type="number" class="thickness-layer2" value="176"></div>
+                <div class="measurement-cell"><input type="number" class="thickness-layer2" value="200"></div>
+                <div class="measurement-cell"><input type="number" class="thickness-layer2" value="212"></div>
+                <div class="measurement-cell"><input type="number" class="thickness-layer2" value="184"></div>
+                <div class="measurement-cell"><input type="number" class="thickness-layer2" value="193"></div>
+                <div class="measurement-cell"><input type="number" class="thickness-layer2" value="178"></div>
+                <div class="measurement-cell"><input type="number" class="thickness-layer2" value="184"></div>
+                <div class="measurement-cell"><input type="number" class="thickness-layer2" value="249"></div>
+                <div class="measurement-cell"><input type="number" class="thickness-layer2" value="214"></div>
+                <div class="measurement-cell"><input type="number" class="thickness-layer2" value="195"></div>
+                <div class="measurement-cell"><input type="number" class="thickness-layer2" value="170"></div>
+                <div class="measurement-cell"><input type="number" class="thickness-layer2" value="183"></div>
+                <div class="measurement-cell"><input type="number" class="thickness-layer2" value="223"></div>
+            </div>
+            <div style="text-align: right; font-size: 11px; margin-top: 10px;">
+                <strong>Среднее: </strong><span id="avg2">—</span> мкм | 
+                <strong>Мин: </strong><span id="min2">—</span> мкм | 
+                <strong>Макс: </strong><span id="max2">—</span> мкм
+            </div>
+        </div>
+
+        <!-- TOTAL THICKNESS -->
+        <div class="summary-box">
+            <h4>📊 Итоговая толщина системы</h4>
+            <div class="summary-grid">
+                <div class="summary-item">
+                    <div class="value" id="totalAvg">—</div>
+                    <div class="label">Средняя (мкм)</div>
+                </div>
+                <div class="summary-item">
+                    <div class="value" id="totalMin">—</div>
+                    <div class="label">Мин. (мкм)</div>
+                </div>
+                <div class="summary-item">
+                    <div class="value" id="totalMax">—</div>
+                    <div class="label">Макс. (мкм)</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PHOTOS -->
+        <h2 class="section-title">📸 Фотоматериалы</h2>
+        <div class="photo-section" onclick="document.getElementById('photoInput1').click()">
+            📷 Загрузить фото: Подготовленная поверхность к нанесению грунта
+            <input type="file" id="photoInput1" multiple accept="image/*" style="display: none" onchange="previewPhotos(this, 'photoPreview1')">
+            <div id="photoPreview1"></div>
+        </div>
+        <div class="photo-section" onclick="document.getElementById('photoInput2').click()">
+            📷 Загрузить фото: Эталонный участок с нанесенным покрытием
+            <input type="file" id="photoInput2" multiple accept="image/*" style="display: none" onchange="previewPhotos(this, 'photoPreview2')">
+            <div id="photoPreview2"></div>
+        </div>
+
+        <!-- SIGNATURES -->
+        <h2 class="section-title">✍️ Подписи сторон</h2>
+        <div class="signature-row">
+            <div class="signature-box">
+                <div class="position">Представитель субподрядчика</div>
+                <div class="name" contenteditable="true">Степанов А.В.</div>
+                <div class="company">Начальник участка ООО «АльпСервис»</div>
+            </div>
+            <div class="signature-box">
+                <div class="position">Представитель поставщика материалов</div>
+                <div class="name" contenteditable="true">Саликов Р.</div>
+                <div class="company">Технический директор ООО «ТОНАЛЬ»</div>
+            </div>
+        </div>
+        <div style="font-size: 11px; color: #666; margin-top: 10px;">
+            (по доверенности № <input type="text" style="width: 150px; border: none; border-bottom: 1px solid #333; background: transparent;"> от 
+            <input type="date" style="border: none; border-bottom: 1px solid #333; background: transparent;"> 2025 г.)
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <div class="report-footer">
+        <div class="footer-grid">
+            <div>
+                <h4>ООО «ТОНАЛЬ»</h4>
+                <p>353900, г. Новороссийск, ул. Видова, д. 212, кв. 57</p>
+                <p>ИНН 2315998033 | КПП 231501001</p>
+            </div>
+            <div>
+                <h4>📍 Самара</h4>
+                <p>Заводское шоссе, д. 13, корп. 3</p>
+                <p>📞 +7 (964) 891-23-78 (Евгений Пониматкин)</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- CONTROLS -->
+<div class="report-controls">
+    <button class="btn btn-success" onclick="window.print()">🖨️ Печать / PDF</button>
+    <button class="btn btn-primary" onclick="saveReport()">💾 Сохранить</button>
+    <button class="btn btn-warning" onclick="clearForm()">🗑️ Очистить</button>
+    <button class="btn btn-primary" onclick="calculateAll()">📊 Пересчитать</button>
+</div>
+
+<script>
+    // Set default date to today
+    document.getElementById('reportDate').valueAsDate = new Date();
+
+    // Calculate statistics for layer 1
+    function calculateLayer1() {
+        const inputs = document.querySelectorAll('.thickness-layer1');
+        const values = Array.from(inputs).map(i => parseFloat(i.value) || 0).filter(v => v > 0);
+        if (values.length > 0) {
+            document.getElementById('avg1').textContent = (values.reduce((a, b) => a + b, 0) / values.length).toFixed(1);
+            document.getElementById('min1').textContent = Math.min(...values).toFixed(1);
+            document.getElementById('max1').textContent = Math.max(...values).toFixed(1);
+        }
+        calculateTotal();
+    }
+
+    // Calculate statistics for layer 2
+    function calculateLayer2() {
+        const inputs = document.querySelectorAll('.thickness-layer2');
+        const values = Array.from(inputs).map(i => parseFloat(i.value) || 0).filter(v => v > 0);
+        if (values.length > 0) {
+            document.getElementById('avg2').textContent = (values.reduce((a, b) => a + b, 0) / values.length).toFixed(1);
+            document.getElementById('min2').textContent = Math.min(...values).toFixed(1);
+            document.getElementById('max2').textContent = Math.max(...values).toFixed(1);
+        }
+        calculateTotal();
+    }
+
+    // Calculate total thickness
+    function calculateTotal() {
+        const avg1 = parseFloat(document.getElementById('avg1').textContent) || 0;
+        const avg2 = parseFloat(document.getElementById('avg2').textContent) || 0;
+        const min1 = parseFloat(document.getElementById('min1').textContent) || 0;
+        const min2 = parseFloat(document.getElementById('min2').textContent) || 0;
+        const max1 = parseFloat(document.getElementById('max1').textContent) || 0;
+        const max2 = parseFloat(document.getElementById('max2').textContent) || 0;
+
+        if (avg1 > 0 && avg2 > 0) {
+            document.getElementById('totalAvg').textContent = (avg1 + avg2).toFixed(1);
+            document.getElementById('totalMin').textContent = (min1 + min2).toFixed(1);
+            document.getElementById('totalMax').textContent = (max1 + max2).toFixed(1);
+        }
+    }
+
+    // Calculate all on input change
+    document.querySelectorAll('.thickness-layer1').forEach(input => {
+        input.addEventListener('input', calculateLayer1);
+    });
+
+    document.querySelectorAll('.thickness-layer2').forEach(input => {
+        input.addEventListener('input', calculateLayer2);
+    });
+
+    // Initial calculation
+    calculateLayer1();
+    calculateLayer2();
+
+    // Photo preview
+    function previewPhotos(input, previewId) {
+        const preview = document.getElementById(previewId);
+        preview.innerHTML = '';
+        
+        if (input.files) {
+            Array.from(input.files).slice(0, 3).forEach((file, index) => {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const img = document.createElement('img');
+                    img.src = e.target.result;
+                    img.style.maxWidth = '200px';
+                    img.style.margin = '5px';
+                    preview.appendChild(img);
+                };
+                reader.readAsDataURL(file);
+            });
+        }
+    }
+
+    // Save report
+    function saveReport() {
+        alert('Отчёт сохранён! (В будущем — отправка на сервер или скачивание JSON)');
+    }
+
+    // Clear form
+    function clearForm() {
+        if (confirm('Очистить все поля и сбросить к значениям по умолчанию?')) {
+            location.reload();
+        }
+    }
+
+    // Calculate all button
+    function calculateAll() {
+        calculateLayer1();
+        calculateLayer2();
+        alert('Расчёты обновлены!');
+    }
+</script>
+
+</body>
+</html>

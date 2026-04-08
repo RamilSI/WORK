@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Доверенность | ООО «ТОНАЛЬ»</title>
+    <link rel="stylesheet" href="css/reports.css">
+    <style>
+        :root {
+            --primary: #003366;
+            --secondary: #d35400;
+            --success: #27ae60;
+            --text: #2c3e50;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.4;
+            color: var(--text);
+            background: #555;
+            margin: 0;
+            padding: 20px;
+            font-size: 11px;
+        }
+        
+        .doverennost-container {
+            max-width: 210mm;
+            min-height: 297mm;
+            margin: 0 auto;
+            background: white;
+            padding: 25px 30px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.3);
+            box-sizing: border-box;
+        }
+        
+        /* HEADER WITH LOGO - БЕЗ РАМКИ */
+        .doverennost-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .logo-section {
+            width: 140px;
+            text-align: center;
+        }
+        
+        /* ✅ Логотип без рамки */
+        .logo-placeholder {
+            width: 120px;
+            height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+            cursor: pointer;
+            border: none !important;
+            background: transparent !important;
+        }
+        
+        .logo-placeholder img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            border: none !important;
+        }
+        
+        .logo-text {
+            color: #999;
+            font-size: 10px;
+            text-align: center;
+            line-height: 1.4;
+        }
+        
+        .header-info {
+            flex: 1;
+            padding-left: 25px;
+            font-size: 9px;
+            line-height: 1.5;
+            color: #666;
+        }
+        
+        .header-info strong {
+            color: var(--primary);
+            font-size: 10px;
+        }
+        
+        .doverennost-title {
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+            color: var(--primary);
+            text-transform: uppercase;
+            margin: 15px 0;
+            letter-spacing: 2px;
+        }
+        
+        .doverennost-number {
+            text-align: center;
+            font-size: 10px;
+            color: #666;
+            margin: 10px 0;
+            padding: 8px;
+            background: #f8f9fa;
+            border-radius: 4px;
+        }
+        
+        .doverennost-content {
+            font-size: 10px;
+            line-height: 1.5;
+            text-align: justify;
+        }
+        
+        .doverennost-content p {
+            margin: 8px 0;
+        }
+        
+        /* ✅ ПОЛНОМОЧИЯ - УВЕЛИЧЕННЫЙ ШРИФТ */
+        .powers-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin: 15px 0;
+            padding: 12px;
+            background: #f8f9fa;
+            border-radius: 4px;
+        }
+        
+        .powers-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .powers-list li {
+            padding: 5px 0;
+            padding-left: 18px;
+            position: relative;
+            font-size: 11px;  /* ✅ Было 10px, стало 11px */
+            line-height: 1.5;
+            font-weight: 500;
+        }
+        
+        .powers-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--success);
+            font-weight: bold;
+            font-size: 12px;
+        }
+        
+        .person-block {
+            background: #e8f4f8;
+            border: 1px solid #ddd;
+            padding: 12px;
+            margin: 12px 0;
+            border-radius: 4px;
+            font-size: 10px;
+        }
+        
+        .person-block .fio {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 8px;
+            text-align: center;
+        }
+        
+        .passport-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+            margin-top: 8px;
+        }
+        
+        .editable-field {
+            border-bottom: 1px solid var(--primary);
+            display: inline-block;
+            padding: 0 5px;
+            font-weight: 600;
+            color: var(--primary);
+            min-width: 100px;
+        }
+        
+        .validity-box {
+            background: #fff3cd;
+            border-left: 3px solid #f39c12;
+            padding: 8px 12px;
+            margin: 12px 0;
+            font-size: 10px;
+            border-radius: 4px;
+        }
+        
+        .signature-section {
+            margin-top: 25px;
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 30px;
+            page-break-inside: avoid;
+        }
+        
+        .stamp-placeholder {
+            width: 90px;
+            height: 90px;
+            border: 2px dashed #ccc;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            font-size: 9px;
+            text-align: center;
+            background: #fafafa;
+        }
+        
+        .signature-block {
+            border-top: 1px solid #333;
+            padding-top: 8px;
+        }
+        
+        .signature-block .position {
+            font-size: 10px;
+            color: #666;
+            margin-bottom: 3px;
+        }
+        
+        .signature-block .name {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--primary);
+        }
+        
+        .signature-block .basis {
+            font-size: 9px;
+            color: #999;
+            margin-top: 3px;
+        }
+        
+        .footer-note {
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 1px solid #eee;
+            font-size: 8px;
+            color: #999;
+            text-align: center;
+        }
+        
+        .controls {
+            text-align: center;
+            padding: 15px;
+            background: #333;
+            color: white;
+            position: sticky;
+            bottom: 0;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            border: none;
+            margin: 0 5px;
+            text-decoration: none;
+        }
+        
+        .btn-success { background: var(--success); color: white; }
+        .btn-primary { background: var(--primary); color: white; }
+        .btn-warning { background: #f39c12; color: white; }
+        .btn:hover { opacity: 0.9; }
+        
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            
+            .doverennost-container {
+                box-shadow: none;
+                padding: 20px 25px;
+                min-height: auto;
+            }
+            
+            .controls {
+                display: none;
+            }
+            
+            .stamp-placeholder {
+                border: 2px solid #ccc;
+            }
+            
+            /* ✅ При печати тоже без рамки */
+            .logo-placeholder,
+            .logo-placeholder img {
+                border: none !important;
+            }
+        }
+        
+        @media (max-width: 700px) {
+            .doverennost-header {
+                flex-direction: column;
+            }
+            
+            .logo-section {
+                margin-bottom: 15px;
+            }
+            
+            .signature-section,
+            .passport-grid,
+            .powers-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="doverennost-container">
+    <!-- HEADER WITH LOGO -->
+    <div class="doverennost-header">
+        <div class="logo-section">
+            <div class="logo-placeholder" id="logoPlaceholder" onclick="document.getElementById('logoInput').click()">
+                <div class="logo-text" id="logoText">📷<br>Логотип</div>
+                <input type="file" id="logoInput" accept="image/*" style="display: none" onchange="uploadLogo(this)">
+            </div>
+        </div>
+        <div class="header-info">
+            <strong>ООО «ТОНАЛЬ»</strong><br>
+            353900, г. Новороссийск, ул. Видова, д. 212, кв. 57<br>
+            Самара, Заводское шоссе, д. 14, корп. 3<br>
+            ИНН 2315998033 | КПП 231501001 | ОГРН 1172375080943<br>
+            р/с 0702810004550000073 в ФИЛИАЛЕ "ЦЕНТРАЛЬНЫЙ" БАНКА ВТБ (ПАО) г. Москва<br>
+            тел. +7 (918) 49-06-109 | inbox@tonaly.ru | tonaly.ru
+        </div>
+    </div>
+
+    <!-- TITLE -->
+    <h1 class="doverennost-title">ДОВЕРЕННОСТЬ</h1>
+    
+    <div class="doverennost-number">
+        № <input type="text" class="editable-field" value="Д-001/2025" style="width: 100px; text-align: center;">
+        &nbsp;&nbsp;|&nbsp;&nbsp;
+        <input type="date" class="editable-field" id="issueDate" style="text-align: center;">
+        &nbsp;&nbsp;|&nbsp;&nbsp;
+        г. Новороссийск
+    </div>
+
+    <!-- CONTENT -->
+    <div class="doverennost-content">
+        <p>
+            ООО «ТОНАЛЬ» (далее — «Доверитель»), в лице Генерального директора 
+            <span class="editable-field" contenteditable="true">Цвиренко Елены Александровны</span>, 
+            действующей на основании Устава, уполномочивает:
+        </p>
+
+        <!-- PERSON BLOCK -->
+        <div class="person-block">
+            <div class="fio" contenteditable="true">[ФИО доверенного лица полностью]</div>
+            <div class="passport-grid">
+                <div>
+                    <strong>Паспорт:</strong><br>
+                    Серия <input type="text" class="editable-field" value="____" style="width: 60px;"> 
+                    № <input type="text" class="editable-field" value="______" style="width: 80px;">
+                </div>
+                <div>
+                    <strong>Выдан:</strong><br>
+                    <input type="text" class="editable-field" value="" style="width: 100%;" placeholder="кем и когда">
+                </div>
+                <div>
+                    <strong>Код подр.:</strong><br>
+                    <input type="text" class="editable-field" value="______" style="width: 80px;">
+                </div>
+                <div>
+                    <strong>Адрес:</strong><br>
+                    <input type="text" class="editable-field" value="" style="width: 100%;" placeholder="адрес регистрации">
+                </div>
+            </div>
+        </div>
+
+        <div class="validity-box">
+            <strong>⏱️ Срок действия:</strong> 
+            <input type="text" class="editable-field" value="3 (три) года" style="width: 120px;">
+            (до <input type="date" class="editable-field" id="expiryDate" style="width: 120px;">)
+        </div>
+
+        <p><strong>Полномочия:</strong></p>
+        <div class="powers-grid">
+            <ul class="powers-list">
+                <li>Инспекция лакокрасочных покрытий</li>
+                <li>Инспекция эталонных участков окраски</li>
+                <li>Контроль подготовки поверхности</li>
+                <li>Замеры толщины покрытия (ТСП)</li>
+                <li>Проверка адгезии покрытий</li>
+                <li>Контроль микроклимата при нанесении</li>
+            </ul>
+            <ul class="powers-list">
+                <li>Ведение исполнительной документации</li>
+                <li>Подписание актов и отчётов</li>
+                <li>Взаимодействие с Заказчиком</li>
+                <li>Представление интересов ООО «ТОНАЛЬ»</li>
+                <li>Получение технической документации</li>
+                <li>Фиксация дефектов и несоответствий</li>
+            </ul>
+        </div>
+
+        <p>
+            <strong>С правом:</strong> подписывать акты, отчёты, протоколы; давать технические рекомендации; 
+            требовать устранения нарушений; приостанавливать работы при критических несоответствиях.
+        </p>
+
+        <p>
+            <strong>Для предъявления:</strong> 
+            <input type="text" class="editable-field" value="АО «Электрощит», ООО «Афипский НПЗ»" style="width: 300px;">
+            и иным контрагентам ООО «ТОНАЛЬ».
+        </p>
+
+        <p>
+            Доверенность выдана <strong>без права передоверия</strong>. Подпись доверенного лица удостоверяю.
+        </p>
+    </div>
+
+    <!-- SIGNATURES -->
+    <div class="signature-section">
+        <div>
+            <div class="stamp-placeholder">
+                М.П.<br>(печать)
+            </div>
+        </div>
+        <div class="signature-block">
+            <div class="position">Генеральный директор</div>
+            <div class="position">ООО «ТОНАЛЬ»</div>
+            <div class="name" contenteditable="true">_________________ / Цвиренко Е.В.</div>
+            <div class="basis">Действует на основании Устава</div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <div class="footer-note">
+        Документ составлен в соответствии со ст. 185-189 ГК РФ | Печать обязательна | 
+        Для проверки: +7 (918) 49-06-109 | inbox@tonaly.ru
+    </div>
+</div>
+
+<!-- CONTROLS -->
+<div class="controls">
+    <button class="btn btn-success" onclick="window.print()">🖨️ Печать</button>
+    <button class="btn btn-primary" onclick="fillDates()">📅 Даты</button>
+    <button class="btn btn-warning" onclick="clearForm()">🗑️ Очистить</button>
+</div>
+
+<script>
+    // Set default dates
+    document.getElementById('issueDate').valueAsDate = new Date();
+    const expiry = new Date();
+    expiry.setFullYear(expiry.getFullYear() + 3);
+    document.getElementById('expiryDate').valueAsDate = expiry;
+
+    // Fill dates
+    function fillDates() {
+        document.getElementById('issueDate').valueAsDate = new Date();
+        const expiry = new Date();
+        expiry.setFullYear(expiry.getFullYear() + 3);
+        document.getElementById('expiryDate').valueAsDate = expiry;
+    }
+
+    // ✅ Upload logo - ПОЛНОСТЬЮ БЕЗ РАМКИ
+    function uploadLogo(input) {
+        if (input.files && input.files[0]) {
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const placeholder = document.getElementById('logoPlaceholder');
+                placeholder.innerHTML = `<img src="${e.target.result}" alt="Логотип">`;
+                // ✅ Никаких рамок не добавляем
+                placeholder.style.border = 'none';
+                placeholder.style.background = 'transparent';
+            };
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+
+    // Clear form
+    function clearForm() {
+        if (confirm('Очистить все поля?')) {
+            document.querySelectorAll('[contenteditable="true"]').forEach(el => {
+                el.textContent = '';
+            });
+            document.querySelectorAll('input[type="text"]').forEach(el => {
+                if (!el.value.includes('____')) el.value = '';
+            });
+            // Reset logo
+            const placeholder = document.getElementById('logoPlaceholder');
+            placeholder.innerHTML = '<div class="logo-text" id="logoText">📷<br>Логотип</div><input type="file" id="logoInput" accept="image/*" style="display: none" onchange="uploadLogo(this)">';
+            placeholder.style.border = 'none';
+            placeholder.style.background = 'transparent';
+        }
+    }
+</script>
+
+</body>
+</html>
