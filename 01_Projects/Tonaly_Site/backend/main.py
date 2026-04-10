@@ -133,5 +133,31 @@ async def debug_paths():
 async def health_check():
     return {"status": "ok", "timestamp": datetime.now().isoformat()}
 
+# 📄 Технический меморандум
+@app.get("/documents/memorandum")
+async def get_memorandum():
+    doc_path = FRONTEND_DIR / "documents" / "memorandum.html"
+    if not doc_path.exists():
+        return JSONResponse(status_code=404, content={"error": "Document not found"})
+    with open(doc_path, "r", encoding="utf-8") as f:
+        return HTMLResponse(content=f.read())
+
+# 📁 Список документов
+@app.get("/documents")
+async def get_documents_list():
+    return {
+        "documents": [
+            {
+                "id": "memorandum-001",
+                "title": "Технический меморандум по смешиванию ЛКМ",
+                "date": "2026-04-09",
+                "type": "technical",
+                "url": "/documents/memorandum"
+            }
+            # Добавить другие документы
+        ]
+    }
+
+
 # === ЗАПУСК ===
 # uvicorn main:app --reload --host 127.0.0.1 --port 8000

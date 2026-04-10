@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Справка о пропорциях смешивания | ТОНАЛЬ</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --tonal-primary: #003366;
+      --tonal-secondary: #0056b3;
+      --tonal-accent: #d35400;
+      --tonal-success: #27ae60;
+      --doc-bg: #ffffff;
+      --doc-text: #333333;
+      --doc-border: #e0e0e0;
+      --doc-header-bg: #0056b3;
+      --doc-row-alt: #f9fbfd;
+      --doc-highlight: #e3f2fd;
+      --warning-bg: #fff3cd;
+      --ral-badge: #003366;
+    }
+    
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    
+    body {
+      font-family: 'Roboto', Arial, sans-serif;
+      line-height: 1.5;
+      color: var(--doc-text);
+      background: #555;
+      padding: 20px;
+      font-size: 11px;
+    }
+    
+    .document-wrapper {
+      max-width: 210mm;
+      margin: 0 auto;
+      background: white;
+    }
+    
+    .page {
+      width: 210mm;
+      min-height: 297mm;
+      padding: 20mm 20mm;
+      background: white;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      position: relative;
+      page-break-after: always;
+    }
+    
+    .page:last-child {
+      margin-bottom: 0;
+      page-break-after: auto;
+    }
+    
+    /* LETTERHEAD */
+    .letterhead {
+      border-top: 5px solid var(--tonal-secondary);
+      border-bottom: 2px solid var(--doc-border);
+      padding: 15px 0;
+      margin-bottom: 20px;
+    }
+    
+    .logo-block {
+      display: flex;
+      align-items: flex-start;
+      gap: 15px;
+    }
+    
+    .logo-placeholder {
+      width: 70px;
+      height: 70px;
+      background: var(--tonal-primary);
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: 700;
+      font-size: 10px;
+      text-align: center;
+      flex-shrink: 0;
+    }
+    
+    .company-name {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--tonal-primary);
+      margin-bottom: 3px;
+    }
+    
+    .company-desc {
+      font-size: 11px;
+      color: #666;
+      margin-bottom: 6px;
+    }
+    
+    .address {
+      font-size: 9px;
+      color: #555;
+      line-height: 1.4;
+    }
+    
+    .address a {
+      color: var(--tonal-secondary);
+      text-decoration: none;
+    }
+    
+    /* DOC HEADER */
+    .doc-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 20px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--doc-border);
+    }
+    
+    .doc-number {
+      font-size: 12px;
+      color: var(--tonal-primary);
+      font-weight: 600;
+    }
+    
+    .doc-date {
+      font-size: 11px;
+      color: #666;
+      text-align: right;
+    }
+    
+    .doc-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--tonal-secondary);
+      margin: 15px 0;
+      padding-left: 10px;
+      border-left: 4px solid var(--tonal-secondary);
+      line-height: 1.4;
+    }
+    
+    .doc-subtitle {
+      font-size: 11px;
+      font-weight: 400;
+      color: #666;
+      margin-top: 5px;
+    }
+    
+    .recipient {
+      margin: 15px 0;
+      padding: 10px 12px;
+      background-color: #f8f9fa;
+      border-left: 3px solid var(--tonal-secondary);
+      border-radius: 0 4px 4px 0;
+      font-size: 11px;
+      font-weight: 600;
+    }
+    
+    /* RAL BADGE */
+    .ral-badge {
+      display: inline-block;
+      background: var(--ral-badge);
+      color: white;
+      padding: 4px 10px;
+      border-radius: 4px;
+      font-weight: 600;
+      font-size: 10px;
+      margin-left: 8px;
+    }
+    
+    /* TABLES */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 15px 0;
+      font-size: 10px;
+      background: white;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    
+    th {
+      background-color: var(--doc-header-bg);
+      color: white;
+      text-align: left;
+      padding: 8px 10px;
+      font-weight: 500;
+      font-size: 9px;
+      text-transform: uppercase;
+    }
+    
+    td {
+      padding: 7px 10px;
+      border-bottom: 1px solid var(--doc-border);
+      vertical-align: top;
+    }
+    
+    tr:last-child td { border-bottom: none; }
+    tr:nth-child(even) { background-color: var(--doc-row-alt); }
+    
+    .label-cell {
+      background: #f8f9fa;
+      font-weight: 500;
+      color: #555;
+      width: 40%;
+    }
+    
+    .value-cell {
+      font-weight: 500;
+      color: var(--tonal-primary);
+    }
+    
+    .ratio-highlight {
+      background-color: var(--doc-highlight);
+      font-weight: 600;
+      color: var(--tonal-primary);
+    }
+    
+    /* SECTIONS */
+    .section {
+      margin: 18px 0;
+    }
+    
+    .section h3 {
+      color: var(--tonal-primary);
+      font-size: 12px;
+      margin: 0 0 12px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--doc-border);
+      font-weight: 600;
+    }
+    
+    .section h4 {
+      color: var(--tonal-secondary);
+      font-size: 11px;
+      margin: 15px 0 8px;
+      font-weight: 600;
+    }
+    
+    /* WARNING BOX */
+    .warning-box {
+      margin-top: 12px;
+      padding: 10px 12px;
+      background: var(--warning-bg);
+      border-left: 3px solid #f39c12;
+      border-radius: 4px;
+      font-size: 10px;
+      line-height: 1.4;
+    }
+    
+    .warning-box strong {
+      color: #856404;
+    }
+    
+    /* SIGNATURES */
+    .signature-block {
+      margin-top: 30px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      padding-top: 15px;
+      border-top: 2px solid var(--tonal-primary);
+    }
+    
+    .signature-item {
+      font-size: 11px;
+    }
+    
+    .signature-item .position {
+      color: #666;
+      margin-bottom: 4px;
+      font-weight: 500;
+    }
+    
+    .signature-item .name {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--tonal-primary);
+      border-bottom: 1px solid #333;
+      padding-bottom: 4px;
+      margin-bottom: 3px;
+      display: inline-block;
+      min-width: 180px;
+    }
+    
+    .signature-item .company {
+      font-size: 10px;
+      color: #777;
+    }
+    
+    .signature-item .power {
+      font-size: 9px;
+      color: #999;
+      margin-top: 4px;
+      font-style: italic;
+    }
+    
+    /* FOOTER */
+    .footer {
+      position: absolute;
+      bottom: 15mm;
+      left: 20mm;
+      right: 20mm;
+      padding-top: 12px;
+      border-top: 1px solid var(--doc-border);
+      font-size: 9px;
+      color: #777;
+      text-align: center;
+    }
+    
+    .page-number {
+      position: absolute;
+      bottom: 10mm;
+      right: 20mm;
+      font-size: 9px;
+      color: #999;
+    }
+    
+    /* CONTROLS */
+    .doc-controls {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      display: flex;
+      gap: 10px;
+      z-index: 1000;
+    }
+    
+    .btn {
+      padding: 12px 20px;
+      border-radius: 4px;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      border: none;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    
+    .btn-success { background: var(--tonal-success); color: white; }
+    .btn-primary { background: var(--tonal-primary); color: white; }
+    
+    /* PRINT OPTIMIZATION */
+    @media print {
+      body {
+        background: white;
+        padding: 0;
+      }
+      
+      .document-wrapper {
+        max-width: 100%;
+        margin: 0;
+      }
+      
+      .page {
+        box-shadow: none;
+        margin: 0;
+        width: 210mm;
+        height: 297mm;
+        page-break-after: always;
+      }
+      
+      .page:last-child {
+        page-break-after: auto;
+      }
+      
+      .doc-controls {
+        display: none !important;
+      }
+      
+      .logo-placeholder {
+        border: 2px solid var(--tonal-primary);
+        background: white;
+        color: var(--tonal-primary);
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      
+      th {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      
+      .warning-box, .ral-badge {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="document-wrapper">
+
+  <!-- ==================== СТРАНИЦА 1 ==================== -->
+  <div class="page">
+    
+    <!-- LETTERHEAD -->
+    <div class="letterhead">
+      <div class="logo-block">
+        <div class="logo-placeholder">TONAL<br>LOGO</div>
+        <div>
+          <div class="company-name">ТОНАЛЬ</div>
+          <div class="company-desc">Производственно-торговая компания</div>
+          <div class="address">
+            📍 Новороссийск, 353900, ул. Видова, д. 212, кв. 57 | 
+            Самара, Заводское шоссе, д. 14, корп. 3
+          </div>
+          <div class="address">
+            📞 <a href="tel:+79184906109">+7 (918) 49-06-109</a> | 
+            ✉️ <a href="mailto:inbox@tonaly.ru">inbox@tonaly.ru</a> | 
+            🌐 <a href="https://tonaly.ru" target="_blank">tonaly.ru</a>
+          </div>
+          <div class="address" style="margin-top: 4px; font-size: 8px; color: #777;">
+            ИНН 2315998033 | КПП 231501001 | р/с 0702810004550000073 
+            в ФИЛИАЛЕ "ЦЕНТРАЛЬНЫЙ" БАНКА ВТБ (ПАО) г. Москва
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DOC HEADER -->
+    <div class="doc-header">
+      <div class="doc-number">Исх. № СПР-<span id="docNumber">____</span>/2025</div>
+      <div class="doc-date">
+        <div id="docDate">__ ______ 2025 г.</div>
+        <div style="color: var(--tonal-secondary); font-weight: 500; margin-top: 2px;">г. Новороссийск</div>
+      </div>
+    </div>
+
+    <!-- TITLE -->
+    <div class="doc-title">
+      СПРАВКА
+      <div class="doc-subtitle">о пропорциях смешивания, фасовке и применении двухкомпонентных лакокрасочных материалов</div>
+    </div>
+
+    <!-- RECIPIENT -->
+    <div class="recipient">ВСЕМ ЗАИНТЕРЕСОВАННЫМ ЛИЦАМ</div>
+
+    <!-- INTRO -->
+    <div class="section">
+      <p style="font-size: 10px; line-height: 1.5; margin-bottom: 12px;">
+        Настоящая справка выдана ООО «ТОНАЛЬ» в подтверждение технических характеристик, 
+        пропорций смешивания, стандартной фасовки и условий применения двухкомпонентных 
+        лакокрасочных материалов собственного производства и поставки.
+      </p>
+      <p style="font-size: 10px; line-height: 1.5;">
+        Документ может быть использован при подготовке проектной документации, составлении 
+        спецификаций, проведении тендерных процедур, техническом сопровождении объектов 
+        и контроле качества выполняемых работ по антикоррозионной защите.
+      </p>
+    </div>
+
+    <!-- PRODUCTS -->
+    <div class="section">
+      <h3>📦 Номенклатура материалов</h3>
+      <table>
+        <thead>
+          <tr>
+            <th style="width: 35%;">Продукт</th>
+            <th style="width: 30%;">Тип</th>
+            <th style="width: 35%;">Назначение</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="value-cell">REM-POX 0607 HS 2K</td>
+            <td>Грунт-эмаль эпоксидная</td>
+            <td>Антикоррозионная защита, высокий сухой остаток</td>
+          </tr>
+          <tr>
+            <td class="value-cell">REM-PUR 1604 2K <span class="ral-badge">RAL 7040</span></td>
+            <td>Эмаль полиуретановая</td>
+            <td>Финишное атмосферостойкое покрытие</td>
+          </tr>
+          <tr>
+            <td class="value-cell">REM-SOL-2</td>
+            <td>Растворитель</td>
+            <td>Для эпоксидных материалов (ГОСТ 7827-74)</td>
+          </tr>
+          <tr>
+            <td class="value-cell">REM-SOL-3</td>
+            <td>Растворитель</td>
+            <td>Для полиуретановых материалов</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- PACKAGING -->
+    <div class="section">
+      <h3>📦 Стандартные фасовки</h3>
+      <table>
+        <thead>
+          <tr>
+            <th style="width: 30%;">Продукт</th>
+            <th style="width: 35%;">Комплектация</th>
+            <th style="width: 17%;">Фасовка (кг)</th>
+            <th style="width: 18%;">Фасовка (л)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="value-cell" rowspan="2" style="vertical-align: middle;">REM-POX 0607 HS 2K</td>
+            <td>Основа (Компонент А)</td>
+            <td>25,0 кг</td>
+            <td>16,5 л</td>
+          </tr>
+          <tr>
+            <td>Отвердитель Harter EP1 H5 (Компонент B)</td>
+            <td>2,5 кг</td>
+            <td>2,5 л</td>
+          </tr>
+          <tr>
+            <td class="value-cell" rowspan="2" style="vertical-align: middle;">REM-PUR 1604 2K</td>
+            <td>Основа (Компонент А)</td>
+            <td>20,0 кг</td>
+            <td>14,87 л</td>
+          </tr>
+          <tr>
+            <td>Отвердитель Harter PU1 M4 (Компонент B)</td>
+            <td>2,4 кг</td>
+            <td>2,4 л</td>
+          </tr>
+          <tr>
+            <td class="value-cell">REM-SOL-2</td>
+            <td>Растворитель для эпоксидов</td>
+            <td>—</td>
+            <td>5, 20 л</td>
+          </tr>
+          <tr>
+            <td class="value-cell">REM-SOL-3</td>
+            <td>Растворитель для полиуретанов</td>
+            <td>—</td>
+            <td>5, 20 л</td>
+          </tr>
+        </tbody>
+      </table>
+      <p style="font-size: 9px; color: #666; margin-top: 8px; font-style: italic;">
+        ⚠️ Материалы поставляются в комплекте: основа + отвердитель + паспорт + инструкция. 
+        Возможна поставка компонентов раздельно по согласованию.
+      </p>
+    </div>
+
+    <!-- PAGE FOOTER -->
+    <div class="footer">
+      <p>© ООО «ТОНАЛЬ», 2025. Все права защищены. | tonaly.ru | detalystaly.ru</p>
+      <p style="margin-top: 4px; font-size: 8px; color: #999;">
+        Документ составлен в соответствии с ГОСТ Р 52804-2007, ISO 12944, ISO 8501
+      </p>
+    </div>
+    <div class="page-number">Страница 1 из 2</div>
+
+  </div>
+
+  <!-- ==================== СТРАНИЦА 2 ==================== -->
+  <div class="page">
+    
+    <!-- LETTERHEAD (COMPACT) -->
+    <div class="letterhead" style="padding: 10px 0; margin-bottom: 15px;">
+      <div style="display: flex; justify-content: space-between; align-items: center;">
+        <div class="company-name" style="font-size: 16px;">ТОНАЛЬ</div>
+        <div style="font-size: 9px; color: #666;">
+          📞 +7 (918) 49-06-109 | ✉️ inbox@tonaly.ru | 🌐 tonaly.ru
+        </div>
+      </div>
+    </div>
+
+    <!-- RAL 7040 WARNING -->
+    <div class="warning-box" style="margin-bottom: 20px; border-left-width: 4px;">
+      ⚠️ <strong>Важно:</strong> Указанные ниже пропорции смешивания актуальны только для эмали 
+      <strong>REM-PUR 1604 2K в цвете RAL 7040</strong>. Для других цветов RAL пропорции могут отличаться — 
+      уточняйте в техническом паспорте (TDS) конкретного продукта.
+    </div>
+
+    <!-- MIXING RATIOS -->
+    <div class="section">
+      <h3>⚗️ Пропорции смешивания</h3>
+      
+      <h4>Грунт-эмаль эпоксидная REM-POX 0607 HS 2K</h4>
+      <p style="font-size: 10px; margin-bottom: 8px;">
+        <strong>Отвердитель:</strong> Harter EP1 H5
+      </p>
+      <table>
+        <tr>
+          <td class="label-cell">По объёму</td>
+          <td class="ratio-highlight">16,5 л : 2,5 л = 6,6 : 1 (100 : 15,2)</td>
+        </tr>
+        <tr>
+          <td class="label-cell">По массе</td>
+          <td class="ratio-highlight">25,0 кг : 2,5 кг = 10 : 1 (100 : 10)</td>
+        </tr>
+        <tr>
+          <td class="label-cell">Рекомендуемый растворитель</td>
+          <td>REM-SOL-2, 10–20% от смеси</td>
+        </tr>
+        <tr>
+          <td class="label-cell">Температура компонентов</td>
+          <td>20–25 °С перед смешиванием</td>
+        </tr>
+      </table>
+
+      <h4 style="margin-top: 20px;">Эмаль полиуретановая REM-PUR 1604 2K <span class="ral-badge">RAL 7040</span></h4>
+      <p style="font-size: 10px; margin-bottom: 8px;">
+        <strong>Отвердитель:</strong> Harter PU1 M4
+      </p>
+      <table>
+        <tr>
+          <td class="label-cell">По объёму</td>
+          <td class="ratio-highlight">14,87 л : 2,4 л = 6,2 : 1 (100 : 16,1)</td>
+        </tr>
+        <tr>
+          <td class="label-cell">По массе</td>
+          <td class="ratio-highlight">20,0 кг : 2,4 кг = 8,33 : 1 (100 : 12)</td>
+        </tr>
+        <tr>
+          <td class="label-cell">Рекомендуемый растворитель</td>
+          <td>REM-SOL-3, 10–20% от смеси</td>
+        </tr>
+        <tr>
+          <td class="label-cell">Температура компонентов</td>
+          <td>20–25 °С перед смешиванием</td>
+        </tr>
+      </table>
+      
+      <div class="warning-box">
+        ⚠️ <strong>Важно:</strong> Приоритет имеет смешивание по массе. Объёмные пропорции приведены справочно — 
+        плотность компонентов различается. Точное соблюдение пропорций критично для полного отверждения и 
+        достижения заявленных эксплуатационных свойств.
+      </div>
+    </div>
+
+    <!-- SIGNATURES -->
+    <div class="signature-block">
+      <div class="signature-item">
+        <div class="position">Генеральный директор</div>
+        <div class="position">ООО «ТОНАЛЬ»</div>
+        <div class="name" contenteditable="true">_________________ / Цвиренко Е.А.</div>
+        <div class="company">Действует на основании Устава</div>
+      </div>
+      <div class="signature-item">
+        <div class="position">Технический директор</div>
+        <div class="position">ООО «ТОНАЛЬ»</div>
+        <div class="name" contenteditable="true">_________________ / Саликов Р.И.</div>
+        <div class="power">по доверенности № Д-001/2025 от 15.01.2025 г.</div>
+      </div>
+    </div>
+
+    <!-- PAGE FOOTER -->
+    <div class="footer">
+      <p>© ООО «ТОНАЛЬ», 2025. Все права защищены. | tonaly.ru | detalystaly.ru</p>
+      <p style="margin-top: 4px; font-size: 8px; color: #999;">
+        Справка действительна при наличии подписи и печати | Версия: 2.2 | Дата обновления: 18.08.2025
+      </p>
+    </div>
+    <div class="page-number">Страница 2 из 2</div>
+
+  </div>
+
+</div>
+
+<!-- CONTROLS -->
+<div class="doc-controls">
+  <button class="btn btn-success" onclick="window.print()">🖨️ Печать / PDF</button>
+  <a href="../index.html" class="btn btn-primary">← На главную</a>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const now = new Date();
+    const options = { day: 'numeric', month: 'long', year: 'numeric' };
+    document.getElementById('docDate').textContent = now.toLocaleDateString('ru-RU', options) + ' г.';
+    const yy = String(now.getFullYear()).slice(-2);
+    const mm = String(now.getMonth() + 1).padStart(2, '0');
+    const rand = Math.floor(Math.random() * 900) + 100;
+    document.getElementById('docNumber').textContent = `${yy}${mm}-${rand}`;
+  });
+</script>
+
+</body>
+</html>

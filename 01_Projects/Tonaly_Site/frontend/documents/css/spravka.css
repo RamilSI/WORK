@@ -1,0 +1,330 @@
+/**
+ * TONAL — Справка (универсальный шаблон)
+ * Отдельные стили, не привязанные к проекту
+ */
+
+:root {
+  --tonal-primary: #003366;
+  --tonal-secondary: #0056b3;
+  --tonal-accent: #d35400;
+  --tonal-success: #27ae60;
+  --doc-bg: #fafafa;
+  --doc-text: #333;
+  --doc-border: #e0e0e0;
+  --doc-header-bg: #0056b3;
+  --doc-row-alt: #f9fbfd;
+  --doc-highlight: #e3f2fd;
+}
+
+/* BASE */
+.spravka-body {
+  font-family: 'Roboto', Arial, sans-serif;
+  line-height: 1.6;
+  color: var(--doc-text);
+  max-width: 850px;
+  margin: 0 auto;
+  padding: 30px 20px;
+  background-color: var(--doc-bg);
+  font-size: 13px;
+}
+
+/* LETTERHEAD */
+.spravka-letterhead {
+  border-top: 6px solid var(--tonal-secondary);
+  border-bottom: 2px solid var(--doc-border);
+  padding: 20px 25px;
+  margin-bottom: 25px;
+  background: white;
+  border-radius: 4px;
+}
+
+.spravka-logo-block {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+}
+
+.spravka-logo {
+  width: 80px;
+  height: 80px;
+  background: var(--tonal-primary);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 700;
+  font-size: 11px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.spravka-company-name {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--tonal-primary);
+  margin-bottom: 3px;
+}
+
+.spravka-company-desc {
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 8px;
+}
+
+.spravka-address {
+  font-size: 11px;
+  color: #555;
+  line-height: 1.5;
+}
+
+.spravka-address a {
+  color: var(--tonal-secondary);
+  text-decoration: none;
+}
+
+.spravka-address a:hover { text-decoration: underline; }
+
+/* DOC HEADER */
+.spravka-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 25px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid var(--doc-border);
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.spravka-number {
+  font-size: 14px;
+  color: var(--tonal-primary);
+  font-weight: 600;
+}
+
+.spravka-date {
+  font-size: 13px;
+  color: #666;
+  text-align: right;
+}
+
+.spravka-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--tonal-secondary);
+  margin: 20px 0;
+  padding-left: 12px;
+  border-left: 4px solid var(--tonal-secondary);
+  line-height: 1.4;
+}
+
+/* RECIPIENT */
+.spravka-recipient {
+  margin: 20px 0;
+  padding: 12px 15px;
+  background-color: #f8f9fa;
+  border-left: 3px solid var(--tonal-secondary);
+  border-radius: 0 4px 4px 0;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* TABLES */
+.spravka-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 12px;
+  background: white;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.spravka-table th {
+  background-color: var(--doc-header-bg);
+  color: white;
+  text-align: left;
+  padding: 10px 12px;
+  font-weight: 500;
+  font-size: 11px;
+  text-transform: uppercase;
+}
+
+.spravka-table td {
+  padding: 9px 12px;
+  border-bottom: 1px solid var(--doc-border);
+  vertical-align: top;
+}
+
+.spravka-table tr:last-child td { border-bottom: none; }
+.spravka-table tr:nth-child(even) { background-color: var(--doc-row-alt); }
+
+.spravka-table .label-cell {
+  background: #f8f9fa;
+  font-weight: 500;
+  color: #555;
+  width: 40%;
+}
+
+.spravka-table .value-cell {
+  font-weight: 500;
+  color: var(--tonal-primary);
+}
+
+/* SECTIONS */
+.spravka-section {
+  margin: 25px 0;
+  background: white;
+  padding: 20px 25px;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.spravka-section h3 {
+  color: var(--tonal-primary);
+  font-size: 14px;
+  margin: 0 0 15px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--doc-border);
+}
+
+.spravka-section h4 {
+  color: var(--tonal-secondary);
+  font-size: 13px;
+  margin: 20px 0 10px;
+  font-weight: 600;
+}
+
+/* LISTS */
+.spravka-notes {
+  padding-left: 20px;
+  margin: 15px 0;
+  font-size: 12px;
+}
+
+.spravka-notes li {
+  margin-bottom: 8px;
+  line-height: 1.5;
+}
+
+.spravka-notes strong {
+  color: var(--tonal-primary);
+}
+
+/* SIGNATURES */
+.spravka-signatures {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  padding-top: 20px;
+  border-top: 2px solid var(--tonal-primary);
+}
+
+.spravka-signature {
+  font-size: 12px;
+}
+
+.spravka-signature .position {
+  color: #666;
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+
+.spravka-signature .name {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--tonal-primary);
+  border-bottom: 1px solid #333;
+  padding-bottom: 5px;
+  margin-bottom: 3px;
+  display: inline-block;
+  min-width: 200px;
+}
+
+.spravka-signature .company {
+  font-size: 11px;
+  color: #777;
+}
+
+.spravka-signature .power {
+  font-size: 10px;
+  color: #999;
+  margin-top: 5px;
+  font-style: italic;
+}
+
+/* FOOTER */
+.spravka-footer {
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid var(--doc-border);
+  font-size: 11px;
+  color: #777;
+  text-align: center;
+}
+
+/* CONTROLS */
+.spravka-controls {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  gap: 10px;
+  z-index: 1000;
+}
+
+.spravka-btn {
+  padding: 12px 20px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: opacity 0.2s;
+}
+
+.spravka-btn:hover { opacity: 0.9; }
+.spravka-btn-success { background: var(--tonal-success); color: white; }
+.spravka-btn-primary { background: var(--tonal-primary); color: white; }
+
+/* PRINT */
+@media print {
+  .spravka-body {
+    background: white;
+    padding: 0;
+    font-size: 11px;
+  }
+  
+  .spravka-controls { display: none !important; }
+  
+  .spravka-letterhead, .spravka-section, .spravka-table {
+    box-shadow: none !important;
+    border-radius: 0 !important;
+  }
+  
+  .spravka-logo {
+    border: 2px solid var(--tonal-primary);
+    background: white;
+    color: var(--tonal-primary);
+  }
+  
+  .spravka-table th {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}
+
+@media (max-width: 700px) {
+  .spravka-logo-block { flex-direction: column; }
+  .spravka-header { flex-direction: column; align-items: flex-start; }
+  .spravka-date { text-align: left; }
+  .spravka-signatures { grid-template-columns: 1fr; gap: 30px; }
+}
+

@@ -1,0 +1,43 @@
+:root {
+  /* TONAL Brand Colors */
+  --tonal-primary: #003366;
+  --tonal-secondary: #0056b3;
+  --tonal-accent: #d35400;
+  --tonal-success: #27ae60;
+  --tonal-warning: #f39c12;
+  
+  /* Document Styles */
+  --doc-bg: #fafafa;
+  --doc-text: #333;
+  --doc-border: #e0e0e0;
+  --doc-header-bg: #0056b3;
+  --doc-row-alt: #f9fbfd;
+  --doc-highlight: #e3f2fd;
+}
+
+/* Переопределение стилей шаблона под переменные */
+.letterhead {
+  border-top-color: var(--tonal-secondary);
+  border-bottom-color: var(--doc-border);
+}
+
+.company-name {
+  color: var(--tonal-primary);
+}
+
+.doc-title {
+  color: var(--tonal-secondary);
+  border-left-color: var(--tonal-secondary);
+}
+
+th {
+  background-color: var(--doc-header-bg);
+}
+
+tr:nth-child(even) {
+  background-color: var(--doc-row-alt);
+}
+
+.ratio-highlight {
+  background-color: var(--doc-highlight);
+}
