@@ -3,174 +3,304 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Реестр протоколов испытаний</title>
+    <title>Реестр протоколов испытаний ЛКМ</title>
     <style>
         :root {
-            --primary: #2563eb;
-            --bg: #f8fafc;
-            --border: #e2e8f0;
-            --text: #0f172a;
-            --hover: #f1f5f9;
-            --pass: #16a34a;
-            --fail: #dc2626;
+            --primary: #2563eb; --success: #16a34a; --warning: #ca8a04; --danger: #dc2626;
+            --bg: #f8fafc; --border: #e2e8f0; --text: #0f172a; --hover: #f1f5f9;
         }
-        body {
-            font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background: var(--bg);
-            color: var(--text);
-            margin: 0;
-            padding: 20px;
-            line-height: 1.4;
-        }
+        body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; background: var(--bg); color: var(--text); margin: 0; padding: 20px; line-height: 1.4; font-size: 13px; }
         h1 { text-align: center; margin-bottom: 20px; font-size: 1.5rem; color: #1e293b; }
-        .container {
-            background: #fff;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
-            overflow-x: auto;
-            padding: 16px;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            min-width: 1300px;
-            font-size: 13px;
-        }
-        th, td {
-            padding: 10px 12px;
-            border-bottom: 1px solid var(--border);
-            vertical-align: top;
-        }
-        th {
-            background: var(--primary);
-            color: #fff;
-            position: sticky;
-            top: 0;
-            z-index: 2;
-            font-weight: 500;
-            white-space: nowrap;
-        }
+        .controls { display: flex; gap: 10px; margin-bottom: 15px; flex-wrap: wrap; }
+        .controls input, .controls select { padding: 6px 10px; border: 1px solid var(--border); border-radius: 5px; font-size: 13px; }
+        .container { background: #fff; border-radius: 10px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); overflow-x: auto; padding: 16px; }
+        table { width: 100%; border-collapse: collapse; min-width: 2200px; font-size: 12px; }
+        th, td { padding: 8px 10px; border-bottom: 1px solid var(--border); vertical-align: top; white-space: nowrap; }
+        th { background: var(--primary); color: #fff; position: sticky; top: 0; z-index: 2; font-weight: 500; cursor: pointer; user-select: none; }
+        th:hover { background: #1d4ed8; }
         tr:hover { background: var(--hover); }
-        .status-pass { color: var(--pass); font-weight: 600; }
-        .status-fail { color: var(--fail); font-weight: 600; }
-        .footer-note {
-            margin-top: 16px;
-            padding: 12px;
-            background: #f1f5f9;
-            border-radius: 6px;
-            font-size: 12px;
-            color: #334155;
+        .status-pass { color: var(--success); font-weight: 600; }
+        .status-fail { color: var(--danger); font-weight: 600; }
+        .status-pending { color: var(--warning); font-weight: 600; }
+        .badge { display: inline-block; padding: 2px 8px; border-radius: 12px; font-size: 11px; font-weight: 500; background: #e2e8f0; }
+        .badge-food { background: #dcfce7; color: #166534; }
+        .badge-corrosion { background: #dbeafe; color: #1e40af; }
+        .badge-chemical { background: #fef3c7; color: #92400e; }
+        .badge-climate { background: #ede9fe; color: #5b21b6; }
+        .footer-note { margin-top: 20px; padding: 15px; background: #f1f5f9; border-radius: 8px; font-size: 12px; color: #334155; }
+        .footer-note code { background: #e2e8f0; padding: 2px 5px; border-radius: 3px; font-family: monospace; }
+        .hint { color: #64748b; font-style: italic; }
+        @media print {
+            .controls { display: none; }
+            body { padding: 0; }
+            .container { box-shadow: none; }
+            th { background: #cbd5e1 !important; color: #000 !important; -webkit-print-color-adjust: exact; }
         }
-        .footer-note ul { margin: 6px 0 0 20px; padding: 0; }
-        .footer-note li { margin-bottom: 4px; }
-        code { background: #e2e8f0; padding: 2px 4px; border-radius: 3px; font-family: monospace; }
     </style>
 </head>
 <body>
 
-<h1>Реестр протоколов испытаний ЛКМ и покрытий</h1>
+<h1>📋 Реестр протоколов испытаний ЛКМ и покрытий</h1>
+
+<div class="controls">
+    <input type="text" id="search" placeholder="🔍 Поиск по реестру..." onkeyup="filterTable()">
+    <select id="filterStatus" onchange="filterTable()">
+        <option value="">Все статусы</option>
+        <option value="Соответствует">✅ Соответствует</option>
+        <option value="Не соответствует">❌ Не соответствует</option>
+        <option value="Требует продления">⏳ Требует продления</option>
+    </select>
+    <select id="filterMaterial" onchange="filterTable()">
+        <option value="">Все материалы</option>
+        <option>Рем-Покс 2К</option>
+        <option>Рем-Покс 2К HS</option>
+        <option>Рем-Покс 2К AS</option>
+        <option>Рем-Пур 2К</option>
+        <option>Рем-Цинк 2К</option>
+        <option>Рем-Люкс</option>
+        <option>Рем-Крил 2К</option>
+    </select>
+    <button onclick="exportToCSV()">📥 Экспорт в CSV</button>
+    <button onclick="window.print()">🖨️ Печать</button>
+</div>
 
 <div class="container">
-    <table>
+    <table id="registryTable">
         <thead>
             <tr>
-                <th>№ документа</th>
-                <th>Дата</th>
-                <th>Испытательная лаборатория</th>
-                <th>Материал / Схема покрытия</th>
-                <th>Наименование испытания</th>
-                <th>Стандарт / Метод</th>
-                <th>Контролируемый показатель</th>
-                <th>Условия проведения</th>
-                <th>Нормативное требование</th>
-                <th>Фактический результат</th>
-                <th>Заключение</th>
+                <th data-sort="docNum">№ документа</th>
+                <th data-sort="docDate">Дата</th>
+                <th data-sort="lab">Лаборатория</th>
+                <th data-sort="material">Материал / Схема покрытия</th>
+                <th data-sort="substrate">Подложка / Подготовка</th>
+                <th data-sort="thickness">Толщина покрытия, мкм</th>
+                <th data-sort="testName">Наименование испытания</th>
+                <th data-sort="standard">Стандарт / Метод</th>
+                <th data-sort="indicator">Контролируемый показатель</th>
+                <th data-sort="conditions">Условия проведения</th>
+                <th data-sort="medium">Среда воздействия</th>
+                <th data-sort="norm">Нормативное требование</th>
+                <th data-sort="result">Фактический результат</th>
+                <th data-sort="conclusion">Заключение</th>
+                <th data-sort="customer">Заказчик</th>
+                <th data-sort="validUntil">Срок действия</th>
+                <th data-sort="status">Статус</th>
+                <th data-sort="fileLink">Ссылка на файл</th>
+                <th data-sort="responsible">Ответственный</th>
             </tr>
         </thead>
         <tbody>
+            <!-- Пример заполненной строки -->
             <tr>
                 <td>Протокол № 211</td>
                 <td>07.03.2023</td>
                 <td>БелНИИнефть (Гомель)</td>
-                <td>Нефть товарная после 720 ч контакта с пластинами, покрытыми <b>Рем-Покс AS</b></td>
+                <td><b>Рем-Покс 2К AS</b> (1 слой, 60-80 мкм)</td>
+                <td>Сталь, очистка не нормировалась</td>
+                <td>60-80</td>
                 <td>Анализ влияния покрытия на свойства нефти</td>
                 <td>ГОСТ 31378-2009, ASTM D5002, ASTM D4294</td>
-                <td>Плотность, мех. примеси, вода, сера, фракционный выход, хлориды, H₂S, меркаптаны</td>
+                <td>Плотность, мех. примеси, вода, сера, фракционный состав, хлориды, H₂S</td>
                 <td>20°C, 720 ч, статическое выдерживание</td>
+                <td>Нефть товарная</td>
                 <td>Соответствие типам/классам по ГОСТ 31378-2009</td>
-                <td>Все показатели в норме (плотность 857,7 кг/м³, сера 0,54%, вода 0,1%)</td>
-                <td class="status-pass">Соответствует</td>
-            </tr>
+                <td>Плотность 857,7 кг/м³, сера 0,54%, вода 0,1% — в норме</td>
+                <td class="status-pass">✅ Соответствует</td>
+                <td>СН «Рем-Колор» ООО</td>
+                <td>—</td>
+                <td><span class="badge status-pass">Действующий</span></td>
+                <td><a href="#" class="hint">033. №211 0607AS воздействие на нефть.pdf</a></td>
+                <td>В.П. Альтшулер</td>
+            </tr<tr>
+                <td>Лист хим. стойкости от 04.09.2017</td>
+                <td>04.09.2017</td>
+                <td>DE REM Lacke Farben GmbH (Selbitz, Германия) / Лаборатория производителя</td>
+                <td><b>DEREMPox 2K / Рем-Покс 2К</b> — эпоксидная двухкомпонентная грунтовка</td>
+                <td>Не нормировалась (лабораторные пластины)</td>
+                <td>—</td>
+                <td>
+                    Лабораторные испытания химической стойкости:<br>
+                    • Водный конденсат (720 ч)<br>
+                    • Соляной туман (1440 ч)<br>
+                    • Химреактивы, нефтепродукты, растворители (360–720 ч)
+                </td>
+                <td>
+                    ISO 2812 (хим. стойкость)<br>
+                    ISO 6270 (конденсат)<br>
+                    ISO 9227 NSS (соляной туман)
+                </td>
+                <td>
+                    Визуальная оценка покрытия:<br>
+                    отсутствие вздутий, отслаивания, изменения цвета, блеска
+                </td>
+                <td>
+                    • t°: 20±2°C (стандартные условия)<br>
+                    • Экспозиция: 360 ч / 720 ч / 1440 ч<br>
+                    • Статическое погружение / распыление
+                </td>
+                <td>
+                    10% NaOH, 10% H₂SO₄, минеральное масло, нефть, бензин, дизель,<br>
+                    метанол, толуол, ксилол, соль, водный конденсат
+                </td>
+                <td>Оценка по шкале: «Отлично» / «Очень хорошо»</td>
+                <td>
+                    • Вода, соль, нефтепродукты, щёлочи: <b>Отлично</b><br>
+                    • 10% H₂SO₄, ксилол: <b>Очень хорошо</b><br>
+                    • Разрушений покрытия не зафиксировано
+                </td>
+                <td class="status-pass">✅ Соответствует</td>
+                <td>SP «REM-COLOR» LLC / DE REM Lacke Farben GmbH</td>
+                <td>—</td>
+                <td><span class="badge badge-chemical">Химстойкость</span></td>
+                <td><a href="#" class="hint">02. РЕМ-ПОКС 2К 0607HS DE REM лист химстойкости.pdf</a></td>
+                <td>Leiter Technik (DE REM)</td>
+            </tr>>
             <tr>
                 <td>Протокол № 0115/08_02</td>
                 <td>~04.2014</td>
                 <td>РЦГиЭ (Минск)</td>
-                <td>Грунтовка <b>ЭП-0507 Рем-Покс 2К</b> + Эмаль <b>УР-1604 Рем-Пур 2К</b></td>
+                <td><b>ЭП-0507 Рем-Покс 2К</b> + <b>УР-1604 Рем-Пур 2К</b></td>
+                <td>Стеклянные пластины</td>
+                <td>не нормировалась</td>
                 <td>Санитарно-химическая экспертиза (контакт с пищей/водой)</td>
                 <td>Решение КТС №299, МУ, ГОСТ Р ИСО 10523-2009</td>
-                <td>Миграция формальдегида, ацетона, метанола, этилацетата и др. в модельные среды</td>
+                <td>Миграция формальдегида, ацетона, метанола, этилацетата и др.</td>
                 <td>10 суток, дист. вода / 2% лимонная к-та, 20°C / 40°C</td>
+                <td>Вода пищевая, 2% лимонная кислота</td>
                 <td>ПДК по санитарным нормам КТС</td>
                 <td>Миграция не превышает гигиенических регламентов</td>
-                <td class="status-pass">Соответствует. Разрешен для контакта с пищей и водой</td>
+                <td class="status-pass">✅ Соответствует. Разрешён для контакта с пищей</td>
+                <td>СН «Рем-Колор» ООО</td>
+                <td>—</td>
+                <td><span class="badge badge-food">Пищевой контакт</span></td>
+                <td><a href="#" class="hint">025. РЕМ-ПОКС 2К 0607HS + РЕМ ПУР 2К 1604...pdf</a></td>
+                <td>Р.А. Соболь</td>
             </tr>
             <tr>
                 <td>Тех. заключение № а 62</td>
-                <td>~02.2018</td>
-                <td>БНТУ (НИЛ ВиСМ)</td>
-                <td><b>ЭП-0607 Рем-Покс 2К</b> (100-160 мкм) + <b>УР-1604 Рем-Пур 2К</b> (60 мкм)</td>
-                <td>Климатические и коррозионные испытания</td>
-                <td>ГОСТ 9.401-91, ГОСТ 27037-86, ТУ BY 101558453.006-2005</td>
-                <td>Целостность покрытия, цвет, отсутствие трещин/вздутий/отслаивания</td>
-                <td>Соляной туман (30 ц.), перепад t° (-20/+20°C, 30 ц.), влажность 97% при 40°C (30 ц.)</td>
-                <td>Отсутствие разрушений поверхности</td>
-                <td>Разрушений нет, при влажности 97% зафиксировано незначительное изменение цвета</td>
-                <td class="status-pass">Соответствует</td>
-            </tr>
-            <tr>
-                <td>Протокол № 4607</td>
-                <td>~12.2016</td>
-                <td>БНТУ (НИЛ ВиСМ)</td>
-                <td>3 слоя <b>ЭП-0607</b> + 2 слоя <b>УР-1604</b></td>
-                <td>Стойкость к статическому воздействию сырой нефти</td>
-                <td>ГОСТ 9.403-80, метод А</td>
-                <td>Внешний вид (блеск, цвет, пузыри, сморщивание, отслаивание)</td>
-                <td>20±2°C, 30 суток, статическое погружение</td>
-                <td>Изменения не допускаются</td>
-                <td>Изменений не обнаружено</td>
-                <td class="status-pass">Соответствует</td>
-            </tr>
-            <tr>
-                <td>Протокол № 59</td>
-                <td>09.09.2020</td>
-                <td>БНТУ (НИЛ ВиСМ)</td>
-                <td>ЭП-0607 Рем-Покс 2К / HS / AS, ЭП-0608 Рем-Цинк 2К, АС-0605 Рем-Люкс, АС-0606 Рем-Крил 2К</td>
-                <td>Периодические испытания грунтовок</td>
-                <td>ТУ BY 101558453.006-2005, ГОСТ 31939-2012, ГОСТ 9.403-80</td>
-                <td>Массовая доля нелетучих в-в, стойкость к воде, NaCl 3%, маслам, бензину, кислотам, щелочам, влажность/температура</td>
-                <td>20±2°C, экспозиция 360-760 ч, циклы влажности (≥5 мес.)</td>
-                <td>По ТУ и ГОСТ</td>
-                <td>Нелетучие 69-88%, разрушений нет, изменение внешнего вида не наблюдается</td>
-                <td class="status-pass">Соответствует ТУ</td>
+                <td>23.10.2017 – 09.02.2018</td>
+                <td>БНТУ, НИЛ ВиСМ (Минск)</td>
+                <td>
+                    <b>Вариант 1:</b> ЭП-0607 Рем-Покс 2К (160 мкм)<br>
+                    <b>Вариант 2:</b> ЭП-0607 Рем-Покс 2К (100 мкм) + УР-1604 Рем-Пур 2К (60 мкм)
+                </td>
+                <td>Сталь, пластины 70×150×0,9 мм, подготовка по ТУ</td>
+                <td>100–160</td>
+                <td>
+                    Климатические и коррозионные испытания:<br>
+                    • Соляной туман (30 циклов)<br>
+                    • Перепад температур (30 циклов)<br>
+                    • Повышенная влажность +40°C (30 циклов)
+                </td>
+                <td>
+                    ГОСТ 9.401-91 (метод Е)<br>
+                    ГОСТ 27037-86<br>
+                    ТУ BY 101558453.006-2005, п. 5.8
+                </td>
+                <td>
+                    Внешний вид покрытия:<br>
+                    отсутствие трещин, вздутий, отслаивания, изменения цвета
+                </td>
+                <td>
+                    • Соляной туман: 35±2°C, 8 ч + воздух 20±2°C, 16 ч × 30 циклов (720 ч)<br>
+                    • Температурные циклы: −20±2°C / +20±2°C × 30 циклов (720 ч)<br>
+                    • Влажность: 97±3% при 40±2°C, 8 ч + воздух × 30 циклов (720 ч)
+                </td>
+                <td>Атмосферные воздействия, конденсат, солевой аэрозоль</td>
+                <td>Отсутствие разрушений поверхности по завершении 30 циклов</td>
+                <td>
+                    • Вариант 1: при влажности 97% — незначительное изменение цвета (побеление)<br>
+                    • Вариант 2 (система): изменений внешнего вида и цвета не обнаружено
+                </td>
+                <td class="status-pass">✅ Соответствует</td>
+                <td>СП «Рем-Колор» ООО</td>
+                <td>—</td>
+                <td><span class="badge badge-corrosion">Климатика/Коррозия</span></td>
+                <td><a href="#" class="hint">БНТУ №062 _0607HS+_1604 720ч. PDF.pdf</a></td>
+                <td>А.А. Гроза / Л.В. Сысоева</td>
             </tr>
         </tbody>
     </table>
 </div>
 
 <div class="footer-note">
-    <strong>💡 Рекомендованные дополнительные поля для реестра:</strong>
-    <ul>
-        <li><code>Заказчик испытаний</code> – организация, инициировавшая тесты</li>
-        <li><code>Подложка и подготовка</code> – тип металла/основы, степень очистки (напр. Sa 2.5)</li>
-        <li><code>Толщина покрытия</code> – сухой слой (мкм), кол-во слоев, межслойная сушка</li>
-        <li><code>Тип воздействия / Среда</code> – нефть, морская вода, УФ, химреактивы и т.д.</li>
-        <li><code>Статус документа</code> – Действующий / Архив / Требует продления</li>
-        <li><code>Срок действия протокола</code> – дата окончания или периодичность переиспытаний</li>
-        <li><code>Ссылка на оригинал</code> – путь в СЭД, сетевая папка или QR-код</li>
-        <li><code>Ответственный / Контакт</code> – инженер лаборатории или менеджер проекта</li>
-    </ul>
-    <p>Таблица полностью адаптивна и готова к экспорту в Excel/CSV. Для автоматизации рекомендую подключить её к базе данных (PostgreSQL, 1С, Notion, Airtable) с фильтрацией по <code>Материалу</code>, <code>Типу испытания</code> и <code>Статусу</code>.</p>
+    <strong>💡 Как добавить остальные файлы в реестр:</strong>
+    <ol>
+        <li><b>Вручную</b>: Скопируйте строку <code>&lt;tr&gt;...&lt;/tr&gt;</code> в разделе <code>&lt;tbody&gt;</code>, замените данные на значения из вашего протокола.</li>
+        <li><b>Через CSV</b>: 
+            <ul>
+                <li>Нажмите кнопку «📥 Экспорт в CSV» — скачается шаблон с текущими данными</li>
+                <li>Откройте его в Excel/Google Таблицах, добавьте новые строки</li>
+                <li>Сохраните как <code>UTF-8 CSV</code> и при необходимости импортируйте обратно (или используйте как источник данных для 1С/Notion)</li>
+            </ul>
+        </li>
+        <li><b>Автоматически</b>: Если вы загрузите сюда новые PDF-файлы, я могу:
+            <ul>
+                <li>Извлечь ключевые данные (номер, дата, материал, испытания, результаты)</li>
+                <li>Сгенерировать готовые <code>&lt;tr&gt;</code>-строки для вставки в таблицу</li>
+                <li>Подсказать, какие поля остались незаполненными</li>
+            </ul>
+        </li>
+    </ol>
+    <p><strong>📌 Рекомендация по структуре папок для хранения файлов:</strong><br>
+    <code>Реестр_ЛКМ/├─ 2023/├─ 2024/├─ Шаблоны/├─ Экспорт/</code> — так проще находить оригиналы по номеру протокола и году.</p>
 </div>
+
+<script>
+// Простая фильтрация
+function filterTable() {
+    const search = document.getElementById('search').value.toLowerCase();
+    const statusFilter = document.getElementById('filterStatus').value;
+    const materialFilter = document.getElementById('filterMaterial').value;
+    const rows = document.querySelectorAll('#registryTable tbody tr');
+    
+    rows.forEach(row => {
+        const text = row.textContent.toLowerCase();
+        const status = row.querySelector('td:nth-child(17)').textContent.trim();
+        const material = row.querySelector('td:nth-child(4)').textContent.toLowerCase();
+        
+        const matchSearch = text.includes(search);
+        const matchStatus = !statusFilter || status.includes(statusFilter);
+        const matchMaterial = !materialFilter || material.includes(materialFilter.toLowerCase());
+        
+        row.style.display = (matchSearch && matchStatus && matchMaterial) ? '' : 'none';
+    });
+}
+
+// Экспорт в CSV
+function exportToCSV() {
+    const table = document.getElementById('registryTable');
+    const headers = Array.from(table.querySelectorAll('th')).map(th => th.textContent);
+    const rows = Array.from(table.querySelectorAll('tbody tr')).map(tr => 
+        Array.from(tr.querySelectorAll('td')).map(td => {
+            let text = td.textContent.replace(/[\n\r]+/g, ' ').trim();
+            return `"${text.replace(/"/g, '""')}"`;
+        })
+    );
+    const csv = [headers.join(','), ...rows.map(r => r.join(','))].join('\n');
+    const blob = new Blob(['\ufeff' + csv], { type: 'text/csv;charset=utf-8;' });
+    const link = document.createElement('a');
+    link.href = URL.createObjectURL(blob);
+    link.download = 'реестр_испытаний_ЛКМ_' + new Date().toISOString().slice(0,10) + '.csv';
+    link.click();
+}
+
+// Сортировка по колонкам
+document.querySelectorAll('th[data-sort]').forEach(th => {
+    th.addEventListener('click', () => {
+        const key = th.dataset.sort;
+        const idx = Array.from(th.parentNode.children).indexOf(th);
+        const tbody = document.querySelector('#registryTable tbody');
+        const rows = Array.from(tbody.querySelectorAll('tr'));
+        rows.sort((a, b) => {
+            const aText = a.children[idx]?.textContent.trim() || '';
+            const bText = b.children[idx]?.textContent.trim() || '';
+            return aText.localeCompare(bText, 'ru', { numeric: true });
+        });
+        rows.forEach(row => tbody.appendChild(row));
+    });
+});
+</script>
 
 </body>
 </html>
