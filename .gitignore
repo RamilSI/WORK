@@ -41,3 +41,12 @@ target/
 bin/
 obj/
 *.user
+
+# Добавьте эти строки в .gitignore
+venv/
+.env
+__pycache__/
+*.pyc
+.DS_Store
+.idea/
+*.log
