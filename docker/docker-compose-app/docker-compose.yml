@@ -1,0 +1,14 @@
+services:
+  app:
+    image: python:3.9
+    command: python main.py
+    volumes:
+      - ./app:/app
+      - ./requirements.txt:/app/requirements.txt
+    working_dir: /app
+    depends_on:
+      - mongo
+    entrypoint: ["sh", "-c", "pip install --no-cache-dir -r /app/requirements.txt && python main.py"]
+
+  mongo:
+    image: mongo

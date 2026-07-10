@@ -40,4 +40,5 @@ target/
 # C# / .NET
 bin/
 obj/
-*.user
+*.user.kodik/
+.kodik/
