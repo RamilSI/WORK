@@ -6,6 +6,7 @@
     <title>Rem-Cryl 0606 2K — Грунтовка акриловая | Rem Color</title>
     <link rel="stylesheet" href="../css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <header>
@@ -34,33 +35,56 @@
             </div>
 
             <div class="product-grid">
-                <div class="product-info">
-                    <h3>Описание</h3>
-                    <p>Высококачественная двухкомпонентная акриловая грунтовка, содержащая активные антикоррозионные пигменты. Предназначена для создания надежного адгезионного слоя на металлических поверхностях.</p>
-                    
-                    <h3>Основные характеристики</h3>
-                    <table class="specs-table">
-                        <tr>
-                            <td>Тип связующего</td>
-                            <td>Акриловая смола</td>
-                        </tr>
-                        <tr>
-                            <td>Цвет</td>
-                            <td>Серый, красно-коричневый (базовые)</td>
-                        </tr>
-                        <tr>
-                            <td>Время высыхания (до степени 3)</td>
-                            <td>30-40 минут при +20°C</td>
-                        </tr>
-                        <tr>
-                            <td>Рекомендуемая толщина слоя</td>
-                            <td>40-60 мкм</td>
-                        </tr>
-                    </table>
+                <div class="product-main">
+                    <div class="product-visuals">
+                        <div class="product-image-card">
+                            <div class="image-placeholder">
+                                <img src="../img/rem-cryl-0606-can.png" alt="Тара Rem-Cryl 0606" class="can-photo" style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
+                            </div>
+                            <p class="photo-caption" style="text-align: center; margin-top: 10px; color: #666; font-size: 0.9em;">Фото тары: Rem-Cryl 0606 + Harter PU1 M2</p>
+                        </div>
+                    </div>
 
-                    <div class="product-actions">
-                        <a href="#" class="btn-primary">Скачать TDS (PDF)</a>
-                        <a href="../../Microservices/LKM_Comparison/offer_final_v3.html" class="btn-secondary">Сравнить с аналогами</a>
+                    <div class="product-info">
+                        <h3>Описание</h3>
+                        <p>Высококачественная двухкомпонентная акриловая грунтовка, содержащая активные антикоррозионные пигменты. Предназначена для создания надежного адгезионного слоя на металлических поверхностях.</p>
+                        
+                        <h3>Основные характеристики</h3>
+                        <table class="specs-table">
+                            <tr>
+                                <td>Тип связующего</td>
+                                <td>Акриловая смола</td>
+                            </tr>
+                            <tr>
+                                <td>Цвет</td>
+                                <td>Серый, красно-коричневый (базовые)</td>
+                            </tr>
+                            <tr>
+                                <td>Отвердитель</td>
+                                <td>Harter PU1 M2 (смешивание 10:1 по массе)</td>
+                            </tr>
+                            <tr>
+                                <td>Растворитель</td>
+                                <td>РЕМ СОЛ 3 (до 10%)</td>
+                            </tr>
+                            <tr>
+                                <td>Время высыхания (до степени 3)</td>
+                                <td>30-40 минут при +20°C</td>
+                            </tr>
+                            <tr>
+                                <td>Рекомендуемая толщина слоя</td>
+                                <td>40-60 мкм</td>
+                            </tr>
+                        </table>
+
+                        <div class="product-actions">
+                            <a href="../docs/tds-rem-cryl-0606.pdf" class="btn-primary btn-download" target="_blank">
+                                <i class="fas fa-file-pdf"></i> Скачать TDS (PDF)
+                            </a>
+                            <a href="../../Microservices/LKM_Comparison/offer_final_v3.html" class="btn-secondary">
+                                <i class="fas fa-balance-scale"></i> Сравнить с аналогами
+                            </a>
+                        </div>
                     </div>
                 </div>
                 
@@ -83,5 +107,22 @@
             <p>&copy; 2026 Rem Color. Все права защищены.</p>
         </div>
     </footer>
+
+    <!-- Модальное окно для увеличения фото -->
+    <div id="imageModal" class="modal" onclick="this.style.display='none'">
+        <img class="modal-content" id="imgFull">
+    </div>
+
+    <script>
+        function openModal(src) {
+            document.getElementById('imageModal').style.display = 'block';
+            document.getElementById('imgFull').src = src;
+        }
+
+        // Находим фото тары и вешаем событие
+        document.querySelector('.can-photo').onclick = function() {
+            openModal(this.src);
+        };
+    </script>
 </body>
 </html>
