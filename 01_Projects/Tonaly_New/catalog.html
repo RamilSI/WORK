@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Каталог материалов | Tonal</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav class="main-nav">
+                <div class="logo">
+                    <a href="index.html"><img src="img/logo.svg" alt="Tonal Logo" class="logo-img"></a>
+                </div>
+                <div class="nav-links">
+                    <a href="index.html">Главная</a>
+                    <a href="index.html#applications">Применение</a>
+                    <a href="index.html#tools">Сервисы</a>
+                    <a href="#" class="login-btn">Личный кабинет</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">Каталог материалов</h2>
+                <div class="catalog-filters" style="text-align: center; margin-bottom: 30px;">
+                    <button class="filter-btn active" data-filter="all">Все</button>
+                    <button class="filter-btn" data-filter="грунтовка">Грунтовки</button>
+                    <button class="filter-btn" data-filter="эмаль">Эмали</button>
+                    <button class="filter-btn" data-filter="грунт-эмаль">Грунт-эмали</button>
+                </div>
+                <div class="catalog-list catalog-horizontal">
+                    <div class="catalog-item" data-type="грунтовка" data-binder="акриловая" data-purpose="антикоррозионная">
+                        <a href="catalog/rem-cryl-0606.html" class="catalog-item-link">
+                            <span class="badge">2K Система</span>
+                            <div class="catalog-item-info">
+                                <h3>Грунтовка Rem-Cryl 0606</h3>
+                                <p class="material-type">Акриловая грунтовка, быстрое высыхание</p>
+                            </div>
+                            <div class="catalog-photo">
+                                <img src="img/rem-cryl-0606-can.png" alt="Rem-Cryl 0606">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="catalog-item" data-type="эмаль" data-binder="полиуретановая" data-purpose="атмосферостойкая">
+                        <a href="catalog/rem-cryl-1602.html" class="catalog-item-link">
+                            <span class="badge">2K Система</span>
+                            <div class="catalog-item-info">
+                                <h3>Эмаль Rem-Cryl 1602</h3>
+                                <p class="material-type">Полиуретановая эмаль, стойкая к УФ</p>
+                            </div>
+                            <div class="catalog-photo">
+                                <img src="img/rem-cryl-1602-can.png" alt="Rem-Cryl 1602">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="catalog-item" data-type="грунт-эмаль" data-binder="эпоксидная" data-purpose="антикоррозионная">
+                        <a href="catalog/rem-pox-0607-hs.html" class="catalog-item-link">
+                            <span class="badge">2K Система</span>
+                            <div class="catalog-item-info">
+                                <h3>Грунт-эмаль Rem-Pox 0607 HS</h3>
+                                <p class="material-type">Эпоксидная High Solids, 80% сухой остаток</p>
+                            </div>
+                            <div class="catalog-photo">
+                                <img src="img/rem-pox-0607-hs-can.png" alt="Rem-Pox 0607 HS">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="catalog-item" data-type="грунтовка" data-binder="эпоксидная" data-purpose="антикоррозионная">
+                        <a href="catalog/rem-pox-0607.html" class="catalog-item-link">
+                            <span class="badge">2K Система</span>
+                            <div class="catalog-item-info">
+                                <h3>Грунтовка Rem-Pox 0607</h3>
+                                <p class="material-type">Эпоксидная грунтовка, 55% сухой остаток</p>
+                            </div>
+                            <div class="catalog-photo">
+                                <img src="img/rem-pox-0607-can.png" alt="Rem-Pox 0607">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="catalog-item" data-type="грунт-эмаль" data-binder="эпоксидная" data-purpose="атмосферостойкая">
+                        <a href="catalog/rem-pox-0607-as.html" class="catalog-item-link">
+                            <span class="badge">2K Система</span>
+                            <div class="catalog-item-info">
+                                <h3>Грунт-эмаль Rem-Pox 0607 AS</h3>
+                                <p class="material-type">Эпоксидная AS, акрил-силиконовая модификация</p>
+                            </div>
+                            <div class="catalog-photo">
+                                <img src="img/rem-pox-0607-as-can.png" alt="Rem-Pox 0607 AS">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="catalog-item" data-type="грунт-эмаль" data-binder="алкидная" data-purpose="антикоррозионная">
+                        <a href="catalog/rem-lux-1607.html" class="catalog-item-link">
+                            <span class="badge">1K Система</span>
+                            <div class="catalog-item-info">
+                                <h3>Грунт-эмаль Rem-Lux 1607</h3>
+                                <p class="material-type">Алкидная грунт-эмаль, однокомпонентная</p>
+                            </div>
+                            <div class="catalog-photo">
+                                <img src="img/rem-lux-1607-can.png" alt="Rem-Lux 1607">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="catalog-item" data-type="грунтовка" data-binder="алкидная" data-purpose="антикоррозионная">
+                        <a href="catalog/rem-lux-0605.html" class="catalog-item-link">
+                            <span class="badge">1K Система</span>
+                            <div class="catalog-item-info">
+                                <h3>Грунтовка Rem-Lux 0605</h3>
+                                <p class="material-type">Алкидная грунтовка, однокомпонентная</p>
+                            </div>
+                            <div class="catalog-photo">
+                                <img src="img/rem-lux-0605-can.png" alt="Rem-Lux 0605">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="catalog-item" data-type="грунт-эмаль" data-binder="эпоксидная" data-purpose="антикоррозионная">
+                        <a href="catalog/rem-pox-7605.html" class="catalog-item-link">
+                            <span class="badge">2K Система</span>
+                            <div class="catalog-item-info">
+                                <h3>Грунт-эмаль Rem-Pox 7605</h3>
+                                <p class="material-type">Эпоксидная грунт-эмаль, химстойкая</p>
+                            </div>
+                            <div class="catalog-photo">
+                                <img src="img/rem-pox-7605-can.png" alt="Rem-Pox 7605">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="catalog-item" data-type="грунт-эмаль" data-binder="виниловая" data-purpose="антикоррозионная">
+                        <a href="catalog/rem-vinyl-hv-0278.html" class="catalog-item-link">
+                            <span class="badge">1K Система</span>
+                            <div class="catalog-item-info">
+                                <h3>Грунт-эмаль Rem-Vinyl ХВ-0278</h3>
+                                <p class="material-type">Виниловая грунт-эмаль, химстойкая</p>
+                            </div>
+                            <div class="catalog-photo">
+                                <img src="img/rem-vinyl-hv-0278-can.png" alt="Rem-Vinyl ХВ-0278">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="catalog-item" data-type="грунт-эмаль" data-binder="эпоксидная" data-purpose="антикоррозионная">
+                        <a href="catalog/rem-zink-7606.html" class="catalog-item-link">
+                            <span class="badge">1K Система</span>
+                            <div class="catalog-item-info">
+                                <h3>Грунт-эмаль Rem-Zink 7606</h3>
+                                <p class="material-type">Цинконаполненная, протекторная защита</p>
+                            </div>
+                            <div class="catalog-photo">
+                                <img src="img/rem-zink-7606-can.png" alt="Rem-Zink 7606">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="catalog-item" data-type="грунт-эмаль" data-binder="полиуретановая" data-purpose="атмосферостойкая">
+                        <a href="catalog/rem-pur-210.html" class="catalog-item-link">
+                            <span class="badge">2K Система</span>
+                            <div class="catalog-item-info">
+                                <h3>Грунт-эмаль Rem-Pur 210</h3>
+                                <p class="material-type">Полиуретановая, атмосферостойкая</p>
+                            </div>
+                            <div class="catalog-photo">
+                                <img src="img/rem-pur-210-can.png" alt="Rem-Pur 210">
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Tonal. Все права защищены.</p>
+        </div>
+    </footer>
+    <script>
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                const filter = this.dataset.filter;
+                document.querySelectorAll('.catalog-item').forEach(item => {
+                    if (filter === 'all' || item.dataset.type === filter) {
+                        item.style.display = '';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
