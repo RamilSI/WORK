@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% block title %}Tonal — Антикоррозионная защита и ЛКМ{% endblock %}
+{% block content %}
+<div class="header-content">
+    <div class="container">
+        <h1>Профессиональные решения Tonal</h1>
+        <p>Защита металлоконструкций любой сложности: от мостов до резервуарных парков</p>
+        <div class="hero-btns">
+            <a href="/catalog" class="btn-primary">Перейти в каталог</a>
+            <a href="/#tools" class="btn-secondary">Рассчитать проект</a>
+        </div>
+    </div>
+</div>
+
+<section id="applications" class="section bg-light-section">
+    <div class="container">
+        <h2 class="section-title">Области применения</h2>
+        <div class="app-grid">
+            <div class="app-item">
+                <span class="icon">🌉</span>
+                <h4>Мостостроение</h4>
+                <p>Защита пролетных строений и опор.</p>
+            </div>
+            <div class="app-item">
+                <span class="icon">🛢️</span>
+                <h4>Резервуарные парки</h4>
+                <p>Внутренняя и внешняя защита емкостей.</p>
+            </div>
+            <div class="app-item">
+                <span class="icon">🏗️</span>
+                <h4>Промышленные цеха</h4>
+                <p>Защита каркасов зданий и оборудования.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="tools" class="section">
+    <div class="container">
+        <h2 class="section-title">Цифровые сервисы</h2>
+        <div class="grid">
+            <div class="card service-card">
+                <h3>Сравнение ЛКМ</h3>
+                <p>Подбор аналогов и расчет экономической эффективности.</p>
+                <a href="/offers/offer_final_v3.html" class="btn">Открыть сервис</a>
+            </div>
+            <div class="card service-card">
+                <h3>Калькулятор расхода</h3>
+                <div class="coming-soon">Скоро</div>
+                <p>Точный расчет объема материалов под вашу площадь.</p>
+                <a href="#" class="btn disabled">В разработке</a>
+            </div>
+            <div class="card service-card">
+                <h3>Генератор документов</h3>
+                <p>Автоматическое создание ТКП и спецификаций.</p>
+                <a href="/documents" class="btn">Создать документ</a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

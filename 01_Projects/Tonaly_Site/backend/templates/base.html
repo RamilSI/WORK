@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Tonal — Антикоррозионная защита и ЛКМ{% endblock %}</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav class="container main-nav">
+            <div class="logo">
+                <a href="/"><img src="/img/logo.svg" alt="Tonal Logo" class="logo-img"></a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="/catalog">Каталог</a></li>
+                <li><a href="/#applications">Применение</a></li>
+                <li><a href="/#tools">Сервисы</a></li>
+                <li><a href="#" class="login-btn">Личный кабинет</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Tonal. Все права защищены.</p>
+        </div>
+    </footer>
+</body>
+</html>

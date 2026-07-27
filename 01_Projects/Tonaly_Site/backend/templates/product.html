@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+{% block title %}{{ product.name }} | Tonal{% endblock %}
+{% block content %}
+<div class="container section">
+    <nav class="breadcrumb">
+        <a href="/">Главная</a> / <a href="/catalog">Каталог</a> / {{ product.slug }}
+    </nav>
+
+    <div class="product-card">
+        <div class="product-card-top">
+            <div class="product-image">
+                <img src="/img/{{ product.slug }}-can.png" alt="Тара {{ product.name }}">
+            </div>
+            <div class="product-info">
+                <h1>{{ product.name }}</h1>
+                <p>{{ product.description }}</p>
+
+                <div class="product-tags">
+                    <span class="product-tag"><span class="tag-label">Применение:</span> {{ product.application_tag }}</span>
+                    <span class="product-tag"><span class="tag-label">Основа:</span> Органическая</span>
+                    <span class="product-tag"><span class="tag-label">Тип поверхности:</span> Металлическая</span>
+                    <span class="product-tag"><span class="tag-label">Вид работ:</span> Окрашивание</span>
+                </div>
+
+                <div class="price-section" style="display: flex; gap: 15px; align-items: center;">
+                    <a href="#" class="btn-order">Заказать</a>
+                    <a href="/docs/tds-{{ product.slug }}.pdf" class="btn-order" style="background: var(--primary-color);" target="_blank">TDS (PDF)</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="product-detail-section">
+            <h3>Основные характеристики</h3>
+            <table class="specs-table">
+                {% for spec in product.specs %}
+                <tr>
+                    <td>{{ spec.name }}</td>
+                    <td>{{ spec.value }}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+
+        <div class="product-detail-section">
+            <h3>Область применения</h3>
+            <p>{{ product.application }}</p>
+        </div>
+
+        <div class="product-detail-section">
+            <h3>Преимущества</h3>
+            <div class="benefits-grid">
+                {% for benefit in product.benefits %}
+                <div class="benefit-item">✅ {{ benefit }}</div>
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="product-detail-section">
+            <h3>С этим товаром покупают</h3>
+            <div class="related-products">
+                {% for related in product.related %}
+                <div class="related-item">
+                    <img src="/img/{{ related.slug }}-can.png" alt="{{ related.name }}">
+                    <h4>{{ related.name }}</h4>
+                    <a href="/product/{{ related.slug }}" class="related-link">Смотреть →</a>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="imageModal" class="modal" onclick="this.style.display='none'">
+    <img class="modal-content" id="imgFull">
+</div>
+<script>
+    document.querySelector('.product-card .product-image').onclick = function() {
+        var modal = document.getElementById('imageModal');
+        var img = this.querySelector('img');
+        document.getElementById('imgFull').src = img.src;
+        modal.style.display = 'block';
+    };
+</script>
+{% endblock %}

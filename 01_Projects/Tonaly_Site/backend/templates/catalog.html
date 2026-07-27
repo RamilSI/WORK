@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block title %}Каталог материалов | Tonal{% endblock %}
+{% block content %}
+<section class="section">
+    <div class="container">
+        <h2 class="section-title">Каталог материалов</h2>
+        <div class="catalog-filters" style="text-align: center; margin-bottom: 30px;">
+            <button class="filter-btn active" data-filter="all">Все</button>
+            <button class="filter-btn" data-filter="грунтовка">Грунтовки</button>
+            <button class="filter-btn" data-filter="эмаль">Эмали</button>
+            <button class="filter-btn" data-filter="грунт-эмаль">Грунт-эмали</button>
+        </div>
+        <div class="catalog-list catalog-horizontal">
+            {% for product in products %}
+            <div class="catalog-item" data-type="{{ product.type }}" data-binder="{{ product.binder }}" data-purpose="{{ product.purpose }}">
+                <a href="/product/{{ product.slug }}" class="catalog-item-link">
+                    <span class="badge">{{ product.badge }}</span>
+                    <div class="catalog-item-info">
+                        <h3>{{ product.name }}</h3>
+                        <p class="material-type">{{ product.short_desc }}</p>
+                    </div>
+                    <div class="catalog-photo">
+                        <img src="/img/{{ product.slug }}-can.png" alt="{{ product.name }}">
+                    </div>
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+<script>
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+            this.classList.add('active');
+            const filter = this.dataset.filter;
+            document.querySelectorAll('.catalog-item').forEach(item => {
+                if (filter === 'all' || item.dataset.type === filter) {
+                    item.style.display = '';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        });
+    });
+</script>
+{% endblock %}
