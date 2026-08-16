@@ -10,20 +10,12 @@
             <button class="filter-btn" data-filter="эмаль">Эмали</button>
             <button class="filter-btn" data-filter="грунт-эмаль">Грунт-эмали</button>
         </div>
-        <div class="catalog-list catalog-horizontal">
+        <div class="catalog-list">
             {% for product in products %}
-            <div class="catalog-item" data-type="{{ product.type }}" data-binder="{{ product.binder }}" data-purpose="{{ product.purpose }}">
-                <a href="/product/{{ product.slug }}" class="catalog-item-link">
-                    <span class="badge">{{ product.badge }}</span>
-                    <div class="catalog-item-info">
-                        <h3>{{ product.name }}</h3>
-                        <p class="material-type">{{ product.short_desc }}</p>
-                    </div>
-                    <div class="catalog-photo">
-                        <img src="/img/{{ product.slug }}-can.png" alt="{{ product.name }}">
-                    </div>
-                </a>
-            </div>
+            <a href="/product/{{ product.slug }}" class="catalog-row" data-type="{{ product.type }}">
+                <span class="catalog-row-name">{{ product.name }}</span>
+                <span class="catalog-row-desc">{{ product.short_desc }}</span>
+            </a>
             {% endfor %}
         </div>
     </div>
@@ -34,7 +26,7 @@
             document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
             this.classList.add('active');
             const filter = this.dataset.filter;
-            document.querySelectorAll('.catalog-item').forEach(item => {
+            document.querySelectorAll('.catalog-row').forEach(item => {
                 if (filter === 'all' || item.dataset.type === filter) {
                     item.style.display = '';
                 } else {
