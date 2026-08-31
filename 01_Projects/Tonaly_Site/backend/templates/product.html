@@ -1,84 +1,139 @@
 {% extends "base.html" %}
 {% block title %}{{ product.name }} | Tonal{% endblock %}
 {% block content %}
-<div class="container section">
-    <nav class="breadcrumb">
-        <a href="/">Главная</a> / <a href="/catalog">Каталог</a> / {{ product.slug }}
-    </nav>
+<section class="section">
+    <div class="container">
+        <nav class="breadcrumb">
+            <a href="/">Главная</a> / <a href="/catalog{% if product.brand == 'akzo' %}?brand=akzo{% endif %}">Каталог</a> / {{ product.name }}
+        </nav>
 
-    <div class="product-card">
-        <div class="product-card-top">
+        <div class="product-head">
+            {% if product.badge %}<span class="chip">{{ product.badge }}</span>{% endif %}
+            <h1>{{ product.name }}</h1>
+
+            {% if product.short_desc or product.body_paragraphs or product.analog %}
+            <div class="product-description-panel">
+                {% if product.short_desc %}
+                <p class="product-lead">{{ product.short_desc }}</p>
+                {% endif %}
+                {% if product.body_paragraphs %}
+                <div class="product-body">
+                    {% for para in product.body_paragraphs %}
+                    <p>{{ para }}</p>
+                    {% endfor %}
+                </div>
+                {% endif %}
+                {% if product.analog %}
+                <div class="product-analog">
+                    <p class="product-analog-notice">
+                        {% if product.analog.notice %}
+                        <span class="product-analog-prefix">{{ product.analog.notice }}</span>
+                        {% else %}
+                        <span class="product-analog-prefix">Внимание! протестирован аналог:</span>
+                        {% endif %}
+                        <a href="/product/{{ product.analog.rem_slug }}">{{ product.analog.link_label }}</a>
+                        <span class="product-analog-brand">(REM COLOR)</span>
+                    </p>
+                    {% if product.analog.note %}
+                    <p class="product-analog-note">{{ product.analog.note }}</p>
+                    {% endif %}
+                </div>
+                {% endif %}
+            </div>
+            {% endif %}
+        </div>
+
+        <div class="product-layout{% if not product.has_image %} product-layout--solo{% endif %}">
+            {% if product.has_image %}
             <div class="product-image">
-                <img src="/img/{{ product.slug }}-can.png" alt="Тара {{ product.name }}">
+                <img src="/img/{{ product.slug }}-can.png" alt="{{ product.name }}">
             </div>
+            {% endif %}
             <div class="product-info">
-                <h1>{{ product.name }}</h1>
-                <p>{{ product.description }}</p>
-
                 <div class="product-tags">
-                    <span class="product-tag"><span class="tag-label">Применение:</span> {{ product.application_tag }}</span>
-                    <span class="product-tag"><span class="tag-label">Основа:</span> Органическая</span>
-                    <span class="product-tag"><span class="tag-label">Тип поверхности:</span> Металлическая</span>
-                    <span class="product-tag"><span class="tag-label">Вид работ:</span> Окрашивание</span>
+                    {% if product.application_tag %}
+                    <span class="product-tag"><span class="tag-label">Назначение:</span> {{ product.application_tag }}</span>
+                    {% endif %}
+                    {% if product.binder %}
+                    <span class="product-tag"><span class="tag-label">Основа:</span> {{ product.binder }}</span>
+                    {% endif %}
+                    <span class="product-tag"><span class="tag-label">Поверхность:</span> Металл</span>
+                    {% if product.type %}
+                    <span class="product-tag"><span class="tag-label">Тип:</span> {{ product.type }}</span>
+                    {% endif %}
                 </div>
 
-                <div class="price-section" style="display: flex; gap: 15px; align-items: center;">
-                    <a href="#" class="btn-order">Заказать</a>
-                    <a href="/docs/tds-{{ product.slug }}.pdf" class="btn-order" style="background: var(--primary-color);" target="_blank">TDS (PDF)</a>
+                <div class="product-actions">
+                    <a href="/contacts" class="btn-primary">Запросить коммерческое предложение</a>
+                    <a href="/docs/{{ product.tds_file }}" class="btn-ghost" target="_blank" rel="noopener">Технический лист (PDF)</a>
                 </div>
             </div>
         </div>
 
-        <div class="product-detail-section">
-            <h3>Основные характеристики</h3>
-            <table class="specs-table">
-                {% for spec in product.specs %}
-                <tr>
-                    <td>{{ spec.name }}</td>
-                    <td>{{ spec.value }}</td>
-                </tr>
-                {% endfor %}
-            </table>
+        {% if product.specs %}
+        <div class="product-block">
+            <h2>Основные характеристики</h2>
+            <div class="specs-panel">
+                <table class="specs-table">
+                    {% for spec in product.specs %}
+                    <tr>
+                        <td>{{ spec.name }}</td>
+                        <td>{{ spec.value }}</td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            </div>
         </div>
+        {% endif %}
 
-        <div class="product-detail-section">
-            <h3>Область применения</h3>
+        {% if product.application and product.application.strip() != (product.short_desc or '').strip() and product.application.strip() != (product.description or '').strip() %}
+        <div class="product-block">
+            <h2>Область применения</h2>
             <p>{{ product.application }}</p>
         </div>
+        {% endif %}
 
-        <div class="product-detail-section">
-            <h3>Преимущества</h3>
-            <div class="benefits-grid">
+        {% if product.benefits %}
+        <div class="product-block">
+            <h2>Особенности</h2>
+            <ul class="benefits-list">
                 {% for benefit in product.benefits %}
-                <div class="benefit-item">✅ {{ benefit }}</div>
+                <li>{{ benefit }}</li>
                 {% endfor %}
-            </div>
+            </ul>
         </div>
+        {% endif %}
 
-        <div class="product-detail-section">
-            <h3>С этим товаром покупают</h3>
-            <div class="related-products">
+        {% if product.related %}
+        <div class="product-block">
+            <h2>Сопутствующие материалы</h2>
+            <div class="related-grid">
                 {% for related in product.related %}
-                <div class="related-item">
-                    <img src="/img/{{ related.slug }}-can.png" alt="{{ related.name }}">
-                    <h4>{{ related.name }}</h4>
-                    <a href="/product/{{ related.slug }}" class="related-link">Смотреть →</a>
-                </div>
+                <a class="related-item" href="/product/{{ related.slug }}">
+                    {% if related.has_image %}<img src="/img/{{ related.slug }}-can.png" alt="{{ related.name }}">{% endif %}
+                    <div>
+                        <h3>{{ related.name }}</h3>
+                        <span>Открыть карточку</span>
+                    </div>
+                </a>
                 {% endfor %}
             </div>
         </div>
+        {% endif %}
     </div>
-</div>
+</section>
 
-<div id="imageModal" class="modal" onclick="this.style.display='none'">
-    <img class="modal-content" id="imgFull">
+<div id="imageModal" class="modal" onclick="this.classList.remove('is-open')">
+    <img class="modal-content" id="imgFull" alt="">
 </div>
+{% if product.has_image %}
 <script>
-    document.querySelector('.product-card .product-image').onclick = function() {
+    document.querySelector('.product-image').onclick = function() {
         var modal = document.getElementById('imageModal');
         var img = this.querySelector('img');
         document.getElementById('imgFull').src = img.src;
-        modal.style.display = 'block';
+        modal.classList.add('is-open');
     };
 </script>
+{% endif %}
 {% endblock %}

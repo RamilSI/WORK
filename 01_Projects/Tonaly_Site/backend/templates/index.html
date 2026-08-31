@@ -1,64 +1,109 @@
 {% extends "base.html" %}
 {% block title %}Tonal — Антикоррозионная защита и ЛКМ{% endblock %}
 {% block hero %}
-<div class="hero-section">
+<section class="hero-section">
     <div class="container">
-        <h1>Профессиональные решения Tonal</h1>
-        <p>Защита металлоконструкций любой сложности: от мостов до резервуарных парков</p>
+        <p class="hero-kicker">Akzo Nobel · WEG · Rem Color</p>
+        <h1>Антикоррозионная защита и специальные покрытия</h1>
+        <p>Дистрибьютор промышленных ЛКМ в России: поставка, техсопровождение и инспекции с 2017 года.</p>
         <div class="hero-btns">
-            <a href="/catalog" class="btn-primary">Перейти в каталог</a>
-            <a href="/contacts" class="btn-secondary">Наши контакты</a>
+            <a href="/catalog" class="btn-primary">Каталог материалов</a>
+            <a href="/about" class="btn-secondary">О компании</a>
         </div>
     </div>
-</div>
+</section>
 {% endblock %}
 
 {% block content %}
-<section id="applications" class="section bg-light-section">
+<section id="applications" class="section bg-paper">
     <div class="container">
         <h2 class="section-title">Области применения</h2>
-        <div class="app-grid">
-            <div class="app-item">
-                <span class="icon">🌉</span>
-                <h4>Мостостроение</h4>
-                <p>Защита пролетных строений и опор.</p>
-            </div>
-            <div class="app-item">
-                <span class="icon">🛢️</span>
-                <h4>Резервуарные парки</h4>
-                <p>Внутренняя и внешняя защита емкостей.</p>
-            </div>
-            <div class="app-item">
-                <span class="icon">🏗️</span>
-                <h4>Промышленные цеха</h4>
-                <p>Защита каркасов зданий и оборудования.</p>
-            </div>
+        <div class="app-grid app-grid--wide">
+            <article class="app-item">
+                <span class="icon" aria-hidden="true">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+                        <path d="M3 18h18M5 18V10l7-5 7 5v8M9 18v-5h6v5"/>
+                    </svg>
+                </span>
+                <h3>Мостостроение</h3>
+                <p>Защита пролётных строений, опор и металлоконструкций в атмосфере.</p>
+            </article>
+            <article class="app-item">
+                <span class="icon" aria-hidden="true">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+                        <path d="M4 20h16M6 20V9h4v11M12 20V6h6v14M8 9V6M15 6V4"/>
+                    </svg>
+                </span>
+                <h3>Резервуарные парки</h3>
+                <p>Внутренняя и внешняя защита ёмкостей, трубопроводов и оборудования.</p>
+            </article>
+            <article class="app-item">
+                <span class="icon" aria-hidden="true">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+                        <path d="M4 20V10l4-3v13M12 20V7l8-3v16M4 20h16"/>
+                    </svg>
+                </span>
+                <h3>Нефтегаз и энергетика</h3>
+                <p>НПЗ, ГРС, магистральные трубопроводы, объекты ТЭК.</p>
+            </article>
+            <article class="app-item">
+                <span class="icon" aria-hidden="true">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+                        <path d="M2 20h20M4 20V8l8-4 8 4v12M8 20v-6h8v6"/>
+                    </svg>
+                </span>
+                <h3>Гидротехника</h3>
+                <p>Портовые сооружения, шлюзы, причалы и металлоконструкции у воды.</p>
+            </article>
+            <article class="app-item">
+                <span class="icon" aria-hidden="true">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+                        <path d="M3 21h18M5 21V8l7-4 7 4v13M9 21v-6h6v6"/>
+                        <path d="M9 10h6M9 14h4"/>
+                    </svg>
+                </span>
+                <h3>Промышленное строительство</h3>
+                <p>Каркасы цехов, технологическое оборудование и конструкции внутри помещений.</p>
+            </article>
+            <article class="app-item">
+                <span class="icon" aria-hidden="true">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+                        <path d="M2 18l2-6h16l2 6M4 14h16M6 10l2-4h8l2 4"/>
+                    </svg>
+                </span>
+                <h3>Судостроение и судоремонт</h3>
+                <p>Корпусные покрытия, надстройки и металлоконструкции судов.</p>
+            </article>
         </div>
+        <p class="section-lead home-about-link"><a href="/about">Подробнее о компании и проектах →</a></p>
     </div>
 </section>
 
 <section id="tools" class="section">
     <div class="container">
         <h2 class="section-title">Цифровые сервисы</h2>
-        <div class="grid">
-            <div class="card service-card">
-                <h3>Сравнение ЛКМ</h3>
-                <div class="coming-soon">Скоро</div>
-                <p>Подбор аналогов и расчет экономической эффективности.</p>
-                <a href="#" class="btn disabled">В разработке</a>
-            </div>
-            <div class="card service-card">
-                <h3>Калькулятор расхода</h3>
-                <div class="coming-soon">Скоро</div>
-                <p>Точный расчет объема материалов под вашу площадь.</p>
-                <a href="#" class="btn disabled">В разработке</a>
-            </div>
-            <div class="card service-card">
-                <h3>Генератор документов</h3>
-                <div class="coming-soon">Скоро</div>
-                <p>Автоматическое создание ТКП и спецификаций.</p>
-                <a href="#" class="btn disabled">В разработке</a>
-            </div>
+        <div class="service-grid">
+            <article class="service-card">
+                <header>
+                    <h3>Сравнение ЛКМ</h3>
+                    <span class="chip">Скоро</span>
+                </header>
+                <p>Подбор аналогов и оценка экономической эффективности систем покрытия.</p>
+            </article>
+            <article class="service-card">
+                <header>
+                    <h3>Калькулятор расхода</h3>
+                    <span class="chip">Скоро</span>
+                </header>
+                <p>Расчёт объёма материалов по площади, толщине слоя и сухому остатку.</p>
+            </article>
+            <article class="service-card">
+                <header>
+                    <h3>Генератор документов</h3>
+                    <span class="chip">Скоро</span>
+                </header>
+                <p>Автоматическое формирование ТКП, спецификаций и комплектов документации.</p>
+            </article>
         </div>
     </div>
 </section>
