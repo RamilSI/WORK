@@ -1,0 +1,20 @@
+[
+  {
+    "slug": "intergard-263",
+    "name": "INTERGARD 263",
+    "brand": "akzo",
+    "family": "INTERGARD",
+    "badge": "2K Система",
+    "ptype": "грунтовка",
+    "binder": "эпоксидная",
+    "purpose": "антикоррозионная",
+    "short_desc": "Пример записи для импорта Akzo Nobel",
+    "description": "Полное описание материала.",
+    "specs": [
+      {"name": "Тип связующего", "value": "Эпоксидная смола"}
+    ],
+    "related": [],
+    "tds_file": "tds-intergard-263.pdf",
+    "source_id": "tonaly-example"
+  }
+]

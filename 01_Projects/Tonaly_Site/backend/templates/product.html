@@ -4,7 +4,7 @@
 <section class="section">
     <div class="container">
         <nav class="breadcrumb">
-            <a href="/">Главная</a> / <a href="/catalog{% if product.brand == 'akzo' %}?brand=akzo{% endif %}">Каталог</a> / {{ product.name }}
+            <a href="/">Главная</a> / <a href="/catalog{% if product.brand == 'akzo' %}?brand=akzo{% elif product.kind == 'equipment' %}?brand=equipment{% endif %}">Каталог</a> / {{ product.name }}
         </nav>
 
         <div class="product-head">
@@ -37,6 +37,12 @@
                     {% if product.analog.note %}
                     <p class="product-analog-note">{{ product.analog.note }}</p>
                     {% endif %}
+                    {% for extra in product.analog.also %}
+                    <p class="product-analog-also">
+                        <a href="/product/{{ extra.rem_slug }}">{{ extra.link_label }}</a>
+                        <span class="product-analog-brand">(REM COLOR)</span>
+                    </p>
+                    {% endfor %}
                 </div>
                 {% endif %}
             </div>
@@ -46,7 +52,7 @@
         <div class="product-layout{% if not product.has_image %} product-layout--solo{% endif %}">
             {% if product.has_image %}
             <div class="product-image">
-                <img src="/img/{{ product.slug }}-can.png" alt="{{ product.name }}">
+                <img src="{{ product.image if product.image else '/img/' ~ product.slug ~ '-can.png' }}" alt="{{ product.name }}">
             </div>
             {% endif %}
             <div class="product-info">
@@ -57,15 +63,22 @@
                     {% if product.binder %}
                     <span class="product-tag"><span class="tag-label">Основа:</span> {{ product.binder }}</span>
                     {% endif %}
+                    {% if product.kind != 'equipment' %}
                     <span class="product-tag"><span class="tag-label">Поверхность:</span> Металл</span>
+                    {% endif %}
                     {% if product.type %}
                     <span class="product-tag"><span class="tag-label">Тип:</span> {{ product.type }}</span>
+                    {% endif %}
+                    {% if product.part_no %}
+                    <span class="product-tag"><span class="tag-label">Артикул:</span> {{ product.part_no }}</span>
                     {% endif %}
                 </div>
 
                 <div class="product-actions">
                     <a href="/contacts" class="btn-primary">Запросить коммерческое предложение</a>
-                    <a href="/docs/{{ product.tds_file }}" class="btn-ghost" target="_blank" rel="noopener">Технический лист (PDF)</a>
+                    {% if product.tds_file %}
+                    <a href="/docs/{{ product.tds_file }}" class="btn-ghost" target="_blank" rel="noopener">{{ product.docs_label or 'Технический лист (PDF)' }}</a>
+                    {% endif %}
                 </div>
             </div>
         </div>
@@ -104,13 +117,29 @@
         </div>
         {% endif %}
 
+        {% if product.schemes %}
+        <div class="product-block">
+            <h2>Схемы с этим материалом</h2>
+            <div class="related-grid">
+                {% for scheme in product.schemes %}
+                <a class="related-item" href="/schemes/{{ scheme.slug }}">
+                    <div>
+                        <h3>{{ scheme.title }}</h3>
+                        <span>{{ scheme.code }}{% if scheme.total_dft %} · {{ scheme.total_dft }} мкм{% endif %}</span>
+                    </div>
+                </a>
+                {% endfor %}
+            </div>
+        </div>
+        {% endif %}
+
         {% if product.related %}
         <div class="product-block">
-            <h2>Сопутствующие материалы</h2>
+            <h2>{% if product.kind == 'equipment' %}Сопутствующее оборудование{% else %}Сопутствующие материалы{% endif %}</h2>
             <div class="related-grid">
                 {% for related in product.related %}
                 <a class="related-item" href="/product/{{ related.slug }}">
-                    {% if related.has_image %}<img src="/img/{{ related.slug }}-can.png" alt="{{ related.name }}">{% endif %}
+                    {% if related.has_image %}<img src="{{ related.image if related.image else '/img/' ~ related.slug ~ '-can.png' }}" alt="{{ related.name }}">{% endif %}
                     <div>
                         <h3>{{ related.name }}</h3>
                         <span>Открыть карточку</span>
@@ -126,14 +155,14 @@
 <div id="imageModal" class="modal" onclick="this.classList.remove('is-open')">
     <img class="modal-content" id="imgFull" alt="">
 </div>
-{% if product.has_image %}
 <script>
+    {% if product.has_image %}
     document.querySelector('.product-image').onclick = function() {
         var modal = document.getElementById('imageModal');
         var img = this.querySelector('img');
         document.getElementById('imgFull').src = img.src;
         modal.classList.add('is-open');
     };
+    {% endif %}
 </script>
-{% endif %}
 {% endblock %}

@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% block title %}Схемы покрытий | Tonal{% endblock %}
+{% block content %}
+<section class="page-intro">
+    <div class="container">
+        <h1>Схемы покрытий</h1>
+        <p>{{ scheme_count }} рабочих систем Rem Color как замена Akzo Nobel, WEG и других конкурентов — слои, ТСП, категория среды и преимущества.</p>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <p class="section-lead catalog-panel-lead">Толщины Rem Color совпадают с исходной схемой. Финальную спецификацию подтверждаем под объект, норматив и продукт в ёмкости.</p>
+        <div class="scheme-cat-nav">
+            {% for group in groups %}
+            <a href="#{{ group.key }}">{{ group.title }}</a>
+            {% endfor %}
+        </div>
+
+        {% for group in groups %}
+        <section class="brand-group" id="{{ group.key }}">
+            <header class="brand-group-head">
+                <h2>{{ group.title }}</h2>
+                {% if group.description %}<p>{{ group.description }}</p>{% endif %}
+            </header>
+            <div class="catalog-list">
+                {% for scheme in group.schemes %}
+                <article class="catalog-row scheme-row">
+                    <a href="/schemes/{{ scheme.slug }}" class="catalog-row-link">
+                        <span class="catalog-row-main">
+                            <span class="catalog-row-top">
+                                <strong class="catalog-row-name">{{ scheme.title }}</strong>
+                                {% if scheme.corrosivity %}<span class="chip">{{ scheme.corrosivity }}</span>{% endif %}
+                            </span>
+                            <span class="catalog-row-desc">{{ scheme.purpose }}</span>
+                            <span class="catalog-row-meta">
+                                <span>{{ scheme.code }}</span>
+                                {% if scheme.total_dft %}<span>{{ scheme.total_dft }} мкм</span>{% endif %}
+                                {% if scheme.durability %}<span>{{ scheme.durability }}</span>{% endif %}
+                                <span>{{ scheme.rem.brand }}: {{ scheme.rem.code }}</span>
+                            </span>
+                        </span>
+                    </a>
+                    <div class="catalog-row-actions">
+                        <a href="/schemes/{{ scheme.slug }}" class="catalog-row-more">→</a>
+                    </div>
+                </article>
+                {% endfor %}
+            </div>
+        </section>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}

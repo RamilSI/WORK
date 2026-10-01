@@ -1,34 +1,51 @@
 <!DOCTYPE html>
 <html lang="ru">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Tonal — Антикоррозионная защита и ЛКМ{% endblock %}</title>
-    <link rel="stylesheet" href="/css/style.css?v=20260913b">
+    <link rel="stylesheet" href="/css/style.css?v=20260930c">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
-
 <body>
     <header class="site-header">
         <nav class="container main-nav">
             <a href="/" class="logo">
                 <img src="/img/logo.svg" alt="ООО «Тональ»" class="logo-img">
             </a>
-            <button class="nav-toggle" type="button" aria-label="Меню"
-                onclick="document.querySelector('.nav-links').classList.toggle('is-open')">
+            <button class="nav-toggle" type="button" aria-label="Меню" onclick="document.querySelector('.nav-links').classList.toggle('is-open')">
                 <span></span>
             </button>
             <ul class="nav-links">
-                <li><a href="/catalog">Каталог</a></li>
+                <li class="has-sub">
+                    <button class="nav-sub-btn" type="button" aria-expanded="false" aria-haspopup="true">Каталог</button>
+                    <ul class="nav-sub">
+                        <li><a href="/catalog?brand=akzo">Akzo Nobel</a></li>
+                        <li><a href="/catalog?brand=rem-color">Rem Color</a></li>
+                        <li><a href="/catalog?brand=equipment">Оборудование</a></li>
+                    </ul>
+                </li>
                 <li><a href="/about">О компании</a></li>
-                <li><a href="/#applications">Применение</a></li>
-                <li><a href="/#tools">Сервисы</a></li>
+                <li class="has-sub">
+                    <button class="nav-sub-btn" type="button" aria-expanded="false" aria-haspopup="true">Применение</button>
+                    <ul class="nav-sub">
+                        <li><a href="/#applications">Области применения</a></li>
+                        <li><a href="/schemes">Схемы покрытий</a></li>
+                    </ul>
+                </li>
+                <li class="has-sub">
+                    <button class="nav-sub-btn" type="button" aria-expanded="false" aria-haspopup="true">Сервисы</button>
+                    <ul class="nav-sub">
+                        <li><a href="/services#inspection">Инспекция</a></li>
+                        <li><a href="/services#application">Работы по АКЗ</a></li>
+                        <li><a href="/#tools">Цифровые сервисы</a></li>
+                    </ul>
+                </li>
                 <li><a href="/contacts">Контакты</a></li>
                 <li><a href="/offwork">Вне работы</a></li>
-                <li><a href="#" class="login-btn">Личный кабинет</a></li>
+                <li><a href="/cabinet" class="login-btn">Личный кабинет</a></li>
             </ul>
         </nav>
     </header>
@@ -44,32 +61,54 @@
             <p>© 2026 ООО «Тональ». Антикоррозионная защита металлоконструкций</p>
             <div class="footer-links">
                 <a href="/catalog">Каталог</a>
+                <a href="/schemes">Схемы покрытий</a>
+                <a href="/services">Сервисы</a>
                 <a href="/about">О компании</a>
                 <a href="/contacts">Контакты</a>
-                <a href="/offwork">Вне работы</a>
             </div>
         </div>
     </footer>
-    {% if metrika_id %}
-    <script type="text/javascript">
-        (function (m, e, t, r, i, k, a) {
-            m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments) };
-            m[i].l = 1 * new Date();
-            for (var j = 0; j < document.scripts.length; j++) { if (document.scripts[j].src === r) { return; } }
-            k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
-        })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-        ym({{ metrika_id }}, "init", {
-            clickmap: true,
-            trackLinks: true,
-            accurateTrackBounce: true,
-            webvisor: true
+    <script>
+        document.querySelectorAll('.nav-sub-btn').forEach(function (btn) {
+            btn.addEventListener('click', function () {
+                var item = btn.closest('.has-sub');
+                var open = !item.classList.contains('is-open');
+                document.querySelectorAll('.has-sub').forEach(function (el) {
+                    el.classList.remove('is-open');
+                    var other = el.querySelector('.nav-sub-btn');
+                    if (other) other.setAttribute('aria-expanded', 'false');
+                });
+                if (open) {
+                    item.classList.add('is-open');
+                    btn.setAttribute('aria-expanded', 'true');
+                }
+            });
+        });
+        document.addEventListener('click', function (e) {
+            if (e.target.closest('.has-sub')) return;
+            document.querySelectorAll('.has-sub').forEach(function (el) {
+                el.classList.remove('is-open');
+                var btn = el.querySelector('.nav-sub-btn');
+                if (btn) btn.setAttribute('aria-expanded', 'false');
+            });
         });
     </script>
-    <noscript>
-        <div><img src="https://mc.yandex.ru/watch/{{ metrika_id }}" style="position:absolute; left:-9999px;" alt="">
-        </div>
-    </noscript>
+    {% if metrika_id %}
+    <script type="text/javascript">
+        (function(m,e,t,r,i,k,a){
+            m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+            m[i].l=1*new Date();
+            for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+            k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+        })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+        ym({{ metrika_id }}, "init", {
+            clickmap:true,
+            trackLinks:true,
+            accurateTrackBounce:true,
+            webvisor:true
+        });
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/{{ metrika_id }}" style="position:absolute; left:-9999px;" alt=""></div></noscript>
     {% endif %}
 </body>
-
 </html>

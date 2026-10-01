@@ -1,7 +1,7 @@
 """TONAL — FastAPI + Jinja2 + SQLite"""
-from fastapi import FastAPI
+from fastapi import FastAPI, Form, Request
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import HTMLResponse, Response
+from fastapi.responses import HTMLResponse, RedirectResponse, Response
 from fastapi.staticfiles import StaticFiles
 from jinja2 import Environment, FileSystemLoader
 from pathlib import Path
@@ -10,6 +10,9 @@ from database import SessionLocal
 from models import Product
 from settings import SETTINGS
 from rem_analog import parse_analog_json, resolve_rem_slug
+from schemes import get_scheme, group_schemes, load_schemes, schemes_for_product
+from equipment import get_equipment, group_equipment, load_equipment
+from cabinets import media_for, read_session, sign_session, verify_password
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 FRONTEND_DIR = BASE_DIR / "frontend"
@@ -107,6 +110,33 @@ def rem_product_index(products: list[dict]) -> dict[str, dict]:
     }
 
 
+def rem_short_name(rem_name: str) -> str:
+    if "«" in (rem_name or "") and "»" in rem_name:
+        return rem_name[rem_name.find("«") + 1 : rem_name.find("»")].strip() or rem_name
+    return rem_name
+
+
+def analog_from_slug(
+    rem_slug: str,
+    rem_index: dict[str, dict],
+    name: str = "",
+    notice: str = "",
+    note: str = "",
+) -> dict | None:
+    if not rem_slug or rem_slug not in rem_index:
+        return None
+    rem_name = rem_index[rem_slug]["name"]
+    rem_short = rem_short_name(rem_name)
+    return {
+        "notice": notice,
+        "note": note,
+        "rem_slug": rem_slug,
+        "link_label": name or rem_short,
+        "rem_name": rem_name,
+        "rem_short": rem_short,
+    }
+
+
 def build_analog_view(analog_raw: str, rem_index: dict[str, dict]) -> dict | None:
     data = parse_analog_json(analog_raw)
     if not data:
@@ -121,18 +151,24 @@ def build_analog_view(analog_raw: str, rem_index: dict[str, dict]) -> dict | Non
     if not rem_slug or rem_slug not in rem_index:
         rem_slug = resolve_rem_slug(data.get("url", ""), name, rem_index) or ""
 
-    if not rem_slug:
+    view = analog_from_slug(rem_slug, rem_index, name=name, notice=notice, note=note)
+    if not view:
         return None
 
-    rem_name = rem_index[rem_slug]["name"]
-    link_label = name or rem_name
-    return {
-        "notice": notice,
-        "note": note,
-        "rem_slug": rem_slug,
-        "link_label": link_label,
-        "rem_name": rem_name,
-    }
+    also = []
+    for extra in data.get("also") or []:
+        if isinstance(extra, str):
+            extra_slug, extra_name = extra.strip(), ""
+        elif isinstance(extra, dict):
+            extra_slug = (extra.get("rem_slug") or "").strip()
+            extra_name = (extra.get("name") or "").strip()
+        else:
+            continue
+        item = analog_from_slug(extra_slug, rem_index, name=extra_name)
+        if item and item["rem_slug"] != view["rem_slug"]:
+            also.append(item)
+    view["also"] = also
+    return view
 
 
 def serialize_product(p, rem_index: dict[str, dict] | None = None):
@@ -193,6 +229,10 @@ def get_products():
         db.close()
 
 
+def get_all_items():
+    return get_products() + load_equipment()
+
+
 @app.get("/", response_class=HTMLResponse)
 async def root():
     return render_template("index.html")
@@ -202,40 +242,108 @@ async def about():
     return render_template("about.html")
 
 @app.get("/catalog", response_class=HTMLResponse)
-async def catalog():
+async def catalog(brand: str | None = None):
+    if brand == "schemes":
+        return RedirectResponse("/schemes", status_code=302)
     products = get_products()
     rem_products = [p for p in products if p["brand"] == "rem-color"]
     akzo_products = [p for p in products if p["brand"] == "akzo"]
+    equipment = load_equipment()
     return render_template("catalog.html", {
         "products": products,
         "rem_groups": group_by_family(rem_products, REM_FAMILY_META),
         "akzo_groups": group_by_family(akzo_products, AKZO_FAMILY_META),
+        "equipment_groups": group_equipment(equipment),
         "rem_count": len(rem_products),
         "akzo_count": len(akzo_products),
+        "equipment_count": len(equipment),
     })
 
 @app.get("/contacts", response_class=HTMLResponse)
 async def contacts():
     return render_template("contacts.html")
 
+@app.get("/services", response_class=HTMLResponse)
+async def services():
+    return render_template("services.html")
+
 @app.get("/offwork", response_class=HTMLResponse)
 async def offwork():
     return render_template("offwork.html")
 
 @app.get("/offwork/kiteboarding", response_class=HTMLResponse)
-async def offwork_kiteboarding():
+async def kiteboarding():
     return render_template("kiteboarding.html")
+
+@app.get("/schemes", response_class=HTMLResponse)
+async def schemes_page():
+    products = get_products()
+    by_slug = {p["slug"]: p for p in products}
+    schemes = load_schemes(by_slug)
+    return render_template("schemes.html", {
+        "groups": group_schemes(schemes),
+        "scheme_count": len(schemes),
+    })
+
+@app.get("/schemes/{slug}", response_class=HTMLResponse)
+async def scheme_page(slug: str):
+    products = get_products()
+    by_slug = {p["slug"]: p for p in products}
+    scheme = get_scheme(slug, by_slug)
+    if not scheme:
+        return HTMLResponse("Схема не найдена", status_code=404)
+    return render_template("scheme.html", {"scheme": scheme})
+
+def _cabinet_from_request(request: Request):
+    return read_session(request.cookies.get("cabinet"))
+
+
+@app.get("/cabinet", response_class=HTMLResponse)
+async def cabinet_get(request: Request):
+    cabinet = _cabinet_from_request(request)
+    if cabinet:
+        return render_template("cabinet.html", {"cabinet": cabinet, "media": media_for(cabinet["slug"])})
+    return render_template("cabinet_login.html", {"error": ""})
+
+
+@app.post("/cabinet", response_class=HTMLResponse)
+async def cabinet_post(login: str = Form(""), password: str = Form("")):
+    cabinet = verify_password(login, password)
+    if not cabinet:
+        return render_template("cabinet_login.html", {"error": "Неверный логин или пароль"})
+    response = RedirectResponse("/cabinet", status_code=303)
+    response.set_cookie("cabinet", sign_session(cabinet["slug"]), httponly=True, samesite="lax", max_age=60 * 60 * 24 * 30)
+    return response
+
+
+@app.get("/cabinet/logout")
+async def cabinet_logout():
+    response = RedirectResponse("/cabinet", status_code=303)
+    response.delete_cookie("cabinet")
+    return response
+
 
 @app.get("/product/{slug}", response_class=HTMLResponse)
 async def product_page(slug: str):
-    products = get_products()
-    by_slug = {p["slug"]: p for p in products}
-    p = by_slug.get(slug)
+    by_slug = {p["slug"]: p for p in get_all_items()}
+    p = by_slug.get(slug) or get_equipment(slug)
     if not p:
         return HTMLResponse("Товар не найден", status_code=404)
-    related = [{"slug": s, "name": by_slug[s]["name"], "has_image": by_slug[s]["has_image"]} for s in p.get("related", []) if s in by_slug]
+    related = []
+    for s in p.get("related", []):
+        item = by_slug.get(s)
+        if not item:
+            continue
+        related.append({
+            "slug": s,
+            "name": item["name"],
+            "has_image": item["has_image"],
+            "image": item.get("image") or (f"/img/{s}-can.png" if item["has_image"] else ""),
+        })
+    paints = {k: v for k, v in by_slug.items() if v.get("kind") != "equipment"}
     pd = dict(p)
     pd["related"] = related
+    pd["schemes"] = schemes_for_product(slug, paints) if p.get("kind") != "equipment" else []
     return render_template("product.html", {"product": pd})
 
 @app.get("/health")
@@ -255,17 +363,18 @@ Sitemap: {site}/sitemap.xml
 @app.get("/sitemap.xml", response_class=Response)
 async def sitemap():
     site = SETTINGS["SITE_URL"].rstrip("/")
-    products = get_products()
     urls = [
         ("", "daily", "1.0"),
         ("/about", "monthly", "0.8"),
         ("/catalog", "weekly", "0.9"),
+        ("/schemes", "weekly", "0.9"),
+        ("/services", "monthly", "0.8"),
         ("/contacts", "monthly", "0.7"),
-        ("/offwork", "monthly", "0.5"),
-        ("/offwork/kiteboarding", "monthly", "0.5"),
     ]
-    for product in products:
+    for product in get_all_items():
         urls.append((f"/product/{product['slug']}", "monthly", "0.8"))
+    for scheme in load_schemes():
+        urls.append((f"/schemes/{scheme['slug']}", "monthly", "0.8"))
 
     items = []
     for path, freq, priority in urls:

@@ -1,0 +1,122 @@
+{% extends "base.html" %}
+{% block title %}{{ scheme.title }} | Схемы | Tonal{% endblock %}
+{% block content %}
+<section class="section">
+    <div class="container">
+        <nav class="breadcrumb">
+            <a href="/">Главная</a> / <a href="/schemes">Схемы покрытий</a> / {{ scheme.title }}
+        </nav>
+
+        <div class="product-head">
+            {% if scheme.corrosivity %}<span class="chip">{{ scheme.corrosivity }}</span>{% endif %}
+            <h1>{{ scheme.title }}</h1>
+            <div class="product-description-panel">
+                <p class="product-lead">{{ scheme.purpose }}</p>
+                <div class="scheme-facts">
+                    {% if scheme.code %}<span>Исходная схема: <strong>{{ scheme.code }}</strong></span>{% endif %}
+                    {% if scheme.total_dft %}<span>ТСП: <strong>{{ scheme.total_dft }} мкм</strong></span>{% endif %}
+                    {% if scheme.durability %}<span>Срок службы: <strong>{{ scheme.durability }}</strong></span>{% endif %}
+                    {% if scheme.temperature %}<span>Температура: <strong>{{ scheme.temperature }}</strong></span>{% endif %}
+                </div>
+            </div>
+        </div>
+
+        <div class="scheme-compare">
+            <article class="scheme-side">
+                <header>
+                    <p class="scheme-side-kicker">Исходная система</p>
+                    <h2>{{ scheme.competitor.brand }}</h2>
+                    {% if scheme.competitor.code %}<p>{{ scheme.competitor.code }}</p>{% endif %}
+                </header>
+                <table class="specs-table">
+                    <thead>
+                        <tr><th>Слой</th><th>Роль</th><th>ТСП, мкм</th></tr>
+                    </thead>
+                    <tbody>
+                        {% for layer in scheme.competitor.layers %}
+                        <tr>
+                            <td>
+                                {% if layer.href %}
+                                <a href="{{ layer.href }}">{{ layer.display_name }}</a>
+                                {% else %}
+                                {{ layer.display_name }}
+                                {% endif %}
+                            </td>
+                            <td>{{ layer.role }}</td>
+                            <td>{{ layer.dft_label }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+                <p class="scheme-side-total">Итого {{ scheme.competitor.total_dft }} мкм</p>
+            </article>
+
+            <article class="scheme-side scheme-side--rem">
+                <header>
+                    <p class="scheme-side-kicker">Альтернатива</p>
+                    <h2>{{ scheme.rem.brand }}</h2>
+                    {% if scheme.rem.code %}<p>{{ scheme.rem.code }}</p>{% endif %}
+                </header>
+                <table class="specs-table">
+                    <thead>
+                        <tr><th>Слой</th><th>Роль</th><th>ТСП, мкм</th></tr>
+                    </thead>
+                    <tbody>
+                        {% for layer in scheme.rem.layers %}
+                        <tr>
+                            <td>
+                                {% if layer.href %}
+                                <a href="{{ layer.href }}">{{ layer.display_name }}</a>
+                                {% else %}
+                                {{ layer.display_name }}
+                                {% endif %}
+                            </td>
+                            <td>{{ layer.role }}</td>
+                            <td>{{ layer.dft_label }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+                <p class="scheme-side-total">Итого {{ scheme.rem.total_dft }} мкм</p>
+            </article>
+        </div>
+
+        {% if scheme.advantages %}
+        <div class="product-block">
+            <h2>Почему эта замена</h2>
+            <ul class="benefits-list">
+                {% for item in scheme.advantages %}
+                <li>{{ item }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+
+        {% if scheme.others %}
+        <div class="product-block">
+            <h2>Типовые системы других производителей</h2>
+            <div class="scheme-others">
+                {% for other in scheme.others %}
+                <article class="contact-card">
+                    <h2>{{ other.brand }}</h2>
+                    <p>{{ other.note }}</p>
+                </article>
+                {% endfor %}
+            </div>
+        </div>
+        {% endif %}
+
+        {% if scheme.notes %}
+        <div class="product-block">
+            <h2>Оговорка по применению</h2>
+            <p>{{ scheme.notes }}</p>
+        </div>
+        {% endif %}
+
+        <div class="product-actions">
+            <a href="/contacts" class="btn-primary">Запросить спецификацию</a>
+            <a href="/schemes" class="btn-ghost">Все схемы</a>
+        </div>
+    </div>
+</section>
+{% endblock %}

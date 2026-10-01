@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block title %}Личный кабинет | Tonal{% endblock %}
+{% block content %}
+<section class="page-intro">
+    <div class="container">
+        <h1>Личный кабинет</h1>
+        <p>Вход для клиента. Пока кабинеты заполняете вы — логин можно позже передать заказчику.</p>
+    </div>
+</section>
+<section class="section">
+    <div class="container">
+        <form class="cabinet-form" method="post" action="/cabinet">
+            {% if error %}
+            <p class="cabinet-error">{{ error }}</p>
+            {% endif %}
+            <label>
+                Логин
+                <input type="text" name="login" required autocomplete="username">
+            </label>
+            <label>
+                Пароль
+                <input type="password" name="password" required autocomplete="current-password">
+            </label>
+            <button type="submit" class="btn-primary">Войти</button>
+        </form>
+    </div>
+</section>
+{% endblock %}

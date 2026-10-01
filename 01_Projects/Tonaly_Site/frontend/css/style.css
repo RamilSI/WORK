@@ -100,13 +100,8 @@ main {
     left: 0;
 }
 
-.nav-toggle span::before {
-    top: -5px;
-}
-
-.nav-toggle span::after {
-    top: 5px;
-}
+.nav-toggle span::before { top: -5px; }
+.nav-toggle span::after { top: 5px; }
 
 .nav-links {
     display: flex;
@@ -141,6 +136,60 @@ main {
 .login-btn:hover {
     border-color: #fff;
     color: #fff !important;
+}
+
+.has-sub {
+    position: relative;
+}
+
+.nav-sub-btn {
+    appearance: none;
+    background: none;
+    border: 0;
+    padding: 0;
+    color: #d5dde6;
+    font: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.nav-sub-btn:hover,
+.has-sub:hover .nav-sub-btn,
+.has-sub.is-open .nav-sub-btn {
+    color: #fff;
+}
+
+.nav-sub {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    min-width: 220px;
+    margin: 0;
+    padding: 8px 0;
+    list-style: none;
+    background: #0b1c2e;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-top: 3px solid #c45c26;
+    z-index: 60;
+}
+
+.has-sub:hover .nav-sub,
+.has-sub:focus-within .nav-sub,
+.has-sub.is-open .nav-sub {
+    display: block;
+}
+
+.nav-sub a {
+    display: block;
+    padding: 10px 16px;
+    font-size: 13px;
+    letter-spacing: 0.04em;
+    white-space: nowrap;
 }
 
 /* Buttons */
@@ -273,6 +322,16 @@ main {
     margin: 0;
     color: var(--ink-soft);
     max-width: 42em;
+}
+
+.page-intro p a {
+    color: var(--steel);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.page-intro p a:hover {
+    text-decoration: underline;
 }
 
 .section {
@@ -549,7 +608,7 @@ main {
     line-height: 1.2;
 }
 
-.product-info>p {
+.product-info > p {
     margin: 0 0 20px;
     color: var(--ink-soft);
     font-size: 1.05rem;
@@ -625,6 +684,24 @@ main {
     color: var(--ink-soft);
 }
 
+.product-analog-also {
+    margin: 6px 0 0;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--ink);
+    line-height: 1.45;
+}
+
+.product-analog-also a {
+    color: var(--steel);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.product-analog-also a:hover {
+    color: var(--ink);
+}
+
 /* Дополнительный текст, если длиннее short_desc */
 .product-desc {
     margin: 0 0 20px;
@@ -678,6 +755,57 @@ main {
 .product-block h2 {
     margin: 0 0 18px;
     font-size: 1.2rem;
+}
+
+.cabinet-form {
+    max-width: 360px;
+    display: grid;
+    gap: 14px;
+}
+
+.cabinet-form label {
+    display: grid;
+    gap: 6px;
+    font-size: 0.9rem;
+}
+
+.cabinet-form input {
+    padding: 10px 12px;
+    border: 1px solid var(--line);
+    background: #fff;
+    font: inherit;
+}
+
+.cabinet-error {
+    margin: 0;
+    color: #8a1f1f;
+}
+
+.cabinet-h2 {
+    margin: 0 0 14px;
+    font-size: 1.2rem;
+}
+
+.cabinet-media {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 8px;
+}
+
+.cabinet-media img,
+.cabinet-video {
+    width: 100%;
+    display: block;
+    background: #0b1c2e;
+}
+
+.cabinet-video {
+    grid-column: 1 / -1;
+    max-height: 420px;
+}
+
+.cabinet-out {
+    margin-top: 28px;
 }
 
 .specs-table {
@@ -761,7 +889,7 @@ main {
     font-weight: 600;
 }
 
-.contact-card p+p {
+.contact-card p + p {
     margin-top: 10px;
 }
 
@@ -815,6 +943,7 @@ main {
 
 .catalog-brand-tabs {
     display: flex;
+    flex-wrap: wrap;
     gap: 0;
     margin-bottom: 20px;
     border: 1px solid var(--ink);
@@ -849,11 +978,7 @@ main {
     display: none;
 }
 
-.catalog-row-link--no-img {
-    grid-template-columns: 1fr;
-}
-
-/* Akzo — одна строка: название | TDS */
+/* Akzo — одна строка: название | аналог Rem | TDS */
 
 .catalog-row--akzo {
     display: grid;
@@ -862,8 +987,17 @@ main {
     min-height: 36px;
 }
 
+.catalog-akzo-main {
+    display: flex;
+    align-items: center;
+    min-width: 0;
+    gap: 10px;
+}
+
 .catalog-akzo-line {
     display: block;
+    flex: 1;
+    min-width: 0;
     padding: 8px 12px;
     font-size: 0.92rem;
     font-weight: 700;
@@ -877,6 +1011,49 @@ main {
 
 .catalog-akzo-line:hover {
     color: var(--steel);
+}
+
+.catalog-akzo-chips {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    gap: 6px;
+    margin-right: 4px;
+}
+
+.catalog-akzo-analog {
+    flex-shrink: 0;
+    max-width: 16em;
+    padding: 3px 8px;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background: var(--paper);
+    color: var(--ink-soft);
+    font-size: 0.72rem;
+    font-weight: 600;
+    line-height: 1.2;
+    text-decoration: none;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.catalog-akzo-analog span {
+    margin-right: 0.4em;
+    font-size: 0.62rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #7a8a9c;
+}
+
+.catalog-akzo-analog:hover {
+    border-color: var(--steel);
+    color: var(--steel);
+}
+
+.catalog-akzo-analog--quiet {
+    color: var(--ink);
 }
 
 .catalog-list--akzo .catalog-row-actions {
@@ -943,6 +1120,11 @@ main {
 .home-about-link {
     margin-top: 20px;
     text-align: center;
+}
+
+.service-card .home-about-link {
+    margin-top: 14px;
+    text-align: left;
 }
 
 .app-grid--wide {
@@ -1043,6 +1225,10 @@ main {
     text-decoration: none;
     color: inherit;
     min-width: 0;
+}
+
+.catalog-row-link.catalog-row-link--no-img {
+    grid-template-columns: minmax(0, 1fr);
 }
 
 .catalog-row-photo {
@@ -1166,7 +1352,7 @@ main {
     font-size: 1.05rem;
 }
 
-.service-offer-card>p {
+.service-offer-card > p {
     margin: 0 0 12px;
     color: var(--ink-soft);
     font-size: 0.95rem;
@@ -1186,6 +1372,213 @@ main {
 .service-offer-card .btn-primary {
     align-self: flex-start;
     margin-top: auto;
+}
+
+.service-offer-card--wide {
+    grid-column: 1 / -1;
+}
+
+.service-offer-card--wide .about-cta {
+    padding-top: 0;
+}
+
+/* Dedicated services page */
+
+.services-overview {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+.services-overview-card {
+    display: block;
+    padding: 22px 20px;
+    border: 1px solid var(--line);
+    border-top: 3px solid var(--ink);
+    background: var(--white);
+    text-decoration: none;
+    color: inherit;
+}
+
+.services-overview-card:hover {
+    border-color: var(--steel);
+}
+
+.services-overview-card .icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    margin-bottom: 14px;
+    background: var(--ink);
+    color: var(--white);
+}
+
+.services-overview-card h2 {
+    margin: 0 0 8px;
+    font-size: 1.15rem;
+}
+
+.services-overview-card p {
+    margin: 0;
+    color: var(--ink-soft);
+    font-size: 0.95rem;
+}
+
+.process-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin: 0 0 28px;
+}
+
+.process-step {
+    padding: 20px 18px;
+    border: 1px solid var(--line);
+    background: var(--white);
+}
+
+.process-num {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: #c45c26;
+}
+
+.process-step h3 {
+    margin: 0 0 8px;
+    font-size: 1.02rem;
+}
+
+.process-step p {
+    margin: 0;
+    color: var(--ink-soft);
+    font-size: 0.92rem;
+}
+
+/* Coating schemes */
+
+.scheme-cat-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0;
+    margin: 0 0 28px;
+    border: 1px solid var(--ink);
+}
+
+.scheme-cat-nav a {
+    flex: 1 1 auto;
+    min-height: 38px;
+    padding: 8px 12px;
+    border-right: 1px solid var(--ink);
+    color: var(--ink);
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.scheme-cat-nav a:last-child {
+    border-right: 0;
+}
+
+.scheme-cat-nav a:hover {
+    background: var(--ink);
+    color: var(--white);
+}
+
+.scheme-row .catalog-row-link {
+    grid-template-columns: 1fr;
+}
+
+.scheme-facts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 18px;
+    margin-top: 12px;
+    font-size: 0.92rem;
+    color: var(--ink-soft);
+}
+
+.scheme-compare {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin: 32px 0 8px;
+}
+
+.scheme-side {
+    border: 1px solid var(--line);
+    background: var(--white);
+}
+
+.scheme-side--rem {
+    border-top: 3px solid #c45c26;
+}
+
+.scheme-side header {
+    padding: 16px 18px 12px;
+    border-bottom: 1px solid var(--line);
+    background: var(--paper);
+}
+
+.scheme-side-kicker {
+    margin: 0 0 4px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+}
+
+.scheme-side h2 {
+    margin: 0 0 4px;
+    font-size: 1.15rem;
+}
+
+.scheme-side header p:last-child {
+    margin: 0;
+    font-size: 0.88rem;
+    color: var(--ink-soft);
+}
+
+.scheme-side .specs-table {
+    margin: 0;
+}
+
+.scheme-side .specs-table th {
+    text-align: left;
+    padding: 10px 14px;
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    border-bottom: 1px solid var(--line);
+}
+
+.scheme-side-total {
+    margin: 0;
+    padding: 12px 14px;
+    border-top: 1px solid var(--line);
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+.scheme-others {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+
+.scheme-others .contact-card p {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--ink-soft);
 }
 
 /* Contacts */
@@ -1224,126 +1617,6 @@ main {
 
 .contact-card a:hover {
     color: var(--steel);
-}
-
-/* Off-work / kiteboarding */
-
-.offwork-crumb {
-    margin: 0 0 8px;
-    font-size: 0.88rem;
-    color: var(--ink-soft);
-}
-
-.offwork-crumb a {
-    color: var(--steel);
-    text-decoration: none;
-}
-
-.offwork-crumb a:hover {
-    text-decoration: underline;
-}
-
-.offwork-grid {
-    display: grid;
-    grid-template-columns: minmax(0, 640px);
-    gap: 12px;
-}
-
-.offwork-card {
-    display: block;
-    padding: 22px 20px;
-    border: 1px solid var(--line);
-    border-top: 3px solid var(--ink);
-    background: var(--white);
-    text-decoration: none;
-    color: inherit;
-}
-
-.offwork-card:hover {
-    border-color: var(--ink);
-}
-
-.offwork-card .icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 44px;
-    height: 44px;
-    margin-bottom: 16px;
-    background: var(--ink);
-    color: var(--white);
-}
-
-.offwork-card-kicker {
-    margin: 0 0 6px;
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: #7a8a9c;
-}
-
-.offwork-card h2 {
-    margin: 0 0 8px;
-    font-size: 1.2rem;
-}
-
-.offwork-card p {
-    margin: 0 0 14px;
-    color: var(--ink-soft);
-    font-size: 0.95rem;
-}
-
-.offwork-card-more {
-    font-size: 14px;
-    font-weight: 600;
-    color: var(--steel);
-}
-
-.kite-hero {
-    background:
-        linear-gradient(90deg, rgba(8, 16, 28, 0.9) 0%, rgba(8, 28, 44, 0.62) 48%, rgba(12, 56, 80, 0.28) 100%),
-        linear-gradient(165deg, #16324a 0%, #0c2438 42%, #1a3d2a 100%);
-}
-
-.kite-process {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 12px;
-    margin-top: 22px;
-}
-
-.kite-step {
-    padding: 20px 18px;
-    border: 1px solid var(--line);
-    border-top: 3px solid var(--ink);
-    background: var(--white);
-}
-
-.kite-step-num {
-    display: block;
-    margin-bottom: 10px;
-    font-size: 12px;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    color: #7a8a9c;
-}
-
-.kite-step h3 {
-    margin: 0 0 8px;
-    font-size: 1.05rem;
-}
-
-.kite-step p {
-    margin: 0;
-    color: var(--ink-soft);
-    font-size: 0.95rem;
-}
-
-.kite-facts .contact-card p {
-    font-size: 1rem;
-    font-weight: 600;
-    line-height: 1.35;
 }
 
 /* Footer */
@@ -1404,18 +1677,33 @@ main {
 /* Responsive */
 
 @media (max-width: 900px) {
-
     .app-grid,
     .service-grid,
     .catalog-grid,
     .product-layout,
     .contacts-grid,
     .service-offer-grid,
+    .services-overview,
+    .process-grid,
     .related-grid,
     .benefits-list,
-    .offwork-grid,
-    .kite-process {
+    .scheme-compare,
+    .scheme-others {
         grid-template-columns: 1fr;
+    }
+
+    .catalog-brand-tab {
+        flex: 1 1 50%;
+        min-height: 44px;
+        border-bottom: 1px solid var(--ink);
+    }
+
+    .catalog-brand-tab:nth-child(2n) {
+        border-right: 0;
+    }
+
+    .catalog-brand-tab:nth-last-child(-n+2) {
+        border-bottom: 0;
     }
 
     .catalog-row:not(.catalog-row--akzo) {
@@ -1425,6 +1713,25 @@ main {
     .catalog-row:not(.catalog-row--akzo) .catalog-row-actions {
         border-left: 0;
         border-top: 1px solid var(--line);
+    }
+
+    .catalog-row--akzo {
+        grid-template-columns: 1fr auto;
+    }
+
+    .catalog-akzo-main {
+        flex-wrap: wrap;
+        gap: 6px 10px;
+    }
+
+    .catalog-akzo-chips {
+        flex-wrap: wrap;
+        margin: 0 8px 6px 12px;
+        max-width: calc(100% - 16px);
+    }
+
+    .catalog-akzo-analog {
+        max-width: 100%;
     }
 
     .product-lead {
@@ -1465,6 +1772,41 @@ main {
         border-bottom: 1px solid rgba(255, 255, 255, 0.12);
     }
 
+    .has-sub {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .nav-sub-btn {
+        display: block;
+        width: 100%;
+        padding: 12px 0;
+        text-align: left;
+    }
+
+    .nav-sub {
+        position: static;
+        transform: none;
+        min-width: 0;
+        padding: 0 0 8px 12px;
+        border: 0;
+        background: transparent;
+    }
+
+    .has-sub:hover .nav-sub {
+        display: none;
+    }
+
+    .has-sub.is-open .nav-sub,
+    .has-sub:focus-within .nav-sub {
+        display: block;
+    }
+
+    .nav-sub a {
+        padding: 10px 0;
+        text-transform: none;
+        letter-spacing: 0.02em;
+    }
+
     .login-btn {
         border: 0;
         padding: 12px 0;
@@ -1484,11 +1826,6 @@ main {
 
 @media (min-width: 701px) and (max-width: 900px) {
     .catalog-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .kite-process,
-    .offwork-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 }

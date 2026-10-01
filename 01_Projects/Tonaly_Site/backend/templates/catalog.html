@@ -4,22 +4,17 @@
 <section class="page-intro">
     <div class="container">
         <h1>Каталог</h1>
-        <p>Промышленные покрытия Rem Color, Akzo Nobel и услуги сопровождения проектов.</p>
+        <p>Материалы Rem Color и Akzo Nobel и окрасочное оборудование: пистолеты, сопла XHD, фильтры и рукава. Схемы покрытий — в разделе <a href="/schemes">Применение</a>. Инспекция и работы по АКЗ — в <a href="/services">Сервисах</a>.</p>
     </div>
 </section>
 
 <section class="section">
     <div class="container">
-        <div class="catalog-tabs">
-            <button class="catalog-tab active" type="button" data-panel="materials">Материалы</button>
-            <button class="catalog-tab" type="button" data-panel="services">Услуги</button>
+        <div class="catalog-brand-tabs">
+            <button class="catalog-brand-tab active" type="button" data-brand="rem-color">Rem Color ({{ rem_count }})</button>
+            <button class="catalog-brand-tab" type="button" data-brand="akzo">Akzo Nobel ({{ akzo_count }})</button>
+            <button class="catalog-brand-tab" type="button" data-brand="equipment">Оборудование ({{ equipment_count }})</button>
         </div>
-
-        <div id="panel-materials" class="catalog-panel">
-            <div class="catalog-brand-tabs">
-                <button class="catalog-brand-tab active" type="button" data-brand="rem-color">Rem Color ({{ rem_count }})</button>
-                <button class="catalog-brand-tab" type="button" data-brand="akzo">Akzo Nobel ({{ akzo_count }})</button>
-            </div>
 
             <div id="brand-rem-color" class="catalog-brand-panel">
                 {% for group in rem_groups %}
@@ -70,7 +65,21 @@
                         <div class="catalog-list catalog-list--akzo">
                             {% for product in group.products %}
                             <article class="catalog-row catalog-row--akzo">
-                                <a href="/product/{{ product.slug }}" class="catalog-akzo-line">{{ product.name }}</a>
+                                <div class="catalog-akzo-main">
+                                    <a href="/product/{{ product.slug }}" class="catalog-akzo-line">{{ product.name }}</a>
+                                    {% if product.analog %}
+                                    <span class="catalog-akzo-chips">
+                                        <a href="/product/{{ product.analog.rem_slug }}" class="catalog-akzo-analog" title="Протестированный аналог Rem Color">
+                                            <span>аналог</span>{{ product.analog.rem_short }}
+                                        </a>
+                                        {% for extra in product.analog.also %}
+                                        <a href="/product/{{ extra.rem_slug }}" class="catalog-akzo-analog catalog-akzo-analog--quiet" title="Rem Color">
+                                            {{ extra.rem_short }}
+                                        </a>
+                                        {% endfor %}
+                                    </span>
+                                    {% endif %}
+                                </div>
                                 <div class="catalog-row-actions">
                                     <a href="/docs/{{ product.tds_file }}" class="catalog-row-tds" target="_blank" rel="noopener">TDS</a>
                                     <a href="/product/{{ product.slug }}" class="catalog-row-more">→</a>
@@ -84,92 +93,53 @@
                     <p class="section-lead catalog-empty">Каталог Akzo Nobel в процессе переноса. Следующий этап — топ-семейства INTERGARD, INTERZONE, INTERTHANE и др.</p>
                 {% endif %}
             </div>
-        </div>
 
-        <div id="panel-services" class="catalog-panel is-hidden">
-            <p class="section-lead catalog-panel-lead">Техническое сопровождение проектов антикоррозионной защиты — на объекте и дистанционно.</p>
-            <div class="service-offer-grid">
-                <article class="service-offer-card">
-                    <span class="icon" aria-hidden="true">
-                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
-                            <path d="M3 21h18M5 21V8l7-4 7 4v13M9 21v-6h6v6"/>
-                            <path d="M9 10h6M9 14h4"/>
-                        </svg>
-                    </span>
-                    <h3>Инспекция на объекте</h3>
-                    <p>Выезд специалиста: оценка покрытий, дефектов и соответствия проектной системе.</p>
-                    <ul class="service-offer-list">
-                        <li>Визуальная и измерительная диагностика</li>
-                        <li>Фотоотчёт и рекомендации</li>
-                        <li>Подбор материалов для восстановления</li>
-                    </ul>
-                    <a href="/contacts" class="btn-primary">Заказать выезд</a>
-                </article>
-                <article class="service-offer-card">
-                    <span class="icon" aria-hidden="true">
-                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
-                            <rect x="2" y="3" width="20" height="14" rx="1"/>
-                            <path d="M8 21h8M12 17v4"/>
-                            <circle cx="12" cy="10" r="2.5"/>
-                        </svg>
-                    </span>
-                    <h3>Удалённая инспекция</h3>
-                    <p>Анализ по фото, видео и технической документации без выезда на объект.</p>
-                    <ul class="service-offer-list">
-                        <li>Экспертная оценка материалов</li>
-                        <li>Консультация по системе покрытия</li>
-                        <li>План корректирующих работ</li>
-                    </ul>
-                    <a href="/contacts" class="btn-primary">Отправить запрос</a>
-                </article>
-                <article class="service-offer-card">
-                    <span class="icon" aria-hidden="true">
-                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
-                            <path d="M4 6h16M4 12h10M4 18h14"/>
-                            <path d="M18 10l3 2-3 2v-4z"/>
-                        </svg>
-                    </span>
-                    <h3>Подбор системы покрытия</h3>
-                    <p>Адаптация антикоррозионной системы под условия объекта и нормативы.</p>
-                    <ul class="service-offer-list">
-                        <li>Анализ агрессивности среды</li>
-                        <li>Спецификация материалов и слоёв</li>
-                        <li>Расчёт объёмов и сроков</li>
-                    </ul>
-                    <a href="/contacts" class="btn-primary">Обсудить проект</a>
-                </article>
-                <article class="service-offer-card">
-                    <span class="icon" aria-hidden="true">
-                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
-                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-                            <path d="M14 2v6h6M9 13h6M9 17h4"/>
-                        </svg>
-                    </span>
-                    <h3>Техническая документация</h3>
-                    <p>ТКП, спецификации и комплекты для тендеров и согласования.</p>
-                    <ul class="service-offer-list">
-                        <li>Коммерческие предложения</li>
-                        <li>Спецификации материалов</li>
-                        <li>Сопровождение до поставки</li>
-                    </ul>
-                    <a href="/contacts" class="btn-primary">Запросить ТКП</a>
-                </article>
+            <div id="brand-equipment" class="catalog-brand-panel is-hidden">
+                <p class="section-lead catalog-panel-lead">Пистолет HANDOK AH7000 (аналог Graco XTR7), оригинальные сопла XHD и расходники: фильтры в ручку, фильтр насоса 244067, рукав 1/2&Prime; на 500&nbsp;бар. Сопло и комплект подтверждаем под материал и объект.</p>
+                {% for group in equipment_groups %}
+                <section class="brand-group" id="eq-{{ group.key }}">
+                    <header class="brand-group-head">
+                        <h2>{{ group.title }}</h2>
+                        {% if group.description %}<p>{{ group.description }}</p>{% endif %}
+                    </header>
+                    <div class="catalog-list">
+                        {% for product in group.products %}
+                        <article class="catalog-row">
+                            <a href="/product/{{ product.slug }}" class="catalog-row-link{% if not product.has_image %} catalog-row-link--no-img{% endif %}">
+                                {% if product.has_image %}
+                                <span class="catalog-row-photo">
+                                    <img src="{{ product.image }}" alt="">
+                                </span>
+                                {% endif %}
+                                <span class="catalog-row-main">
+                                    <span class="catalog-row-top">
+                                        <strong class="catalog-row-name">{{ product.name }}</strong>
+                                        {% if product.badge %}<span class="chip">{{ product.badge }}</span>{% endif %}
+                                    </span>
+                                    <span class="catalog-row-desc">{{ product.short_desc }}</span>
+                                    <span class="catalog-row-meta">
+                                        {% if product.family %}<span>{{ product.family }}</span>{% endif %}
+                                        {% if product.type %}<span>{{ product.type }}</span>{% endif %}
+                                        {% if product.part_no %}<span>{{ product.part_no }}</span>{% endif %}
+                                        {% if product.purpose %}<span>{{ product.purpose }}</span>{% endif %}
+                                    </span>
+                                </span>
+                            </a>
+                            <div class="catalog-row-actions">
+                                {% if product.tds_file %}
+                                <a href="/docs/{{ product.tds_file }}" class="catalog-row-tds" target="_blank" rel="noopener">PDF</a>
+                                {% endif %}
+                                <a href="/product/{{ product.slug }}" class="catalog-row-more">→</a>
+                            </div>
+                        </article>
+                        {% endfor %}
+                    </div>
+                </section>
+                {% endfor %}
             </div>
-        </div>
     </div>
 </section>
 <script>
-    document.querySelectorAll('.catalog-tab').forEach(tab => {
-        tab.addEventListener('click', function() {
-            document.querySelectorAll('.catalog-tab').forEach(t => t.classList.remove('active'));
-            this.classList.add('active');
-            const panelId = 'panel-' + this.dataset.panel;
-            document.querySelectorAll('.catalog-panel').forEach(p => {
-                p.classList.toggle('is-hidden', p.id !== panelId);
-            });
-        });
-    });
-
     document.querySelectorAll('.catalog-brand-tab').forEach(tab => {
         tab.addEventListener('click', function() {
             document.querySelectorAll('.catalog-brand-tab').forEach(t => t.classList.remove('active'));
@@ -178,6 +148,9 @@
             document.querySelectorAll('.catalog-brand-panel').forEach(p => {
                 p.classList.toggle('is-hidden', p.id !== brandId);
             });
+            const url = new URL(window.location);
+            url.searchParams.set('brand', this.dataset.brand);
+            history.replaceState(null, '', url.pathname + url.search);
         });
     });
 

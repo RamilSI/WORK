@@ -4,6 +4,10 @@ __pycache__/
 *.pyc
 *.db
 
+# Cabinet passwords (plain text + hashes)
+backend/data/cabinets_secrets.json
+backend/data/cabinets_passwords.txt
+
 # macOS
 .DS_Store
 

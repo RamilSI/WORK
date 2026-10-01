@@ -3,6 +3,23 @@ import json
 from database import engine, SessionLocal, Base
 from models import Product
 
+REM_FAMILIES = {
+    "pox": "POX",
+    "lux": "LUX",
+    "pur": "PUR",
+    "zink": "ZINK",
+    "cryl": "CRYL",
+    "vinyl": "VINYL",
+}
+
+
+def family_from_slug(slug: str) -> str:
+    parts = (slug or "").split("-")
+    if len(parts) < 2:
+        return ""
+    return REM_FAMILIES.get(parts[1], parts[1].upper())
+
+
 # Создаём таблицы
 Base.metadata.create_all(bind=engine)
 
@@ -62,6 +79,11 @@ products = [
      "Грунт-эмаль «Rem-Pur 210» — двухкомпонентная полиуретановая система.",
      [{"name":"Тип связующего","value":"Полиуретановая смола"},{"name":"Цвет","value":"По каталогу RAL"},{"name":"Отвердитель","value":"Harter PU1 M2 (10:1)"},{"name":"Растворитель","value":"РЕМ СОЛ 3 (до 10%)"},{"name":"Время высыхания","value":"40-60 мин"},{"name":"Толщина слоя","value":"50-80 мкм"}],
      ["rem-cryl-1602","rem-pox-0607-as"]),
+    ("rem-pur-1604", "Эмаль «Rem-Pur 1604»", "2K Система", "эмаль", "полиуретановая", "атмосферостойкая",
+     "Полиуретановая эмаль, аналог Interthane 990",
+     "Эмаль «Rem-Pur 1604» — двухкомпонентная акрил-полиуретановая система. Финишное и самостоятельное покрытие для стали, в том числе оцинкованной.",
+     [{"name":"Тип связующего","value":"Акрил-полиуретан"},{"name":"Цвет","value":"По каталогу RAL"},{"name":"Сухой остаток","value":"58%"},{"name":"Плотность","value":"1,25 кг/л"},{"name":"Толщина слоя","value":"40-80 мкм"},{"name":"Растворитель","value":"РЕМ СОЛ 3 (до 10%)"}],
+     ["rem-pur-210","rem-pox-0607-as"]),
 ]
 
 db = SessionLocal()
@@ -73,7 +95,10 @@ try:
                 slug=slug, name=name, badge=badge, ptype=ptype, binder=binder,
                 purpose=purpose, short_desc=short_desc, description=description,
                 specs=json.dumps(specs, ensure_ascii=False),
-                related=json.dumps(related, ensure_ascii=False)
+                related=json.dumps(related, ensure_ascii=False),
+                brand="rem-color",
+                family=family_from_slug(slug),
+                tds_file=f"tds-{slug}.pdf",
             )
             db.add(p)
     db.commit()
