@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+{% block title %}Применение | Tonal{% endblock %}
+{% block content %}
+<section class="page-intro">
+    <div class="container">
+        <h1>Применение</h1>
+        <p>Где работают покрытия, как выбрать систему и готовые схемы слоёв. Марка банки — после среды, срока и подготовки стали.</p>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <div class="services-overview services-overview--3">
+            <a href="#areas" class="services-overview-card">
+                <h2>Области</h2>
+                <p>Мосты, резервуары, нефтегаз, гидротехника, цеха и суда — типичные объекты поставки.</p>
+            </a>
+            <a href="/guide" class="services-overview-card">
+                <h2>Как выбрать систему</h2>
+                <p>Среда, срок до ремонта и подготовка стали. Без этого схема — просто картинка слоёв.</p>
+            </a>
+            <a href="/schemes" class="services-overview-card">
+                <h2>Схемы покрытий</h2>
+                <p>Рабочие системы Rem Color как замена Akzo, WEG и других: слои, ТСП, категория среды.</p>
+            </a>
+        </div>
+    </div>
+</section>
+
+<section id="areas" class="section bg-paper">
+    <div class="container">
+        <h2 class="section-title">Области применения</h2>
+        <div class="app-grid app-grid--wide">
+            <article class="app-item">
+                <h3>Мостостроение</h3>
+                <p>Защита пролётных строений, опор и металлоконструкций в атмосфере.</p>
+            </article>
+            <article class="app-item">
+                <h3>Резервуарные парки</h3>
+                <p>Внутренняя и внешняя защита ёмкостей, трубопроводов и оборудования.</p>
+            </article>
+            <article class="app-item">
+                <h3>Нефтегаз и энергетика</h3>
+                <p>НПЗ, ГРС, магистральные трубопроводы, объекты ТЭК.</p>
+            </article>
+            <article class="app-item">
+                <h3>Гидротехника</h3>
+                <p>Портовые сооружения, шлюзы, причалы и металлоконструкции у воды.</p>
+            </article>
+            <article class="app-item">
+                <h3>Промышленное строительство</h3>
+                <p>Каркасы цехов, технологическое оборудование и конструкции внутри помещений.</p>
+            </article>
+            <article class="app-item">
+                <h3>Судостроение и судоремонт</h3>
+                <p>Корпусные покрытия, надстройки и металлоконструкции судов.</p>
+            </article>
+        </div>
+        <div class="about-cta">
+            <a href="/object" class="btn-primary">Описать объект</a>
+            <a href="/schemes" class="btn-ghost">Схемы покрытий</a>
+        </div>
+    </div>
+</section>
+{% endblock %}

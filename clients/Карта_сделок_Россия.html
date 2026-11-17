@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Сделки Тональ · карта России</title>
+<style>
+  :root {
+    --bg: #f4f1ea; --panel: #fffdf8; --ink: #1c1916; --muted: #6b635a;
+    --line: #ddd4c6; --land: #e7e0d4; --land-stroke: #8d8476;
+    --sea: #d9e2e6; --buyer: #1f4e79; --pick: #0f6b4c; --caution: #8a2f2f; --crm: #8a8378;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; height: 100%; font: 14px/1.45 Georgia, "Iowan Old Style", serif; color: var(--ink); background: var(--bg); }
+  #app { display: grid; grid-template-columns: 380px 1fr; height: 100%; }
+  aside { background: var(--panel); border-right: 1px solid var(--line); display: flex; flex-direction: column; min-width: 0; }
+  header { padding: 20px 20px 12px; border-bottom: 1px solid var(--line); }
+  h1 { font-size: 20px; font-weight: 600; margin: 0 0 6px; }
+  .sub { color: var(--muted); font-size: 12px; }
+  .stats { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; padding: 12px 20px; }
+  .stat { border: 1px solid var(--line); padding: 8px 10px; }
+  .stat b { display: block; font-size: 18px; font-family: "Avenir Next", sans-serif; }
+  .stat span { color: var(--muted); font-size: 11px; }
+  .filters { display: flex; flex-wrap: wrap; gap: 6px; padding: 0 20px 12px; }
+  button.chip, button.tool {
+    border: 1px solid var(--line); background: #fff; color: var(--ink);
+    padding: 5px 10px; cursor: pointer; font: inherit; font-size: 12px;
+  }
+  button.chip.on { background: var(--ink); color: #fff; border-color: var(--ink); }
+  input[type="search"] {
+    margin: 0 20px 12px; width: calc(100% - 40px); border: 1px solid var(--line);
+    padding: 8px 10px; font: inherit; background: #fff;
+  }
+  #list { overflow: auto; flex: 1; padding: 0 12px 20px; }
+  .city {
+    display: flex; justify-content: space-between; align-items: center;
+    width: calc(100% - 16px); margin: 12px 8px 4px; padding: 8px 10px;
+    border: 1px solid var(--line); background: #fff; cursor: pointer;
+    font: inherit; font-size: 12px; letter-spacing: .04em; text-transform: uppercase;
+    color: var(--ink); text-align: left;
+  }
+  .city:hover, .city:focus { background: #efe8dc; outline: none; }
+  .city-go { color: var(--pick); font-size: 11px; letter-spacing: 0; text-transform: none; }
+  .row { width: 100%; text-align: left; border: 1px solid transparent; background: transparent; padding: 8px; cursor: pointer; font: inherit; }
+  .row:hover, .row.active { background: #efe8dc; border-color: var(--line); }
+  .row .name { font-weight: 600; }
+  .row .meta { color: var(--muted); font-size: 12px; }
+  .tag { display: inline-block; font-size: 10px; text-transform: uppercase; margin-right: 6px; }
+  .tag.review { color: var(--pick); } .tag.site { color: #8a4b12; } .tag.caution { color: var(--caution); }
+  #stage { position: relative; background: var(--sea); overflow: hidden; }
+  svg { width: 100%; height: 100%; display: block; cursor: grab; touch-action: none; }
+  svg:active { cursor: grabbing; }
+  .land { fill: var(--land); stroke: var(--land-stroke); stroke-width: 0.6; vector-effect: non-scaling-stroke; }
+  .dot { cursor: pointer; stroke: #fff; stroke-width: 1.2; vector-effect: non-scaling-stroke; }
+  .dot:hover, .dot.sel { stroke: var(--ink); stroke-width: 2; }
+  .lbl { font: 11px/1 Georgia, serif; fill: #5a534a; pointer-events: none; }
+  .tools {
+    position: absolute; top: 14px; right: 14px; width: 196px;
+    background: var(--panel); border: 1px solid var(--line); padding: 10px 12px;
+  }
+  .zoom-row { display: flex; align-items: center; gap: 6px; }
+  .zoom-row .tool { width: 28px; flex: 0 0 28px; padding: 4px 0; }
+  .zoom-row input[type="range"] { flex: 1; min-width: 0; accent-color: #1c1916; }
+  .zoom-pct { font: 11px/1 "Avenir Next", sans-serif; color: var(--muted); margin: 6px 0 8px; }
+  .regions { display: flex; flex-wrap: wrap; gap: 4px; }
+  .regions .tool { font-size: 11px; padding: 4px 7px; }
+  .hint { margin-top: 8px; font-size: 11px; color: var(--muted); }
+  .legend { position: absolute; left: 14px; bottom: 16px; background: var(--panel); border: 1px solid var(--line); padding: 10px 12px; font-size: 12px; }
+  .legend i { display: inline-block; width: 10px; height: 10px; margin-right: 6px; vertical-align: -1px; border-radius: 50%; }
+  #card {
+    position: absolute; top: 14px; left: 14px; width: 280px; background: var(--panel);
+    border: 1px solid var(--line); padding: 12px 14px; display: none;
+  }
+  #card b { display: block; margin-bottom: 4px; }
+  #card .x { float: right; border: 0; background: none; cursor: pointer; font-size: 16px; }
+  @media (max-width: 800px) { #app { grid-template-columns: 1fr; grid-template-rows: 42% 58%; } }
+</style>
+</head>
+<body>
+<div id="app">
+  <aside>
+    <header>
+      <h1>Сделки Тональ</h1>
+      <div class="sub">ОСВ 62 · 01.01.2024–01.04.2026<br>Карта внутри файла — без ключей и без интернета</div>
+    </header>
+    <div class="stats">
+      <div class="stat"><b id="nBuyers">0</b><span>поставки</span></div>
+      <div class="stat"><b id="nPick">0</b><span>отзыв / сайт</span></div>
+      <div class="stat"><b id="nCrm">0</b><span>карточки CRM</span></div>
+    </div>
+    <div class="filters">
+      <button class="chip on" data-f="buyers">Поставки</button>
+      <button class="chip" data-f="pick">Отзыв и сайт</button>
+      <button class="chip" data-f="crm">Карточки CRM</button>
+    </div>
+    <input type="search" id="q" placeholder="Поиск: компания, город, объект, материал">
+    <div id="list"></div>
+  </aside>
+  <div id="stage">
+    <svg id="map" viewBox="0 0 1100 520"></svg>
+    <div class="tools">
+      <div class="zoom-row">
+        <button class="tool" id="zoomOut" title="Отдалить">−</button>
+        <input type="range" id="zoomSlider" min="0" max="100" value="0" step="1">
+        <button class="tool" id="zoomIn" title="Приблизить">+</button>
+      </div>
+      <div class="zoom-pct" id="zoomPct">100%</div>
+      <div class="regions">
+        <button class="tool" id="zoomFit">вся Россия</button>
+        <button class="tool" data-region="south">Юг</button>
+        <button class="tool" data-region="volga">Волга</button>
+        <button class="tool" data-region="ural">Урал</button>
+        <button class="tool" data-region="east">Дальний Восток</button>
+      </div>
+      <div class="hint">Колесо и щипок — плавно. В списке слева жми зелёную строку города, не название фирмы.</div>
+    </div>
+    <div id="card"></div>
+    <div class="legend">
+      <div><i style="background:#1f4e79"></i>поставка в ОСВ</div>
+      <div><i style="background:#0f6b4c"></i>кандидат на отзыв / сайт</div>
+      <div><i style="background:#8a2f2f"></i>осторожно</div>
+      <div><i style="background:#8a8378"></i>карточка CRM</div>
+      <div style="margin-top:6px;color:#6b635a">Перетаскивание — сдвиг карты</div>
+    </div>
+  </div>
+</div>
+<script>
+const PACK = {"deals":{"title":"Сделки Тональ на карте России","period":"ОСВ 62 · 01.01.2024–01.04.2026","note":"Пока без 2021–2023: ждём ОСВ от бухгалтерии. Точки покупателей слегка разведены, чтобы не слипались в одном городе.","buyers":[{"name":"АВАНГАРД","city":"Грозный","products":"REM-LUX 1607","object":"Стеллажи","id":"b0","lat":43.2956,"lon":45.7157,"kind":"buyer"},{"name":"АЛЬТАИР ТЗМИК","city":"Тольятти","products":"0607HS, 1604","object":"Инфраструктура Росгвардии","caution":"силовой объект — не для сайта","id":"b1","lat":53.53195,"lon":49.4204,"kind":"buyer"},{"name":"АЛЬТИМА СТРОЙ","city":"Новороссийск","products":"0607HS, 1604","object":"Транснефть","id":"b2","lat":44.74485,"lon":37.8001,"kind":"buyer"},{"name":"АРМАДА 51","city":"Мурманск","products":"0607HS","object":"Портовая инфраструктура","id":"b3","lat":69.0058,"lon":33.09145,"kind":"buyer"},{"name":"АС","city":"Краснодар","products":"0607HS, 1604","object":"НПЗ","id":"b4","lat":45.06385,"lon":38.96305,"kind":"buyer"},{"name":"АССТЕК-Н","city":"Новороссийск","products":"0607HS, 1604","object":"Портовая инфраструктура","review":true,"media":19,"id":"b5","lat":44.74415,"lon":37.7784,"kind":"buyer"},{"name":"БАРКА-СК","city":"Новороссийск","products":"0607HS, 1604","object":"Резервуарный парк","id":"b6","lat":44.71895,"lon":37.78995,"kind":"buyer"},{"name":"БЕЛСЕВЕРСТРОЙ","city":"Тюмень","products":"0607HS","object":"Портовая инфраструктура","media":7,"id":"b7","lat":57.1172,"lon":65.5594,"kind":"buyer"},{"name":"ВЕЛИКОДВОРСКИЙ ПЕРЕРАБАТЫВАЮЩИЙ КОМБИНАТ","city":"Рязань","products":"0607HS","object":"Абразивостойкое покрытие","id":"b8","lat":54.6493,"lon":39.7259,"kind":"buyer"},{"name":"ВПК-КОНЦЕПТ","city":"Самара","products":"REM-PUR 210","object":"АвтоВАЗ","review":true,"id":"b9","lat":53.18085,"lon":50.0939,"kind":"buyer"},{"name":"ГЛУБИНА ВК","city":"Симферополь","products":"0607HS, 1604, LUX","object":"Водолазное оборудование, понтоны, суда","site":true,"media":167,"id":"b10","lat":44.95665,"lon":34.1353,"kind":"buyer"},{"name":"ГОРНЫЙ АВТОДОР","city":"Якутск","products":"1604","object":"Горнодобывающее оборудование","id":"b11","lat":62.05695,"lon":129.73115,"kind":"buyer"},{"name":"ЕВРОХИМ-ВОЛГАКАЛИЙ","city":"Волгоград","products":"0607HS, 1604","object":"Химическое производство","media":23,"id":"b12","lat":48.68175,"lon":44.535,"kind":"buyer"},{"name":"ЗМК ВОЛГОГРАД","city":"Волгоград","products":"0607HS, 1604","object":"РЖД, Еврохим","id":"b13","lat":48.69365,"lon":44.53115,"kind":"buyer"},{"name":"ИМС","city":"Новороссийск","products":"REM-PUR 210","object":"Портовая инфраструктура","id":"b14","lat":44.70635,"lon":37.79135,"kind":"buyer"},{"name":"ИНТРА САХАЛИН","city":"Южно-Сахалинск","products":"0607HS","object":"Портовая инфраструктура","id":"b15","lat":46.96235,"lon":142.7082,"kind":"buyer"},{"name":"К2 ИНЖИНИРИНГ","city":"Краснодар","products":"0607HS, 1604","object":"НПЗ","id":"b16","lat":45.0257,"lon":38.94485,"kind":"buyer"},{"name":"КВОИТ ГК","city":"Самара","products":"0607HS, 1604","object":"Лукойл, Газпромнефть, Амурский ГКХ","review":true,"id":"b17","lat":53.2253,"lon":50.075,"kind":"buyer"},{"name":"КОМИСТРОЙСЕРВИС","city":"Ухта","products":"0607HS, 1604","object":"Лукойл","onSite":true,"id":"b18","lat":63.59955,"lon":53.71465,"kind":"buyer"},{"name":"КОМПЛЕКСНЫЕ ПОСТАВКИ","city":"Тюмень","products":"0607HS, 1604","object":"Сибур","id":"b19","lat":57.1634,"lon":65.5167,"kind":"buyer"},{"name":"Кракотец А. П.","city":"Краснодар","products":"REM-LUX 1607","object":"Автосервис","caution":"мелкий гражданский","id":"b20","lat":45.03375,"lon":39.00575,"kind":"buyer"},{"name":"КЭСМ","city":"Новороссийск","products":"0607HS, 1604","object":"Портовая инфраструктура","id":"b21","lat":44.7249,"lon":37.7434,"kind":"buyer"},{"name":"Легион Строй","city":"Новороссийск","products":"0607HS","object":"Морские защитные сооружения","media":6,"id":"b22","lat":44.741,"lon":37.7861,"kind":"buyer"},{"name":"Макаров С. Н.","city":"Новороссийск","products":"0607HS, 1604","object":"Автомобили, суда","caution":"ИП","id":"b23","lat":44.7144,"lon":37.7763,"kind":"buyer"},{"name":"МАЯК","city":"Самара","products":"REM-ZINC 0608","object":"РЖД","id":"b24","lat":53.20465,"lon":50.0827,"kind":"buyer"},{"name":"МЕТКОМ","city":"Новороссийск","products":"1604","object":"Портовая инфраструктура","id":"b25","lat":44.7522,"lon":37.7441,"kind":"buyer"},{"name":"МОДУЛЬСТРОЙ","city":"Новороссийск","products":"0607HS, 1604","object":"Портовая инфраструктура","id":"b26","lat":44.71895,"lon":37.76755,"kind":"buyer"},{"name":"МПССМ","city":"Ростов-на-Дону","products":"0607HS, 1604","object":"Оцинкованные мачты РЖД","id":"b27","lat":47.235,"lon":39.7162,"kind":"buyer"},{"name":"НАША КЛИНИКА","city":"Ростов-на-Дону","products":"REM-LUX 1607","object":"Гражданская инфраструктура","caution":"не АКЗ-кейс","id":"b28","lat":47.2322,"lon":39.7134,"kind":"buyer"},{"name":"НГ-БУРЕНИЕ","city":"Ноябрьск","products":"0607HS, 1604","object":"Нефтедобыча","id":"b29","lat":63.2284,"lon":75.4236,"kind":"buyer"},{"name":"НЕВА ТПО","city":"Астрахань","products":"0607HS, 1604, 0607AS, 210, LUX","object":"Резервуарный парк","site":true,"id":"b30","lat":46.3434,"lon":48.0093,"kind":"buyer"},{"name":"НЕФТЕХИММОНТАЖ","city":"Краснодар","products":"0607HS, 1604","object":"НПЗ","id":"b31","lat":45.02185,"lon":38.94835,"kind":"buyer"},{"name":"НИИТ","city":"Новороссийск","products":"0607HS, 1604","object":"Портовая инфраструктура","id":"b32","lat":44.70005,"lon":37.74725,"kind":"buyer"},{"name":"ННК-ПРИМОРНЕФТЕПРОДУКТ","city":"Владивосток","products":"0607HS, 1604","object":"НПЗ / терминал","media":45,"id":"b33","lat":43.1295,"lon":131.9128,"kind":"buyer"},{"name":"НОВАМАШ","city":"Нижний Тагил","products":"0607HS, 1604","object":"ЕвроХим","id":"b34","lat":57.89715,"lon":59.9568,"kind":"buyer"},{"name":"НЭС","city":"Новороссийск","products":"","object":"Портовая инфраструктура","id":"b35","lat":44.7403,"lon":37.79275,"kind":"buyer"},{"name":"ПЕТРОГАЗТЕХ ШЕЛЬФ-СЕРВИС","city":"Владивосток","products":"0607HS","object":"Портовая инфраструктура","id":"b36","lat":43.119,"lon":131.8974,"kind":"buyer"},{"name":"ПОЛАР ЭНЕРДЖИ","city":"Владивосток","products":"0607HS","object":"Портовая инфраструктура","id":"b37","lat":43.0847,"lon":131.8512,"kind":"buyer"},{"name":"ПРЕМИУМ СТРОЙ","city":"Краснодар","products":"0607HS, 1604","object":"Оцинкованные мачты РЖД","id":"b38","lat":45.0061,"lon":38.96445,"kind":"buyer"},{"name":"ПРОДМАШ","city":"Самара","products":"0607HS","object":"Арктик СПГ, замена Akzo","review":true,"site":true,"id":"b39","lat":53.1679,"lon":50.0722,"kind":"buyer"},{"name":"ПРОМСТРОЙ","city":"Новороссийск","products":"линейка REM","object":"Транснефть","id":"b40","lat":44.7501,"lon":37.77315,"kind":"buyer"},{"name":"ПРОМТЕХМОНТАЖ","city":"Краснодар","products":"0607HS, 1604","object":"НПЗ","id":"b41","lat":45.0383,"lon":38.9753,"kind":"buyer"},{"name":"ПРОМФИНСТРОЙ","city":"Краснодар","products":"0607HS, 1604","object":"НПЗ","id":"b42","lat":45.0299,"lon":38.95115,"kind":"buyer"},{"name":"ПромЭлектроТорг","city":"Краснодар","products":"0607HS, 1604","object":"НПЗ","id":"b43","lat":45.0103,"lon":38.97915,"kind":"buyer"},{"name":"РЕМСТРОЙГРУПП","city":"Новороссийск","products":"0607HS, 1604","object":"Портовая инфраструктура","id":"b44","lat":44.7368,"lon":37.79765,"kind":"buyer"},{"name":"РН-МОРСКОЙ ТЕРМИНАЛ ТУАПСЕ","city":"Туапсе","products":"LUX, 0607HS, 1604","object":"Портовая инфраструктура","onSite":true,"id":"b45","lat":44.10565,"lon":39.1089,"kind":"buyer"},{"name":"РОМЕКС-КУБАНЬ ЮГ","city":"Краснодар","products":"INTERCHAR 973","object":"Торговый центр","caution":"огнезащита, не типичный АКЗ","id":"b46","lat":45.0677,"lon":38.9781,"kind":"buyer"},{"name":"РЭМ БИЛДИНГ","city":"Новороссийск","products":"LUX, 0607HS, 1604","object":"Портовая инфраструктура","id":"b47","lat":44.7333,"lon":37.79205,"kind":"buyer"},{"name":"Селиванова Т. И.","city":"Новороссийск","products":"LUX, 0607HS, 1604","object":"Портовая инфраструктура","caution":"ИП","id":"b48","lat":44.72245,"lon":37.7504,"kind":"buyer"},{"name":"СЕРВИС-ТЕЛЕМАТИКА","city":"Краснодар","products":"0607HS, 1604","object":"Оцинкованные мачты РЖД","id":"b49","lat":45.0082,"lon":38.98265,"kind":"buyer"},{"name":"СИБСТРОЙСНАБ","city":"Тюмень","products":"0607HS, 1604","object":"Сибур","id":"b50","lat":57.16725,"lon":65.54785,"kind":"buyer"},{"name":"СИП РС","city":"Самара","products":"0607HS, 1604","object":"Оцинкованные мачты РЖД","review":true,"site":true,"media":238,"id":"b51","lat":53.17735,"lon":50.12995,"kind":"buyer"},{"name":"СКЗМК","city":"Ставрополь","products":"0607HS, 1604","object":"ЕвроХим","id":"b52","lat":45.01505,"lon":41.941,"kind":"buyer"},{"name":"СПб НОВАЯ ЭНЕРГЕТИЧЕСКАЯ ГРУППА","city":"Санкт-Петербург","products":"INTERZONE 954","object":"Портовая инфраструктура","id":"b53","lat":59.96055,"lon":30.3309,"kind":"buyer"},{"name":"СПЕЦПРОМСЕРВИС","city":"Новороссийск","products":"0607HS, 1604","object":"Портовая инфраструктура","id":"b54","lat":44.69655,"lon":37.735,"kind":"buyer"},{"name":"СПЕЦПРОМСТРОЙ","city":"Новороссийск","products":"0607HS, 1604","object":"Портовая инфраструктура","id":"b55","lat":44.72035,"lon":37.7392,"kind":"buyer"},{"name":"СПЕЦСТРОЙМОНТАЖ","city":"Новороссийск","products":"0607HS, 1604","object":"Портовая инфраструктура","id":"b56","lat":44.7116,"lon":37.75495,"kind":"buyer"},{"name":"Стальная геометрия","city":"Краснодар","products":"0607HS, 1604","object":"НПЗ","id":"b57","lat":45.06175,"lon":39.00085,"kind":"buyer"},{"name":"СТАЛЬНЫЕ КОНСТРУКЦИИ","city":"Краснодар","products":"0607HS, 1604","object":"НПЗ","id":"b58","lat":45.0355,"lon":38.9802,"kind":"buyer"},{"name":"СТРОЙ ПРОГРЕСС 23","city":"Новороссийск","products":"0607HS, 1604","object":"Портовая инфраструктура","id":"b59","lat":44.7368,"lon":37.80045,"kind":"buyer"},{"name":"СТРОЙМОЛЛ ТД","city":"Краснодар","products":"REM-LUX 1607","object":"Гражданская инфраструктура","id":"b60","lat":45.02045,"lon":38.9711,"kind":"buyer"},{"name":"СУ-44","city":"Краснодар","products":"0607HS, 1604","object":"НПЗ","id":"b61","lat":45.0509,"lon":38.9991,"kind":"buyer"},{"name":"СФЕРА-95","city":"Краснодар","products":"0607HS, 1604","object":"НПЗ","id":"b62","lat":45.03375,"lon":39.0054,"kind":"buyer"},{"name":"ТАГГЕРТ","city":"Краснодар","products":"0607HS, 1604","object":"НПЗ","id":"b63","lat":45.03375,"lon":38.97215,"kind":"buyer"},{"name":"ТЕРМИНАЛ ИЛЬИНКА","city":"Астрахань","products":"линейка REM","object":"Резервуарный парк","site":true,"id":"b64","lat":46.36405,"lon":48.03275,"kind":"buyer"},{"name":"ТМА","city":"Краснодар","products":"0607HS, 1604","object":"НПЗ","id":"b65","lat":45.0425,"lon":38.948,"kind":"buyer"},{"name":"ТОЧКА РОСЫ","city":"Пермь","products":"0607HS, 1604","object":"Уралкалий","review":true,"site":true,"media":84,"id":"b66","lat":58.02555,"lon":56.2362,"kind":"buyer"},{"name":"УРАЛПРОМСТРОЙ","city":"Краснодар","products":"0607HS, 1604","object":"НПЗ","id":"b67","lat":45.02325,"lon":38.9998,"kind":"buyer"},{"name":"УТК-СТАЛЬ","city":"Санкт-Петербург","products":"INTERZONE 954, 0607HS","object":"Портовая инфраструктура","id":"b68","lat":59.96685,"lon":30.3302,"kind":"buyer"},{"name":"ФРЕГАТ ТД","city":"Новороссийск","products":"0607HS, 1604","object":"Судно","id":"b69","lat":44.7081,"lon":37.7609,"kind":"buyer"},{"name":"Шахин Д. В. ИП","city":"Новороссийск","products":"0607HS","object":"Гидросооружение в погружении","caution":"ИП","id":"b70","lat":44.68885,"lon":37.763,"kind":"buyer"},{"name":"ШЕШМАСТРОЙСЕРВИС","city":"Альметьевск","products":"0607HS, 1604","object":"НПЗ","id":"b71","lat":54.8755,"lon":52.29755,"kind":"buyer"},{"name":"ЭЛИТСТРОЙ","city":"Краснодар","products":"1604, LUX","object":"Гражданская инфраструктура","id":"b72","lat":45.05895,"lon":38.95605,"kind":"buyer"},{"name":"ЭЛМА ПК","city":"Новороссийск","products":"0607HS, 1604","object":"Портовая инфраструктура","id":"b73","lat":44.7249,"lon":37.7777,"kind":"buyer"},{"name":"ЭФКОМ","city":"Новороссийск","products":"0607HS, 1604","object":"Портовая инфраструктура","id":"b74","lat":44.70635,"lon":37.77315,"kind":"buyer"},{"name":"ЮГСТРОЙСЕРВИС","city":"Новороссийск","products":"0607HS, 1604","object":"Портовая инфраструктура","id":"b75","lat":44.74415,"lon":37.80045,"kind":"buyer"},{"name":"ЮЖТЕХМОНТАЖ","city":"Новороссийск","products":"0607HS, 1604","object":"Портовая инфраструктура","id":"b76","lat":44.69515,"lon":37.7889,"kind":"buyer"},{"name":"ЮМАСС","city":"Новороссийск","products":"0607HS, 1604","object":"Судно","id":"b77","lat":44.74345,"lon":37.75985,"kind":"buyer"}],"crm":[{"id":"c3","name":"ООО \"АВИКОМ-ПЛАСТ\"","legal":"АВИКОМ-ПЛАСТ","city":"Самара","group":"Завод","inn":"3446021050","lat":53.1594,"lon":50.1442,"kind":"crm"},{"id":"c4","name":"АО \"АВТОВАЗ\"","legal":"АВТОВАЗ","city":"Тольятти","group":"Заказчик","inn":"6320002223","lat":53.5518,"lon":49.3989,"kind":"crm"},{"id":"c8","name":"ООО \"АЙ ДИ ИНЖИНИРС\"","legal":"АЙ ДИ ИНЖИНИРС","city":"Москва","group":"Проектировщик","inn":"7701347300","lat":55.7958,"lon":37.6658,"kind":"crm"},{"id":"c9","name":"ООО \"АЙДИ-ИНЖИНИРИНГ\"","legal":"АЙДИ-ИНЖИНИРИНГ","city":"Екатеринбург","group":"Проектировщик","inn":"6670408276","lat":56.8629,"lon":60.5617,"kind":"crm"},{"id":"c11","name":"ПАО \"АКРОН\"","legal":"АКРОН","city":"Великий Новгород","group":"Заказчик","inn":"5321029508","lat":58.4774,"lon":31.3158,"kind":"crm"},{"id":"c13","name":"АО \"АК ОЗНА\"","legal":"АКЦИОНЕРНАЯ КОМПАНИЯ ОЗНА","city":"Башкортостан","group":"Завод","inn":"0265004219","lat":54.7313,"lon":55.9981,"kind":"crm"},{"id":"c16","name":"ООО \"АМАРАНТ-С\"","legal":"АМАРАНТ-С","city":"Самара","group":"Партнер","inn":"6316265212","lat":53.2434,"lon":50.0757,"kind":"crm"},{"id":"c18","name":"АНКО","legal":"АНКО","city":"Санкт-Петербург","group":"Завод","inn":"7839442605","lat":59.8878,"lon":30.3086,"kind":"crm"},{"id":"c19","name":"ООО","legal":"АНКОРР","city":"Ярославль","group":"Поставщик товара","inn":"7602154794","lat":57.6346,"lon":39.9323,"kind":"crm"},{"id":"c20","name":"ООО \"АНТИКОРГРУПП\"","legal":"АНТИКОРГРУПП","city":"Воронеж","group":"Подрядчик акз","inn":"3666198060","lat":51.67,"lon":39.1528,"kind":"crm"},{"id":"c21","name":"АО \"СЗ КВОИТ\"","legal":"АО \"СЗ КВОиТ\"","city":"Самара","group":"Завод","inn":"6318116093","lat":53.2404,"lon":50.0752,"kind":"crm"},{"id":"c22","name":"АО “СТРОЙ-ТРЕСТ”","legal":"АО “СТРОЙ-ТРЕСТ”","city":"Москва","group":"Инвестор","inn":"","lat":55.7383,"lon":37.6543,"kind":"crm"},{"id":"c23","name":"АО \"АПАТИТ\"","legal":"АПАТИТ","city":"Череповец","group":"Заказчик","inn":"5103070023","lat":59.1343,"lon":37.875,"kind":"crm"},{"id":"c24","name":"ООО \"АРМУ\"","legal":"АРТЕМОВСКОЕ РЕМОНТНО-МОНТАЖНОЕ УПРАВЛЕНИЕ","city":"Артем, Приморский край","group":"Генеральный подрядчик","inn":"2502067669","lat":43.391,"lon":132.187,"kind":"crm"},{"id":"c26","name":"ООО \"АССТЕК-Н\"","legal":"АССТЕК-Н","city":"Новороссийск","group":"Генеральный подрядчик","inn":"2315997304","lat":44.705,"lon":37.7606,"kind":"crm"},{"id":"c27","name":"ООО \"АФИПСКИЙ НПЗ\"","legal":"АФИПСКИЙ НЕФТЕПЕРЕРАБАТЫВАЮЩИЙ ЗАВОД","city":"Краснодар","group":"Заказчик","inn":"7704214548","lat":45.033,"lon":38.9443,"kind":"crm"},{"id":"c28","name":"ООО \"АФТ-ЭНЕРГО\"","legal":"АФТ-ЭНЕРГО","city":"Москва","group":"Заказчик","inn":"7722321398","lat":55.7453,"lon":37.6008,"kind":"crm"},{"id":"c30","name":"ИП Арутюнян Гарий Рафаэлович","legal":"Арутюнян Гарий Рафаэлович","city":"Краснодар","group":"Заказчик","inn":"231004126628","lat":45.0015,"lon":38.9843,"kind":"crm"},{"id":"c31","name":"АО \"БАМТОННЕЛЬСТРОЙ\"","legal":"БАМТОННЕЛЬСТРОЙ","city":"Подольск","group":"Генеральный подрядчик","inn":"0317000144","lat":55.4462,"lon":37.5478,"kind":"crm"},{"id":"c32","name":"АО \"БТС-МОСТ\"","legal":"БАМТОННЕЛЬСТРОЙ-МОСТ","city":"Москва","group":"Инвестор","inn":"7702322731","lat":55.7163,"lon":37.6438,"kind":"crm"},{"id":"c33","name":"Башнефть-Новойл","legal":"БАШНЕФТЬ-Новойл","city":"Башкортостан","group":"Заказчик","inn":"0274051582","lat":54.6973,"lon":55.9731,"kind":"crm"},{"id":"c37","name":"АО \"БСК\"","legal":"БСК","city":"Башкортостан","group":"Заказчик","inn":"0268008010","lat":54.7508,"lon":55.9601,"kind":"crm"},{"id":"c38","name":"БУНКЕРОВОЧНАЯ КОМПАНИЯ ЛЕСНОЙ ПОРТ","legal":"БУНКЕРОВОЧНАЯ КОМПАНИЯ ЛЕСНОЙ ПОРТ","city":"Новороссийск","group":"Заказчик","inn":"2315086485","lat":44.7095,"lon":37.7636,"kind":"crm"},{"id":"c39","name":"ООО \"БКЕ ШЕЛЬФ\"","legal":"БУРОВАЯ КОМПАНИЯ ЕВРАЗИЯ ШЕЛЬФ","city":"Астрахань","group":"Заказчик","inn":"3008011426","lat":46.3972,"lon":48.0163,"kind":"crm"},{"id":"c40","name":"Баркас","legal":"Баркас","city":"Ростов-на-Дону","group":"Подрядчик акз","inn":"","lat":47.1872,"lon":39.6775,"kind":"crm"},{"id":"c43","name":"ООО \"ВЕЛЕССТРОЙ\"","legal":"ВЕЛЕССТРОЙ","city":"Москва","group":"Генеральный подрядчик","inn":"7709787790","lat":55.7593,"lon":37.6098,"kind":"crm"},{"id":"c44","name":"ООО \"ВЕЛИКОДВОРСКИЙ ПЕРЕРАБАТЫВАЮЩИЙ КОМБИНАТ\"","legal":"ВЕЛИКОДВОРСКИЙ ПЕРЕРАБАТЫВАЮЩИЙ КОМБИНАТ","city":"Владимирская обл., Гусь-Хрустальный","group":"Заказчик","inn":"3314007330","lat":55.6413,"lon":40.6309,"kind":"crm"},{"id":"c45","name":"ООО \"ВЕЯ ИНВЕСТ\"","legal":"ВЕЯ ИНВЕСТ","city":"Москва","group":"Завод","inn":"7718544458","lat":55.7963,"lon":37.6218,"kind":"crm"},{"id":"c46","name":"ЗАО \"ЗМК\"","legal":"ВЗМК","city":"Волгоград","group":"Завод","inn":"3461008945","lat":48.6595,"lon":44.5473,"kind":"crm"},{"id":"c48","name":"ООО \"ВИРКРАФТ ИНЖИНИРИНГ\"","legal":"ВИРКРАФТ ИНЖИНИРИНГ","city":"Москва","group":"Генеральный подрядчик","inn":"2312198180","lat":55.8023,"lon":37.6258,"kind":"crm"},{"id":"c50","name":"ООО ПО \"ВЗРК\"","legal":"ВОЛГОГРАДСКИЙ ЗАВОД РЕЗЕРВУАРНЫХ КОНСТРУКЦИЙ","city":"Волгоград","group":"Завод","inn":"3435307346","lat":48.707,"lon":44.4863,"kind":"crm"},{"id":"c51","name":"ООО \"ВСС\"","legal":"ВОЛГОСНАБСЕРВИС","city":"Самара","group":"Подрядчик акз","inn":"6319187629","lat":53.1894,"lon":50.1142,"kind":"crm"},{"id":"c52","name":"ООО \"ВОЛГА НИПИТЭК\"","legal":"ВОЛЖСКИЙ НАУЧНО-ИССЛЕДОВАТЕЛЬСКИЙ И ПРОЕКТНЫЙ ИНСТИТУТ ТОПЛИВНО-ЭНЕРГЕТИЧЕСКОГО КОМПЛЕКСА","city":"Самара","group":"Проектировщик","inn":"6319072138","lat":53.2099,"lon":50.0517,"kind":"crm"},{"id":"c53","name":"ООО \"ВОСТОКГЕРМЕТИК\"","legal":"ВОСТОКГЕРМЕТИК","city":"Самара","group":"Партнер","inn":"2801175870","lat":53.1614,"lon":50.1477,"kind":"crm"},{"id":"c55","name":"ПАО \"ГАЗПРОМ\"","legal":"ГАЗПРОМ","city":"Санкт-Петербург","group":"Заказчик","inn":"7736050003","lat":59.9498,"lon":30.3561,"kind":"crm"},{"id":"c58","name":"ООО \"ГАЗПРОМ НЕФТЬ ШЕЛЬФ\"","legal":"ГАЗПРОМ НЕФТЬ ШЕЛЬФ","city":"Санкт-Петербург","group":"Заказчик","inn":"7725610285","lat":59.9613,"lon":30.3381,"kind":"crm"},{"id":"c59","name":"ООО \"ГАЗПРОМ ПЕРЕРАБОТКА БЛАГОВЕЩЕНСК\"","legal":"ГАЗПРОМ ПЕРЕРАБОТКА БЛАГОВЕЩЕНСК","city":"Амурская обл.","group":"Заказчик","inn":"2722130919","lat":50.3362,"lon":127.5592,"kind":"crm"},{"id":"c60","name":"АО \"ГАЗПРОМНЕФТЬ - МНПЗ\"","legal":"ГАЗПРОМНЕФТЬ - МОСКОВСКИЙ НПЗ","city":"Москва","group":"Заказчик","inn":"7723006328","lat":55.7538,"lon":37.6258,"kind":"crm"},{"id":"c61","name":"ООО \"ГАЗПРОМНЕФТЬ - СНАБЖЕНИЕ\"","legal":"ГАЗПРОМНЕФТЬ - СНАБЖЕНИЕ","city":"Омск","group":"Заказчик","inn":"5501072608","lat":55.0135,"lon":73.3227,"kind":"crm"},{"id":"c62","name":"АО \"ГАЗПРОМНЕФТЬ-ОНПЗ\"","legal":"ГАЗПРОМНЕФТЬ-ОМСКИЙ НПЗ","city":"Омск","group":"Заказчик","inn":"5501041254","lat":55.03,"lon":73.3157,"kind":"crm"},{"id":"c65","name":"АО \"ГИДРОРЕМОНТ-ВКК\"","legal":"ГИДРОРЕМОНТ-ВКК","city":"Москва","group":"Заказчик","inn":"6345012488","lat":55.7678,"lon":37.5923,"kind":"crm"},{"id":"c67","name":"ООО \"ГИДРОТЕХНИКА\"","legal":"ГИДРОТЕХНИКА","city":"Сочи","group":"Проектировщик","inn":"2319044461","lat":43.5585,"lon":39.6736,"kind":"crm"},{"id":"c68","name":"ООО \"ГИДРОТЕХСЕРВИС\"","legal":"ГИДРОТЕХСЕРВИС","city":"Астрахань","group":"Завод","inn":"3007009270","lat":46.3982,"lon":48.0343,"kind":"crm"},{"id":"c69","name":"ООО \"ГК\"ДЕЛО+\"","legal":"ГК \"ДЕЛО+\"","city":"Москва","group":"Инвестор","inn":"4217160230","lat":55.7633,"lon":37.6498,"kind":"crm"},{"id":"c70","name":"ООО \"ГРУППА КОМПАНИЙ \"НАФТА\"","legal":"ГК \"НАФТА\"","city":"Самара","group":"Генеральный подрядчик","inn":"6315654671","lat":53.1974,"lon":50.1252,"kind":"crm"},{"id":"c71","name":"ООО \"ГЛОБАЛ-МАРИН\"","legal":"ГЛОБАЛ-МАРИН","city":"Севастополь","group":"","inn":"9204004458","lat":44.6391,"lon":33.5599,"kind":"crm"},{"id":"c73","name":"ПАО \"ГМК \"НОРИЛЬСКИЙ НИКЕЛЬ\"","legal":"ГОРНО-МЕТАЛЛУРГИЧЕСКАЯ КОМПАНИЯ НОРИЛЬСКИЙ НИКЕЛЬ","city":"Норильск","group":"Заказчик","inn":"8401005730","lat":69.395,"lon":88.1792,"kind":"crm"},{"id":"c76","name":"ООО ГК \"ИНТЕРМЕТАЛЛ\"","legal":"ГРУППА КОМПАНИЙ ИНТЕРМЕТАЛЛ","city":"Краснодар","group":"Генеральный подрядчик","inn":"2311315575","lat":45.047,"lon":38.9548,"kind":"crm"},{"id":"c77","name":"ПАО \"ГРУППА ЛСР\"","legal":"ГРУППА ЛСР","city":"Санкт-Петербург","group":"Генеральный подрядчик","inn":"7838360491","lat":59.8893,"lon":30.3306,"kind":"crm"},{"id":"c79","name":"ГУП РК \"ЧЕРНОМОРНЕФТЕГАЗ\"","legal":"ГУП РЕСПУБЛИКИ КРЫМ ЧЕРНОМОРНЕФТЕГАЗ","city":"Крым","group":"Заказчик","inn":"9102048801","lat":44.9806,"lon":34.1014,"kind":"crm"},{"id":"c81","name":"АО \"ДАЛЬТРАНСУГОЛЬ\"","legal":"ДАЛЬТРАНСУГОЛЬ","city":"Хабаровск","group":"Заказчик","inn":"2709006503","lat":48.5282,"lon":135.11,"kind":"crm"},{"id":"c82","name":"ДВ СКП","legal":"ДВ СКП","city":"Хабаровск","group":"Завод","inn":"2723167855","lat":48.5172,"lon":135.119,"kind":"crm"},{"id":"c85","name":"АО \"ДИМ\"","legal":"ДОРОГИ И МОСТЫ","city":"Москва","group":"Заказчик","inn":"7730259560","lat":55.7773,"lon":37.5938,"kind":"crm"},{"id":"c87","name":"ООО \"ДЕЛОПОРТС\"","legal":"ДелоПортс","city":"Новороссийск","group":"Заказчик","inn":"7706420120","lat":44.7695,"lon":37.7216,"kind":"crm"},{"id":"c88","name":"ООО \"ЕВРОХИМ - УКК\"","legal":"ЕВРОХИМ - УСОЛЬСКИЙ КАЛИЙНЫЙ КОМБИНАТ","city":"Пермь","group":"Заказчик","inn":"5911066005","lat":57.99,"lon":56.2622,"kind":"crm"},{"id":"c89","name":"ООО \"ЕВРОХИМ-ВОЛГАКАЛИЙ\"","legal":"ЕВРОХИМ-ВОЛГАКАЛИЙ","city":"Волгоград","group":"Заказчик","inn":"7710473036","lat":48.74,"lon":44.5093,"kind":"crm"},{"id":"c91","name":"ОАО \"ЖМУ \"СММ\"","legal":"ЖУКОВСКОЕ МОНТАЖНОЕ УПРАВЛЕНИЕ СПЕЦМАШМОНТАЖ","city":"Москва","group":"Генеральный подрядчик","inn":"5013040948","lat":55.7628,"lon":37.6663,"kind":"crm"},{"id":"c93","name":"ООО \"ЗМЗ\"","legal":"ЗАВОД МОНТАЖНЫХ ЗАГОТОВОК","city":"Волгоград","group":"Завод","inn":"3448055946","lat":48.684,"lon":44.5503,"kind":"crm"},{"id":"c94","name":"ООО \"ЗАВОД ПЭМ\"","legal":"ЗАВОД ПЕНЗЭНЕРГОМАШ","city":"Пенза","group":"Завод","inn":"5835110517","lat":53.1874,"lon":44.9948,"kind":"crm"},{"id":"c95","name":"ОАО \"ЗАВОД ПРОДМАШ\"","legal":"ЗАВОД ПРОДМАШ","city":"Самара","group":"Завод","inn":"6318100047","lat":53.2364,"lon":50.0622,"kind":"crm"},{"id":"c97","name":"ООО \"ЗИСКОН\"","legal":"ЗИСКОН","city":"Краснодар","group":"Завод","inn":"6658437129","lat":45.009,"lon":38.9903,"kind":"crm"},{"id":"c100","name":"АО \"ИЭМЗ \"КУПОЛ\"","legal":"ИЖЕВСКИЙ ЭЛЕКТРОМЕХАНИЧЕСКИЙ ЗАВОД КУПОЛ","city":"Ижевск","group":"Завод","inn":"1831083343","lat":56.8593,"lon":53.2075,"kind":"crm"},{"id":"c101","name":"ООО \"ИЖОРСКИЕ ГИДРОСИСТЕМЫ\"","legal":"ИЖОРСКИЕ ГИДРОСИСТЕМЫ","city":"Санкт-Петербург","group":"Завод","inn":"7817331034","lat":59.9203,"lon":30.3661,"kind":"crm"},{"id":"c109","name":"ИП \"Мехов\"","legal":"ИП \"Мехов\"","city":"Новороссийск","group":"Маляр","inn":"","lat":44.7405,"lon":37.7656,"kind":"crm"},{"id":"c110","name":"ИП Кудинов","legal":"ИП Кудинов","city":"Самара","group":"Маляр","inn":"","lat":53.2219,"lon":50.1187,"kind":"crm"},{"id":"c111","name":"ООО \"ИПП\"","legal":"ИПП","city":"Новороссийск","group":"Заказчик","inn":"2315999816","lat":44.7085,"lon":37.7631,"kind":"crm"},{"id":"c115","name":"ООО \"КАМЫШИНСКИЙ ОПЫТНЫЙ ЗАВОД\"","legal":"КАМЫШИНСКИЙ ОПЫТНЫЙ ЗАВОД","city":"Камышин","group":"Завод","inn":"3436011278","lat":50.0818,"lon":45.4315,"kind":"crm"},{"id":"c117","name":"ООО \"КИП-ЭЛЕКТРОМОНТАЖ\"","legal":"КИП-ЭЛЕКТРОМОНТАЖ","city":"Астрахань","group":"Завод","inn":"3448057936","lat":46.3737,"lon":48.0298,"kind":"crm"},{"id":"c120","name":"ООО \"КОМПАНИЯ \"ТЕРМОСИСТЕМЫ\"","legal":"КОМПАНИЯ ТЕРМОСИСТЕМЫ","city":"Самара","group":"Завод","inn":"6319105930","lat":53.1479,"lon":50.0857,"kind":"crm"},{"id":"c123","name":"ООО \"КОНТРАСТ-ЮГ\"","legal":"КОНТРАСТ-ЮГ","city":"Ставрополь","group":"Подрядчик акз","inn":"2635242905","lat":45.0278,"lon":41.9255,"kind":"crm"},{"id":"c128","name":"ООО \"КРИПТО\"","legal":"КРИПТО","city":"Москва, Смоленск","group":"Партнер","inn":"7720326560","lat":54.7346,"lon":32.0833,"kind":"crm"},{"id":"c130","name":"АО \"КСК\"","legal":"КСК","city":"Новороссийск","group":"Заказчик","inn":"2315006923","lat":44.695,"lon":37.7626,"kind":"crm"},{"id":"c131","name":"АО \"КТК-Р\"","legal":"КТК-Р","city":"Новороссийск","group":"Заказчик","inn":"2310040800","lat":44.674,"lon":37.8131,"kind":"crm"},{"id":"c132","name":"ООО \"КУБАНЬ СТРОЙ\"","legal":"КУБАНЬ СТРОЙ","city":"Краснодар","group":"Завод","inn":"2303024364","lat":45.0185,"lon":38.9788,"kind":"crm"},{"id":"c133","name":"ПАО \"КУЙБЫШЕВАЗОТ\"","legal":"КУЙБЫШЕВАЗОТ","city":"Тольятти","group":"Заказчик","inn":"6320005915","lat":53.5153,"lon":49.4464,"kind":"crm"},{"id":"c136","name":"ООО \"ЛАЗЕР-КМ\"","legal":"ЛАЗЕР-КМ","city":"Ростов-на-Дону","group":"","inn":"6154138867","lat":47.1892,"lon":39.682,"kind":"crm"},{"id":"c137","name":"ООО \"ЛЕГИОН СТРОЙ\"","legal":"ЛЕГИОН СТРОЙ","city":"Ростов-на-Дону","group":"Завод","inn":"6165229428","lat":47.2022,"lon":39.682,"kind":"crm"},{"id":"c139","name":"ООО \"ЛУКОЙЛ-ВОЛГОГРАДНЕФТЕПЕРЕРАБОТКА\"","legal":"ЛУКОЙЛ-ВОЛГОГРАДНЕФТЕПЕРЕРАБОТКА","city":"Волгоград","group":"Заказчик","inn":"3448017919","lat":48.707,"lon":44.4678,"kind":"crm"},{"id":"c140","name":"ООО \"ЛУКОЙЛ-НИЖНЕВОЛЖСКНЕФТЬ\"","legal":"ЛУКОЙЛ-НИЖНЕВОЛЖСКНЕФТЬ","city":"Астрахань","group":"Заказчик","inn":"3444070534","lat":46.3162,"lon":48.0563,"kind":"crm"},{"id":"c143","name":"ООО \"ЛУКОЙЛ-УНП\"","legal":"ЛУКОЙЛ-УХТАНЕФТЕПЕРЕРАБОТКА","city":"Коми","group":"Заказчик","inn":"1102057865","lat":61.6518,"lon":50.7944,"kind":"crm"},{"id":"c144","name":"ООО \"ЛЫТКАРИНСКАЯ ПЛАТНАЯ ДОРОГА\"","legal":"ЛЫТКАРИНСКАЯ ПЛАТНАЯ ДОРОГА","city":"Москва","group":"Заказчик","inn":"5027278877","lat":55.7798,"lon":37.5723,"kind":"crm"},{"id":"c145","name":"АО \"ММТП\"","legal":"МАХАЧКАЛИНСКИЙ МОРСКОЙ ТОРГОВЫЙ ПОРТ","city":"Дагестан","group":"Заказчик","inn":"0573008521","lat":42.9384,"lon":47.5162,"kind":"crm"},{"id":"c149","name":"АО \"МЕТРОЛОГ\"","legal":"МЕТРОЛОГ","city":"Самара","group":"Генеральный подрядчик","inn":"6367011336","lat":53.1869,"lon":50.0667,"kind":"crm"},{"id":"c150","name":"ООО \"МИАЛ-ДОН\"","legal":"МИАЛ-ДОН","city":"Ростов-на-Дону","group":"Завод","inn":"6166095953","lat":47.2017,"lon":39.7385,"kind":"crm"},{"id":"c152","name":"ООО \"МОЛТЕХНОПРОЕКТ\"","legal":"МОЛТЕХНОПРОЕКТ","city":"Вологда","group":"Завод","inn":"3525355471","lat":59.2395,"lon":39.9335,"kind":"crm"},{"id":"c154","name":"АО \"МОРСКОЙ НЕФТЯНОЙ ТЕРМИНАЛ\"","legal":"МОРСКОЙ НЕФТЯНОЙ ТЕРМИНАЛ","city":"Крым","group":"Заказчик","inn":"9108123533","lat":44.9241,"lon":34.1214,"kind":"crm"},{"id":"c156","name":"ООО \"МОРСКОЙ ТЕРМИНАЛ \"ТАМАНЬ\"","legal":"МОРСКОЙ ТЕРМИНАЛ ТАМАНЬ","city":"Тамань","group":"Заказчик","inn":"2352044518","lat":45.1971,"lon":36.7481,"kind":"crm"},{"id":"c157","name":"ООО \"МОСГИПРОПРОЕКТ\"","legal":"МОСГИПРОПРОЕКТ","city":"Москва","group":"Проектировщик","inn":"7725831012","lat":55.7338,"lon":37.6023,"kind":"crm"},{"id":"c161","name":"АО МХЗ","legal":"Монтажхимзащита","city":"Москва","group":"Подрядчик акз","inn":"","lat":55.7663,"lon":37.6293,"kind":"crm"},{"id":"c164","name":"ООО \"НЕВГИДРОМЕТ\"","legal":"НЕВГИДРОМЕТ","city":"Невинномыск","group":"Завод","inn":"2631041228","lat":44.6533,"lon":41.9249,"kind":"crm"},{"id":"c166","name":"АО \"НЕВИННОМЫССКИЙ АЗОТ\"","legal":"НЕВИННОМЫССКИЙ АЗОТ","city":"Невинномыск","group":"Заказчик","inn":"2631015563","lat":44.6728,"lon":41.9714,"kind":"crm"},{"id":"c167","name":"АО \"НЗЛ\"","legal":"НЕВСКИЙ ЗАВОД","city":"Санкт-Петербург","group":"Завод","inn":"7806369727","lat":59.8998,"lon":30.3396,"kind":"crm"},{"id":"c169","name":"ООО \"НГЭМ\"","legal":"НЕФТЕГАЗЭНЕРГОМОНТАЖ","city":"Воронеж","group":"Завод","inn":"3666254250","lat":51.666,"lon":39.1518,"kind":"crm"},{"id":"c170","name":"ООО \"НЕФТЕХИМКОМПЛЕКТАЦИЯ\"","legal":"НЕФТЕХИМКОМПЛЕКТАЦИЯ","city":"Самара","group":"Генеральный подрядчик","inn":"6312154215","lat":53.2354,"lon":50.0707,"kind":"crm"},{"id":"c171","name":"ООО \"НЕФТЬИНВЕСТ-ТЕРМИНАЛ\"","legal":"НЕФТЬИНВЕСТ-ТЕРМИНАЛ","city":"Оренбургская обл.","group":"Заказчик","inn":"5603045674","lat":51.8042,"lon":55.138,"kind":"crm"},{"id":"c172","name":"ПАО \"ЛУКОЙЛ\"","legal":"НЕФТЯНАЯ КОМПАНИЯ ЛУКОЙЛ","city":"Коми","group":"Заказчик","inn":"7708004767","lat":61.7083,"lon":50.8119,"kind":"crm"},{"id":"c175","name":"ООО \"НЗТО\"","legal":"НЗТО","city":"Нижний Новгород","group":"Завод","inn":"5261068838","lat":56.3085,"lon":43.9441,"kind":"crm"},{"id":"c177","name":"ПАО \"НИЖНЕКАМСКНЕФТЕХИМ\"","legal":"НИЖНЕКАМСКНЕФТЕХИМ","city":"Татарстан, Нижнекамск","group":"Заказчик","inn":"1651000010","lat":55.6332,"lon":51.7813,"kind":"crm"},{"id":"c178","name":"ООО \"НИИТ\"","legal":"НИИ ТЕХНОЛОГИИ","city":"Новороссийск","group":"Генеральный подрядчик","inn":"2315221977","lat":44.6985,"lon":37.7281,"kind":"crm"},{"id":"c179","name":"АО \"НК НПЗ\"","legal":"НК НПЗ","city":"Самара","group":"Заказчик","inn":"6330000553","lat":53.2259,"lon":50.1342,"kind":"crm"},{"id":"c180","name":"АО \"ННК-ПРИМОРНЕФТЕПРОДУКТ\"","legal":"ННК-ПРИМОРНЕФТЕПРОДУКТ","city":"Владивосток","group":"Заказчик","inn":"2504000532","lat":43.0925,"lon":131.853,"kind":"crm"},{"id":"c181","name":"АО \"ННК-ХАБАРОВСКИЙ НПЗ\"","legal":"ННК-ХАБАРОВСКИЙ НЕФТЕПЕРЕРАБАТЫВАЮЩИЙ ЗАВОД","city":"Хабаровск","group":"Заказчик","inn":"2722010040","lat":48.4897,"lon":135.0745,"kind":"crm"},{"id":"c182","name":"ПАО \"НОВАТЭК\"","legal":"НОВАТЭК","city":"Ямало-Ненецкий АО","group":"Заказчик","inn":"6316031581","lat":66.5249,"lon":66.6189,"kind":"crm"},{"id":"c184","name":"ООО \"НОВОМОСКОВСК-РЕМСТРОЙСЕРВИС\"","legal":"НОВОМОСКОВСК-РЕМСТРОЙСЕРВИС","city":"Тула","group":"Генеральный подрядчик","inn":"7116018514","lat":54.2231,"lon":37.6083,"kind":"crm"},{"id":"c185","name":"АО \"НЛЭ\"","legal":"НОВОРОСЛЕСЭКСПОРТ","city":"Новороссийск","group":"Заказчик","inn":"2315014794","lat":44.7,"lon":37.8171,"kind":"crm"},{"id":"c190","name":"ООО \"НОВОРОСТЕХФЛОТ\"","legal":"НОВОРОСТЕХФЛОТ","city":"Новороссийск","group":"Подрядчик акз","inn":"2315114799","lat":44.759,"lon":37.7921,"kind":"crm"},{"id":"c191","name":"АО \"НЗНП\"","legal":"НОВОШАХТИНСКИЙ ЗАВОД НЕФТЕПРОДУКТОВ","city":"Ростов-на-Дону","group":"Заказчик","inn":"6151012111","lat":47.2617,"lon":39.6575,"kind":"crm"},{"id":"c193","name":"ООО НПП \"ПТО\"","legal":"НПП ПРОМТЕХОБРАБОТКА","city":"Москва","group":"Завод","inn":"7451438544","lat":55.7728,"lon":37.6213,"kind":"crm"},{"id":"c195","name":"ООО \"ОЛИМП\"","legal":"ОЛИМП","city":"Рязань","group":"Подрядчик акз","inn":"6229067729","lat":54.6119,"lon":39.7346,"kind":"crm"},{"id":"c197","name":"ООО \"НПФ \"СПЕЦИАЛЬНЫЕ ПРОМЫШЛЕННЫЕ ТЕХНОЛОГИИ\"","legal":"ООО \"НПФ \"СПЕЦИАЛЬНЫЕ ПРОМЫШЛЕННЫЕ ТЕХНОЛОГИИ\"","city":"Рязань","group":"Завод","inn":"6229036953","lat":54.6709,"lon":39.6801,"kind":"crm"},{"id":"c198","name":"УК Колмар","legal":"ООО \"УК Колмар\"","city":"Москва, Якутия, Нерюнгри","group":"Заказчик","inn":"7701924275","lat":56.7039,"lon":124.7553,"kind":"crm"},{"id":"c200","name":"Промпривод","legal":"ООО Промпривод","city":"Минск","group":"Завод","inn":"","lat":53.9001,"lon":27.5955,"kind":"crm"},{"id":"c203","name":"ПАО \"ОРСКНЕФТЕОРГСИНТЕЗ\"","legal":"ОРСКНЕФТЕОРГСИНТЕЗ","city":"Оренбургская обл.","group":"Заказчик","inn":"5615002700","lat":51.7332,"lon":55.1445,"kind":"crm"},{"id":"c204","name":"ОАО \"ВОЛГОГРАДНЕФТЕМАШ\"","legal":"ОТКРЫТОЕ АКЦИОНЕРНОЕ ОБЩЕСТВО \"ВОЛГОГРАДНЕФТЕМАШ\"","city":"Волгоград","group":"Завод","inn":"3446003396","lat":48.7315,"lon":44.5403,"kind":"crm"},{"id":"c205","name":"АО \"ОТЭКО\"","legal":"ОТЭКО","city":"Тамань","group":"Заказчик","inn":"7713321151","lat":45.2271,"lon":36.6821,"kind":"crm"},{"id":"c206","name":"Роснефть","legal":"ПАО \"НК \"Роснефть\"","city":"Москва","group":"Заказчик","inn":"","lat":55.7893,"lon":37.5993,"kind":"crm"},{"id":"c207","name":"ООО \"ПЕЛЕН\" (ТД Метида)","legal":"ПЕЛЕН (ТД Метида)","city":"Москва","group":"Партнер","inn":"7730272458","lat":55.7813,"lon":37.6413,"kind":"crm"},{"id":"c208","name":"АО \"ПТПА\"","legal":"ПЕНЗТЯЖПРОМАРМАТУРА","city":"Пенза","group":"Завод","inn":"5835014041","lat":53.1614,"lon":44.9753,"kind":"crm"},{"id":"c211","name":"ООО \"ПИКЭНЕРГОТРАНС\"","legal":"ПИКЭНЕРГОТРАНС","city":"Батайск","group":"Завод","inn":"6141053599","lat":47.1427,"lon":39.7208,"kind":"crm"},{"id":"c212","name":"ООО ПКФ \"ЭКС-ФОРМА\"","legal":"ПКФ ЭКС-ФОРМА","city":"Саратов","group":"Завод","inn":"6455004320","lat":51.5791,"lon":46.0543,"kind":"crm"},{"id":"c214","name":"ООО \"ПМИ - НК\"","legal":"ПОЛИМЕТАЛЛИНВЕСТ - НК","city":"Татарстан","group":"Завод","inn":"1651053452","lat":55.8223,"lon":49.0983,"kind":"crm"},{"id":"c215","name":"ООО \"ПОРТКОМПЛЕКТИМПЕКС\"","legal":"ПОРТКОМПЛЕКТИМПЕКС","city":"Новороссийск","group":"Генеральный подрядчик","inn":"2315024633","lat":44.7445,"lon":37.7471,"kind":"crm"},{"id":"c219","name":"ООО \"ПРОМ ЭКСПЕРТ\"","legal":"ПРОМ ЭКСПЕРТ","city":"Новороссийск","group":"Подрядчик акз","inn":"2308111395","lat":44.7285,"lon":37.7371,"kind":"crm"},{"id":"c220","name":"АО \"ПРОМГРАЖДАНСТРОЙ\"","legal":"ПРОМГРАЖДАНСТРОЙ","city":"Белгород","group":"Проектировщик","inn":"3122006870","lat":50.6037,"lon":36.5868,"kind":"crm"},{"id":"c221","name":"ООО \"СК \"ПРОМСТРОЙ-ГАРАНТ\"","legal":"ПРОМСТРОЙ-ГАРАНТ","city":"Краснодар","group":"Подрядчик акз","inn":"2308245511","lat":45.053,"lon":38.9723,"kind":"crm"},{"id":"c224","name":"ООО \"ПРОМЫШЛЕННОЕ СТРОИТЕЛЬСТВО\"","legal":"ПРОМЫШЛЕННОЕ СТРОИТЕЛЬСТВО","city":"Краснодар","group":"Подрядчик акз","inn":"2310091770","lat":45.0485,"lon":38.9323,"kind":"crm"},{"id":"c226","name":"ООО \"ПРОТЕХ ИНЖИНИРИНГ\"","legal":"ПРОТЕХ ИНЖИНИРИНГ","city":"Москва","group":"Заказчик","inn":"9725070298","lat":55.7163,"lon":37.6253,"kind":"crm"},{"id":"c227","name":"ПАО \"НКХП\"","legal":"ПУБЛИЧНОЕ АКЦИОНЕРНОЕ ОБЩЕСТВО \"НОВОРОССИЙСКИЙ КОМБИНАТ ХЛЕБОПРОДУКТОВ\"","city":"Новороссийск","group":"Заказчик","inn":"2315014748","lat":44.757,"lon":37.7581,"kind":"crm"},{"id":"c229","name":"ООО \"РАКУРС\"","legal":"РАКУРС","city":"Благовещенск","group":"Завод","inn":"2801150114","lat":50.3167,"lon":127.5172,"kind":"crm"},{"id":"c231","name":"ООО \"РСК\"","legal":"РЕМОНТНО - СТРОИТЕЛЬНАЯ КОМПАНИЯ","city":"Смоленск","group":"Подрядчик акз","inn":"6726026698","lat":54.7591,"lon":32.0448,"kind":"crm"},{"id":"c239","name":"АО \"РН-МОСКВА\"","legal":"РН-МОСКВА","city":"Москва","group":"Заказчик","inn":"7706091500","lat":55.7203,"lon":37.5718,"kind":"crm"},{"id":"c240","name":"ООО \"РН-ТУАПСИНСКИЙ НПЗ\"","legal":"РН-ТУАПСИНСКИЙ НЕФТЕПЕРЕРАБАТЫВАЮЩИЙ ЗАВОД","city":"Туапсе","group":"Заказчик","inn":"2365004375","lat":44.1368,"lon":39.1187,"kind":"crm"},{"id":"c241","name":"ООО \"РН-ЮГАНСКНЕФТЕГАЗ\"","legal":"РН-ЮГАНСКНЕФТЕГАЗ","city":"Нефтеюганск","group":"Заказчик","inn":"8604035473","lat":61.1063,"lon":72.6244,"kind":"crm"},{"id":"c242","name":"ООО \"РОГОС\"","legal":"РОГОС","city":"Ижевск","group":"Завод","inn":"1841083350","lat":56.8058,"lon":53.2075,"kind":"crm"},{"id":"c244","name":"РОСАВТОДОР","legal":"РОСАВТОДОР","city":"Москва","group":"Заказчик","inn":"7717509757","lat":55.7063,"lon":37.6383,"kind":"crm"},{"id":"c245","name":"АО \"РОСПАН ИНТЕРНЕШНЛ\"","legal":"РОСПАН ИНТЕРНЕШНЛ","city":"Ямало-Ненецкий АО","group":"Заказчик","inn":"7727004530","lat":66.5379,"lon":66.5679,"kind":"crm"},{"id":"c248","name":"ООО \"РЗРК-ЮТМ\"","legal":"РОСТОВСКИЙ ЗАВОД РЕЗЕРВУАРНЫХ КОНСТРУКЦИЙ-ЮТМ","city":"Ростов-на-Дону","group":"Генеральный подрядчик","inn":"6166091660","lat":47.2282,"lon":39.7195,"kind":"crm"},{"id":"c249","name":"ООО \"РУСВИНИЛ\"","legal":"РУСВИНИЛ","city":"Кстово","group":"Заказчик","inn":"5262218620","lat":56.1572,"lon":44.2401,"kind":"crm"},{"id":"c250","name":"ООО \"РУСГАЗШЕЛЬФ\"","legal":"РУСГАЗШЕЛЬФ","city":"Москва","group":"Заказчик","inn":"7719472189","lat":55.7503,"lon":37.5888,"kind":"crm"},{"id":"c251","name":"ООО \"РУСНЕФТЕМАШ\"","legal":"РУСНЕФТЕМАШ","city":"Самара","group":"Завод","inn":"6315003091","lat":53.1479,"lon":50.1237,"kind":"crm"},{"id":"c253","name":"ПАО НК \"РУССНЕФТЬ\"","legal":"РУССНЕФТЬ","city":"Москва","group":"Заказчик","inn":"7717133960","lat":55.7558,"lon":37.5753,"kind":"crm"},{"id":"c256","name":"Рем Колор","legal":"Рем Колор","city":"Минск","group":"Поставщик товара","inn":"","lat":53.9381,"lon":27.6,"kind":"crm"},{"id":"c257","name":"Ренейссанс Констракшн","legal":"Ренейссанс Констракшн","city":"Москва","group":"Генеральный подрядчик","inn":"","lat":55.7493,"lon":37.6448,"kind":"crm"},{"id":"c258","name":"Руки Мастера","legal":"Руки Мастера","city":"Краснодар","group":"Подрядчик акз","inn":"","lat":45.0155,"lon":38.9488,"kind":"crm"},{"id":"c261","name":"ООО \"СНГП\"","legal":"САМАРАНЕФТЕГАЗПРОЕКТ","city":"Самара","group":"Проектировщик","inn":"6316134234","lat":53.2289,"lon":50.1432,"kind":"crm"},{"id":"c262","name":"АО \"САМАРАНЕФТЕХИМПРОЕКТ\"","legal":"САМАРАНЕФТЕХИМПРОЕКТ","city":"Самара","group":"Проектировщик","inn":"6316012356","lat":53.2114,"lon":50.1322,"kind":"crm"},{"id":"c263","name":"ООО \"САМАРАТРАНССТРОЙ\"","legal":"САМАРАТРАНССТРОЙ","city":"Самара","group":"Заказчик","inn":"6376021161","lat":53.1994,"lon":50.0647,"kind":"crm"},{"id":"c265","name":"ПАО \"САРАТОВСКИЙ НПЗ\"","legal":"САРАТОВСКИЙ НПЗ","city":"Саратов","group":"Заказчик","inn":"6451114900","lat":51.5406,"lon":46.0638,"kind":"crm"},{"id":"c266","name":"ООО \"САРРЗ\"","legal":"САРАТОВСКИЙ РЕЗЕРВУАРНЫЙ ЗАВОД","city":"Саратов","group":"Завод","inn":"6451451695","lat":51.5221,"lon":46.0548,"kind":"crm"},{"id":"c267","name":"ООО \"САФ-НЕВА\"","legal":"САФ-НЕВА","city":"Курган","group":"Заказчик","inn":"7826691266","lat":55.4459,"lon":65.3607,"kind":"crm"},{"id":"c269","name":"ООО \"СЦС\"","legal":"САХАЛИНСКИЙ ЦЕНТР СНАБЖЕНИЯ","city":"Южно-Сахалинск","group":"Заказчик","inn":"6501211853","lat":47.0026,"lon":142.73,"kind":"crm"},{"id":"c270","name":"ПАО \"СЕВЕРСТАЛЬ\"","legal":"СЕВЕРСТАЛЬ","city":"Череповец","group":"Завод","inn":"3528000597","lat":59.1488,"lon":37.9205,"kind":"crm"},{"id":"c271","name":"ООО \"СКН\"","legal":"СЕВКОМНЕФТЕГАЗ","city":"Ямало-Ненецкий АО","group":"Заказчик","inn":"4101150169","lat":66.4924,"lon":66.5634,"kind":"crm"},{"id":"c274","name":"ООО \"СИЛВЕЙ\"","legal":"СИЛВЕЙ","city":"Ростов-на-Дону","group":"Завод","inn":"6154137310","lat":47.2807,"lon":39.693,"kind":"crm"},{"id":"c276","name":"ООО \"СК-БАРКА\"","legal":"СК-БАРКА","city":"Новороссийск","group":"Подрядчик акз","inn":"2315219865","lat":44.773,"lon":37.8101,"kind":"crm"},{"id":"c277","name":"ООО \"СЛАВЯНСК ЭКО\"","legal":"СЛАВЯНСК ЭКО","city":"Славянск-на-Кубани","group":"Заказчик","inn":"2370000496","lat":45.2882,"lon":38.1409,"kind":"crm"},{"id":"c279","name":"ООО \"СМУ-ИЗОЛЯЦИЯ\"","legal":"СМУ-ИЗОЛЯЦИЯ","city":"Краснодар","group":"Подрядчик акз","inn":"2308063046","lat":45.013,"lon":39.0168,"kind":"crm"},{"id":"c280","name":"ООО \"СНАБ-ЭНЕРГО ЦЕНТР\"","legal":"СНАБ-ЭНЕРГО ЦЕНТР","city":"Ростов-на-Дону","group":"Генеральный подрядчик","inn":"6101004612","lat":47.2652,"lon":39.7065,"kind":"crm"},{"id":"c282","name":"ООО \"СП ГРУПП\"","legal":"СП ГРУПП","city":"Краснодар","group":"Подрядчик акз","inn":"2311207690","lat":45.0555,"lon":38.9333,"kind":"crm"},{"id":"c283","name":"ООО СП \"РЕКАРТ\"","legal":"СП РЕКАРТ","city":"Башкортостан","group":"Подрядчик акз","inn":"0278033520","lat":54.7753,"lon":55.9271,"kind":"crm"},{"id":"c287","name":"ООО \"СПЕЦМОСТ\"","legal":"СПЕЦМОСТ","city":"Москва","group":"Генеральный подрядчик","inn":"7729504979","lat":55.7208,"lon":37.6438,"kind":"crm"},{"id":"c289","name":"АО \"СРЗ\"","legal":"СРЗ","city":"Самара","group":"Завод","inn":"6317126596","lat":53.1764,"lon":50.1067,"kind":"crm"},{"id":"c290","name":"ООО \"СТАВРОЛЕН\"","legal":"СТАВРОЛЕН","city":"Ставрополь","group":"Заказчик","inn":"2624022320","lat":45.0318,"lon":41.984,"kind":"crm"},{"id":"c291","name":"ГУП СК \"СТАВРОПОЛЬКРАЙВОДОКАНАЛ\"","legal":"СТАВРОПОЛЬКРАЙВОДОКАНАЛ","city":"Ставрополь","group":"Заказчик","inn":"2635040105","lat":45.0903,"lon":41.9655,"kind":"crm"},{"id":"c293","name":"ООО \"СТАЛЬСТРОЙ-ЮГ\"","legal":"СТАЛЬСТРОЙ-ЮГ","city":"Краснодар","group":"Подрядчик акз","inn":"2309126997","lat":45.058,"lon":38.9328,"kind":"crm"},{"id":"c295","name":"ООО \"СК СЗЭМ\"","legal":"СТРОИТЕЛЬНАЯ КОМПАНИЯ СЕВЗАПЭНЕРГОМОНТАЖ","city":"Санкт-Петербург","group":"Завод","inn":"7842162809","lat":59.9283,"lon":30.3071,"kind":"crm"},{"id":"c296","name":"ООО \"СТРОЙ-ГАРАНТ\"","legal":"СТРОЙ-ГАРАНТ","city":"Москва","group":"Завод","inn":"5040160592","lat":55.7433,"lon":37.5763,"kind":"crm"},{"id":"c297","name":"ООО \"СТРОЙ-СТАНДАРТ\"","legal":"СТРОЙ-СТАНДАРТ","city":"Самара","group":"Генеральный подрядчик","inn":"6311133910","lat":53.2264,"lon":50.0592,"kind":"crm"},{"id":"c298","name":"ООО \"СТРОЙМОНТАЖ\"","legal":"СТРОЙМОНТАЖ","city":"Ростов-на-Дону","group":"Генеральный подрядчик","inn":"6165193010","lat":47.1982,"lon":39.666,"kind":"crm"},{"id":"c305","name":"ООО \"САМАРАНИПИНЕФТЬ\"","legal":"СамараНИПИнефть","city":"Самара","group":"Проектировщик","inn":"6316058992","lat":53.1784,"lon":50.0657,"kind":"crm"},{"id":"c308","name":"Стройогнезащита","legal":"Стройогнезащита","city":"Екатеринбург","group":"Подрядчик акз","inn":"","lat":56.8539,"lon":60.6252,"kind":"crm"},{"id":"c309","name":"ООО \"ТАГГЕРТ\"","legal":"ТАГГЕРТ","city":"Ростов-на-Дону","group":"Завод","inn":"5029105301","lat":47.2737,"lon":39.738,"kind":"crm"},{"id":"c310","name":"ООО \"ТЗПМ\"","legal":"ТАМАНСКИЙ ЗАВОД ПЕРЕРАБОТКИ МАСЛОСЕМЯН","city":"Тамань","group":"Заказчик","inn":"2352049724","lat":45.2461,"lon":36.6846,"kind":"crm"},{"id":"c311","name":"АО \"ТНГ\"","legal":"ТАМАНЬНЕФТЕГАЗ","city":"Тамань","group":"Заказчик","inn":"2352013076","lat":45.2291,"lon":36.7156,"kind":"crm"},{"id":"c314","name":"ООО \"ТЕРМОЛЮКСАВТО\"","legal":"ТЕРМОЛЮКСАВТО","city":"Татарстан","group":"Партнер","inn":"1650194161","lat":55.7883,"lon":49.1288,"kind":"crm"},{"id":"c315","name":"ООО \"ТЕХ-АЭРО\"","legal":"ТЕХ-АЭРО","city":"Самара","group":"Завод","inn":"6316150363","lat":53.1534,"lon":50.1332,"kind":"crm"},{"id":"c316","name":"ООО \"ТИО\"","legal":"ТЕХНОЛОГИИ ИНЖИНИРИНГ ОБОРУДОВАНИЕ","city":"Екатеринбург","group":"Генеральный подрядчик","inn":"6670300392","lat":56.8859,"lon":60.5657,"kind":"crm"},{"id":"c318","name":"ООО \"ТИМ\"","legal":"ТИМ","city":"Череповец","group":"Завод","inn":"3523015293","lat":59.1108,"lon":37.894,"kind":"crm"},{"id":"c319","name":"ООО \"ТИМБЕРГРИН\"","legal":"ТИМБЕРГРИН","city":"Краснодар","group":"Завод","inn":"2368009766","lat":45.024,"lon":38.9978,"kind":"crm"},{"id":"c321","name":"ПАО \"ТОАЗ\"","legal":"ТОЛЬЯТТИАЗОТ","city":"Тольятти","group":"Заказчик","inn":"6320004728","lat":53.5223,"lon":49.4239,"kind":"crm"},{"id":"c322","name":"ООО \"ТЗМИК \"АЛЬТАИР\"","legal":"ТОЛЬЯТТИНСКИЙ ЗАВОД МЕТАЛЛОКОНСТРУКЦИЙ И КОМПОЗИТОВ АЛЬТАИР","city":"Тольятти","group":"Завод","inn":"6320071403","lat":53.4748,"lon":49.4124,"kind":"crm"},{"id":"c324","name":"АО \"ТОМСКНИПИНЕФТЬ\"","legal":"ТОМСКНИПИНЕФТЬ","city":"Томск","group":"Проектировщик","inn":"7021049088","lat":56.4466,"lon":84.9287,"kind":"crm"},{"id":"c328","name":"ООО ТД \"САХСПЕЦИНДУСТРИЯ\"","legal":"ТОРГОВЫЙ ДОМ САХСПЕЦИНДУСТРИЯ","city":"Южно-Сахалинск","group":"Заказчик","inn":"6501259750","lat":46.9806,"lon":142.7315,"kind":"crm"},{"id":"c329","name":"ТД \"ЮГСНАБ\" (ООО)","legal":"ТОРГОВЫЙ ДОМ ЮГСНАБ","city":"Новороссийск","group":"Генеральный подрядчик","inn":"2321015250","lat":44.7105,"lon":37.7501,"kind":"crm"},{"id":"c330","name":"ООО \"ТОЧКА РОСЫ\"","legal":"ТОЧКА РОСЫ","city":"Пермь","group":"Партнер","inn":"5916032828","lat":57.964,"lon":56.2347,"kind":"crm"},{"id":"c331","name":"АО \"ТРАНСНЕФТЬ - ДРУЖБА\"","legal":"ТРАНСНЕФТЬ - ДРУЖБА","city":"Брянск","group":"Заказчик","inn":"3235002178","lat":53.2759,"lon":34.3245,"kind":"crm"},{"id":"c333","name":"ООО \"ТРАНСПРОЕКТ\"","legal":"ТРАНСПОРТНОЕ ПРОЕКТИРОВАНИЕ","city":"Владимирская обл.","group":"Проектировщик","inn":"3662196985","lat":56.169,"lon":40.4546,"kind":"crm"},{"id":"c334","name":"ООО \"ТРИОС-ТЕХНО\"","legal":"ТРИОС-ТЕХНО","city":"Самара","group":"Генеральный подрядчик","inn":"6323062622","lat":53.1649,"lon":50.1312,"kind":"crm"},{"id":"c335","name":"ООО \"ТСК АЛЬЯНС\"","legal":"ТСК АЛЬЯНС","city":"Екатеринбург","group":"Подрядчик акз","inn":"6686055065","lat":56.8059,"lon":60.6017,"kind":"crm"},{"id":"c337","name":"ООО \"ТУГНУЙСКАЯ ОБОГАТИТЕЛЬНАЯ ФАБРИКА\"","legal":"ТУГНУЙСКАЯ ОБОГАТИТЕЛЬНАЯ ФАБРИКА","city":"Бурятия","group":"Заказчик","inn":"2466130383","lat":51.8025,"lon":107.5726,"kind":"crm"},{"id":"c339","name":"Три Ас","legal":"Три Ас","city":"Самара","group":"Подрядчик акз","inn":"","lat":53.1694,"lon":50.1247,"kind":"crm"},{"id":"c340","name":"ООО \"УДОКАНСКАЯ МЕДЬ\"","legal":"УДОКАНСКАЯ МЕДЬ","city":"Забайкальский Край","group":"Заказчик","inn":"7536097029","lat":52.0436,"lon":113.4734,"kind":"crm"},{"id":"c341","name":"АО \"УК ЭФКО\"","legal":"УПРАВЛЯЮЩАЯ КОМПАНИЯ ЭФКО","city":"Москва","group":"Заказчик","inn":"3122504272","lat":55.7488,"lon":37.5733,"kind":"crm"},{"id":"c344","name":"ФГКУ КОМБИНАТ \"ГВАРДЕЙСКИЙ\" РОСРЕЗЕРВА","legal":"ФГКУ КОМБИНАТ \"ГВАРДЕЙСКИЙ\" РОСРЕЗЕРВА","city":"Крым","group":"Заказчик","inn":"9107000553","lat":44.9426,"lon":34.1094,"kind":"crm"},{"id":"c348","name":"АО \"ФИРМА ЭНЕРГОЗАЩИТА\"","legal":"ФИРМА ЭНЕРГОЗАЩИТА","city":"Москва","group":"Генеральный подрядчик","inn":"7709046921","lat":55.7148,"lon":37.6293,"kind":"crm"},{"id":"c349","name":"АО \"ФОРТЕИНВЕСТ\"","legal":"ФОРТЕИНВЕСТ","city":"Москва","group":"Инвестор","inn":"7707743204","lat":55.7293,"lon":37.6158,"kind":"crm"},{"id":"c350","name":"ООО \"ФОСАГРО-ДОН\"","legal":"ФОСАГРО-ДОН","city":"Ростов-на-Дону","group":"Заказчик","inn":"6161032815","lat":47.2062,"lon":39.684,"kind":"crm"},{"id":"c351","name":"ООО \"ХИМЗАЩИТА\"","legal":"ХИМЗАЩИТА","city":"Краснодар","group":"Подрядчик акз","inn":"2308035264","lat":45.019,"lon":38.9983,"kind":"crm"},{"id":"c352","name":"ООО \"ЦИТ-М\"","legal":"ЦЕНТР ИННОВАЦИОННЫХ ТЕХНОЛОГИЙ И МАТЕРИАЛОВ","city":"Ростов-на-Дону","group":"Заказчик","inn":"6143082595","lat":47.2262,"lon":39.66,"kind":"crm"},{"id":"c353","name":"ООО \"ЦЕНТР-ТЕСТ\"","legal":"ЦЕНТР-ТЕСТ","city":"Владимирская обл.","group":"Подрядчик акз","inn":"3325421818","lat":56.151,"lon":40.3706,"kind":"crm"},{"id":"c354","name":"АО \"ЧЗМК\"","legal":"ЧЕЛЯБИНСКИЙ ЗАВОД МЕТАЛЛОКОНСТРУКЦИЙ","city":"Челябинск","group":"Завод","inn":"7449010952","lat":55.1574,"lon":61.4658,"kind":"crm"},{"id":"c356","name":"АО \"ЧЕРНОМОРТРАНСНЕФТЬ\"","legal":"ЧЕРНОМОРТРАНСНЕФТЬ","city":"Новороссийск","group":"Заказчик","inn":"2315072242","lat":44.715,"lon":37.7536,"kind":"crm"},{"id":"c357","name":"ООО \"ШТУРМ\"","legal":"ШТУРМ","city":"Екатеринбург","group":"Подрядчик акз","inn":"6686129197","lat":56.8244,"lon":60.5727,"kind":"crm"},{"id":"c359","name":"АО \"ГК \"ЭЛЕКТРОЩИТ\" - ТМ САМАРА\"","legal":"ЭЛЕКТРОЩИТ - ТМ САМАРА","city":"Самара","group":"Завод","inn":"6313009980","lat":53.1889,"lon":50.0812,"kind":"crm"},{"id":"c360","name":"ООО \"ЭНЕРГЕТИКА\"","legal":"ЭНЕРГЕТИКА","city":"Краснодар","group":"Генеральный подрядчик","inn":"2311060158","lat":45.0075,"lon":39.0003,"kind":"crm"},{"id":"c363","name":"ООО \"ЭНЕРГОДИАГНОСТИКА\"","legal":"ЭНЕРГОДИАГНОСТИКА","city":"Северодвинск","group":"Генеральный подрядчик","inn":"7727255565","lat":64.598,"lon":39.8037,"kind":"crm"},{"id":"c364","name":"ООО \"ЭНЕРГОНЕФТЕГАЗ-КОМПЛЕКС\"","legal":"ЭНЕРГОНЕФТЕГАЗ-КОМПЛЕКС","city":"Краснодар","group":"Генеральный подрядчик","inn":"2311246956","lat":45.081,"lon":38.9798,"kind":"crm"},{"id":"c365","name":"ООО \"ЭНЕРГОСПЕЦСТРОЙ\"","legal":"ЭНЕРГОСПЕЦСТРОЙ","city":"Владивосток","group":"Заказчик","inn":"2540265830","lat":43.0935,"lon":131.87,"kind":"crm"},{"id":"c367","name":"ООО \"ЭРА ЛОГИСТИКИ\"","legal":"ЭРА ЛОГИСТИКИ","city":"Южно-Сахалинск","group":"Партнер","inn":"6501195168","lat":46.9871,"lon":142.74,"kind":"crm"},{"id":"c368","name":"ООО \"ЭСТА КОНСТРАКШЕН\"","legal":"ЭСТА КОНСТРАКШЕН","city":"Москва","group":"Генеральный подрядчик","inn":"7704615959","lat":55.7573,"lon":37.6283,"kind":"crm"},{"id":"c371","name":"ООО \"ЮГ-ЭКОАУДИТ\"","legal":"ЮГ-ЭКОАУДИТ","city":"Ростов-на-Дону","group":"Проектировщик","inn":"6164110317","lat":47.1917,"lon":39.7455,"kind":"crm"},{"id":"c372","name":"ООО \"ЮГСТРОЙКУБАНЬ\"","legal":"ЮГСТРОЙКУБАНЬ","city":"Краснодар","group":"Подрядчик акз","inn":"2312257397","lat":45.0405,"lon":38.9858,"kind":"crm"},{"id":"c374","name":"ООО \"ЮТП\"","legal":"ЮГТЕРМИНАЛПРОЕКТ","city":"Краснодар","group":"Проектировщик","inn":"7705893589","lat":45.0495,"lon":39.0028,"kind":"crm"},{"id":"c375","name":"ООО \"ЮГМК ДОНЕЦК\"","legal":"ЮЖНЫЙ ГОРНО-МЕТАЛЛУРГИЧЕСКИЙ КОМПЛЕКС ДОНЕЦК","city":"Донецк","group":"Заказчик","inn":"9308000360","lat":48.0654,"lon":37.7558,"kind":"crm"},{"id":"c376","name":"ООО \"ЮЗМ\"","legal":"ЮЖНЫЙ ЗАВОД МЕТАЛЛОКОНСТРУКЦИЙ","city":"Краснодар","group":"Завод","inn":"2309166703","lat":45.041,"lon":39.0163,"kind":"crm"},{"id":"c377","name":"ЗАО \"ЮЖТЕХМОНТАЖ\"","legal":"ЮЖТЕХМОНТАЖ","city":"Ростов-на-Дону","group":"Генеральный подрядчик","inn":"6164100492","lat":47.2242,"lon":39.7165,"kind":"crm"},{"id":"c378","name":"ООО \"ЮТЭК\"","legal":"ЮТЭК","city":"Ростов-на-Дону","group":"Заказчик","inn":"6144014559","lat":47.2757,"lon":39.6775,"kind":"crm"},{"id":"c379","name":"АО \"ЮЦСС\"","legal":"ЮЦСС","city":"Астрахань","group":"Завод","inn":"3023004670","lat":46.3612,"lon":47.9988,"kind":"crm"},{"id":"c380","name":"ОАО \"ЯМАЛ СПГ\"","legal":"ЯМАЛ СПГ","city":"Ямало-Ненецкий АО","group":"Заказчик","inn":"7709602713","lat":66.5724,"lon":66.6149,"kind":"crm"}]},"rus":{"type":"MultiPolygon","coordinates":[[[[143.648007,50.7476],[144.654148,48.976391],[143.173928,49.306551],[142.558668,47.861575],[143.533492,46.836728],[143.505277,46.137908],[142.747701,46.740765],[142.09203,45.966755],[141.906925,46.805929],[142.018443,47.780133],[141.904445,48.859189],[142.1358,49.615163],[142.179983,50.952342],[141.594076,51.935435],[141.682546,53.301966],[142.606934,53.762145],[142.209749,54.225476],[142.654786,54.365881],[142.914616,53.704578],[143.260848,52.74076],[143.235268,51.75666],[143.648007,50.7476]]],[[[22.731099,54.327537],[20.892245,54.312525],[19.66064,54.426084],[19.888481,54.86616],[21.268449,55.190482],[22.315724,55.015299],[22.757764,54.856574],[22.651052,54.582741],[22.731099,54.327537]]],[[[-175.01425,66.58435],[-174.33983,66.33556],[-174.57182,67.06219],[-171.85731,66.91308],[-169.89958,65.97724],[-170.89107,65.54139],[-172.53025,65.43791],[-172.555,64.46079],[-172.95533,64.25269],[-173.89184,64.2826],[-174.65392,64.63125],[-175.98353,64.92288],[-176.20716,65.35667],[-177.22266,65.52024],[-178.35993,65.39052],[-178.90332,65.74044],[-178.68611,66.11211],[-179.88377,65.87456],[-179.43268,65.40411],[-180,64.979709],[-180,68.963636],[-177.55,68.2],[-174.92825,67.20589],[-175.01425,66.58435]]],[[[180,70.832199],[178.903425,70.78114],[178.7253,71.0988],[180,71.515714],[180,70.832199]]],[[[-178.69378,70.89302],[-180,70.832199],[-180,71.515714],[-179.871875,71.55762],[-179.02433,71.55553],[-177.577945,71.26948],[-177.663575,71.13277],[-178.69378,70.89302]]],[[[143.60385,73.21244],[142.08763,73.20544],[140.038155,73.31692],[139.86312,73.36983],[140.81171,73.76506],[142.06207,73.85758],[143.48283,73.47525],[143.60385,73.21244]]],[[[150.73167,75.08406],[149.575925,74.68892],[147.977465,74.778355],[146.11919,75.17298],[146.358485,75.49682],[148.22223,75.345845],[150.73167,75.08406]]],[[[145.086285,75.562625],[144.3,74.82],[140.61381,74.84768],[138.95544,74.61148],[136.97439,75.26167],[137.51176,75.94917],[138.831075,76.13676],[141.471615,76.09289],[145.086285,75.562625]]],[[[57.535693,70.720464],[56.944979,70.632743],[53.677375,70.762658],[53.412017,71.206662],[51.601895,71.474759],[51.455754,72.014881],[52.478275,72.229442],[52.444169,72.774731],[54.427614,73.627548],[53.50829,73.749814],[55.902459,74.627486],[55.631933,75.081412],[57.868644,75.60939],[61.170044,76.251883],[64.498368,76.439055],[66.210977,76.809782],[68.15706,76.939697],[68.852211,76.544811],[68.180573,76.233642],[64.637326,75.737755],[61.583508,75.260885],[58.477082,74.309056],[56.986786,73.333044],[55.419336,72.371268],[55.622838,71.540595],[57.535693,70.720464]]],[[[106.97013,76.97419],[107.24,76.48],[108.1538,76.72335],[111.07726,76.71],[113.33151,76.22224],[114.13417,75.84764],[113.88539,75.32779],[112.77918,75.03186],[110.15125,74.47673],[109.4,74.18],[110.64,74.04],[112.11919,73.78774],[113.01954,73.97693],[113.52958,73.33505],[113.96881,73.59488],[115.56782,73.75285],[118.77633,73.58772],[119.02,73.12],[123.20066,72.97122],[123.25777,73.73503],[125.38,73.56],[126.97644,73.56549],[128.59126,73.03871],[129.05157,72.39872],[128.46,71.98],[129.71599,71.19304],[131.28858,70.78699],[132.2535,71.8363],[133.85766,71.38642],[135.56193,71.65525],[137.49755,71.34763],[138.23409,71.62803],[139.86983,71.48783],[139.14791,72.41619],[140.46817,72.84941],[149.5,72.2],[150.35118,71.60643],[152.9689,70.84222],[157.00688,71.03141],[158.99779,70.86672],[159.83031,70.45324],[159.70866,69.72198],[160.94053,69.43728],[162.27907,69.64204],[164.05248,69.66823],[165.94037,69.47199],[167.83567,69.58269],[169.57763,68.6938],[170.81688,69.01363],[170.0082,69.65276],[170.45345,70.09703],[173.64391,69.81743],[175.72403,69.87725],[178.6,69.4],[180,68.963636],[180,64.979709],[179.99281,64.97433],[178.7072,64.53493],[177.41128,64.60821],[178.313,64.07593],[178.90825,63.25197],[179.37034,62.98262],[179.48636,62.56894],[179.22825,62.3041],[177.3643,62.5219],[174.56929,61.76915],[173.68013,61.65261],[172.15,60.95],[170.6985,60.33618],[170.33085,59.88177],[168.90046,60.57355],[166.29498,59.78855],[165.84,60.16],[164.87674,59.7316],[163.53929,59.86871],[163.21711,59.21101],[162.01733,58.24328],[162.05297,57.83912],[163.19191,57.61503],[163.05794,56.15924],[162.12958,56.12219],[161.70146,55.28568],[162.11749,54.85514],[160.36877,54.34433],[160.02173,53.20257],[158.53094,52.95868],[158.23118,51.94269],[156.78979,51.01105],[156.42,51.7],[155.99182,53.15895],[155.43366,55.38103],[155.91442,56.76792],[156.75815,57.3647],[156.81035,57.83204],[158.36433,58.05575],[160.15064,59.31477],[161.87204,60.343],[163.66969,61.1409],[164.47355,62.55061],[163.25842,62.46627],[162.65791,61.6425],[160.12148,60.54423],[159.30232,61.77396],[156.72068,61.43442],[154.21806,59.75818],[155.04375,59.14495],[152.81185,58.88385],[151.26573,58.78089],[151.33815,59.50396],[149.78371,59.65573],[148.54481,59.16448],[145.48722,59.33637],[142.19782,59.03998],[138.95848,57.08805],[135.12619,54.72959],[136.70171,54.60355],[137.19342,53.97732],[138.1647,53.75501],[138.80463,54.25455],[139.90151,54.18968],[141.34531,53.08957],[141.37923,52.23877],[140.59742,51.23967],[140.51308,50.04553],[140.06193,48.44671],[138.55472,46.99965],[138.21971,46.30795],[136.86232,45.1435],[135.51535,43.989],[134.86939,43.39821],[133.53687,42.81147],[132.90627,42.79849],[132.27807,43.28456],[130.93587,42.55274],[130.78,42.22],[130.64,42.395],[130.633866,42.903015],[131.144688,42.92999],[131.288555,44.11152],[131.02519,44.96796],[131.883454,45.321162],[133.09712,45.14409],[133.769644,46.116927],[134.11235,47.21248],[134.50081,47.57845],[135.026311,48.47823],[133.373596,48.183442],[132.50669,47.78896],[130.98726,47.79013],[130.582293,48.729687],[129.397818,49.4406],[127.6574,49.76027],[127.287456,50.739797],[126.939157,51.353894],[126.564399,51.784255],[125.946349,52.792799],[125.068211,53.161045],[123.57147,53.4588],[122.245748,53.431726],[121.003085,53.251401],[120.177089,52.753886],[120.725789,52.516226],[120.7382,51.96411],[120.18208,51.64355],[119.27939,50.58292],[119.288461,50.142883],[117.879244,49.510983],[116.678801,49.888531],[115.485695,49.805177],[114.96211,50.140247],[114.362456,50.248303],[112.89774,49.543565],[111.581231,49.377968],[110.662011,49.130128],[109.402449,49.292961],[108.475167,49.282548],[107.868176,49.793705],[106.888804,50.274296],[105.886591,50.406019],[104.62158,50.27532],[103.676545,50.089966],[102.25589,50.51056],[102.06521,51.25991],[100.88948,51.516856],[99.981732,51.634006],[98.861491,52.047366],[97.82574,51.010995],[98.231762,50.422401],[97.25976,49.72605],[95.81402,49.97746],[94.815949,50.013433],[94.147566,50.480537],[93.10421,50.49529],[92.234712,50.802171],[90.713667,50.331812],[88.805567,49.470521],[87.751264,49.297198],[87.35997,49.214981],[86.829357,49.826675],[85.54127,49.692859],[85.11556,50.117303],[84.416377,50.3114],[83.935115,50.889246],[83.383004,51.069183],[81.945986,50.812196],[80.568447,51.388336],[80.03556,50.864751],[77.800916,53.404415],[76.525179,54.177003],[76.8911,54.490524],[74.38482,53.54685],[73.425679,53.48981],[73.508516,54.035617],[72.22415,54.376655],[71.180131,54.133285],[70.865267,55.169734],[69.068167,55.38525],[68.1691,54.970392],[65.66687,54.60125],[65.178534,54.354228],[61.4366,54.00625],[60.978066,53.664993],[61.699986,52.979996],[60.739993,52.719986],[60.927269,52.447548],[59.967534,51.96042],[61.588003,51.272659],[61.337424,50.79907],[59.932807,50.842194],[59.642282,50.545442],[58.36332,51.06364],[56.77798,51.04355],[55.71694,50.62171],[54.532878,51.02624],[52.328724,51.718652],[50.766648,51.692762],[48.702382,50.605128],[48.577841,49.87476],[47.54948,50.454698],[46.751596,49.356006],[47.043672,49.152039],[46.466446,48.394152],[47.31524,47.71585],[48.05725,47.74377],[48.694734,47.075628],[48.59325,46.56104],[49.10116,46.39933],[48.64541,45.80629],[47.67591,45.64149],[46.68201,44.6092],[47.59094,43.66016],[47.49252,42.98658],[48.58437,41.80888],[47.987283,41.405819],[47.815666,41.151416],[47.373315,41.219732],[46.686071,41.827137],[46.404951,41.860675],[45.7764,42.09244],[45.470279,42.502781],[44.537623,42.711993],[43.93121,42.55496],[43.75599,42.74083],[42.3944,43.2203],[40.92219,43.38215],[40.076965,43.553104],[39.955009,43.434998],[38.68,44.28],[37.53912,44.65721],[36.67546,45.24469],[37.40317,45.40451],[38.23295,46.24087],[37.67372,46.63657],[39.14767,47.04475],[39.1212,47.26336],[38.223538,47.10219],[38.255112,47.5464],[38.77057,47.82562],[39.738278,47.898937],[39.89562,48.23241],[39.67465,48.78382],[40.080789,49.30743],[40.06904,49.60105],[38.594988,49.926462],[38.010631,49.915662],[37.39346,50.383953],[36.626168,50.225591],[35.356116,50.577197],[35.37791,50.77394],[35.022183,51.207572],[34.224816,51.255993],[34.141978,51.566413],[34.391731,51.768882],[33.7527,52.335075],[32.715761,52.238465],[32.412058,52.288695],[32.15944,52.06125],[31.78597,52.10168],[31.540018,52.742052],[31.305201,53.073996],[31.49764,53.16743],[32.304519,53.132726],[32.693643,53.351421],[32.405599,53.618045],[31.731273,53.794029],[31.791424,53.974639],[31.384472,54.157056],[30.757534,54.811771],[30.971836,55.081548],[30.873909,55.550976],[29.896294,55.789463],[29.371572,55.670091],[29.229513,55.918344],[28.176709,56.16913],[27.855282,56.759326],[27.770016,57.244258],[27.288185,57.474528],[27.716686,57.791899],[27.42015,58.72457],[28.131699,59.300825],[27.98112,59.47537],[29.1177,60.02805],[28.07,60.50352],[30.211107,61.780028],[31.139991,62.357693],[31.516092,62.867687],[30.035872,63.552814],[30.444685,64.204453],[29.54443,64.948672],[30.21765,65.80598],[29.054589,66.944286],[29.977426,67.698297],[28.445944,68.364613],[28.59193,69.064777],[29.39955,69.15692],[31.10108,69.55811],[32.13272,69.90595],[33.77547,69.30142],[36.51396,69.06342],[40.29234,67.9324],[41.05987,67.45713],[41.12595,66.79158],[40.01583,66.26618],[38.38295,65.99953],[33.91871,66.75961],[33.18444,66.63253],[34.81477,65.90015],[34.878574,65.436213],[34.94391,64.41437],[36.23129,64.10945],[37.01273,63.84983],[37.14197,64.33471],[36.539579,64.76446],[37.17604,65.14322],[39.59345,64.52079],[40.4356,64.76446],[39.7626,65.49682],[42.09309,66.47623],[43.01604,66.41858],[43.94975,66.06908],[44.53226,66.75634],[43.69839,67.35245],[44.18795,67.95051],[43.45282,68.57079],[46.25,68.25],[46.82134,67.68997],[45.55517,67.56652],[45.56202,67.01005],[46.34915,66.66767],[47.89416,66.88455],[48.13876,67.52238],[50.22766,67.99867],[53.71743,68.85738],[54.47171,68.80815],[53.48582,68.20131],[54.72628,68.09702],[55.44268,68.43866],[57.31702,68.46628],[58.802,68.88082],[59.94142,68.27844],[61.07784,68.94069],[60.03,69.52],[60.55,69.85],[63.504,69.54739],[64.888115,69.234835],[68.51216,68.09233],[69.18068,68.61563],[68.16444,69.14436],[68.13522,69.35649],[66.93008,69.45461],[67.25976,69.92873],[66.72492,70.70889],[66.69466,71.02897],[68.54006,71.9345],[69.19636,72.84336],[69.94,73.04],[72.58754,72.77629],[72.79603,72.22006],[71.84811,71.40898],[72.47011,71.09019],[72.79188,70.39114],[72.5647,69.02085],[73.66787,68.4079],[73.2387,67.7404],[71.28,66.32],[72.42301,66.17267],[72.82077,66.53267],[73.92099,66.78946],[74.18651,67.28429],[75.052,67.76047],[74.46926,68.32899],[74.93584,68.98918],[73.84236,69.07146],[73.60187,69.62763],[74.3998,70.63175],[73.1011,71.44717],[74.89082,72.12119],[74.65926,72.83227],[75.15801,72.85497],[75.68351,72.30056],[75.28898,71.33556],[76.35911,71.15287],[75.90313,71.87401],[77.57665,72.26717],[79.65202,72.32011],[81.5,71.75],[80.61071,72.58285],[80.51109,73.6482],[82.25,73.85],[84.65526,73.80591],[86.8223,73.93688],[86.00956,74.45967],[87.16682,75.11643],[88.31571,75.14393],[90.26,75.64],[92.90058,75.77333],[93.23421,76.0472],[95.86,76.14],[96.67821,75.91548],[98.92254,76.44689],[100.75967,76.43028],[101.03532,76.86189],[101.99084,77.28754],[104.3516,77.69792],[106.06664,77.37389],[104.705,77.1274],[106.97013,76.97419]]],[[[105.07547,78.30689],[99.43814,77.921],[101.2649,79.23399],[102.08635,79.34641],[102.837815,79.28129],[105.37243,78.71334],[105.07547,78.30689]]],[[[51.136187,80.54728],[49.793685,80.415428],[48.894411,80.339567],[48.754937,80.175468],[47.586119,80.010181],[46.502826,80.247247],[47.072455,80.559424],[44.846958,80.58981],[46.799139,80.771918],[48.318477,80.78401],[48.522806,80.514569],[49.09719,80.753986],[50.039768,80.918885],[51.522933,80.699726],[51.136187,80.54728]]],[[[99.93976,78.88094],[97.75794,78.7562],[94.97259,79.044745],[93.31288,79.4265],[92.5454,80.14379],[91.18107,80.34146],[93.77766,81.0246],[95.940895,81.2504],[97.88385,80.746975],[100.186655,79.780135],[99.93976,78.88094]]]]}};
+const DATA = PACK.deals;
+const RUS = PACK.rus;
+const W = 1100, H = 520;
+const LON0 = 19, LON1 = 191, LAT0 = 41, LAT1 = 82;
+
+function normLon(lon) { return lon < 0 ? lon + 360 : lon; }
+function xy(lat, lon) {
+  lon = normLon(lon);
+  return [((lon - LON0) / (LON1 - LON0)) * W, ((LAT1 - lat) / (LAT1 - LAT0)) * H];
+}
+function pathFrom(ring) {
+  return ring.map((p, i) => {
+    const [x, y] = xy(p[1], p[0]);
+    return (i ? "L" : "M") + x.toFixed(1) + "," + y.toFixed(1);
+  }).join(" ") + "Z";
+}
+
+const svg = document.getElementById("map");
+const root = document.createElementNS("http://www.w3.org/2000/svg", "g");
+svg.appendChild(root);
+const land = document.createElementNS("http://www.w3.org/2000/svg", "g");
+const pins = document.createElementNS("http://www.w3.org/2000/svg", "g");
+const labels = document.createElementNS("http://www.w3.org/2000/svg", "g");
+root.appendChild(land); root.appendChild(labels); root.appendChild(pins);
+
+RUS.coordinates.forEach(poly => {
+  const d = poly.map(ring => pathFrom(ring)).join(" ");
+  const p = document.createElementNS("http://www.w3.org/2000/svg", "path");
+  p.setAttribute("d", d); p.setAttribute("class", "land");
+  land.appendChild(p);
+});
+
+[["Москва",55.75,37.62],["Санкт-Петербург",59.93,30.32],["Самара",53.2,50.15],["Новороссийск",44.72,37.77],["Екатеринбург",56.84,60.61],["Новосибирск",55.03,82.92],["Владивосток",43.12,131.89],["Якутск",62.03,129.73],["Мурманск",68.97,33.08],["Астрахань",46.35,48.04]].forEach(([name,lat,lon]) => {
+  const [x,y] = xy(lat, lon);
+  const t = document.createElementNS("http://www.w3.org/2000/svg", "text");
+  t.setAttribute("class", "lbl"); t.setAttribute("x", x + 8); t.setAttribute("y", y - 6); t.textContent = name;
+  labels.appendChild(t);
+});
+
+function colorOf(item) {
+  if (item.kind === "crm") return "#8a8378";
+  if (item.caution) return "#8a2f2f";
+  if (item.review || item.site) return "#0f6b4c";
+  return "#1f4e79";
+}
+
+let filter = "buyers";
+let selected = null;
+const nodes = {};
+
+function allItems() { return DATA.buyers.concat(DATA.crm); }
+
+function visible() {
+  const q = document.getElementById("q").value.trim().toLowerCase();
+  const src = filter === "crm" ? DATA.crm : DATA.buyers;
+  return src.filter(item => {
+    if (filter === "pick" && !(item.review || item.site)) return false;
+    if (!q) return true;
+    return [item.name, item.city, item.object, item.products, item.group, item.legal].filter(Boolean).join(" ").toLowerCase().includes(q);
+  });
+}
+
+function drawPins() {
+  pins.innerHTML = "";
+  visible().forEach(item => {
+    const [x, y] = xy(item.lat, item.lon);
+    const c = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+    c.setAttribute("cx", x); c.setAttribute("cy", y);
+    c.dataset.r = item.kind === "crm" ? 3.5 : 5.5;
+    c.setAttribute("fill", colorOf(item));
+    c.setAttribute("class", "dot" + (selected === item.id ? " sel" : ""));
+    c.dataset.id = item.id;
+    c.addEventListener("click", ev => { ev.stopPropagation(); select(item.id); });
+    pins.appendChild(c);
+    nodes[item.id] = c;
+  });
+  sizePins();
+}
+
+function renderList() {
+  const items = visible();
+  const byCity = {};
+  items.forEach(it => { (byCity[it.city] ||= []).push(it); });
+  const cities = Object.keys(byCity).sort((a,b) => byCity[b].length - byCity[a].length || a.localeCompare(b, "ru"));
+  document.getElementById("list").innerHTML = cities.map(city => {
+    const rows = byCity[city].map(it => {
+      const tags = [];
+      if (it.review) tags.push('<span class="tag review">отзыв</span>');
+      if (it.site) tags.push('<span class="tag site">сайт</span>');
+      if (it.caution) tags.push(`<span class="tag caution">${it.caution}</span>`);
+      return `<button class="row ${selected===it.id?"active":""}" data-id="${it.id}">
+        <div class="name">${it.name}</div>
+        <div class="meta">${it.object || it.group || ""}${it.products ? " · " + it.products : ""}</div>
+        ${tags.join("")}</button>`;
+    }).join("");
+    return `<button type="button" class="city" data-city="${city.replace(/"/g, "&quot;")}">${city}<span class="city-go">${byCity[city].length} → на карте</span></button>${rows}`;
+  }).join("") || '<div class="city" style="border:0;background:none;color:#6b635a">Ничего не найдено</div>';
+  document.querySelectorAll("#list .city[data-city]").forEach(el => {
+    el.addEventListener("click", ev => {
+      ev.preventDefault();
+      ev.stopPropagation();
+      flyToCity(el.getAttribute("data-city"));
+    });
+  });
+}
+
+function showCard(item) {
+  const el = document.getElementById("card");
+  if (!item) { el.style.display = "none"; return; }
+  el.style.display = "block";
+  const extra = item.kind === "crm"
+    ? `карточка CRM, не сделка` + (item.inn ? `<br>ИНН ${item.inn}` : "")
+    : [item.products, item.review ? "кандидат на отзыв" : "", item.site ? "кандидат на сайт" : "", item.caution || "", item.media ? item.media + " фото" : ""].filter(Boolean).join("<br>");
+  el.innerHTML = `<button class="x" id="closeCard">×</button><b>${item.name}</b>${item.city}<br>${item.object || item.group || ""}<br>${extra}`;
+  document.getElementById("closeCard").onclick = () => { selected = null; showCard(null); drawPins(); renderList(); };
+}
+
+function select(id) {
+  selected = id;
+  const item = allItems().find(x => x.id === id);
+  showCard(item);
+  drawPins();
+  renderList();
+  const el = document.querySelector(`[data-id="${id}"]`);
+  if (el) el.scrollIntoView({ block: "nearest" });
+  if (item) {
+    const [x, y] = xy(item.lat, item.lon);
+    flyTo(Math.max(view.k, 3.6), x, y);
+  }
+}
+
+const MIN_K = 1, MAX_K = 14;
+const view = { k: 1, x: W / 2, y: H / 2 };
+const slider = document.getElementById("zoomSlider");
+const zoomPct = document.getElementById("zoomPct");
+let anim = 0;
+
+function kToSlider(k) { return Math.round(Math.log(k) / Math.log(MAX_K) * 100); }
+function sliderToK(v) { return Math.pow(MAX_K, v / 100); }
+
+function sizePins() {
+  const scale = 1 / Math.sqrt(view.k);
+  pins.querySelectorAll("circle").forEach(c => {
+    c.setAttribute("r", (+c.dataset.r || 5) * scale);
+  });
+  const fs = Math.max(3.2, 11 / view.k);
+  labels.querySelectorAll("text").forEach(t => t.setAttribute("font-size", fs.toFixed(2)));
+}
+
+function applyView() {
+  view.k = Math.min(MAX_K, Math.max(MIN_K, view.k));
+  view.x = Math.min(W + 40, Math.max(-40, view.x));
+  view.y = Math.min(H + 40, Math.max(-40, view.y));
+  root.setAttribute("transform", `translate(${W/2},${H/2}) scale(${view.k}) translate(${-view.x},${-view.y})`);
+  sizePins();
+  slider.value = String(kToSlider(view.k));
+  zoomPct.textContent = Math.round(view.k * 100) + "%";
+}
+
+function zoomAt(factor, cx, cy) {
+  const px = cx ?? W / 2, py = cy ?? H / 2;
+  const wx = (px - W / 2) / view.k + view.x;
+  const wy = (py - H / 2) / view.k + view.y;
+  view.k = Math.min(MAX_K, Math.max(MIN_K, view.k * factor));
+  view.x = wx - (px - W / 2) / view.k;
+  view.y = wy - (py - H / 2) / view.k;
+  applyView();
+}
+
+function flyTo(k, x, y) {
+  cancelAnimationFrame(anim);
+  view.k = Math.min(MAX_K, Math.max(MIN_K, k));
+  view.x = x;
+  view.y = y;
+  applyView();
+}
+
+function fit() { flyTo(1, W / 2, H / 2); }
+
+const REGIONS = {
+  south: () => ({ k: 3.6, p: xy(46.1, 39.4) }),
+  volga: () => ({ k: 3.8, p: xy(53.4, 50.2) }),
+  ural: () => ({ k: 3.2, p: xy(56.9, 60.6) }),
+  east: () => ({ k: 2.6, p: xy(48.5, 135) }),
+};
+
+function flyToCity(city) {
+  const pts = visible().filter(it => it.city === city);
+  if (!pts.length) return;
+  const xs = pts.map(it => xy(it.lat, it.lon));
+  const x = xs.reduce((s, p) => s + p[0], 0) / xs.length;
+  const y = xs.reduce((s, p) => s + p[1], 0) / xs.length;
+  flyTo(Math.max(view.k, 6.2), x, y);
+}
+
+function svgPoint(e) {
+  const rect = svg.getBoundingClientRect();
+  return [(e.clientX - rect.left) / rect.width * W, (e.clientY - rect.top) / rect.height * H];
+}
+
+applyView();
+
+let drag = null;
+svg.addEventListener("pointerdown", e => {
+  if (e.target.classList && e.target.classList.contains("dot")) return;
+  cancelAnimationFrame(anim);
+  drag = { x: e.clientX, y: e.clientY, vx: view.x, vy: view.y, moved: false };
+  svg.setPointerCapture(e.pointerId);
+});
+svg.addEventListener("pointermove", e => {
+  if (!drag) return;
+  const rect = svg.getBoundingClientRect();
+  const sx = W / rect.width, sy = H / rect.height;
+  if (Math.abs(e.clientX - drag.x) + Math.abs(e.clientY - drag.y) > 3) drag.moved = true;
+  view.x = drag.vx - (e.clientX - drag.x) * sx / view.k;
+  view.y = drag.vy - (e.clientY - drag.y) * sy / view.k;
+  applyView();
+});
+svg.addEventListener("pointerup", () => { drag = null; });
+svg.addEventListener("wheel", e => {
+  e.preventDefault();
+  cancelAnimationFrame(anim);
+  let dy = e.deltaY;
+  if (e.deltaMode === 1) dy *= 16;
+  if (e.deltaMode === 2) dy *= 120;
+  const [cx, cy] = svgPoint(e);
+  zoomAt(Math.exp(-dy * (e.ctrlKey ? 0.01 : 0.0024)), cx, cy);
+}, { passive: false });
+svg.addEventListener("dblclick", e => {
+  if (e.target.classList && e.target.classList.contains("dot")) return;
+  e.preventDefault();
+  const [cx, cy] = svgPoint(e);
+  zoomAt(e.shiftKey ? 0.55 : 1.85, cx, cy);
+});
+
+let pinch = null;
+svg.addEventListener("gesturestart", e => {
+  e.preventDefault();
+  pinch = { k: view.k };
+}, { passive: false });
+svg.addEventListener("gesturechange", e => {
+  e.preventDefault();
+  if (!pinch) return;
+  const [cx, cy] = svgPoint(e);
+  const next = Math.min(MAX_K, Math.max(MIN_K, pinch.k * e.scale));
+  zoomAt(next / view.k, cx, cy);
+}, { passive: false });
+svg.addEventListener("gestureend", e => { e.preventDefault(); pinch = null; });
+
+document.getElementById("zoomIn").onclick = () => zoomAt(1.28);
+document.getElementById("zoomOut").onclick = () => zoomAt(0.78);
+document.getElementById("zoomFit").onclick = fit;
+slider.addEventListener("input", () => {
+  cancelAnimationFrame(anim);
+  zoomAt(sliderToK(+slider.value) / view.k);
+});
+document.querySelectorAll("[data-region]").forEach(btn => btn.addEventListener("click", () => {
+  const r = REGIONS[btn.dataset.region]();
+  flyTo(r.k, r.p[0], r.p[1]);
+}));
+document.getElementById("list").addEventListener("click", e => {
+  const btn = e.target.closest("[data-id]");
+  if (btn) { select(btn.dataset.id); return; }
+  const city = e.target.closest("[data-city]");
+  if (city) flyToCity(city.dataset.city);
+});
+document.addEventListener("keydown", e => {
+  if (e.target.matches("input, textarea")) return;
+  if (e.key === "+" || e.key === "=") zoomAt(1.22);
+  else if (e.key === "-" || e.key === "_") zoomAt(0.82);
+  else if (e.key === "0") fit();
+  else if (e.key === "ArrowLeft") { view.x -= 40 / view.k; applyView(); }
+  else if (e.key === "ArrowRight") { view.x += 40 / view.k; applyView(); }
+  else if (e.key === "ArrowUp") { view.y -= 40 / view.k; applyView(); }
+  else if (e.key === "ArrowDown") { view.y += 40 / view.k; applyView(); }
+});
+document.getElementById("q").addEventListener("input", () => { drawPins(); renderList(); });
+document.querySelectorAll(".chip").forEach(ch => ch.addEventListener("click", () => {
+  document.querySelectorAll(".chip").forEach(x => x.classList.toggle("on", x === ch));
+  filter = ch.dataset.f; selected = null; showCard(null); drawPins(); renderList();
+}));
+
+document.getElementById("nBuyers").textContent = DATA.buyers.length;
+document.getElementById("nPick").textContent = DATA.buyers.filter(b => b.review || b.site).length;
+document.getElementById("nCrm").textContent = DATA.crm.length;
+drawPins();
+renderList();
+</script>
+</body>
+</html>

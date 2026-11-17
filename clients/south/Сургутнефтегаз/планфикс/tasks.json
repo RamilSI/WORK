@@ -1,0 +1,2792 @@
+{
+  "31295": {
+    "result": "success",
+    "task": {
+      "id": 31295,
+      "name": "Сургутнефтегаз согласование к поставке",
+      "description": "",
+      "priority": "NotUrgent",
+      "status": {
+        "id": 2,
+        "name": "В работе",
+        "color": "#3377C3",
+        "isActive": true,
+        "hasDeadline": true,
+        "isAppliedIndividually": false,
+        "texts": [
+          {
+            "lang": "Ru",
+            "name": "В работе"
+          },
+          {
+            "lang": "En",
+            "name": "In progress"
+          }
+        ]
+      },
+      "assigner": {
+        "id": "user:1",
+        "name": "Саликов Рамиль"
+      },
+      "counterparty": {
+        "id": "contact:5278",
+        "name": "СУРГУТНЕФТЕГАЗ"
+      },
+      "dateTime": {
+        "date": "08-06-2026",
+        "time": "11:19",
+        "datetime": "2026-06-08T11:19Z",
+        "dateTimeUtcSeconds": "2026-06-08T11:19:22+0000",
+        "dateTimeUtcWithSeconds": "2026-06-08T11:19:22+0000"
+      },
+      "startDateTime": {
+        "date": "08-06-2026",
+        "time": "13:18",
+        "datetime": "2026-06-08T13:18Z",
+        "dateTimeUtcSeconds": "2026-06-08T13:18:00+0000",
+        "dateTimeUtcWithSeconds": "2026-06-08T13:18:00+0000"
+      },
+      "dateOfLastUpdate": {
+        "date": "15-09-2026",
+        "time": "08:53",
+        "datetime": "2026-09-15T08:53Z",
+        "dateTimeUtcSeconds": "2026-09-15T08:53:55+0000",
+        "dateTimeUtcWithSeconds": "2026-09-15T08:53:55+0000"
+      },
+      "assignees": {
+        "users": [
+          {
+            "id": "user:23",
+            "name": "Пониматкин Евгений"
+          },
+          {
+            "id": "user:1",
+            "name": "Саликов Рамиль"
+          }
+        ],
+        "groups": []
+      },
+      "files": []
+    }
+  },
+  "31295_comments": {
+    "result": "success",
+    "comments": [
+      {
+        "id": 9047060,
+        "dateTime": {
+          "date": "15-09-2026",
+          "time": "08:53",
+          "datetime": "2026-09-15T08:53Z",
+          "dateTimeUtcSeconds": "2026-09-15T08:53:47+0000",
+          "dateTimeUtcWithSeconds": "2026-09-15T08:53:47+0000"
+        },
+        "type": "Comment",
+        "owner": {
+          "id": "user:1",
+          "name": "Саликов Рамиль"
+        },
+        "description": "<p>вот</p>\n<blockquote>\n <div>\n  + rml@\n </div>\n <div>\n  &nbsp;\n </div>\n <div>\n  Рамиль ,привет !\n </div>\n <div>\n  &nbsp;\n </div>\n <div>\n  переговорил с руководством.\n </div>\n <div>\n  &nbsp;\n </div>\n <div>\n  тогда фиксируем: Вы ( ООО ТОНАЛЬ) занимаетесь \\закрепляетесь за дннным предприятием.\n </div>\n <div>\n  &nbsp;\n </div>\n <div>\n  финансовое \\ организационное опровождение <strong>Ваше</strong> ( во всяком случае на данном этапе развития событий).\n </div>\n <div>\n  &nbsp;\n </div>\n <div>\n  Образцы ЛКМ ( подготовка пластин ) - можем взять на себя.\n </div>\n <div>\n  &nbsp;\n </div>\n <div>\n  Дальше действем по ситуации в зависимости от возникших вопросов\\предложений\\требований\\расходов и т.д.\n </div>\n <div>\n  &nbsp;\n </div>\n <div>\n  &nbsp;\n </div>\n <div>\n  &nbsp;\n </div>\n <div>\n  &nbsp;\n </div>\n <div>\n  &nbsp;\n </div>\n <div>\n  &nbsp;\n </div>\n <div>\n  ----------------\n </div>\n <div>\n  Кому: cheslavski@rem-color.by (cheslavski@rem-color.by);\n </div>\n <div>\n  Тема: Сургутнефтегаз согласование к поставке;\n </div>\n <div>\n  10.06.2026, 14:56, \"Рамиль\" &lt;rml@tonaly.ru&gt;:\n </div>\n</blockquote>",
+        "isPinned": false
+      },
+      {
+        "id": 9032812,
+        "dateTime": {
+          "date": "04-08-2026",
+          "time": "17:08",
+          "datetime": "2026-08-04T17:08Z",
+          "dateTimeUtcSeconds": "2026-08-04T17:08:13+0000",
+          "dateTimeUtcWithSeconds": "2026-08-04T17:08:13+0000"
+        },
+        "type": "Comment",
+        "owner": {
+          "id": "user:23",
+          "name": "Пониматкин Евгений"
+        },
+        "description": "Это переписка прошлая неделя",
+        "isPinned": false
+      },
+      {
+        "id": 9032810,
+        "dateTime": {
+          "date": "04-08-2026",
+          "time": "17:07",
+          "datetime": "2026-08-04T17:07Z",
+          "dateTimeUtcSeconds": "2026-08-04T17:07:30+0000",
+          "dateTimeUtcWithSeconds": "2026-08-04T17:07:30+0000"
+        },
+        "type": "Comment",
+        "owner": {
+          "id": "user:23",
+          "name": "Пониматкин Евгений"
+        },
+        "description": "Евгений:<br>Просто есть внутренняя бюрократия<br><br>Евгений:<br>Доброе утро, Александр. Жду утверждения протокола, пока все по плану.",
+        "isPinned": false
+      },
+      {
+        "id": 9032808,
+        "dateTime": {
+          "date": "04-08-2026",
+          "time": "17:07",
+          "datetime": "2026-08-04T17:07Z",
+          "dateTimeUtcSeconds": "2026-08-04T17:07:05+0000",
+          "dateTimeUtcWithSeconds": "2026-08-04T17:07:05+0000"
+        },
+        "type": "Comment",
+        "owner": {
+          "id": "user:23",
+          "name": "Пониматкин Евгений"
+        },
+        "description": "Привет, Александр. СНГ заинтересовано во взаимодействии с Рем Колор. Предлагается выполнить испытания на соответствие ТТ для наружки и внутрянки, при полож результатах инспектирование производства, внесение во Временный перечень ЛКМ",
+        "isPinned": false
+      },
+      {
+        "id": 9032438,
+        "dateTime": {
+          "date": "04-08-2026",
+          "time": "16:00",
+          "datetime": "2026-08-04T16:00Z",
+          "dateTimeUtcSeconds": "2026-08-04T16:00:59+0000",
+          "dateTimeUtcWithSeconds": "2026-08-04T16:00:59+0000"
+        },
+        "type": "Comment",
+        "owner": {
+          "id": "user:1",
+          "name": "Саликов Рамиль"
+        },
+        "description": "<p>Жень, а что тут с согласованием?</p>",
+        "isPinned": false
+      },
+      {
+        "id": 9026962,
+        "dateTime": {
+          "date": "16-07-2026",
+          "time": "07:02",
+          "datetime": "2026-07-16T07:02Z",
+          "dateTimeUtcSeconds": "2026-07-16T07:02:49+0000",
+          "dateTimeUtcWithSeconds": "2026-07-16T07:02:49+0000"
+        },
+        "type": "Comment",
+        "owner": {
+          "id": "user:23",
+          "name": "Пониматкин Евгений"
+        },
+        "description": "Дд! <br>Условия о прохождении акредитации на подписании. В начале недели должны быть на почте.",
+        "isPinned": false
+      },
+      {
+        "id": 9025974,
+        "dateTime": {
+          "date": "13-07-2026",
+          "time": "11:31",
+          "datetime": "2026-07-13T11:31Z",
+          "dateTimeUtcSeconds": "2026-07-13T11:31:03+0000",
+          "dateTimeUtcWithSeconds": "2026-07-13T11:31:03+0000"
+        },
+        "type": "Comment",
+        "owner": {
+          "id": "user:23",
+          "name": "Пониматкин Евгений"
+        },
+        "description": "<p>&nbsp;</p>\n<blockquote>\n <p>Вниманию Гаврилюк Алексея Николаевича!</p>\n <p>В дополнение к ранее направленным в адрес ПАО \"СургутНефтеГаз\" документам для внесения&nbsp; предприятия ООО \"Тональ\" в реестр проверенных поставщиков направляем Вам соглашение о дистрибьюции ЛКМ производства ООО \"РЕМ-КОЛОР\" (г.Минск) и письмо подтверждающие полномочия регионального менеджера Пониматкина Е.А. на подготовку, проведение переговоров и подписание сопутствующих документов</p>\n</blockquote>",
+        "isPinned": false
+      },
+      {
+        "id": 9025972,
+        "dateTime": {
+          "date": "13-07-2026",
+          "time": "11:26",
+          "datetime": "2026-07-13T11:26Z",
+          "dateTimeUtcSeconds": "2026-07-13T11:26:27+0000",
+          "dateTimeUtcWithSeconds": "2026-07-13T11:26:27+0000"
+        },
+        "type": "Comment",
+        "owner": {
+          "id": "user:23",
+          "name": "Пониматкин Евгений"
+        },
+        "description": "<p>Вниманию Гаврилюк Алексея Николаевича!</p>\n<p>В дополнение к ранее направленным в адрес ПАО \"СургутНефтеГаз\" документам для внесения&nbsp; предприятия ООО \"Тональ\" в реестр проверенных поставщиков направляем Вам соглашение о дистрибьюции ЛКМ производства ООО \"РЕМ-КОЛОР\" (г.Минск) и письмо подтверждающие полномочия регионального менеджера Пониматкина Е.А. на подготовку, проведение переговоров и подписание сопутствующих документов.</p>",
+        "isPinned": false
+      },
+      {
+        "id": 9025798,
+        "dateTime": {
+          "date": "13-07-2026",
+          "time": "05:44",
+          "datetime": "2026-07-13T05:44Z",
+          "dateTimeUtcSeconds": "2026-07-13T05:44:55+0000",
+          "dateTimeUtcWithSeconds": "2026-07-13T05:44:55+0000"
+        },
+        "type": "Comment",
+        "owner": {
+          "id": "user:23",
+          "name": "Пониматкин Евгений"
+        },
+        "description": "Спасибо!",
+        "isPinned": false
+      },
+      {
+        "id": 9025796,
+        "dateTime": {
+          "date": "13-07-2026",
+          "time": "05:44",
+          "datetime": "2026-07-13T05:44Z",
+          "dateTimeUtcSeconds": "2026-07-13T05:44:26+0000",
+          "dateTimeUtcWithSeconds": "2026-07-13T05:44:26+0000"
+        },
+        "type": "Comment",
+        "owner": {
+          "id": "user:21",
+          "name": "Котова Наталья"
+        },
+        "description": "",
+        "isPinned": false
+      },
+      {
+        "id": 9025794,
+        "dateTime": {
+          "date": "13-07-2026",
+          "time": "05:32",
+          "datetime": "2026-07-13T05:32Z",
+          "dateTimeUtcSeconds": "2026-07-13T05:32:05+0000",
+          "dateTimeUtcWithSeconds": "2026-07-13T05:32:05+0000"
+        },
+        "type": "Comment",
+        "owner": {
+          "id": "user:23",
+          "name": "Пониматкин Евгений"
+        },
+        "description": "Дд Наталия! На мои полотмочия письмо сегодня можно получить?",
+        "isPinned": false
+      },
+      {
+        "id": 9025702,
+        "dateTime": {
+          "date": "12-07-2026",
+          "time": "16:52",
+          "datetime": "2026-07-12T16:52Z",
+          "dateTimeUtcSeconds": "2026-07-12T16:52:43+0000",
+          "dateTimeUtcWithSeconds": "2026-07-12T16:52:43+0000"
+        },
+        "type": "Comment",
+        "owner": {
+          "id": "contact:943",
+          "name": "Чеславский Вячеслав"
+        },
+        "description": "<div>\n Рамиль, добрый вечер !\n</div>\n<div>\n</div>\n<div>\n письмо во вложении.\n</div>\n<div>\n</div>\n<div>\n</div>\n<div>\n</div>\n<div>\n ----------------\n</div>\n<div>\n Кому: cheslavski@rem-color.by (cheslavski@rem-color.by);\n</div>\n<div>\n Тема: Сургутнефтегаз согласование к поставке;\n</div>\n<div>\n 10.07.2026, 15:54, \"Рамиль\" &lt;rml@tonaly.ru&gt;:\n</div>",
+        "isPinned": false
+      },
+      {
+        "id": 9025454,
+        "dateTime": {
+          "date": "10-07-2026",
+          "time": "12:54",
+          "datetime": "2026-07-10T12:54Z",
+          "dateTimeUtcSeconds": "2026-07-10T12:54:50+0000",
+          "dateTimeUtcWithSeconds": "2026-07-10T12:54:50+0000"
+        },
+        "type": "Comment",
+        "owner": {
+          "id": "user:1",
+          "name": "Саликов Рамиль"
+        },
+        "description": "<p>Слава, добрый день!</p>\n<p>&nbsp;</p>\n<p>Прошу составить письмо касательно подтверждения полномочий ООО \"ТОНАЛЬ\" по поставкам и дистрибуции материалов Рем Колор на ПАО \"Сургутнефтегаз\"</p>\n<p>&nbsp;</p>\n<p>Начинаем подготовку к выбору схем и материалов к внедрению.</p>\n<p>&nbsp;</p>\n<p>Получили положительную обратную связь от заказчика и в том числе запрос по полномочиям.</p>\n<p>&nbsp;</p>\n<p>&nbsp;</p>",
+        "isPinned": false
+      },
+      {
+        "id": 9025332,
+        "dateTime": {
+          "date": "10-07-2026",
+          "time": "09:14",
+          "datetime": "2026-07-10T09:14Z",
+          "dateTimeUtcSeconds": "2026-07-10T09:14:21+0000",
+          "dateTimeUtcWithSeconds": "2026-07-10T09:14:21+0000"
+        },
+        "type": "Comment",
+        "owner": {
+          "id": "user:23",
+          "name": "Пониматкин Евгений"
+        },
+        "description": "Я не силен в русском языке",
+        "isPinned": false
+      },
+      {
+        "id": 9025330,
+        "dateTime": {
+          "date": "10-07-2026",
+          "time": "09:13",
+          "datetime": "2026-07-10T09:13Z",
+          "dateTimeUtcSeconds": "2026-07-10T09:13:40+0000",
+          "dateTimeUtcWithSeconds": "2026-07-10T09:13:40+0000"
+        },
+        "type": "Comment",
+        "owner": {
+          "id": "user:23",
+          "name": "Пониматкин Евгений"
+        },
+        "description": "Еднственное, нверно генерального дректора нужно с большой буквы писать?",
+        "isPinned": false
+      },
+      {
+        "id": 9025328,
+        "dateTime": {
+          "date": "10-07-2026",
+          "time": "09:12",
+          "datetime": "2026-07-10T09:12Z",
+          "dateTimeUtcSeconds": "2026-07-10T09:12:09+0000",
+          "dateTimeUtcWithSeconds": "2026-07-10T09:12:09+0000"
+        },
+        "type": "Comment",
+        "owner": {
+          "id": "user:23",
+          "name": "Пониматкин Евгений"
+        },
+        "description": "Да , подписывайте",
+        "isPinned": false
+      },
+      {
+        "id": 9025326,
+        "dateTime": {
+          "date": "10-07-2026",
+          "time": "09:10",
+          "datetime": "2026-07-10T09:10Z",
+          "dateTimeUtcSeconds": "2026-07-10T09:10:46+0000",
+          "dateTimeUtcWithSeconds": "2026-07-10T09:10:46+0000"
+        },
+        "type": "Comment",
+        "owner": {
+          "id": "user:21",
+          "name": "Котова Наталья"
+        },
+        "description": "<p>Почитайте, если ок, подпишу отправлю Вам&nbsp;</p>",
+        "isPinned": false
+      },
+      {
+        "id": 9025324,
+        "dateTime": {
+          "date": "10-07-2026",
+          "time": "09:03",
+          "datetime": "2026-07-10T09:03Z",
+          "dateTimeUtcSeconds": "2026-07-10T09:03:01+0000",
+          "dateTimeUtcWithSeconds": "2026-07-10T09:03:01+0000"
+        },
+        "type": "Comment",
+        "owner": {
+          "id": "user:23",
+          "name": "Пониматкин Евгений"
+        },
+        "description": "Наталия, выше в переписке есть письмо а имя Дейс В.В, первого заместителя ген. дира СНГ. На его имя нужно писать. Он принимает решения.",
+        "isPinned": false
+      },
+      {
+        "id": 9025322,
+        "dateTime": {
+          "date": "10-07-2026",
+          "time": "08:59",
+          "datetime": "2026-07-10T08:59Z",
+          "dateTimeUtcSeconds": "2026-07-10T08:59:21+0000",
+          "dateTimeUtcWithSeconds": "2026-07-10T08:59:21+0000"
+        },
+        "type": "Comment",
+        "owner": {
+          "id": "user:21",
+          "name": "Котова Наталья"
+        },
+        "description": "<p>я письмо могу подготовить, но мне надо ФИО на чье имя письмо&nbsp;</p>",
+        "isPinned": false
+      },
+      {
+        "id": 9025320,
+        "dateTime": {
+          "date": "10-07-2026",
+          "time": "08:37",
+          "datetime": "2026-07-10T08:37Z",
+          "dateTimeUtcSeconds": "2026-07-10T08:37:53+0000",
+          "dateTimeUtcWithSeconds": "2026-07-10T08:37:53+0000"
+        },
+        "type": "Comment",
+        "owner": {
+          "id": "user:23",
+          "name": "Пониматкин Евгений"
+        },
+        "description": "<p>Сегодня в СНГ во второй половине дня будет совещание по вопросу формирования Реестра поставщиков ЛКМ.</p>\n<p>Технари ознакомившись с ассортиментом ЛКМ от Рем Колор расширили список материалов к применению. Не знаю, хорошо это или нет.</p>\n<p>Также просят как можно быстрее предоставить подтверждение о наличии договора дистрибьюции , желательно именно на СНГ,между производителем ЛКМ ООО Рем Колор и ООО Тональ.&nbsp;</p>\n<p>Так же требуется письмо о том, что я уполномочен вести подготовку документации и проведение перпеговоров с СНГ от лица ООО Тональ.</p>\n<p>Как быстро можно решить эти два вопроса?</p>\n<p>&nbsp;</p>",
+        "isPinned": false
+      },
+      {
+        "id": 9025206,
+        "dateTime": {
+          "date": "10-07-2026",
+          "time": "00:53",
+          "datetime": "2026-07-10T00:53Z",
+          "dateTimeUtcSeconds": "2026-07-10T00:53:23+0000",
+          "dateTimeUtcWithSeconds": "2026-07-10T00:53:23+0000"
+        },
+        "type": "Comment",
+        "owner": {
+          "id": "user:23",
+          "name": "Пониматкин Евгений"
+        },
+        "description": "Но без об явления тендерной процедуры закупок у них нет. Но на тендере только те, кто вошел в реестр добросовестных поставщиков.",
+        "isPinned": false
+      },
+      {
+        "id": 9025204,
+        "dateTime": {
+          "date": "10-07-2026",
+          "time": "00:50",
+          "datetime": "2026-07-10T00:50Z",
+          "dateTimeUtcSeconds": "2026-07-10T00:50:56+0000",
+          "dateTimeUtcWithSeconds": "2026-07-10T00:50:56+0000"
+        },
+        "type": "Comment",
+        "owner": {
+          "id": "user:23",
+          "name": "Пониматкин Евгений"
+        },
+        "description": "Почему? От СНГ придут требования по проведнтю испытаний ЛКП. Мыих пройдем. Войдем в реестр. <br>Параллельно проходим аккредитацию на торговой площадке. <br>Потом будет ряд встреч с подрядчикам и СНГ, на которых будет рекомендовано применение ЛКМ от Тональ. <br>",
+        "isPinned": false
+      },
+      {
+        "id": 9025176,
+        "dateTime": {
+          "date": "09-07-2026",
+          "time": "20:32",
+          "datetime": "2026-07-09T20:32Z",
+          "dateTimeUtcSeconds": "2026-07-09T20:32:32+0000",
+          "dateTimeUtcWithSeconds": "2026-07-09T20:32:32+0000"
+        },
+        "type": "Comment",
+        "owner": {
+          "id": "user:1",
+          "name": "Саликов Рамиль"
+        },
+        "description": "И что теперь? Не проходим?",
+        "isPinned": false
+      },
+      {
+        "id": 9025174,
+        "dateTime": {
+          "date": "09-07-2026",
+          "time": "17:20",
+          "datetime": "2026-07-09T17:20Z",
+          "dateTimeUtcSeconds": "2026-07-09T17:20:40+0000",
+          "dateTimeUtcWithSeconds": "2026-07-09T17:20:40+0000"
+        },
+        "type": "Comment",
+        "owner": {
+          "id": "user:23",
+          "name": "Пониматкин Евгений"
+        },
+        "description": "<p>Дд!</p>\n<p>Для прохождения регистрации на электронной площадке СНГ нужны следующие документы (скан экрана, к сожалению функция копия или скачать файл&nbsp; не доступны) и заявление (я заполнил).</p>",
+        "isPinned": false
+      },
+      {
+        "id": 9023402,
+        "dateTime": {
+          "date": "06-07-2026",
+          "time": "11:33",
+          "datetime": "2026-07-06T11:33Z",
+          "dateTimeUtcSeconds": "2026-07-06T11:33:47+0000",
+          "dateTimeUtcWithSeconds": "2026-07-06T11:33:47+0000"
+        },
+        "type": "Comment",
+        "owner": {
+          "id": "user:23",
+          "name": "Пониматкин Евгений"
+        },
+        "description": "Обещали в среду",
+        "isPinned": false
+      },
+      {
+        "id": 9023400,
+        "dateTime": {
+          "date": "06-07-2026",
+          "time": "11:33",
+          "datetime": "2026-07-06T11:33Z",
+          "dateTimeUtcSeconds": "2026-07-06T11:33:36+0000",
+          "dateTimeUtcWithSeconds": "2026-07-06T11:33:36+0000"
+        },
+        "type": "Comment",
+        "owner": {
+          "id": "user:23",
+          "name": "Пониматкин Евгений"
+        },
+        "description": "Привет",
+        "isPinned": false
+      },
+      {
+        "id": 9023398,
+        "dateTime": {
+          "date": "06-07-2026",
+          "time": "11:32",
+          "datetime": "2026-07-06T11:32Z",
+          "dateTimeUtcSeconds": "2026-07-06T11:32:37+0000",
+          "dateTimeUtcWithSeconds": "2026-07-06T11:32:37+0000"
+        },
+        "type": "Comment",
+        "owner": {
+          "id": "user:1",
+          "name": "Саликов Рамиль"
+        },
+        "description": "<p>Жень, привет!</p>\n<p>&nbsp;</p>\n<p>Тут когда ответ ждать?</p>",
+        "isPinned": false
+      },
+      {
+        "id": 9022396,
+        "dateTime": {
+          "date": "02-07-2026",
+          "time": "08:09",
+          "datetime": "2026-07-02T08:09Z",
+          "dateTimeUtcSeconds": "2026-07-02T08:09:04+0000",
+          "dateTimeUtcWithSeconds": "2026-07-02T08:09:04+0000"
+        },
+        "type": "Comment",
+        "owner": {
+          "id": "user:23",
+          "name": "Пониматкин Евгений"
+        },
+        "description": "<p style=\"margin: 0px; padding: 0px; color: rgb(52, 52, 52); font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, roboto, &quot;Helvetica Neue&quot;, helvetica, arial, sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(239, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial\">Вниманию Гаврилюк Алексея Николаевича!</p>\n<p style=\"margin: 0px; padding: 0px; color: rgb(52, 52, 52); font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, roboto, &quot;Helvetica Neue&quot;, helvetica, arial, sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(239, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial\">Добрый день! Направляем запрос на вхождение ЛКМ производства ООО \"Рем-Колор\" (г. Минск)&nbsp; в реестр проверенных поставщиков ПАО \"СургутНефтеГаз\". К письму на имя&nbsp; Первого заместителя Генерального Директора Дейс В.В прилагается карта партнера&nbsp; ООО \"Тональ\",технические листы ЛКМ, Сертификаты РБ на ЛКМ, Презентация производителя ЛКМ ООО \"Рем-Колор\".</p>\n<p style=\"margin: 0px; padding: 0px; color: rgb(52, 52, 52); font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, roboto, &quot;Helvetica Neue&quot;, helvetica, arial, sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(239, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial\">Все вопросы прошу Вас направлять на почту : samara@tonaly.ru.</p>",
+        "isPinned": false
+      },
+      {
+        "id": 9021330,
+        "dateTime": {
+          "date": "29-06-2026",
+          "time": "09:13",
+          "datetime": "2026-06-29T09:13Z",
+          "dateTimeUtcSeconds": "2026-06-29T09:13:13+0000",
+          "dateTimeUtcWithSeconds": "2026-06-29T09:13:13+0000"
+        },
+        "type": "Comment",
+        "owner": {
+          "id": "user:23",
+          "name": "Пониматкин Евгений"
+        },
+        "description": "<p>Добрый день! Направляем запрос на вхождение ЛКМ производства ООО \"Рем-Колор\" (г. Минск)&nbsp; в реестр проверенных поставщиков ПАО \"СургутНефтеГаз\". К письму прилагается карта партнера&nbsp; ООО \"Тональ\",технические листы ЛКМ, Сертификаты РБ на ЛКМ, Презентация производителя ЛКМ ООО \"Рем-Колор\".</p>\n<p>все вопросы прошу Вас направлять на почту : samara@tonaly.ru.</p>",
+        "isPinned": false
+      },
+      {
+        "id": 9021300,
+        "dateTime": {
+          "date": "29-06-2026",
+          "time": "08:16",
+          "datetime": "2026-06-29T08:16Z",
+          "dateTimeUtcSeconds": "2026-06-29T08:16:00+0000",
+          "dateTimeUtcWithSeconds": "2026-06-29T08:16:00+0000"
+        },
+        "type": "Comment",
+        "owner": {
+          "id": "user:23",
+          "name": "Пониматкин Евгений"
+        },
+        "description": "<p>Письмо направляется на имя зам.ген.дира Дейс В.В.&nbsp; Если почта прикреплена к Богданову письмо уйдет на Дейса?</p>",
+        "isPinned": false
+      },
+      {
+        "id": 9021288,
+        "dateTime": {
+          "date": "29-06-2026",
+          "time": "06:55",
+          "datetime": "2026-06-29T06:55Z",
+          "dateTimeUtcSeconds": "2026-06-29T06:55:44+0000",
+          "dateTimeUtcWithSeconds": "2026-06-29T06:55:44+0000"
+        },
+        "type": "Comment",
+        "owner": {
+          "id": "user:1",
+          "name": "Саликов Рамиль"
+        },
+        "description": "<p>Добавил ген директора с этой почтой.&nbsp;</p>\n<blockquote>\n <blockquote>\n  <p>Дд! СургутНефтеГаз просит прислать следующие письма на почту <a href=\"mailto:uebp-ext@surgutneftegas.ru\" style=\"color: rgb(17, 85, 204); font-family: Arial, Helvetica, sans-serif; font-size: small; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255)\" target=\"_blank\">uebp-ext@surgutneftegas.ru</a>. Я пытаюсь вставить адрес этой почту в карточку , но она не дает вносить изменения.</p>\n </blockquote>\n</blockquote>",
+        "isPinned": false
+      },
+      {
+        "id": 9021278,
+        "dateTime": {
+          "date": "29-06-2026",
+          "time": "06:40",
+          "datetime": "2026-06-29T06:40Z",
+          "dateTimeUtcSeconds": "2026-06-29T06:40:42+0000",
+          "dateTimeUtcWithSeconds": "2026-06-29T06:40:42+0000"
+        },
+        "type": "Comment",
+        "owner": {
+          "id": "user:23",
+          "name": "Пониматкин Евгений"
+        },
+        "description": "<blockquote>\n <p>Дд! СургутНефтеГаз просит прислать следующие письма на почту <a target=\"_blank\" style=\"color: rgb(17, 85, 204); font-family: Arial, Helvetica, sans-serif; font-size: small; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255)\" href=\"mailto:uebp-ext@surgutneftegas.ru\">uebp-ext@surgutneftegas.ru</a>. Я пытаюсь вставить адрес этой почту в карточку , но она не дает вносить изменения.</p>\n</blockquote>",
+        "isPinned": false
+      },
+      {
+        "id": 9021276,
+        "dateTime": {
+          "date": "29-06-2026",
+          "time": "06:37",
+          "datetime": "2026-06-29T06:37Z",
+          "dateTimeUtcSeconds": "2026-06-29T06:37:52+0000",
+          "dateTimeUtcWithSeconds": "2026-06-29T06:37:52+0000"
+        },
+        "type": "Comment",
+        "owner": {
+          "id": "user:1",
+          "name": "Саликов Рамиль"
+        },
+        "description": "Или где сама почта?",
+        "isPinned": false
+      },
+      {
+        "id": 9021274,
+        "dateTime": {
+          "date": "29-06-2026",
+          "time": "06:37",
+          "datetime": "2026-06-29T06:37Z",
+          "dateTimeUtcSeconds": "2026-06-29T06:37:10+0000",
+          "dateTimeUtcWithSeconds": "2026-06-29T06:37:10+0000"
+        },
+        "type": "Comment",
+        "owner": {
+          "id": "user:1",
+          "name": "Саликов Рамиль"
+        },
+        "description": "А на чье имя?",
+        "isPinned": false
+      },
+      {
+        "id": 9021272,
+        "dateTime": {
+          "date": "29-06-2026",
+          "time": "06:36",
+          "datetime": "2026-06-29T06:36Z",
+          "dateTimeUtcSeconds": "2026-06-29T06:36:41+0000",
+          "dateTimeUtcWithSeconds": "2026-06-29T06:36:41+0000"
+        },
+        "type": "Comment",
+        "owner": {
+          "id": "user:23",
+          "name": "Пониматкин Евгений"
+        },
+        "description": "Почту СНГ",
+        "isPinned": false
+      },
+      {
+        "id": 9021270,
+        "dateTime": {
+          "date": "29-06-2026",
+          "time": "06:36",
+          "datetime": "2026-06-29T06:36Z",
+          "dateTimeUtcSeconds": "2026-06-29T06:36:00+0000",
+          "dateTimeUtcWithSeconds": "2026-06-29T06:36:00+0000"
+        },
+        "type": "Comment",
+        "owner": {
+          "id": "user:1",
+          "name": "Саликов Рамиль"
+        },
+        "description": "О какой почте идет речь? \n<blockquote>\n <p>СургутНефтеГаз просит направить эти письма на их почту. У меня не получается вставить почту в карту предприятия.Посмотрите пжста, в чем проблема.</p>\n</blockquote>",
+        "isPinned": false
+      },
+      {
+        "id": 9020948,
+        "dateTime": {
+          "date": "26-06-2026",
+          "time": "11:55",
+          "datetime": "2026-06-26T11:55Z",
+          "dateTimeUtcSeconds": "2026-06-26T11:55:20+0000",
+          "dateTimeUtcWithSeconds": "2026-06-26T11:55:20+0000"
+        },
+        "type": "Comment",
+        "owner": {
+          "id": "user:23",
+          "name": "Пониматкин Евгений"
+        },
+        "description": "<p>СургутНефтеГаз просит направить эти письма на их почту. У меня не получается вставить почту в карту предприятия.Посмотрите пжста, в чем проблема.</p>",
+        "isPinned": false
+      },
+      {
+        "id": 9020946,
+        "dateTime": {
+          "date": "26-06-2026",
+          "time": "11:53",
+          "datetime": "2026-06-26T11:53Z",
+          "dateTimeUtcSeconds": "2026-06-26T11:53:34+0000",
+          "dateTimeUtcWithSeconds": "2026-06-26T11:53:34+0000"
+        },
+        "type": "Comment",
+        "owner": {
+          "id": "user:23",
+          "name": "Пониматкин Евгений"
+        },
+        "description": "<p>Дд! СургутНефтеГаз просит прислать следующие письма на почту&nbsp;<a target=\"_blank\" style=\"color: rgb(17, 85, 204); font-family: Arial, Helvetica, sans-serif; font-size: small; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255)\" href=\"mailto:uebp-ext@surgutneftegas.ru\">uebp-ext@surgutneftegas.ru</a>. Я пытаюсь вставить адрес этой почту в карточку , но она не дает вносить изменения.</p>",
+        "isPinned": false
+      },
+      {
+        "id": 9018390,
+        "dateTime": {
+          "date": "18-06-2026",
+          "time": "11:45",
+          "datetime": "2026-06-18T11:45Z",
+          "dateTimeUtcSeconds": "2026-06-18T11:45:39+0000",
+          "dateTimeUtcWithSeconds": "2026-06-18T11:45:39+0000"
+        },
+        "type": "Comment",
+        "owner": {
+          "id": "user:1",
+          "name": "Саликов Рамиль"
+        },
+        "description": "<p>Если чего нет, запроси у Вячеслава с Рем Колор&nbsp;</p>\n<div style=\"display: flex; flex-direction: row; color: rgb(52, 52, 52); font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, roboto, &quot;Helvetica Neue&quot;, helvetica, arial, sans-serif; font-size: 13px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(247, 247, 247); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial\">\n <div style=\"display: flex; flex-direction: column; padding-bottom: 2px; border-bottom: 1px solid rgb(220, 220, 220); cursor: pointer; width: 455px; min-width: 150px; margin-right: 5px\">\n  <div style=\"word-break: break-word; padding-left: 0px; margin-top: 0px; margin-bottom: 10px; padding-bottom: 0px; font-size: 15px; color: rgb(0, 0, 0); min-height: 18px; transition: max-height 0.15s, min-height 0.15s, margin-bottom 0.15s\">\n   <div style=\"color: rgb(69, 115, 177); overflow: hidden; white-space: nowrap; text-overflow: ellipsis; cursor: pointer !important; display: inline-block\">\n    cheslavski@rem-color.by\n   </div>\n  </div>\n </div>\n</div>\n<div style=\"display: flex; flex-direction: row; color: rgb(52, 52, 52); font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, roboto, &quot;Helvetica Neue&quot;, helvetica, arial, sans-serif; font-size: 13px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(247, 247, 247); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial\">\n <div style=\"display: flex; flex-direction: column; padding-bottom: 2px; border-bottom: 1px solid rgb(220, 220, 220); cursor: pointer; width: 455px; min-width: 150px; margin-right: 5px\">\n  &nbsp;\n </div>\n</div>\n<p>&nbsp;</p>",
+        "isPinned": false
+      },
+      {
+        "id": 9018388,
+        "dateTime": {
+          "date": "18-06-2026",
+          "time": "11:43",
+          "datetime": "2026-06-18T11:43Z",
+          "dateTimeUtcSeconds": "2026-06-18T11:43:48+0000",
+          "dateTimeUtcWithSeconds": "2026-06-18T11:43:48+0000"
+        },
+        "type": "Comment",
+        "owner": {
+          "id": "user:1",
+          "name": "Саликов Рамиль"
+        },
+        "description": "<p>счас все что есть отправлю</p>",
+        "isPinned": false
+      },
+      {
+        "id": 9018112,
+        "dateTime": {
+          "date": "18-06-2026",
+          "time": "06:49",
+          "datetime": "2026-06-18T06:49Z",
+          "dateTimeUtcSeconds": "2026-06-18T06:49:28+0000",
+          "dateTimeUtcWithSeconds": "2026-06-18T06:49:28+0000"
+        },
+        "type": "Comment",
+        "owner": {
+          "id": "user:23",
+          "name": "Пониматкин Евгений"
+        },
+        "description": "<p>Я дополнил красным текстом</p>",
+        "isPinned": false
+      },
+      {
+        "id": 9018086,
+        "dateTime": {
+          "date": "18-06-2026",
+          "time": "05:50",
+          "datetime": "2026-06-18T05:50Z",
+          "dateTimeUtcSeconds": "2026-06-18T05:50:44+0000",
+          "dateTimeUtcWithSeconds": "2026-06-18T05:50:44+0000"
+        },
+        "type": "Comment",
+        "owner": {
+          "id": "user:23",
+          "name": "Пониматкин Евгений"
+        },
+        "description": "<p>Дд!&nbsp; Мне нужно дополнить письмо в Сургутнефтегаз информацией о производственных мощностях и истории предприятия, приложить сертификаты, хотя бы Белорусские, и пригласить на само производство для ознакомлеyия. Это возможно?</p>",
+        "isPinned": false
+      },
+      {
+        "id": 9017464,
+        "dateTime": {
+          "date": "16-06-2026",
+          "time": "13:41",
+          "datetime": "2026-06-16T13:41Z",
+          "dateTimeUtcSeconds": "2026-06-16T13:41:18+0000",
+          "dateTimeUtcWithSeconds": "2026-06-16T13:41:18+0000"
+        },
+        "type": "Comment",
+        "owner": {
+          "id": "user:23",
+          "name": "Пониматкин Евгений"
+        },
+        "description": "",
+        "isPinned": false
+      },
+      {
+        "id": 9017462,
+        "dateTime": {
+          "date": "16-06-2026",
+          "time": "13:36",
+          "datetime": "2026-06-16T13:36Z",
+          "dateTimeUtcSeconds": "2026-06-16T13:36:19+0000",
+          "dateTimeUtcWithSeconds": "2026-06-16T13:36:19+0000"
+        },
+        "type": "Comment",
+        "owner": {
+          "id": "user:23",
+          "name": "Пониматкин Евгений"
+        },
+        "description": "",
+        "isPinned": false
+      },
+      {
+        "id": 9017396,
+        "dateTime": {
+          "date": "16-06-2026",
+          "time": "10:20",
+          "datetime": "2026-06-16T10:20Z",
+          "dateTimeUtcSeconds": "2026-06-16T10:20:45+0000",
+          "dateTimeUtcWithSeconds": "2026-06-16T10:20:45+0000"
+        },
+        "type": "Comment",
+        "owner": {
+          "id": "user:1",
+          "name": "Саликов Рамиль"
+        },
+        "description": "<p>Тут в двух форматах планфикс делать может.&nbsp;</p>\n<p>Отредактируй второй и добавь себя исполнителем и контакты свои укажи.</p>",
+        "isPinned": false
+      },
+      {
+        "id": 9017394,
+        "dateTime": {
+          "date": "16-06-2026",
+          "time": "10:19",
+          "datetime": "2026-06-16T10:19Z",
+          "dateTimeUtcSeconds": "2026-06-16T10:19:42+0000",
+          "dateTimeUtcWithSeconds": "2026-06-16T10:19:42+0000"
+        },
+        "type": "Comment",
+        "owner": {
+          "id": "user:1",
+          "name": "Саликов Рамиль"
+        },
+        "description": "<p style=\"margin-left: 0.5cm; line-height: 100%; margin-bottom: 0cm; background: transparent\">Уважаемый Вадим Владимирович!</p>\n<p style=\"line-height: 100%; margin-bottom: 0cm; background: transparent\">ООО «Тональ» является поставщиком на территории Росийской Федерации ЛКМ производства совместного немецко-белорусского предприятия ООО «РЕМ-КОЛОР» имеющего широкую номенклатуру производственной линейки.</p>\n<p style=\"line-height: 100%; margin-bottom: 0cm; background: transparent\">Прошу Вас рассмотреть возможность включения в реестр доверенных поставщиков для ПАО «Сургутнефтегаз» следующих жидких защитных лакокрасочных покрытий:</p>\n<p style=\"line-height: 100%; margin-bottom: 0cm; background: transparent\">-эпоксидный грунт Рем-Покс 2К ЭП-0607HS для защиты резервуаров с темными нефтепродуктами и технологических трубопроводов</p>\n<p style=\"line-height: 100%; margin-bottom: 0cm; background: transparent\">-эпоксидный грунт Рем-Покс 2К ЭП-0607(модификация<span> AS)</span><span> антистатический </span>для защиты резервуаров со светлыми нефтепродуктами</p>\n<p style=\"line-height: 100%; margin-bottom: 0cm; background: transparent\">-эмаль полиуретановая Рем-Пур 2К УР-1604 для защиты резервуаров и технологических трубопроводов.</p>\n<p style=\"line-height: 100%; margin-bottom: 0cm; background: transparent\">Данные лакокрасочные покрытия нашли применение на следующих объектах:</p>\n<p style=\"line-height: 100%; margin-bottom: 0cm; background: transparent\">-узел регулирования производительностью трубопровод «Дружба» (Белоруссия)</p>\n<p style=\"line-height: 100%; margin-bottom: 0cm; background: transparent\">-технологические трубопроводы ООО «Газпромнефть-Белнефтепродукт» (Белоруссия)</p>\n<p style=\"line-height: 100%; margin-bottom: 0cm; background: transparent\">-техперевооружение рудоуправления ОАО «Беларуськалий»</p>\n<p style=\"line-height: 100%; margin-bottom: 0cm; background: transparent\">-установка охлаждения мелкокристалического хлорида калия ОАО«Беларуськалий»</p>\n<p style=\"line-height: 100%; margin-bottom: 0cm; background: transparent\">-установка грануляции и линейные трубопроводы ОАО«Беларуськалий»</p>\n<p style=\"line-height: 100%; margin-bottom: 0cm; background: transparent\">-пожарные резервуары УКС ВС РБ</p>\n<p style=\"line-height: 100%; margin-bottom: 0cm; background: transparent\">-резервуары хранения нефти РУП «Белоруснефть» д.Лазоревка</p>\n<p style=\"line-height: 100%; margin-bottom: 0cm; background: transparent\">-резервуарный парк хранения нефтепрдуктов филиал «ЛДПС Мозырь»-ОАО»Гомельтанснефть-Дружба»</p>\n<p style=\"line-height: 100%; margin-bottom: 0cm; background: transparent\">-ООО «РН-Морской Терминал Туапсе»</p>\n<p style=\"line-height: 100%; margin-bottom: 0cm; background: transparent\">-резервуарный парк ООО «Ильинка»(Астрахань)</p>\n<p style=\"line-height: 100%; margin-bottom: 0cm; background: transparent\">-производственный корпус и технологии ООО «Еврохим-Волгокалий»</p>\n<p style=\"line-height: 100%; margin-bottom: 0cm; background: transparent\">- ООО «НГ-Бурение» (Ноябрьск)</p>\n<p style=\"line-height: 100%; margin-bottom: 0cm; background: transparent\">-РВС ООО «ГК КВОИТ» (Лукойл, Газпромнефть, Амурский ГПЗ)</p>\n<p style=\"line-height: 100%; margin-bottom: 0cm; background: transparent\">-РВС ООО «Комистройсервис» (Лукойл)</p>\n<p style=\"line-height: 100%; margin-bottom: 0cm; background: transparent\">-РВС и технологические трубопроводы ООО «Афипский НПЗ» (Краснодар)</p>\n<p style=\"line-height: 100%; margin-bottom: 0cm; background: transparent\">-портовая инфраструктура и морские защитные сооружения Новоросийск.</p>\n<p style=\"line-height: 100%; margin-bottom: 0cm; background: transparent\">Данные ЛКП являются химически стойкими( применение в фильтровальном и емкостном оборудовании ОАО «ТОАЗ» (Тольятти) для сильноагрессивных сред (<span>4% H2SO4;4%NaOH ;5-7% Hcl</span><span>), температура эксплуатации -60грС /+250грС. Сохраняет защитные свойства при полном погружении в морскую воду.</span></p>\n<p style=\"line-height: 100%; margin-bottom: 0cm; background: transparent\">Особенно обращаем Ваше внимание на то, что пигменты применяемые при производстве эмали полиуретановой Рем-Пур 2К УР-1604 европейского производства, позволяют колеровать в цвет согласно таблицы<span> RAL, </span>гарантировано сохранять цвет ЛКП на период гарантийного срока <span style=\"background: #ffffff\">(показатель величины изменения цвета и методика измерения показателя величины изменения от воздействия атмосферных явлений в период действия гарантийного срока регламентируется ГОСТ Р 71216-2024, п.9 «Допустимые отклонения по цвету» отклонение величины инструментального цветового различия </span><span style=\"background: #ffffff\">∆</span><span style=\"background: #ffffff\">Е* от 1 до 2).</span></p>\n<p style=\"line-height: 100%; margin-bottom: 0cm; background: transparent\">Наше предприятие готово пройти все необходимые этапы проведения лабораторных испытаний и согласования о вхождении ЛКМ производства ООО «РЕМ-КОЛОР» в реестр доверенных поставщиков для ПАО «Сургутнефтегаз» .</p>\n<p style=\"line-height: 100%; margin-bottom: 0cm; background: transparent\">&nbsp;</p>\n<p style=\"line-height: 100%; margin-bottom: 0cm; background: transparent\">Приложение.</p>\n<p style=\"line-height: 100%; margin-bottom: 0cm; background: transparent\">К письму прилагаются :</p>\n<p style=\"line-height: 100%; margin-bottom: 0cm; background: transparent\">-презентация ООО «Тональ»( 1 шт)</p>\n<p style=\"line-height: 100%; margin-bottom: 0cm; background: transparent\">-презентация СП ООО «РЕМ-КОЛОР»(1 шт)</p>\n<p style=\"line-height: 100%; margin-bottom: 0cm; background: transparent\">-<span>TDS </span>на ЛКМ (3 шт)</p>\n<p style=\"line-height: 100%; margin-bottom: 0cm; background: transparent\">&nbsp;</p>",
+        "isPinned": false
+      },
+      {
+        "id": 9017390,
+        "dateTime": {
+          "date": "16-06-2026",
+          "time": "10:05",
+          "datetime": "2026-06-16T10:05Z",
+          "dateTimeUtcSeconds": "2026-06-16T10:05:33+0000",
+          "dateTimeUtcWithSeconds": "2026-06-16T10:05:33+0000"
+        },
+        "type": "Comment",
+        "owner": {
+          "id": "user:23",
+          "name": "Пониматкин Евгений"
+        },
+        "description": "Мне сегодня надо черновик Гавриленко отправить",
+        "isPinned": false
+      },
+      {
+        "id": 9017354,
+        "dateTime": {
+          "date": "16-06-2026",
+          "time": "09:32",
+          "datetime": "2026-06-16T09:32Z",
+          "dateTimeUtcSeconds": "2026-06-16T09:32:42+0000",
+          "dateTimeUtcWithSeconds": "2026-06-16T09:32:42+0000"
+        },
+        "type": "Comment",
+        "owner": {
+          "id": "user:23",
+          "name": "Пониматкин Евгений"
+        },
+        "description": "<p>А занести где, в этой ветке? В контактах ПАО Сургутнефтегаз?</p>",
+        "isPinned": false
+      },
+      {
+        "id": 9017344,
+        "dateTime": {
+          "date": "16-06-2026",
+          "time": "09:30",
+          "datetime": "2026-06-16T09:30Z",
+          "dateTimeUtcSeconds": "2026-06-16T09:30:24+0000",
+          "dateTimeUtcWithSeconds": "2026-06-16T09:30:24+0000"
+        },
+        "type": "Comment",
+        "owner": {
+          "id": "user:1",
+          "name": "Саликов Рамиль"
+        },
+        "description": "Занеси контакты контрагента, я сделаю письмо с подписью на бланке и вложу то что ты описал. Отправлю тебе и Елене на проверку и далее ты отправишь все в нтц.",
+        "isPinned": false
+      },
+      {
+        "id": 9017332,
+        "dateTime": {
+          "date": "16-06-2026",
+          "time": "09:18",
+          "datetime": "2026-06-16T09:18Z",
+          "dateTimeUtcSeconds": "2026-06-16T09:18:48+0000",
+          "dateTimeUtcWithSeconds": "2026-06-16T09:18:48+0000"
+        },
+        "type": "Comment",
+        "owner": {
+          "id": "user:23",
+          "name": "Пониматкин Евгений"
+        },
+        "description": "<p>Мне нужно завести этих Руководителей в Планфикс?</p>\n<p>Чтобы сформировать письмо, TDS на схемы, презентацию ООО \"Тональ\" и ООО \"РЕМ-КОЛОР\"? Мне нужно на бланке ООО \"Тональ\" за подписью Цвиренко отправить \"черновик\" паекта документов на согласование Гаврилюку по личной почте. После получения команды \"Добро\" отправляем с официальной почты. Вот такая задача.</p>",
+        "isPinned": false
+      }
+    ]
+  },
+  "31295_files": {
+    "result": "success",
+    "files": [
+      {
+        "id": 1013800,
+        "size": 993,
+        "name": "ОТТ-25.220.01-КТН-239-14_с_Изм2_орнд_unlocked.pdf"
+      },
+      {
+        "id": 1013802,
+        "size": 714,
+        "name": "ott-25.220.01-ktn-054-15_s_izm1_sr_unlocked.pdf"
+      },
+      {
+        "id": 1013804,
+        "size": 1110,
+        "name": "104_ott_25.220.01_ktn_187_13_s_izm1_sr_unlocked.pdf"
+      },
+      {
+        "id": 1013806,
+        "size": 881,
+        "name": "102_ott_25.220.01_ktn_097_16_s_izm2_sr_unlocked.pdf"
+      },
+      {
+        "id": 1014904,
+        "size": 42,
+        "name": "ПАО Сургутнефтегаз.odt"
+      },
+      {
+        "id": 1014942,
+        "size": 199,
+        "name": "Письмо №31295-16-06-2026 для ПАО \"СУРГУТНЕФТЕГАЗ\" касательно .pdf"
+      },
+      {
+        "id": 1014944,
+        "size": 322,
+        "name": "Письмо №31295-16-06-2026 для ПАО \"СУРГУТНЕФТЕГАЗ\" касательно .docx"
+      },
+      {
+        "id": 1015002,
+        "size": 161,
+        "name": "Письмо Линейка продуктов №31295 для ПАО \"СУРГУТНЕФТЕГАЗ\".pdf"
+      },
+      {
+        "id": 1015004,
+        "size": 109,
+        "name": "Письмо О ТОНАЛЬ №31295 для ПАО \"СУРГУТНЕФТЕГАЗ\".pdf"
+      },
+      {
+        "id": 1015006,
+        "size": 161,
+        "name": "Письмо Линейка продуктов №31295 для ПАО \"СУРГУТНЕФТЕГАЗ\".pdf"
+      },
+      {
+        "id": 1015008,
+        "size": 109,
+        "name": "Письмо О ТОНАЛЬ №31295 для ПАО \"СУРГУТНЕФТЕГАЗ\".pdf"
+      },
+      {
+        "id": 1015336,
+        "size": 25,
+        "name": "Без имени 1.pdf"
+      },
+      {
+        "id": 1015354,
+        "size": 215,
+        "name": "Письмо №31295-16-06-2026 для ПАО _СУРГУТНЕФТЕГАЗ_ касательно  (3).pdf"
+      },
+      {
+        "id": 1015448,
+        "size": 1699,
+        "name": "св-во о гос рег-ии 0605.JPG"
+      },
+      {
+        "id": 1015450,
+        "size": 1611,
+        "name": "св-во о гос рег-ии ВД АК 015.jpg"
+      },
+      {
+        "id": 1015452,
+        "size": 718,
+        "name": "СГР Рем-Сол-1.pdf"
+      },
+      {
+        "id": 1015454,
+        "size": 1887,
+        "name": "Серт соответ НИИСМ (Белорусь) 1602 1604 1601.pdf"
+      },
+      {
+        "id": 1015456,
+        "size": 643,
+        "name": "Эмаль УР-1604 Рем-Пур (2К).pdf"
+      },
+      {
+        "id": 1015458,
+        "size": 704,
+        "name": "26.03.02 Грунт-эмаль «Rem-Pох 0607 HS» 2К.pdf"
+      },
+      {
+        "id": 1015460,
+        "size": 701,
+        "name": "26.03.02 Отвердитель «Hӓrter EP1».pdf"
+      },
+      {
+        "id": 1015462,
+        "size": 694,
+        "name": "26.03.02 Отвердитель «Hӓrter PU1».pdf"
+      },
+      {
+        "id": 1015464,
+        "size": 713,
+        "name": "26.03.02 Эмаль «Rem Pur 1604» 2К.pdf"
+      },
+      {
+        "id": 1015466,
+        "size": 3415,
+        "name": "Сертификат собственного производства СП Рем-Колор ООО.pdf"
+      },
+      {
+        "id": 1015468,
+        "size": 851,
+        "name": "Сертификат эмаль АК-1602 Рем-Крил 2К, Эмаль УР-1604 Рем-Пур 2К.pdf"
+      },
+      {
+        "id": 1015470,
+        "size": 2541,
+        "name": "СС Грунт-Эмали Rem-Pox 0607 HS 2К, Rem-Pox 0607 AS 2К.PDF"
+      },
+      {
+        "id": 1015472,
+        "size": 846,
+        "name": "СС Эмали «Rem-Cryl 1602» 2К, «Rem-Pur 1604» 2К.pdf"
+      },
+      {
+        "id": 1016950,
+        "size": 232,
+        "name": "Письмо №31295-16-06-2026 для ПАО _СУРГУТНЕФТЕГАЗ_ касательно  (2).pdf"
+      },
+      {
+        "id": 1016956,
+        "size": 442,
+        "name": "Рем-Покс 2К 0607HS -подложка, +40-.pdf"
+      },
+      {
+        "id": 1016958,
+        "size": 453,
+        "name": "Рем-Покс 2к ЭП-0607 AS.pdf"
+      },
+      {
+        "id": 1016960,
+        "size": 307,
+        "name": "Рем-Пур 2к УР-1604_расширенный, ПО ОБЪЕМУ.pdf"
+      },
+      {
+        "id": 1016962,
+        "size": 3415,
+        "name": "Сертификат собственного производства СП Рем-Колор ООО_31295.pdf"
+      },
+      {
+        "id": 1016964,
+        "size": 2541,
+        "name": "СС Грунт-Эмали Rem-Pox 0607 HS 2К, Rem-Pox 0607 AS 2К_31295.PDF"
+      },
+      {
+        "id": 1017190,
+        "size": 112,
+        "name": "Тональ.pdf"
+      },
+      {
+        "id": 1019094,
+        "size": 203,
+        "name": "СНГ.png"
+      },
+      {
+        "id": 1019096,
+        "size": 32,
+        "name": "Шаблон заявки на регистрацию.doc"
+      },
+      {
+        "id": 1019204,
+        "size": 213,
+        "name": "Письмо...pdf"
+      },
+      {
+        "id": 1019334,
+        "size": 426,
+        "name": "письмо Сургутнефтегаз полномочия.pdf"
+      },
+      {
+        "id": 1019394,
+        "size": 225,
+        "name": "Письмо....pdf"
+      }
+    ]
+  },
+  "26495": {
+    "result": "success",
+    "task": {
+      "id": 26495,
+      "name": "СУРГУТ!!!!! Запрос цен №3142314 от 19.09.2025",
+      "description": "<div>\n Елена, Рамиль, доброе утро!\n</div>\n<div>\n пришел запрос\n</div>\n<div>\n посмотрите Ваш он ?\n</div>\n<div>\n</div>\n<div>\n</div>\n<div>\n</div>\n<div>\n</div>\n<div>\n</div>\n<div>\n <div>\n  <div>\n   <div>\n    <div>\n     <div>\n      <div>\n       <p><span style=\"font-family:'times new roman' , serif;font-size:12pt\">Здравствуйте!</span><br><br>Прошу выслать счет и предложить дату поставки по следующим позициям:<br><br>1. Эмаль Основа Рем Пур УР-1604 Ral 6024 17л. - 60 ШТ.<br><br>Прошу также указать стоимость доставки до объекта: г. Сургут ул. Монтажная д. 10 <span style=\"font-family:'times new roman' , serif;font-size:12pt\"> </span></p>\n       <p><span style=\"font-size:11pt\">&nbsp;</span></p>\n       <p><span style=\"font-size:11pt\">&nbsp;</span></p>\n       <p><span style=\"font-family:'times new roman' , serif;font-size:12pt\">&nbsp;</span></p>\n       <p><span style=\"font-family:'times new roman' , serif;font-size:12pt\">&nbsp;</span></p>\n       <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\">\n        <tbody>\n         <tr>\n          <td style=\"padding:0cm\"><p><span style=\"font-family:'times new roman' , serif;font-size:12pt\"><img class=\"ckeditor-direct-upload-image ckeditor-direct-upload-image-968834\" src=\"https://tonal.planfix.ru/filelink/image001.jpg?action=getfile&amp;uniqueid=968834&amp;auth=6c27eece5bea7041b41741407a89011a\"></span></p></td>\n          <td style=\"padding:0cm\">\n           <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\">\n            <tbody>\n             <tr>\n              <td valign=\"top\" style=\"padding:0cm;width:7.5pt\">&nbsp;</td>\n              <td valign=\"top\" style=\"padding:0cm;width:750pt\"><p><span style=\"color:#244061\">С уважением, Хрыдаева Татьяна, Строительный Двор.Комплектация, Филиал г. Сургут, Отдел закупа г. Сургут, Специалист по активным закупкам<br>+7 982 568 65 29, </span><span style=\"font-size:11pt\"><a href=\"mailto:tkhrydaeva@sdvor.com\" target=\"_blank\"><span style=\"color:blue;font-size:10pt\">tkhrydaeva@sdvor.com</span></a></span><span style=\"color:#244061\">, </span><span style=\"font-size:11pt\"><a href=\"http://www.sdvor.com/\" target=\"_blank\"><span style=\"color:blue;font-size:10pt\">www.sdvor.com</span></a></span></p></td>\n             </tr>\n            </tbody>\n           </table></td>\n         </tr>\n        </tbody>\n       </table>\n       <p><span style=\"font-size:11pt\">&nbsp;</span></p>\n      </div>\n     </div>\n    </div>\n   </div>\n   <div>\n   </div>\n  </div>\n </div>\n</div>\n<div>\n</div>",
+      "priority": "NotUrgent",
+      "status": {
+        "id": 5,
+        "name": "Отклоненная",
+        "color": "#3377C3",
+        "isActive": true,
+        "hasDeadline": false,
+        "isAppliedIndividually": false,
+        "texts": [
+          {
+            "lang": "Ru",
+            "name": "Отклоненная"
+          },
+          {
+            "lang": "En",
+            "name": "Declined"
+          }
+        ]
+      },
+      "assigner": {
+        "id": "contact:943",
+        "name": "Чеславский Вячеслав"
+      },
+      "project": {
+        "id": 9689
+      },
+      "counterparty": {
+        "id": "contact:99",
+        "name": "Рем Колор"
+      },
+      "dateTime": {
+        "date": "19-09-2025",
+        "time": "06:44",
+        "datetime": "2025-09-19T06:44Z",
+        "dateTimeUtcSeconds": "2025-09-19T06:44:25+0000",
+        "dateTimeUtcWithSeconds": "2025-09-19T06:44:25+0000"
+      },
+      "dateOfLastUpdate": {
+        "date": "21-04-2026",
+        "time": "23:51",
+        "datetime": "2026-04-21T23:51Z",
+        "dateTimeUtcSeconds": "2026-04-21T23:51:07+0000",
+        "dateTimeUtcWithSeconds": "2026-04-21T23:51:07+0000"
+      },
+      "assignees": {
+        "users": [
+          {
+            "id": "user:1",
+            "name": "Саликов Рамиль"
+          }
+        ],
+        "groups": []
+      },
+      "files": [
+        {
+          "id": 968834,
+          "size": 9,
+          "name": "image001.jpg"
+        },
+        {
+          "id": 968936,
+          "size": 95,
+          "name": "Карточка_Строительный_двор_Комплектация.pdf"
+        }
+      ]
+    }
+  },
+  "26495_comments": {
+    "result": "success",
+    "comments": [
+      {
+        "id": 8932506,
+        "dateTime": {
+          "date": "19-09-2025",
+          "time": "07:06",
+          "datetime": "2025-09-19T07:06Z",
+          "dateTimeUtcSeconds": "2025-09-19T07:06:06+0000",
+          "dateTimeUtcWithSeconds": "2025-09-19T07:06:06+0000"
+        },
+        "type": "Comment",
+        "owner": {
+          "id": "user:5",
+          "name": "Цвиренко Елена Владиславовна"
+        },
+        "description": "Были такие \n<div><br>\n</div>\n<div><br>\n <div>\n  <div><span style=\"background-color: rgba(255, 255, 255, 0)\">С Уважением, </span>\n  </div>\n  <div><span style=\"background-color: rgba(255, 255, 255, 0)\">Генеральный директор </span>\n  </div>\n  <div><span style=\"background-color: rgba(255, 255, 255, 0)\">ООО «ТОНАЛЬ» </span>\n  </div>\n  <div><span style=\"background-color: rgba(255, 255, 255, 0)\">Елена Цвиренко </span><br>\n  </div>\n  <div><span style=\"background-color: rgba(255, 255, 255, 0)\">+7 (918) 49-06-109</span>\n  </div>\n </div>\n <div><br>\n  <blockquote>\n   19 сент. 2025 г., в 09:44, Вячеслав Чеславский &lt;cheslavski@rem-color.by&gt; написал(а):<br><br>\n  </blockquote>\n </div>\n <blockquote>\n  <div>\n   ﻿ \n   <div>\n    Елена, Рамиль, доброе утро!\n   </div>\n   <div>\n    пришел запрос\n   </div>\n   <div>\n    посмотрите Ваш он ?\n   </div>\n   <div>\n   </div>\n   <div>\n   </div>\n   <div>\n   </div>\n   <div>\n   </div>\n   <div>\n   </div>\n   <div>\n    <div>\n     <div>\n      <div>\n       <div>\n        <div>\n         <div>\n          <p><span style=\"font-family:'times new roman' , serif;font-size:12pt\">Здравствуйте!</span><br><br>Прошу выслать счет и предложить дату поставки по следующим позициям:<br><br>1. Эмаль Основа Рем Пур УР-1604 Ral 6024 17л. - 60 ШТ.<br><br>Прошу также указать стоимость доставки до объекта: г. Сургут ул. Монтажная д. 10 <span style=\"font-family:'times new roman' , serif;font-size:12pt\"> </span></p>\n          <p><span style=\"font-size:11pt\">&nbsp;</span></p>\n          <p><span style=\"font-size:11pt\">&nbsp;</span></p>\n          <p><span style=\"font-family:'times new roman' , serif;font-size:12pt\">&nbsp;</span></p>\n          <p><span style=\"font-family:'times new roman' , serif;font-size:12pt\">&nbsp;</span></p>\n          <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\">\n           <tbody>\n            <tr>\n             <td style=\"padding:0cm\"><p><span style=\"font-family:'times new roman' , serif;font-size:12pt\"></span></p></td>\n            </tr>\n           </tbody>\n          </table>\n         </div>\n        </div>\n       </div>\n      </div>\n     </div>\n    </div>\n   </div>\n  </div>\n </blockquote>\n</div>\n<div>\n <blockquote>\n  <div>\n   <div>\n    <div>\n     <div>\n      <div>\n       <div>\n        <div>\n         <div>\n          <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\">\n           <tbody>\n            <tr>\n             <td style=\"padding:0cm\"><p><span style=\"font-family:'times new roman' , serif;font-size:12pt\"></span></p></td>\n             <td style=\"padding:0cm\">\n              <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\">\n               <tbody>\n                <tr>\n                 <td valign=\"top\" width=\"3\" style=\"padding:0cm;width:7.5pt\">&nbsp;</td>\n                 <td valign=\"top\" width=\"364\" style=\"padding:0cm;width:750pt\"><p><span style=\"color:#244061\">С уважением, Хрыдаева Татьяна, Строительный Двор.Комплектация, Филиал г. Сургут, Отдел закупа г. Сургут, Специалист по активным закупкам<br>+7 982 568 65 29, </span><span style=\"font-size:11pt\"><a href=\"mailto:tkhrydaeva@sdvor.com\" target=\"_blank\"><span style=\"color:blue;font-size:10pt\">tkhrydaeva@sdvor.com</span></a></span><span style=\"color:#244061\">, </span><span style=\"font-size:11pt\"><a href=\"http://www.sdvor.com/\" target=\"_blank\"><span style=\"color:blue;font-size:10pt\">www.sdvor.com</span></a></span></p></td>\n                </tr>\n               </tbody>\n              </table></td>\n            </tr>\n           </tbody>\n          </table>\n          <p><span style=\"font-size:11pt\">&nbsp;</span></p>\n         </div>\n        </div>\n       </div>\n      </div>\n      <div>\n      </div>\n     </div>\n    </div>\n   </div>\n   <div>\n   </div>\n  </div>\n </blockquote>\n</div>\n<div>\n <blockquote>\n  <div></div>\n </blockquote>\n</div>",
+        "isPinned": false
+      },
+      {
+        "id": 8932482,
+        "dateTime": {
+          "date": "19-09-2025",
+          "time": "06:52",
+          "datetime": "2025-09-19T06:52Z",
+          "dateTimeUtcSeconds": "2025-09-19T06:52:54+0000",
+          "dateTimeUtcWithSeconds": "2025-09-19T06:52:54+0000"
+        },
+        "type": "Comment",
+        "owner": {
+          "id": "user:1",
+          "name": "Саликов Рамиль"
+        },
+        "description": "Это НГ Бурение, Роснефть, злостные не плательщики, но нас прописали в сметах",
+        "isPinned": false
+      },
+      {
+        "id": 8932480,
+        "dateTime": {
+          "date": "19-09-2025",
+          "time": "06:51",
+          "datetime": "2025-09-19T06:51Z",
+          "dateTimeUtcSeconds": "2025-09-19T06:51:33+0000",
+          "dateTimeUtcWithSeconds": "2025-09-19T06:51:33+0000"
+        },
+        "type": "Comment",
+        "owner": {
+          "id": "user:1",
+          "name": "Саликов Рамиль"
+        },
+        "description": "Да, Слева, доброе утро! Сейчас дадим! Странно, куда из заявки грунт рем Покс делся?))",
+        "isPinned": false
+      },
+      {
+        "id": 8932448,
+        "dateTime": {
+          "date": "19-09-2025",
+          "time": "06:44",
+          "datetime": "2025-09-19T06:44Z",
+          "dateTimeUtcSeconds": "2025-09-19T06:44:25+0000",
+          "dateTimeUtcWithSeconds": "2025-09-19T06:44:25+0000"
+        },
+        "type": "None",
+        "owner": {
+          "id": "contact:943",
+          "name": "Чеславский Вячеслав"
+        },
+        "description": "<div>\n Елена, Рамиль, доброе утро!\n</div>\n<div>\n пришел запрос\n</div>\n<div>\n посмотрите Ваш он ?\n</div>\n<div>\n</div>\n<div>\n</div>\n<div>\n</div>\n<div>\n</div>\n<div>\n</div>\n<div>\n <div>\n  <div>\n   <div>\n    <div>\n     <div>\n      <div>\n       <p><span style=\"font-family:'times new roman' , serif;font-size:12pt\">Здравствуйте!</span><br><br>Прошу выслать счет и предложить дату поставки по следующим позициям:<br><br>1. Эмаль Основа Рем Пур УР-1604 Ral 6024 17л. - 60 ШТ.<br><br>Прошу также указать стоимость доставки до объекта: г. Сургут ул. Монтажная д. 10 <span style=\"font-family:'times new roman' , serif;font-size:12pt\"> </span></p>\n       <p><span style=\"font-size:11pt\">&nbsp;</span></p>\n       <p><span style=\"font-size:11pt\">&nbsp;</span></p>\n       <p><span style=\"font-family:'times new roman' , serif;font-size:12pt\">&nbsp;</span></p>\n       <p><span style=\"font-family:'times new roman' , serif;font-size:12pt\">&nbsp;</span></p>\n       <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\">\n        <tbody>\n         <tr>\n          <td style=\"padding:0cm\"><p><span style=\"font-family:'times new roman' , serif;font-size:12pt\"><img class=\"ckeditor-direct-upload-image ckeditor-direct-upload-image-968834\" src=\"https://tonal.planfix.ru/filelink/image001.jpg?action=getfile&amp;uniqueid=968834&amp;auth=6c27eece5bea7041b41741407a89011a\"></span></p></td>\n          <td style=\"padding:0cm\">\n           <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\">\n            <tbody>\n             <tr>\n              <td valign=\"top\" style=\"padding:0cm;width:7.5pt\">&nbsp;</td>\n              <td valign=\"top\" style=\"padding:0cm;width:750pt\"><p><span style=\"color:#244061\">С уважением, Хрыдаева Татьяна, Строительный Двор.Комплектация, Филиал г. Сургут, Отдел закупа г. Сургут, Специалист по активным закупкам<br>+7 982 568 65 29, </span><span style=\"font-size:11pt\"><a href=\"mailto:tkhrydaeva@sdvor.com\" target=\"_blank\"><span style=\"color:blue;font-size:10pt\">tkhrydaeva@sdvor.com</span></a></span><span style=\"color:#244061\">, </span><span style=\"font-size:11pt\"><a href=\"http://www.sdvor.com/\" target=\"_blank\"><span style=\"color:blue;font-size:10pt\">www.sdvor.com</span></a></span></p></td>\n             </tr>\n            </tbody>\n           </table></td>\n         </tr>\n        </tbody>\n       </table>\n       <p><span style=\"font-size:11pt\">&nbsp;</span></p>\n      </div>\n     </div>\n    </div>\n   </div>\n   <div>\n   </div>\n  </div>\n </div>\n</div>\n<div>\n</div>",
+        "isPinned": false
+      }
+    ]
+  },
+  "26495_files": {
+    "result": "success",
+    "files": [
+      {
+        "id": 968834,
+        "size": 9,
+        "name": "image001.jpg"
+      },
+      {
+        "id": 968936,
+        "size": 95,
+        "name": "Карточка_Строительный_двор_Комплектация.pdf"
+      }
+    ]
+  },
+  "23764": {
+    "result": "success",
+    "task": {
+      "id": 23764,
+      "name": "Запрос в г. Сургут",
+      "description": "<div>\n <p><i><span style=\"font-size:12.0pt\">Добрый день, </span></i></p>\n <p><i><span style=\"font-size:12.0pt\">Прошу Вас выставить счет или КП на </span></i></p>\n <p><i><span style=\"font-size:12.0pt\">&nbsp;</span></i></p>\n <p><i><span style=\"font-size:12.0pt\">РЕМ-ПОКС 2К ЭП-0607HS ( практический расход 576 г/м2 (320мкм)-500кг</span></i></p>\n <p><i><span style=\"font-size:12.0pt\">&nbsp;</span></i></p>\n <p><i><span style=\"font-size:12.0pt\">Наличие, цена с НДС или без, срок поставки, город отгрузки, вес и объём.</span></i></p>\n <p><i><span>&nbsp;</span></i></p>\n <p><span><img class=\"ckeditor-direct-upload-image ckeditor-direct-upload-image-951120\" src=\"https://tonal.planfix.ru/filelink/image001.png?action=getfile&amp;uniqueid=951120&amp;auth=471dc7710aac82c9825b7355026405e4\"></span></p>\n <p><i><span style=\"font-size:12.0pt;font-family:&quot;Times New Roman&quot;,serif\">&nbsp;</span></i></p>\n <p><i><span style=\"font-size:12.0pt;font-family:&quot;Times New Roman&quot;,serif\">С уважением,</span></i></p>\n <p><i><span style=\"font-size:12.0pt;font-family:&quot;Times New Roman&quot;,serif\">Менеджер отдела снабжения ООО «ТД МИР СВАРКИ»</span></i></p>\n <p><i><span style=\"font-size:12.0pt;font-family:&quot;Times New Roman&quot;,serif\">Костицына Юлия Васильевна</span></i></p>\n <p><i><span style=\"font-size:12.0pt;font-family:&quot;Times New Roman&quot;,serif\">650010, г. Кемерово, ул. Железнодорожная, д. 41</span></i></p>\n <p><i><span style=\"font-size:12.0pt;font-family:&quot;Times New Roman&quot;,serif\">(3842) 900-267 доб. 281</span></i></p>\n <p><i><span style=\"font-size:12.0pt;font-family:&quot;Times New Roman&quot;,serif\"><a href=\"http://www.mir-svarki.ru/\"><span style=\"color:#0563C1\">www.mir-svarki.ru</span></a></span></i></p>\n <p>&nbsp;</p>\n</div>",
+      "priority": "NotUrgent",
+      "status": {
+        "id": 180,
+        "name": "Подготовка заявки",
+        "color": "#978202",
+        "isActive": true,
+        "hasDeadline": true,
+        "isAppliedIndividually": false,
+        "texts": [
+          {
+            "lang": "Ru",
+            "name": "Подготовка заявки"
+          },
+          {
+            "lang": "En",
+            "name": "Подготовка заявки"
+          }
+        ]
+      },
+      "assigner": {
+        "id": "contact:4173",
+        "name": "Костицына Юлия Васильевна"
+      },
+      "dateTime": {
+        "date": "23-05-2025",
+        "time": "03:01",
+        "datetime": "2025-05-23T03:01Z",
+        "dateTimeUtcSeconds": "2025-05-23T03:01:54+0000",
+        "dateTimeUtcWithSeconds": "2025-05-23T03:01:54+0000"
+      },
+      "dateOfLastUpdate": {
+        "date": "03-06-2025",
+        "time": "13:21",
+        "datetime": "2025-06-03T13:21Z",
+        "dateTimeUtcSeconds": "2025-06-03T13:21:23+0000",
+        "dateTimeUtcWithSeconds": "2025-06-03T13:21:23+0000"
+      },
+      "assignees": {
+        "users": [
+          {
+            "id": "user:1",
+            "name": "Саликов Рамиль"
+          }
+        ],
+        "groups": []
+      },
+      "files": [
+        {
+          "id": 951120,
+          "size": 22,
+          "name": "image001.png"
+        },
+        {
+          "id": 951122,
+          "size": 26,
+          "name": "реквизиты Сбербанк с 23 мая 2019.doc"
+        }
+      ]
+    }
+  },
+  "23764_comments": {
+    "result": "success",
+    "comments": [
+      {
+        "id": 8896172,
+        "dateTime": {
+          "date": "03-06-2025",
+          "time": "13:21",
+          "datetime": "2025-06-03T13:21Z",
+          "dateTimeUtcSeconds": "2025-06-03T13:21:23+0000",
+          "dateTimeUtcWithSeconds": "2025-06-03T13:21:23+0000"
+        },
+        "type": "Comment",
+        "owner": {
+          "id": "user:1",
+          "name": "Саликов Рамиль"
+        },
+        "description": "",
+        "isPinned": false
+      },
+      {
+        "id": 8891070,
+        "dateTime": {
+          "date": "23-05-2025",
+          "time": "03:01",
+          "datetime": "2025-05-23T03:01Z",
+          "dateTimeUtcSeconds": "2025-05-23T03:01:54+0000",
+          "dateTimeUtcWithSeconds": "2025-05-23T03:01:54+0000"
+        },
+        "type": "None",
+        "owner": {
+          "id": "contact:4173",
+          "name": "Костицына Юлия Васильевна"
+        },
+        "description": "<div>\n <p><i><span style=\"font-size:12.0pt\">Добрый день, </span></i></p>\n <p><i><span style=\"font-size:12.0pt\">Прошу Вас выставить счет или КП на </span></i></p>\n <p><i><span style=\"font-size:12.0pt\">&nbsp;</span></i></p>\n <p><i><span style=\"font-size:12.0pt\">РЕМ-ПОКС 2К ЭП-0607HS ( практический расход 576 г/м2 (320мкм)-500кг</span></i></p>\n <p><i><span style=\"font-size:12.0pt\">&nbsp;</span></i></p>\n <p><i><span style=\"font-size:12.0pt\">Наличие, цена с НДС или без, срок поставки, город отгрузки, вес и объём.</span></i></p>\n <p><i><span>&nbsp;</span></i></p>\n <p><span><img class=\"ckeditor-direct-upload-image ckeditor-direct-upload-image-951120\" src=\"https://tonal.planfix.ru/filelink/image001.png?action=getfile&amp;uniqueid=951120&amp;auth=471dc7710aac82c9825b7355026405e4\"></span></p>\n <p><i><span style=\"font-size:12.0pt;font-family:&quot;Times New Roman&quot;,serif\">&nbsp;</span></i></p>\n <p><i><span style=\"font-size:12.0pt;font-family:&quot;Times New Roman&quot;,serif\">С уважением,</span></i></p>\n <p><i><span style=\"font-size:12.0pt;font-family:&quot;Times New Roman&quot;,serif\">Менеджер отдела снабжения ООО «ТД МИР СВАРКИ»</span></i></p>\n <p><i><span style=\"font-size:12.0pt;font-family:&quot;Times New Roman&quot;,serif\">Костицына Юлия Васильевна</span></i></p>\n <p><i><span style=\"font-size:12.0pt;font-family:&quot;Times New Roman&quot;,serif\">650010, г. Кемерово, ул. Железнодорожная, д. 41</span></i></p>\n <p><i><span style=\"font-size:12.0pt;font-family:&quot;Times New Roman&quot;,serif\">(3842) 900-267 доб. 281</span></i></p>\n <p><i><span style=\"font-size:12.0pt;font-family:&quot;Times New Roman&quot;,serif\"><a href=\"http://www.mir-svarki.ru/\"><span style=\"color:#0563C1\">www.mir-svarki.ru</span></a></span></i></p>\n <p>&nbsp;</p>\n</div>",
+        "isPinned": false
+      }
+    ]
+  },
+  "23764_files": {
+    "result": "success",
+    "files": [
+      {
+        "id": 951120,
+        "size": 22,
+        "name": "image001.png"
+      },
+      {
+        "id": 951122,
+        "size": 26,
+        "name": "реквизиты Сбербанк с 23 мая 2019.doc"
+      }
+    ]
+  },
+  "23812": {
+    "result": "success",
+    "task": {
+      "id": 23812,
+      "name": "Запрос в г. Сургут",
+      "description": "<div>\n <p><i><span>Добрый день! Не тендер, наш конечный покупатель.</span></i></p>\n <p><i><span>такое РЕМ-ПОКС 2К ЭП-0607HS ( практический расход 576 г/м2 (320мкм)-9005- 280кг</span></i></p>\n <p><i><span>такое РЕМ-ПОКС 2К ЭП-0607HS ( практический расход 576 г/м2 (320мкм)-6002-120кг</span></i></p>\n <p><i><span>Жду счет и сроки поставки. (Запрос срочный!)</span></i></p>\n <p><i><span>&nbsp;</span></i></p>\n <p><i><span>&nbsp;</span></i></p>\n <p><span><img class=\"ckeditor-direct-upload-image ckeditor-direct-upload-image-951120\" src=\"https://tonal.planfix.ru/filelink/image001.png?action=getfile&amp;uniqueid=951120&amp;auth=471dc7710aac82c9825b7355026405e4\"></span></p>\n <p><span>&nbsp;</span></p>\n <p><i><span style=\"font-size:12.0pt;font-family:&quot;Times New Roman&quot;,serif\">С уважением,</span></i></p>\n <p><i><span style=\"font-size:12.0pt;font-family:&quot;Times New Roman&quot;,serif\">Менеджер отдела снабжения ООО «ТД МИР СВАРКИ»</span></i></p>\n <p><i><span style=\"font-size:12.0pt;font-family:&quot;Times New Roman&quot;,serif\">Костицына Юлия Васильевна</span></i></p>\n <p><i><span style=\"font-size:12.0pt;font-family:&quot;Times New Roman&quot;,serif\">650010, г. Кемерово, ул. Железнодорожная, д. 41</span></i></p>\n <p><i><span style=\"font-size:12.0pt;font-family:&quot;Times New Roman&quot;,serif\">(3842) 900-267 доб. 281</span></i></p>\n <p><i><span style=\"font-size:12.0pt;font-family:&quot;Times New Roman&quot;,serif\"><a href=\"http://www.mir-svarki.ru/\"><span style=\"color:#0563C1\">www.mir-svarki.ru</span></a></span></i></p>\n <p>&nbsp;</p>\n</div>",
+      "priority": "NotUrgent",
+      "status": {
+        "id": 180,
+        "name": "Подготовка заявки",
+        "color": "#978202",
+        "isActive": true,
+        "hasDeadline": true,
+        "isAppliedIndividually": false,
+        "texts": [
+          {
+            "lang": "Ru",
+            "name": "Подготовка заявки"
+          },
+          {
+            "lang": "En",
+            "name": "Подготовка заявки"
+          }
+        ]
+      },
+      "assigner": {
+        "id": "contact:4173",
+        "name": "Костицына Юлия Васильевна"
+      },
+      "dateTime": {
+        "date": "26-05-2025",
+        "time": "04:02",
+        "datetime": "2025-05-26T04:02Z",
+        "dateTimeUtcSeconds": "2025-05-26T04:02:16+0000",
+        "dateTimeUtcWithSeconds": "2025-05-26T04:02:16+0000"
+      },
+      "endDateTime": {
+        "date": "15-06-2025",
+        "time": "00:00",
+        "datetime": "2025-06-15T00:00Z",
+        "dateTimeUtcSeconds": "2025-06-15T00:00:00+0000",
+        "dateTimeUtcWithSeconds": "2025-06-15T00:00:00+0000"
+      },
+      "dateOfLastUpdate": {
+        "date": "05-06-2025",
+        "time": "20:59",
+        "datetime": "2025-06-05T20:59Z",
+        "dateTimeUtcSeconds": "2025-06-05T20:59:50+0000",
+        "dateTimeUtcWithSeconds": "2025-06-05T20:59:50+0000"
+      },
+      "assignees": {
+        "users": [
+          {
+            "id": "user:1",
+            "name": "Саликов Рамиль"
+          }
+        ],
+        "groups": []
+      },
+      "files": [
+        {
+          "id": 951120,
+          "size": 22,
+          "name": "image001.png"
+        },
+        {
+          "id": 951122,
+          "size": 26,
+          "name": "реквизиты Сбербанк с 23 мая 2019.doc"
+        }
+      ]
+    }
+  },
+  "23812_comments": {
+    "result": "success",
+    "comments": [
+      {
+        "id": 8897144,
+        "dateTime": {
+          "date": "05-06-2025",
+          "time": "20:59",
+          "datetime": "2025-06-05T20:59Z",
+          "dateTimeUtcSeconds": "2025-06-05T20:59:50+0000",
+          "dateTimeUtcWithSeconds": "2025-06-05T20:59:50+0000"
+        },
+        "type": "Comment",
+        "owner": {
+          "id": "user:1",
+          "name": "Саликов Рамиль"
+        },
+        "description": "<p>Костицына Юлия Васильевна добрый день!</p>\n<p>&nbsp;</p>\n<p>Мы отправляли Вам предложение по Вашему запросу.</p>\n<p>Просим сообщить статус нашего предложения!</p>\n<p>&nbsp;</p>\n<p>Будем признательны за обратную связь с Вашей стороны.</p>\n<p>&nbsp;</p>\n<p><br>Сильные стороны покрытий ТОНАЛЬ:<br>1. Высокие малярные и эксплуатационные показатели<br>2. Стабильное качество от партии к партии:<br>◦ по грунту<br>◦ по эмали<br>◦ по полной схеме<br>3. Соответствие параметров материалов данным технической документации<br>4. Возможность работы при около нулевых и отрицательных температурах<br>5. Высокая скорость окрашивания и сушки в условиях открытых причалов (прибрежные и морские районы с высокой соленостью).<br>6. Низкий расход материала.<br>7. Повышенная антикоррозионная стойкость в условиях шельфа Черного моря, повышенная стойкость к механическому истиранию, УФ-излучению,<br>стабильность декоративных свойств на протяжении всего ожидаемого срока службы (10лет).<br>&nbsp;</p>\n<p>&nbsp;</p>",
+        "isPinned": false
+      },
+      {
+        "id": 8892704,
+        "dateTime": {
+          "date": "27-05-2025",
+          "time": "10:34",
+          "datetime": "2025-05-27T10:34Z",
+          "dateTimeUtcSeconds": "2025-05-27T10:34:56+0000",
+          "dateTimeUtcWithSeconds": "2025-05-27T10:34:56+0000"
+        },
+        "type": "Comment",
+        "owner": {
+          "id": "user:5",
+          "name": "Цвиренко Елена Владиславовна"
+        },
+        "description": "<b>Счет  для ООО \"ТД МИР СВАРКИ\" от ООО \"ТОНАЛЬ\"</b><br/><br/><p><br></p>\n<p><br></p>\n<p>К письму приложены документы для ООО \"ТД МИР СВАРКИ\" от ООО \"ТОНАЛЬ\":<br>- Счет на оплату № 109 от 27 мая 2025 г. на сумму 631 320,00 руб.<br>- Электронный счет на оплату № 109 от 27.05.2025.zip<br></p>\n<p>С уважением, Цвиренко Елена Владиславовна.</p>",
+        "isPinned": false
+      },
+      {
+        "id": 8892644,
+        "dateTime": {
+          "date": "27-05-2025",
+          "time": "07:30",
+          "datetime": "2025-05-27T07:30Z",
+          "dateTimeUtcSeconds": "2025-05-27T07:30:29+0000",
+          "dateTimeUtcWithSeconds": "2025-05-27T07:30:29+0000"
+        },
+        "type": "Comment",
+        "owner": {
+          "id": "user:1",
+          "name": "Саликов Рамиль"
+        },
+        "description": "",
+        "isPinned": false
+      },
+      {
+        "id": 8892452,
+        "dateTime": {
+          "date": "27-05-2025",
+          "time": "06:29",
+          "datetime": "2025-05-27T06:29Z",
+          "dateTimeUtcSeconds": "2025-05-27T06:29:56+0000",
+          "dateTimeUtcWithSeconds": "2025-05-27T06:29:56+0000"
+        },
+        "type": "Comment",
+        "owner": {
+          "id": "user:1",
+          "name": "Саликов Рамиль"
+        },
+        "description": "<p>Лена, ответь пожалуйста </p>",
+        "isPinned": false
+      },
+      {
+        "id": 8892332,
+        "dateTime": {
+          "date": "27-05-2025",
+          "time": "02:27",
+          "datetime": "2025-05-27T02:27Z",
+          "dateTimeUtcSeconds": "2025-05-27T02:27:21+0000",
+          "dateTimeUtcWithSeconds": "2025-05-27T02:27:21+0000"
+        },
+        "type": "Comment",
+        "owner": {
+          "id": "contact:4173",
+          "name": "Костицына Юлия Васильевна"
+        },
+        "description": "<div>\n <p>Добрый день, ответ на запрос не получен. Вы сможете поставить или нет?</p>\n <p><i><span>такое РЕМ-ПОКС 2К ЭП-0607HS ( практический расход 576 г/м2 (320мкм)-9005- 280кг</span></i></p>\n <p><i><span>такое РЕМ-ПОКС 2К ЭП-0607HS ( практический расход 576 г/м2 (320мкм)-6002-120кг</span></i></p>\n <p>&nbsp;</p>\n <p>&nbsp;</p>\n <p><span><img class=\"ckeditor-direct-upload-image ckeditor-direct-upload-image-951120\" src=\"https://tonal.planfix.ru/filelink/image001.png?action=getfile&uniqueid=951120&auth=471dc7710aac82c9825b7355026405e4\"></span><span></span></p>\n <p><span>&nbsp;</span></p>\n <p><i><span style=\"font-size:12.0pt;font-family:&quot;Times New Roman&quot;,serif\">С  уважением,</span></i></p>\n <p><i><span style=\"font-size:12.0pt;font-family:&quot;Times New Roman&quot;,serif\">Менеджер отдела снабжения ООО «ТД МИР СВАРКИ»</span></i></p>\n <p><i><span style=\"font-size:12.0pt;font-family:&quot;Times New Roman&quot;,serif\">Костицына Юлия Васильевна</span></i></p>\n <p><i><span style=\"font-size:12.0pt;font-family:&quot;Times New Roman&quot;,serif\">650010, г. Кемерово, ул. Железнодорожная, д. 41</span></i></p>\n <p><i><span style=\"font-size:12.0pt;font-family:&quot;Times New Roman&quot;,serif\">(3842) 900-267 доб. 281</span></i></p>\n <p><i><span style=\"font-size:12.0pt;font-family:&quot;Times New Roman&quot;,serif\"><a href=\"http://www.mir-svarki.ru/\">www.mir-svarki.ru</a></span></i></p>\n <p>&nbsp;</p>\n <p>&nbsp;</p>\n <p>&nbsp;</p>\n <div>\n  <div style=\"border:none;border-top:solid #E1E1E1 1.0pt;padding:3.0pt 0cm 0cm 0cm\">\n   <p><b><span>From:</span></b><span> Костицына Юлия Васильевна <br> <b>Sent:</b> Monday, May 26, 2025 2:27 PM<br> <b>To:</b> 'inbox@tonaly.ru' &lt;inbox@tonaly.ru&gt;<br> <b>Subject:</b> Запрос в г. Сургут</span></p>\n  </div>\n </div>\n <p>&nbsp;</p>\n <p><i><span>Добрый день! Не тендер, наш конечный покупатель.</span></i></p>\n <p><i><span>такое РЕМ-ПОКС 2К ЭП-0607HS ( практический расход 576 г/м2 (320мкм)-9005- 280кг</span></i></p>\n <p><i><span>такое РЕМ-ПОКС 2К ЭП-0607HS ( практический расход 576 г/м2 (320мкм)-6002-120кг</span></i></p>\n <p><i><span>Жду счет и сроки поставки. (Запрос срочный!)</span></i></p>\n <p><i><span>&nbsp;</span></i></p>\n <p><i><span>&nbsp;</span></i></p>\n <p><span><img class=\"ckeditor-direct-upload-image ckeditor-direct-upload-image-951120\" src=\"https://tonal.planfix.ru/filelink/image001.png?action=getfile&uniqueid=951120&auth=471dc7710aac82c9825b7355026405e4\"></span><span></span></p>\n <p><span>&nbsp;</span></p>\n <p><i><span style=\"font-size:12.0pt;font-family:&quot;Times New Roman&quot;,serif\">С  уважением,</span></i></p>\n <p><i><span style=\"font-size:12.0pt;font-family:&quot;Times New Roman&quot;,serif\">Менеджер отдела снабжения ООО «ТД МИР СВАРКИ»</span></i></p>\n <p><i><span style=\"font-size:12.0pt;font-family:&quot;Times New Roman&quot;,serif\">Костицына Юлия Васильевна</span></i></p>\n <p><i><span style=\"font-size:12.0pt;font-family:&quot;Times New Roman&quot;,serif\">650010, г. Кемерово, ул. Железнодорожная, д. 41</span></i></p>\n <p><i><span style=\"font-size:12.0pt;font-family:&quot;Times New Roman&quot;,serif\">(3842) 900-267 доб. 281</span></i></p>\n <p><i><span style=\"font-size:12.0pt;font-family:&quot;Times New Roman&quot;,serif\"><a href=\"http://www.mir-svarki.ru/\">www.mir-svarki.ru</a></span></i></p>\n <p>&nbsp;</p>\n</div>",
+        "isPinned": false
+      },
+      {
+        "id": 8892020,
+        "dateTime": {
+          "date": "26-05-2025",
+          "time": "07:27",
+          "datetime": "2025-05-26T07:27Z",
+          "dateTimeUtcSeconds": "2025-05-26T07:27:20+0000",
+          "dateTimeUtcWithSeconds": "2025-05-26T07:27:20+0000"
+        },
+        "type": "Comment",
+        "owner": {
+          "id": "contact:4173",
+          "name": "Костицына Юлия Васильевна"
+        },
+        "description": "<div>\n <p><i><span>Добрый день! Не тендер, наш конечный покупатель.</span></i></p>\n <p><i><span>такое РЕМ-ПОКС 2К ЭП-0607HS ( практический расход 576 г/м2 (320мкм)-9005- 280кг</span></i></p>\n <p><i><span>такое РЕМ-ПОКС 2К ЭП-0607HS ( практический расход 576 г/м2 (320мкм)-6002-120кг</span></i></p>\n <p><i><span>Жду счет и сроки поставки. (Запрос срочный!)</span></i></p>\n <p><i><span>&nbsp;</span></i></p>\n <p><i><span>&nbsp;</span></i></p>\n <p><span><img class=\"ckeditor-direct-upload-image ckeditor-direct-upload-image-951120\" src=\"https://tonal.planfix.ru/filelink/image001.png?action=getfile&uniqueid=951120&auth=471dc7710aac82c9825b7355026405e4\"></span><span></span></p>\n <p><span>&nbsp;</span></p>\n <p><i><span style=\"font-size:12.0pt;font-family:&quot;Times New Roman&quot;,serif\">С  уважением,</span></i></p>\n <p><i><span style=\"font-size:12.0pt;font-family:&quot;Times New Roman&quot;,serif\">Менеджер отдела снабжения ООО «ТД МИР СВАРКИ»</span></i></p>\n <p><i><span style=\"font-size:12.0pt;font-family:&quot;Times New Roman&quot;,serif\">Костицына Юлия Васильевна</span></i></p>\n <p><i><span style=\"font-size:12.0pt;font-family:&quot;Times New Roman&quot;,serif\">650010, г. Кемерово, ул. Железнодорожная, д. 41</span></i></p>\n <p><i><span style=\"font-size:12.0pt;font-family:&quot;Times New Roman&quot;,serif\">(3842) 900-267 доб. 281</span></i></p>\n <p><i><span style=\"font-size:12.0pt;font-family:&quot;Times New Roman&quot;,serif\"><a href=\"http://www.mir-svarki.ru/\">www.mir-svarki.ru</a></span></i></p>\n <p>&nbsp;</p>\n</div>",
+        "isPinned": false
+      },
+      {
+        "id": 8891890,
+        "dateTime": {
+          "date": "26-05-2025",
+          "time": "04:02",
+          "datetime": "2025-05-26T04:02Z",
+          "dateTimeUtcSeconds": "2025-05-26T04:02:16+0000",
+          "dateTimeUtcWithSeconds": "2025-05-26T04:02:16+0000"
+        },
+        "type": "None",
+        "owner": {
+          "id": "contact:4173",
+          "name": "Костицына Юлия Васильевна"
+        },
+        "description": "<div>\n <p><i><span>Добрый день! Не тендер, наш конечный покупатель.</span></i></p>\n <p><i><span>такое РЕМ-ПОКС 2К ЭП-0607HS ( практический расход 576 г/м2 (320мкм)-9005- 280кг</span></i></p>\n <p><i><span>такое РЕМ-ПОКС 2К ЭП-0607HS ( практический расход 576 г/м2 (320мкм)-6002-120кг</span></i></p>\n <p><i><span>Жду счет и сроки поставки. (Запрос срочный!)</span></i></p>\n <p><i><span>&nbsp;</span></i></p>\n <p><i><span>&nbsp;</span></i></p>\n <p><span><img class=\"ckeditor-direct-upload-image ckeditor-direct-upload-image-951120\" src=\"https://tonal.planfix.ru/filelink/image001.png?action=getfile&amp;uniqueid=951120&amp;auth=471dc7710aac82c9825b7355026405e4\"></span></p>\n <p><span>&nbsp;</span></p>\n <p><i><span style=\"font-size:12.0pt;font-family:&quot;Times New Roman&quot;,serif\">С уважением,</span></i></p>\n <p><i><span style=\"font-size:12.0pt;font-family:&quot;Times New Roman&quot;,serif\">Менеджер отдела снабжения ООО «ТД МИР СВАРКИ»</span></i></p>\n <p><i><span style=\"font-size:12.0pt;font-family:&quot;Times New Roman&quot;,serif\">Костицына Юлия Васильевна</span></i></p>\n <p><i><span style=\"font-size:12.0pt;font-family:&quot;Times New Roman&quot;,serif\">650010, г. Кемерово, ул. Железнодорожная, д. 41</span></i></p>\n <p><i><span style=\"font-size:12.0pt;font-family:&quot;Times New Roman&quot;,serif\">(3842) 900-267 доб. 281</span></i></p>\n <p><i><span style=\"font-size:12.0pt;font-family:&quot;Times New Roman&quot;,serif\"><a href=\"http://www.mir-svarki.ru/\"><span style=\"color:#0563C1\">www.mir-svarki.ru</span></a></span></i></p>\n <p>&nbsp;</p>\n</div>",
+        "isPinned": false
+      }
+    ]
+  },
+  "23812_files": {
+    "result": "success",
+    "files": [
+      {
+        "id": 951120,
+        "size": 22,
+        "name": "image001.png"
+      },
+      {
+        "id": 951122,
+        "size": 26,
+        "name": "реквизиты Сбербанк с 23 мая 2019.doc"
+      },
+      {
+        "id": 951922,
+        "size": 200,
+        "name": "Счет на оплату № 109 от 27 мая 2025 г.pdf"
+      },
+      {
+        "id": 951924,
+        "size": 6,
+        "name": "Электронный счет на оплату № 109 от 27.05.2025.zip"
+      }
+    ]
+  },
+  "19307": {
+    "result": "success",
+    "task": {
+      "id": 19307,
+      "name": "ПЛАН РАБОТ \nпо включению системы антикоррозионного покрытия (категория С3, С4, срок службы 20 лет) для наружной поверхности резервуаров в Реестр ОВП ПАО «Транснефть»",
+      "description": "",
+      "priority": "NotUrgent",
+      "status": {
+        "id": 137,
+        "name": "ОПИ",
+        "color": "#925908",
+        "isActive": true,
+        "hasDeadline": true,
+        "isAppliedIndividually": false,
+        "texts": [
+          {
+            "lang": "Ru",
+            "name": "ОПИ"
+          },
+          {
+            "lang": "En",
+            "name": "ОПИ"
+          }
+        ]
+      },
+      "assigner": {
+        "id": "user:1",
+        "name": "Саликов Рамиль"
+      },
+      "project": {
+        "id": 19294
+      },
+      "counterparty": {
+        "id": "contact:2282",
+        "name": "НАУЧНО-ИССЛЕДОВАТЕЛЬСКИЙ ИНСТИТУТ ТРУБОПРОВОДНОГО ТРАНСПОРТА"
+      },
+      "dateTime": {
+        "date": "08-12-2024",
+        "time": "19:46",
+        "datetime": "2024-12-08T19:46Z",
+        "dateTimeUtcSeconds": "2024-12-08T19:46:14+0000",
+        "dateTimeUtcWithSeconds": "2024-12-08T19:46:14+0000"
+      },
+      "startDateTime": {
+        "date": "13-11-2025",
+        "time": "11:55",
+        "datetime": "2025-11-13T11:55Z",
+        "dateTimeUtcSeconds": "2025-11-13T11:55:00+0000",
+        "dateTimeUtcWithSeconds": "2025-11-13T11:55:00+0000"
+      },
+      "endDateTime": {
+        "date": "29-12-2025",
+        "time": "00:00",
+        "datetime": "2025-12-29T00:00Z",
+        "dateTimeUtcSeconds": "2025-12-29T00:00:00+0000",
+        "dateTimeUtcWithSeconds": "2025-12-29T00:00:00+0000"
+      },
+      "dateOfLastUpdate": {
+        "date": "13-12-2025",
+        "time": "06:00",
+        "datetime": "2025-12-13T06:00Z",
+        "dateTimeUtcSeconds": "2025-12-13T06:00:53+0000",
+        "dateTimeUtcWithSeconds": "2025-12-13T06:00:53+0000"
+      },
+      "assignees": {
+        "users": [
+          {
+            "id": "user:6",
+            "name": "Pavlov Yury"
+          },
+          {
+            "id": "user:5",
+            "name": "Цвиренко Елена Владиславовна"
+          },
+          {
+            "id": "user:1",
+            "name": "Саликов Рамиль"
+          }
+        ],
+        "groups": []
+      },
+      "files": []
+    }
+  },
+  "19307_comments": {
+    "result": "success",
+    "comments": [
+      {
+        "id": 8950496,
+        "dateTime": {
+          "date": "13-11-2025",
+          "time": "11:54",
+          "datetime": "2025-11-13T11:54Z",
+          "dateTimeUtcSeconds": "2025-11-13T11:54:47+0000",
+          "dateTimeUtcWithSeconds": "2025-11-13T11:54:47+0000"
+        },
+        "type": "Comment",
+        "owner": {
+          "id": "user:1",
+          "name": "Саликов Рамиль"
+        },
+        "description": "<p>Задача в текущей проработке проекта</p>",
+        "isPinned": false
+      },
+      {
+        "id": 8820580,
+        "dateTime": {
+          "date": "19-12-2024",
+          "time": "07:49",
+          "datetime": "2024-12-19T07:49Z",
+          "dateTimeUtcSeconds": "2024-12-19T07:49:27+0000",
+          "dateTimeUtcWithSeconds": "2024-12-19T07:49:27+0000"
+        },
+        "type": "Comment",
+        "owner": {
+          "id": "contact:943",
+          "name": "Чеславский Вячеслав"
+        },
+        "description": "<b>ОТВЕТ : ПЛАН РАБОТ по включению системы антикоррозионного покрытия (категория С3, С4, срок службы 20 лет) для наружной поверхности резервуаров в Реестр ОВП ПАО «Транснефть»</b><br/><br/><div>\n Коллеги, добрый день!\n</div>\n<div>\n на данный момент в данном реестре нас нет, т.к . не было такой необходимости\\запросов\n</div>\n<div>\n  \n</div>\n<div>\n В случае возникновения необходимости (понимание ДЛЯ ЧЕГО ЭТО НУЖНО) этот процесс можем организовать.\n</div>\n<div>\n  \n</div>\n<div>\n Ориентировочные сроки включения 2-3 месяца.\n</div>\n<div>\n  \n</div>\n<div>\n  \n</div>\n<div>\n ----------------\n</div>\n<div>\n Кому: vlad.motarykin@yandex.com (vlad.motarykin@yandex.com), cheslavski@rem-color.by (cheslavski@rem-color.by), vlad-motarykin@yandex.ru (vlad-motarykin@yandex.ru), yury.pavlov@tonaly.ru (yury.pavlov@tonaly.ru);\n</div>\n<div>\n Тема: ПЛАН РАБОТ по включению системы антикоррозионного покрытия (категория С3, С4, срок службы 20 лет) для наружной поверхности резервуаров в Реестр ОВП ПАО «Транснефть»;\n</div>\n<div>\n 18.12.2024, 17:06, \"Рамиль\" &lt;rml@tonaly.ru&gt;:\n</div>",
+        "isPinned": false
+      },
+      {
+        "id": 8820236,
+        "dateTime": {
+          "date": "18-12-2024",
+          "time": "14:06",
+          "datetime": "2024-12-18T14:06Z",
+          "dateTimeUtcSeconds": "2024-12-18T14:06:06+0000",
+          "dateTimeUtcWithSeconds": "2024-12-18T14:06:06+0000"
+        },
+        "type": "Comment",
+        "owner": {
+          "id": "user:1",
+          "name": "Саликов Рамиль"
+        },
+        "description": "<p>Вячеслав, вопрос от заказчика:</p>\n<p>&nbsp;</p>\n<p>Рамиль, уточни у коллег на заводе - включены их материалы в Евразийский реестр промышленных товаров государств - членов Евразийского экономического союза.</p>\n<p>&nbsp;</p>\n<p>Пришли пожалуйста документ или письмо-подтверждение.</p>",
+        "isPinned": false
+      },
+      {
+        "id": 8815722,
+        "dateTime": {
+          "date": "10-12-2024",
+          "time": "09:29",
+          "datetime": "2024-12-10T09:29Z",
+          "dateTimeUtcSeconds": "2024-12-10T09:29:50+0000",
+          "dateTimeUtcWithSeconds": "2024-12-10T09:29:50+0000"
+        },
+        "type": "Comment",
+        "owner": {
+          "id": "user:1",
+          "name": "Саликов Рамиль"
+        },
+        "description": "<blockquote><b>Re: ПЛАН РАБОТ по включению системы антикоррозионного покрытия (категория С3, С4, срок службы 20 лет) для наружной поверхности резервуаров в Реестр ОВП ПАО «Транснефть»</b><br>&nbsp; \n <div>\n  Рамиль, какая у нас проектная толщина для данной системы для Транснефти?<br>Я про удар. Что бы у себя воспроизвести методику.\n </div>\n <div>\n  &nbsp;\n </div>\n <div>\n  ----------------\n </div>\n <div>\n  Кому: cheslavski@rem-color.by (cheslavski@rem-color.by), vlad-motarykin@yandex.ru (vlad-motarykin@yandex.ru), yury.pavlov@tonaly.ru (yury.pavlov@tonaly.ru);\n </div>\n <div>\n  Тема: ПЛАН РАБОТ по включению системы антикоррозионного покрытия (категория С3, С4, срок службы 20 лет) для наружной поверхности резервуаров в Реестр ОВП ПАО «Транснефть»;\n </div>\n <div>\n  09.12.2024, 13:02, \"Рамиль\" &lt;rml@tonaly.ru&gt;:\n </div>\n</blockquote>\n<p>Владислав, добрый день!&nbsp;</p>\n<p>&nbsp;</p>\n<p>Хороший вопрос.</p>\n<p>&nbsp;</p>\n<p>По схемам прошу протестировать следующее:</p>\n<p>&nbsp;</p>\n<p style=\"margin: 0px; padding: 0px; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; color: rgb(0, 0, 0); font-family: &quot;Planfix Exo 2&quot;, arial, sans-serif; background-color: rgb(254, 254, 217)\">1. Атмосфера:</p>\n<p style=\"margin: 0px; padding: 0px; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; color: rgb(0, 0, 0); font-family: &quot;Planfix Exo 2&quot;, arial, sans-serif; background-color: rgb(254, 254, 217)\">1.1. С3 и С4 (II не менее 20 лет) = 0607HS 1х140 + 1604 1х60 = 200</p>\n<p style=\"margin: 0px; padding: 0px; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; color: rgb(0, 0, 0); font-family: &quot;Planfix Exo 2&quot;, arial, sans-serif; background-color: rgb(254, 254, 217)\">1.2 С5&nbsp;(II не менее 20 лет) = 0607HS 1х200 + 1604 1х80 = 280</p>\n<p style=\"margin: 0px; padding: 0px; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; color: rgb(0, 0, 0); font-family: &quot;Planfix Exo 2&quot;, arial, sans-serif; background-color: rgb(254, 254, 217)\">&nbsp;</p>\n<p style=\"margin: 0px; padding: 0px; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; color: rgb(0, 0, 0); font-family: &quot;Planfix Exo 2&quot;, arial, sans-serif; background-color: rgb(254, 254, 217)\">2. Внутрянка:</p>\n<p style=\"margin: 0px; padding: 0px; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; color: rgb(0, 0, 0); font-family: &quot;Planfix Exo 2&quot;, arial, sans-serif; background-color: rgb(254, 254, 217)\">2.1. Усиленный тип НЕФТЬ: 0607HS 2х160 = 320 мкм</p>\n<p style=\"margin: 0px; padding: 0px; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; color: rgb(0, 0, 0); font-family: &quot;Planfix Exo 2&quot;, arial, sans-serif; background-color: rgb(254, 254, 217)\">2.2. Усиленный тип НЕФТЕПРОДУКТ:&nbsp; 0607AS 2х155 = 310</p>\n<p style=\"margin: 0px; padding: 0px; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; color: rgb(0, 0, 0); font-family: &quot;Planfix Exo 2&quot;, arial, sans-serif; background-color: rgb(254, 254, 217)\">&nbsp;</p>\n<p style=\"margin: 0px; padding: 0px; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; color: rgb(0, 0, 0); font-family: &quot;Planfix Exo 2&quot;, arial, sans-serif; background-color: rgb(254, 254, 217)\">3. Порты:</p>\n<p style=\"margin: 0px; padding: 0px; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; color: rgb(0, 0, 0); font-family: &quot;Planfix Exo 2&quot;, arial, sans-serif; background-color: rgb(254, 254, 217)\">3.1 0607HS 3х160 - переменное = 480</p>\n<p style=\"margin: 0px; padding: 0px; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; color: rgb(0, 0, 0); font-family: &quot;Planfix Exo 2&quot;, arial, sans-serif; background-color: rgb(254, 254, 217)\">3.2 0607HS 2х200 - постоянное погружение = 400</p>\n<p>&nbsp;</p>\n<p>&nbsp;</p>",
+        "isPinned": false
+      },
+      {
+        "id": 8815424,
+        "dateTime": {
+          "date": "09-12-2024",
+          "time": "13:24",
+          "datetime": "2024-12-09T13:24Z",
+          "dateTimeUtcSeconds": "2024-12-09T13:24:30+0000",
+          "dateTimeUtcWithSeconds": "2024-12-09T13:24:30+0000"
+        },
+        "type": "Comment",
+        "owner": {
+          "id": "contact:599",
+          "name": "Владислав"
+        },
+        "description": "<b>Re: ПЛАН РАБОТ по включению системы антикоррозионного покрытия (категория С3, С4, срок службы 20 лет) для наружной поверхности резервуаров в Реестр ОВП ПАО «Транснефть»</b><br/><br/><div>\n Рамиль, какая у нас проектная толщина для данной системы для Транснефти?<br>Я про удар. Что бы у себя воспроизвести методику.\n</div>\n<div>\n  \n</div>\n<div>\n ----------------\n</div>\n<div>\n Кому: cheslavski@rem-color.by (cheslavski@rem-color.by), vlad-motarykin@yandex.ru (vlad-motarykin@yandex.ru), yury.pavlov@tonaly.ru (yury.pavlov@tonaly.ru);\n</div>\n<div>\n Тема: ПЛАН РАБОТ по включению системы антикоррозионного покрытия (категория С3, С4, срок службы 20 лет) для наружной поверхности резервуаров в Реестр ОВП ПАО «Транснефть»;\n</div>\n<div>\n 09.12.2024, 13:02, \"Рамиль\" &lt;rml@tonaly.ru&gt;:\n</div>",
+        "isPinned": false
+      },
+      {
+        "id": 8815324,
+        "dateTime": {
+          "date": "09-12-2024",
+          "time": "10:02",
+          "datetime": "2024-12-09T10:02Z",
+          "dateTimeUtcSeconds": "2024-12-09T10:02:35+0000",
+          "dateTimeUtcWithSeconds": "2024-12-09T10:02:35+0000"
+        },
+        "type": "Comment",
+        "owner": {
+          "id": "user:1",
+          "name": "Саликов Рамиль"
+        },
+        "description": "<p>Вячеслав, Владислав, добрый день!</p>\n<p>&nbsp;</p>\n<p>Вот такой план предлагаю к рассмотрению.</p>\n<p>&nbsp;</p>\n<p>Он в общем согласован с коллегами из АК Транснефть.</p>\n<p>&nbsp;</p>\n<p>Особое внимание: 1. Ударные испытания, 2. Адгезия отрывом после соляного тумана (!)</p>\n<p>&nbsp;</p>\n<p>Будет предварительное тестирование в Самаре.</p>",
+        "isPinned": false
+      },
+      {
+        "id": 8814250,
+        "dateTime": {
+          "date": "08-12-2024",
+          "time": "19:46",
+          "datetime": "2024-12-08T19:46Z",
+          "dateTimeUtcSeconds": "2024-12-08T19:46:14+0000",
+          "dateTimeUtcWithSeconds": "2024-12-08T19:46:14+0000"
+        },
+        "type": "None",
+        "owner": {
+          "id": "user:1",
+          "name": "Саликов Рамиль"
+        },
+        "description": "",
+        "isPinned": false
+      }
+    ]
+  },
+  "19307_files": {
+    "result": "success",
+    "files": [
+      {
+        "id": 916528,
+        "size": 149,
+        "name": "Вхождение в реестр АК Транснефть 2025 год _ ... _ Транснефть _ Нефть _ tonal.pdf"
+      }
+    ]
+  },
+  "19311": {
+    "result": "success",
+    "task": {
+      "id": 19311,
+      "name": "Изготовление образцов и направление в НТЦ ООО \"НИИ Транснефть\"",
+      "description": "",
+      "priority": "NotUrgent",
+      "status": {
+        "id": 2,
+        "name": "В работе",
+        "color": "#3377C3",
+        "isActive": true,
+        "hasDeadline": true,
+        "isAppliedIndividually": false,
+        "texts": [
+          {
+            "lang": "Ru",
+            "name": "В работе"
+          },
+          {
+            "lang": "En",
+            "name": "In progress"
+          }
+        ]
+      },
+      "assigner": {
+        "id": "user:1",
+        "name": "Саликов Рамиль"
+      },
+      "parent": {
+        "id": 19308
+      },
+      "project": {
+        "id": 19294
+      },
+      "counterparty": {
+        "id": "contact:2282",
+        "name": "НАУЧНО-ИССЛЕДОВАТЕЛЬСКИЙ ИНСТИТУТ ТРУБОПРОВОДНОГО ТРАНСПОРТА"
+      },
+      "dateTime": {
+        "date": "08-12-2024",
+        "time": "20:57",
+        "datetime": "2024-12-08T20:57Z",
+        "dateTimeUtcSeconds": "2024-12-08T20:57:40+0000",
+        "dateTimeUtcWithSeconds": "2024-12-08T20:57:40+0000"
+      },
+      "startDateTime": {
+        "date": "03-02-2025",
+        "time": "08:00",
+        "datetime": "2025-02-03T08:00Z",
+        "dateTimeUtcSeconds": "2025-02-03T08:00:00+0000",
+        "dateTimeUtcWithSeconds": "2025-02-03T08:00:00+0000"
+      },
+      "endDateTime": {
+        "date": "13-12-2025",
+        "time": "00:00",
+        "datetime": "2025-12-13T00:00Z",
+        "dateTimeUtcSeconds": "2025-12-13T00:00:00+0000",
+        "dateTimeUtcWithSeconds": "2025-12-13T00:00:00+0000"
+      },
+      "dateOfLastUpdate": {
+        "date": "13-12-2025",
+        "time": "03:00",
+        "datetime": "2025-12-13T03:00Z",
+        "dateTimeUtcSeconds": "2025-12-13T03:00:50+0000",
+        "dateTimeUtcWithSeconds": "2025-12-13T03:00:50+0000"
+      },
+      "assignees": {
+        "users": [
+          {
+            "id": "user:1",
+            "name": "Саликов Рамиль"
+          }
+        ],
+        "groups": []
+      },
+      "files": []
+    }
+  },
+  "19311_comments": {
+    "result": "success",
+    "comments": [
+      {
+        "id": 8814324,
+        "dateTime": {
+          "date": "08-12-2024",
+          "time": "20:57",
+          "datetime": "2024-12-08T20:57Z",
+          "dateTimeUtcSeconds": "2024-12-08T20:57:40+0000",
+          "dateTimeUtcWithSeconds": "2024-12-08T20:57:40+0000"
+        },
+        "type": "None",
+        "owner": {
+          "id": "user:1",
+          "name": "Саликов Рамиль"
+        },
+        "description": "",
+        "isPinned": false
+      }
+    ]
+  },
+  "19311_files": {
+    "result": "success",
+    "files": []
+  },
+  "19316": {
+    "result": "success",
+    "task": {
+      "id": 19316,
+      "name": "Испытание образцов в НТЦ ООО \"НИИ Транснефть\"",
+      "description": "<p>Испытание образцов в НТЦ ООО \"НИИ Транснефть\"</p>",
+      "priority": "NotUrgent",
+      "status": {
+        "id": 2,
+        "name": "В работе",
+        "color": "#3377C3",
+        "isActive": true,
+        "hasDeadline": true,
+        "isAppliedIndividually": false,
+        "texts": [
+          {
+            "lang": "Ru",
+            "name": "В работе"
+          },
+          {
+            "lang": "En",
+            "name": "In progress"
+          }
+        ]
+      },
+      "assigner": {
+        "id": "user:1",
+        "name": "Саликов Рамиль"
+      },
+      "parent": {
+        "id": 19308
+      },
+      "project": {
+        "id": 19294
+      },
+      "counterparty": {
+        "id": "contact:2282",
+        "name": "НАУЧНО-ИССЛЕДОВАТЕЛЬСКИЙ ИНСТИТУТ ТРУБОПРОВОДНОГО ТРАНСПОРТА"
+      },
+      "dateTime": {
+        "date": "08-12-2024",
+        "time": "21:30",
+        "datetime": "2024-12-08T21:30Z",
+        "dateTimeUtcSeconds": "2024-12-08T21:30:34+0000",
+        "dateTimeUtcWithSeconds": "2024-12-08T21:30:34+0000"
+      },
+      "startDateTime": {
+        "date": "04-04-2025",
+        "time": "08:00",
+        "datetime": "2025-04-04T08:00Z",
+        "dateTimeUtcSeconds": "2025-04-04T08:00:00+0000",
+        "dateTimeUtcWithSeconds": "2025-04-04T08:00:00+0000"
+      },
+      "endDateTime": {
+        "date": "13-12-2025",
+        "time": "00:00",
+        "datetime": "2025-12-13T00:00Z",
+        "dateTimeUtcSeconds": "2025-12-13T00:00:00+0000",
+        "dateTimeUtcWithSeconds": "2025-12-13T00:00:00+0000"
+      },
+      "dateOfLastUpdate": {
+        "date": "13-12-2025",
+        "time": "03:00",
+        "datetime": "2025-12-13T03:00Z",
+        "dateTimeUtcSeconds": "2025-12-13T03:00:50+0000",
+        "dateTimeUtcWithSeconds": "2025-12-13T03:00:50+0000"
+      },
+      "assignees": {
+        "users": [
+          {
+            "id": "user:1",
+            "name": "Саликов Рамиль"
+          }
+        ],
+        "groups": []
+      },
+      "files": []
+    }
+  },
+  "19316_comments": {
+    "result": "success",
+    "comments": [
+      {
+        "id": 8814434,
+        "dateTime": {
+          "date": "08-12-2024",
+          "time": "21:30",
+          "datetime": "2024-12-08T21:30Z",
+          "dateTimeUtcSeconds": "2024-12-08T21:30:34+0000",
+          "dateTimeUtcWithSeconds": "2024-12-08T21:30:34+0000"
+        },
+        "type": "None",
+        "owner": {
+          "id": "user:1",
+          "name": "Саликов Рамиль"
+        },
+        "description": "<p>Испытание образцов в НТЦ ООО \"НИИ Транснефть\"</p>",
+        "isPinned": false
+      }
+    ]
+  },
+  "19316_files": {
+    "result": "success",
+    "files": []
+  },
+  "19323": {
+    "result": "success",
+    "task": {
+      "id": 19323,
+      "name": "Направление ТУ и ПМИ на экспертизу в ООО «НИИ Транснефть»",
+      "description": "<p>Направление ТУ и ПМИ на экспертизу в ООО «НИИ Транснефть»</p>",
+      "priority": "NotUrgent",
+      "status": {
+        "id": 2,
+        "name": "В работе",
+        "color": "#3377C3",
+        "isActive": true,
+        "hasDeadline": true,
+        "isAppliedIndividually": false,
+        "texts": [
+          {
+            "lang": "Ru",
+            "name": "В работе"
+          },
+          {
+            "lang": "En",
+            "name": "In progress"
+          }
+        ]
+      },
+      "assigner": {
+        "id": "user:1",
+        "name": "Саликов Рамиль"
+      },
+      "parent": {
+        "id": 19321
+      },
+      "project": {
+        "id": 19294
+      },
+      "counterparty": {
+        "id": "contact:2282",
+        "name": "НАУЧНО-ИССЛЕДОВАТЕЛЬСКИЙ ИНСТИТУТ ТРУБОПРОВОДНОГО ТРАНСПОРТА"
+      },
+      "dateTime": {
+        "date": "08-12-2024",
+        "time": "21:41",
+        "datetime": "2024-12-08T21:41Z",
+        "dateTimeUtcSeconds": "2024-12-08T21:41:58+0000",
+        "dateTimeUtcWithSeconds": "2024-12-08T21:41:58+0000"
+      },
+      "startDateTime": {
+        "date": "03-02-2025",
+        "time": "08:00",
+        "datetime": "2025-02-03T08:00Z",
+        "dateTimeUtcSeconds": "2025-02-03T08:00:00+0000",
+        "dateTimeUtcWithSeconds": "2025-02-03T08:00:00+0000"
+      },
+      "endDateTime": {
+        "date": "13-12-2025",
+        "time": "00:00",
+        "datetime": "2025-12-13T00:00Z",
+        "dateTimeUtcSeconds": "2025-12-13T00:00:00+0000",
+        "dateTimeUtcWithSeconds": "2025-12-13T00:00:00+0000"
+      },
+      "dateOfLastUpdate": {
+        "date": "13-12-2025",
+        "time": "03:00",
+        "datetime": "2025-12-13T03:00Z",
+        "dateTimeUtcSeconds": "2025-12-13T03:00:50+0000",
+        "dateTimeUtcWithSeconds": "2025-12-13T03:00:50+0000"
+      },
+      "assignees": {
+        "users": [
+          {
+            "id": "user:6",
+            "name": "Pavlov Yury"
+          },
+          {
+            "id": "user:5",
+            "name": "Цвиренко Елена Владиславовна"
+          },
+          {
+            "id": "user:1",
+            "name": "Саликов Рамиль"
+          }
+        ],
+        "groups": []
+      },
+      "files": []
+    }
+  },
+  "19323_comments": {
+    "result": "success",
+    "comments": [
+      {
+        "id": 8816064,
+        "dateTime": {
+          "date": "11-12-2024",
+          "time": "08:09",
+          "datetime": "2024-12-11T08:09Z",
+          "dateTimeUtcSeconds": "2024-12-11T08:09:25+0000",
+          "dateTimeUtcWithSeconds": "2024-12-11T08:09:25+0000"
+        },
+        "type": "Comment",
+        "owner": {
+          "id": "user:1",
+          "name": "Саликов Рамиль"
+        },
+        "description": "<p>Добрый день!</p>\n<p>Просим принять и зарегистрировать наше письмо!</p>",
+        "isPinned": false
+      },
+      {
+        "id": 8816054,
+        "dateTime": {
+          "date": "11-12-2024",
+          "time": "07:44",
+          "datetime": "2024-12-11T07:44Z",
+          "dateTimeUtcSeconds": "2024-12-11T07:44:16+0000",
+          "dateTimeUtcWithSeconds": "2024-12-11T07:44:16+0000"
+        },
+        "type": "Comment",
+        "owner": {
+          "id": "user:1",
+          "name": "Саликов Рамиль"
+        },
+        "description": "<p>ООО «ТОНАЛЬ» является официальным представителем на территории РФ белорусского производителя лакокрасочных материалов ООО «РЕМ КОЛОР»</p>\n<p><br>РЕМ КОЛОР является производителем лакокрасочных материалов для различных отраслей промышленности, в том числе нефтяной и газовой.</p>\n<p><br>Антикоррозионные покрытия на основе ЛКМ производства РЕМ КОЛОР применяются для антикоррозионной защиты стальных поверхностей резервуаров, трубопроводов, технологического оборудования и т.д.<br>Производство расположено в Республике Беларусь в г Минск.&nbsp;&nbsp;</p>\n<p>&nbsp;</p>\n<p>Начиная с 2022 года, в силу ухода с рынка иностранных компаний, компания \"ТОНАЛЬ\" совместно с белорусскими коллегами, провела разработку и тестирование новых продуктов.</p>\n<p><br>Практические применения в сложных коррозионно-активных и климатических условиях подтвердили высокие малярные и эксплуатационных характеристики, зачастую превосходя многие параметры относительно иностранных брендов (PPG, AKZO NOBEL, HEMPEL, JOTUN, TEKNOS)</p>\n<p><br>ООО \"ТОНАЛЬ\" заинтересовано во включении в Реестр ОВП антикоррозионных покрытий на основе материалов производства РЕМ КОЛОР.<br>В связи с вышеизложенным просим Вас сообщить процедуру включения в Реестр ОВП ПАО «Транснефть» систем антикоррозийных покрытий предназначенных для защиты<br>- наружных поверхностей резервуаров;<br>- внутренних поверхностей резервуаров;<br>- портовых сооружения.</p>\n<p><br>Так же просим сообщить возможность включения в Реестр покрытий Рем -Колор с оформлением все разрешительной документации на официального представителя ООО «ТОНАЛЬ»</p>\n<p>&nbsp;</p>\n<p>&nbsp;</p>",
+        "isPinned": false
+      },
+      {
+        "id": 8815756,
+        "dateTime": {
+          "date": "10-12-2024",
+          "time": "09:49",
+          "datetime": "2024-12-10T09:49Z",
+          "dateTimeUtcSeconds": "2024-12-10T09:49:59+0000",
+          "dateTimeUtcWithSeconds": "2024-12-10T09:49:59+0000"
+        },
+        "type": "Comment",
+        "owner": {
+          "id": "user:1",
+          "name": "Саликов Рамиль"
+        },
+        "description": "<p>ООО «ТОНАЛЬ» является официальным представителем на территории РФ белорусского производителя лакокрасочных материалов ООО «РЕМ КОЛОР»</p>\n<p><br>РЕМ КОЛОР является производителем лакокрасочных материалов для различных отраслей промышленности, в том числе нефтяной и газовой.</p>\n<p><br>Антикоррозионные покрытия на основе ЛКМ производства РЕМ КОЛОР применяются для антикоррозионной защиты стальных поверхностей резервуаров, трубопроводов, технологического оборудования и т.д.<br>Производство расположено в Республике Беларусь в г Минск.&nbsp;&nbsp;</p>\n<p>&nbsp;</p>\n<p>Начиная с 2022 года, в силу ухода с рынка иностранных компаний, компания \"ТОНАЛЬ\" совместно с белорусскими коллегами, провела разработку и тестирование новых продуктов.</p>\n<p><br>Практические применения в сложных коррозионно-активных и климатических условиях подтвердили высокие малярные и эксплуатационных характеристики, зачастую превосходя многие параметры относительно иностранных брендов (PPG, AKZO NOBEL, HEMPEL, JOTUN, TEKNOS)</p>\n<p><br>ООО \"ТОНАЛЬ\" заинтересовано во включении в Реестр ОВП антикоррозионных покрытий на основе материалов производства РЕМ КОЛОР.<br>В связи с вышеизложенным просим Вас сообщить процедуру включения в Реестр ОВП ПАО «Транснефть» систем антикоррозийных покрытий предназначенных для защиты<br>- наружных поверхностей резервуаров;<br>- внутренних поверхностей резервуаров;<br>- портовых сооружения.</p>\n<p><br>Так же просим сообщить возможность включения в Реестр покрытий Рем -Колор с оформлением все разрешительной документации на официального представителя ООО «ТОНАЛЬ»</p>",
+        "isPinned": false
+      },
+      {
+        "id": 8815744,
+        "dateTime": {
+          "date": "10-12-2024",
+          "time": "09:47",
+          "datetime": "2024-12-10T09:47Z",
+          "dateTimeUtcSeconds": "2024-12-10T09:47:44+0000",
+          "dateTimeUtcWithSeconds": "2024-12-10T09:47:44+0000"
+        },
+        "type": "Comment",
+        "owner": {
+          "id": "user:1",
+          "name": "Саликов Рамиль"
+        },
+        "description": "<p>ООО «ТОНАЛЬ» является официальным представителем на территории РФ белорусского производителя лакокрасочных материалов ООО «РЕМ КОЛОР»</p>\n<p><br>РЕМ КОЛОР является производителем лакокрасочных материалов для различных отраслей промышленности, в том числе нефтяной и газовой.</p>\n<p><br>Антикоррозионные покрытия на основе ЛКМ производства РЕМ КОЛОР применяются для антикоррозионной защиты стальных поверхностей резервуаров, трубопроводов, технологического оборудования и т.д.<br>Производство расположено в Республике Беларусь в г Минск.&nbsp;&nbsp;</p>\n<p>&nbsp;</p>\n<p>Начиная с 2022 года, в силу ухода с рынка иностранных компаний, компания \"ТОНАЛЬ\" совместно с белорусскими коллегами, провела разработку и тестирование новых продуктов.</p>\n<p><br>Практические применения в сложных коррозионно-активных и климатических условиях подтвердили высокие малярные и эксплуатационных характеристики, зачастую превосходя многие параметры относительно иностранных брендов (PPG, AKZO NOBEL, HEMPEL, JOTUN, TEKNOS)</p>\n<p><br>ООО \"ТОНАЛЬ\" заинтересовано во включении в Реестр ОВП антикоррозионных покрытий на основе материалов производства РЕМ КОЛОР.<br>В связи с вышеизложенным просим Вас сообщить процедуру включения в Реестр ОВП ПАО «Транснефть» систем антикоррозийных покрытий предназначенных для защиты<br>- наружных поверхностей резервуаров;<br>- внутренних поверхностей резервуаров;<br>- портовых сооружения.</p>\n<p><br>Так же просим сообщить возможность включения в Реестр покрытий Рем -Колор с оформлением все разрешительной документации на официального представителя ООО «ТОНАЛЬ»</p>\n<p>&nbsp;</p>\n<p>&nbsp;</p>",
+        "isPinned": false
+      },
+      {
+        "id": 8815734,
+        "dateTime": {
+          "date": "10-12-2024",
+          "time": "09:40",
+          "datetime": "2024-12-10T09:40Z",
+          "dateTimeUtcSeconds": "2024-12-10T09:40:29+0000",
+          "dateTimeUtcWithSeconds": "2024-12-10T09:40:29+0000"
+        },
+        "type": "Comment",
+        "owner": {
+          "id": "user:1",
+          "name": "Саликов Рамиль"
+        },
+        "description": "<p>Лен, тут вот такую текстовку предлагаю вставить:</p>\n<p>&nbsp;</p>\n<p style=\"margin: 0px; padding: 0px; color: rgb(52, 52, 52); font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, roboto, &quot;Helvetica Neue&quot;, helvetica, arial, sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(254, 254, 217); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial\">Начиная с 2022 года, в силу ухода с рынка иностранных компаний, компания \"ТОНАЛЬ\" совместно с белорусскими коллегами, провела разработку и тестирование новых продуктов.<br>Практические применения в сложных коррозионно-активных и климатических условиях подтвердили высокие малярные и эксплуатационных характеристики, зачастую превосходя многие параметры относительно иностранных брендов (PPG, AKZO NOBEL, HEMPEL, JOTUN, TEKNOS)</p>\n<p style=\"margin: 0px; padding: 0px; color: rgb(52, 52, 52); font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, roboto, &quot;Helvetica Neue&quot;, helvetica, arial, sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(254, 254, 217); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial\">В настоящий момент на предприятии \"Афипский НПЗ\" успешно протестированы и уже применяются материалы тм \"РЕМ КОЛОР\":<br>РЕМ ПОКС 2К 0607HS<br>РЕМ ПУР 2К 1604<br>РЕМ ЦИНК 2К 0608</p>",
+        "isPinned": false
+      },
+      {
+        "id": 8815730,
+        "dateTime": {
+          "date": "10-12-2024",
+          "time": "09:39",
+          "datetime": "2024-12-10T09:39Z",
+          "dateTimeUtcSeconds": "2024-12-10T09:39:36+0000",
+          "dateTimeUtcWithSeconds": "2024-12-10T09:39:36+0000"
+        },
+        "type": "Comment",
+        "owner": {
+          "id": "user:1",
+          "name": "Саликов Рамиль"
+        },
+        "description": "<p><span style=\"color: rgb(0, 0, 0); font-family: Roboto, -apple-system, BlinkMacSystemFont, &quot;Apple Color Emoji&quot;, &quot;Segoe UI&quot;, Oxygen, Ubuntu, Cantarell, &quot;Fira Sans&quot;, &quot;Droid Sans&quot;, &quot;Helvetica Neue&quot;, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: pre-wrap; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important\">ООО «НИИ Транснефть»</span><br style=\"box-sizing: border-box; color: rgb(0, 0, 0); font-family: Roboto, -apple-system, BlinkMacSystemFont, &quot;Apple Color Emoji&quot;, &quot;Segoe UI&quot;, Oxygen, Ubuntu, Cantarell, &quot;Fira Sans&quot;, &quot;Droid Sans&quot;, &quot;Helvetica Neue&quot;, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: pre-wrap; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial\"><span style=\"color: rgb(0, 0, 0); font-family: Roboto, -apple-system, BlinkMacSystemFont, &quot;Apple Color Emoji&quot;, &quot;Segoe UI&quot;, Oxygen, Ubuntu, Cantarell, &quot;Fira Sans&quot;, &quot;Droid Sans&quot;, &quot;Helvetica Neue&quot;, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: pre-wrap; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important\">Директору центра оценки соответствия продукции, метрологии и автоматизации производственных процессов</span><br style=\"box-sizing: border-box; color: rgb(0, 0, 0); font-family: Roboto, -apple-system, BlinkMacSystemFont, &quot;Apple Color Emoji&quot;, &quot;Segoe UI&quot;, Oxygen, Ubuntu, Cantarell, &quot;Fira Sans&quot;, &quot;Droid Sans&quot;, &quot;Helvetica Neue&quot;, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: pre-wrap; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial\"><span style=\"color: rgb(0, 0, 0); font-family: Roboto, -apple-system, BlinkMacSystemFont, &quot;Apple Color Emoji&quot;, &quot;Segoe UI&quot;, Oxygen, Ubuntu, Cantarell, &quot;Fira Sans&quot;, &quot;Droid Sans&quot;, &quot;Helvetica Neue&quot;, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: pre-wrap; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important\">Аралову О. В. </span><br style=\"box-sizing: border-box; color: rgb(0, 0, 0); font-family: Roboto, -apple-system, BlinkMacSystemFont, &quot;Apple Color Emoji&quot;, &quot;Segoe UI&quot;, Oxygen, Ubuntu, Cantarell, &quot;Fira Sans&quot;, &quot;Droid Sans&quot;, &quot;Helvetica Neue&quot;, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: pre-wrap; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial\"><br style=\"box-sizing: border-box; color: rgb(0, 0, 0); font-family: Roboto, -apple-system, BlinkMacSystemFont, &quot;Apple Color Emoji&quot;, &quot;Segoe UI&quot;, Oxygen, Ubuntu, Cantarell, &quot;Fira Sans&quot;, &quot;Droid Sans&quot;, &quot;Helvetica Neue&quot;, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: pre-wrap; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial\"><span style=\"color: rgb(0, 0, 0); font-family: Roboto, -apple-system, BlinkMacSystemFont, &quot;Apple Color Emoji&quot;, &quot;Segoe UI&quot;, Oxygen, Ubuntu, Cantarell, &quot;Fira Sans&quot;, &quot;Droid Sans&quot;, &quot;Helvetica Neue&quot;, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: pre-wrap; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important\">Уважаемый Олег Васильевич!</span><br style=\"box-sizing: border-box; color: rgb(0, 0, 0); font-family: Roboto, -apple-system, BlinkMacSystemFont, &quot;Apple Color Emoji&quot;, &quot;Segoe UI&quot;, Oxygen, Ubuntu, Cantarell, &quot;Fira Sans&quot;, &quot;Droid Sans&quot;, &quot;Helvetica Neue&quot;, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: pre-wrap; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial\"><br style=\"box-sizing: border-box; color: rgb(0, 0, 0); font-family: Roboto, -apple-system, BlinkMacSystemFont, &quot;Apple Color Emoji&quot;, &quot;Segoe UI&quot;, Oxygen, Ubuntu, Cantarell, &quot;Fira Sans&quot;, &quot;Droid Sans&quot;, &quot;Helvetica Neue&quot;, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: pre-wrap; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial\"><span style=\"color: rgb(0, 0, 0); font-family: Roboto, -apple-system, BlinkMacSystemFont, &quot;Apple Color Emoji&quot;, &quot;Segoe UI&quot;, Oxygen, Ubuntu, Cantarell, &quot;Fira Sans&quot;, &quot;Droid Sans&quot;, &quot;Helvetica Neue&quot;, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: pre-wrap; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important\">ООО «ХХХ» является официальным представителем на территории РФ белорусского производителя лакокрасочных материалов «Рем Колор» (точное название»</span><br style=\"box-sizing: border-box; color: rgb(0, 0, 0); font-family: Roboto, -apple-system, BlinkMacSystemFont, &quot;Apple Color Emoji&quot;, &quot;Segoe UI&quot;, Oxygen, Ubuntu, Cantarell, &quot;Fira Sans&quot;, &quot;Droid Sans&quot;, &quot;Helvetica Neue&quot;, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: pre-wrap; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial\"><br style=\"box-sizing: border-box; color: rgb(0, 0, 0); font-family: Roboto, -apple-system, BlinkMacSystemFont, &quot;Apple Color Emoji&quot;, &quot;Segoe UI&quot;, Oxygen, Ubuntu, Cantarell, &quot;Fira Sans&quot;, &quot;Droid Sans&quot;, &quot;Helvetica Neue&quot;, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: pre-wrap; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial\"><span style=\"color: rgb(0, 0, 0); font-family: Roboto, -apple-system, BlinkMacSystemFont, &quot;Apple Color Emoji&quot;, &quot;Segoe UI&quot;, Oxygen, Ubuntu, Cantarell, &quot;Fira Sans&quot;, &quot;Droid Sans&quot;, &quot;Helvetica Neue&quot;, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: pre-wrap; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important\">Рем колор является производителем лакокрасочных материалов для различных отраслей промышленности, в том числе нефтяной и газовой. </span><br style=\"box-sizing: border-box; color: rgb(0, 0, 0); font-family: Roboto, -apple-system, BlinkMacSystemFont, &quot;Apple Color Emoji&quot;, &quot;Segoe UI&quot;, Oxygen, Ubuntu, Cantarell, &quot;Fira Sans&quot;, &quot;Droid Sans&quot;, &quot;Helvetica Neue&quot;, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: pre-wrap; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial\"><span style=\"color: rgb(0, 0, 0); font-family: Roboto, -apple-system, BlinkMacSystemFont, &quot;Apple Color Emoji&quot;, &quot;Segoe UI&quot;, Oxygen, Ubuntu, Cantarell, &quot;Fira Sans&quot;, &quot;Droid Sans&quot;, &quot;Helvetica Neue&quot;, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: pre-wrap; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important\">Антикоррозионные покрытия на основе ЛКМ пр-ва Ремколор применяются для антикоррозионной защиты стальных поверхностей резервуаров, трубопроводов, технологического оборудования и т.д. </span><br style=\"box-sizing: border-box; color: rgb(0, 0, 0); font-family: Roboto, -apple-system, BlinkMacSystemFont, &quot;Apple Color Emoji&quot;, &quot;Segoe UI&quot;, Oxygen, Ubuntu, Cantarell, &quot;Fira Sans&quot;, &quot;Droid Sans&quot;, &quot;Helvetica Neue&quot;, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: pre-wrap; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial\"><span style=\"color: rgb(0, 0, 0); font-family: Roboto, -apple-system, BlinkMacSystemFont, &quot;Apple Color Emoji&quot;, &quot;Segoe UI&quot;, Oxygen, Ubuntu, Cantarell, &quot;Fira Sans&quot;, &quot;Droid Sans&quot;, &quot;Helvetica Neue&quot;, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: pre-wrap; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important\">Производство расположено в р. Беларусь , город</span><em style=\"box-sizing: border-box; color: rgb(0, 0, 0); font-family: Roboto, -apple-system, BlinkMacSystemFont, &quot;Apple Color Emoji&quot;, &quot;Segoe UI&quot;, Oxygen, Ubuntu, Cantarell, &quot;Fira Sans&quot;, &quot;Droid Sans&quot;, &quot;Helvetica Neue&quot;, sans-serif; font-size: 16px; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: pre-wrap; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial\">&nbsp;_.</em><span style=\"color: rgb(0, 0, 0); font-family: Roboto, -apple-system, BlinkMacSystemFont, &quot;Apple Color Emoji&quot;, &quot;Segoe UI&quot;, Oxygen, Ubuntu, Cantarell, &quot;Fira Sans&quot;, &quot;Droid Sans&quot;, &quot;Helvetica Neue&quot;, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: pre-wrap; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important\">&nbsp;&nbsp;</span><br style=\"box-sizing: border-box; color: rgb(0, 0, 0); font-family: Roboto, -apple-system, BlinkMacSystemFont, &quot;Apple Color Emoji&quot;, &quot;Segoe UI&quot;, Oxygen, Ubuntu, Cantarell, &quot;Fira Sans&quot;, &quot;Droid Sans&quot;, &quot;Helvetica Neue&quot;, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: pre-wrap; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial\"><br style=\"box-sizing: border-box; color: rgb(0, 0, 0); font-family: Roboto, -apple-system, BlinkMacSystemFont, &quot;Apple Color Emoji&quot;, &quot;Segoe UI&quot;, Oxygen, Ubuntu, Cantarell, &quot;Fira Sans&quot;, &quot;Droid Sans&quot;, &quot;Helvetica Neue&quot;, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: pre-wrap; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial\"><span style=\"color: rgb(0, 0, 0); font-family: Roboto, -apple-system, BlinkMacSystemFont, &quot;Apple Color Emoji&quot;, &quot;Segoe UI&quot;, Oxygen, Ubuntu, Cantarell, &quot;Fira Sans&quot;, &quot;Droid Sans&quot;, &quot;Helvetica Neue&quot;, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: pre-wrap; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important\">ООО ХХХ заинтересовано во включении в Реестр ОВП антикоррозионных покрытий на осанне материалов производства РЕм колор. </span><br style=\"box-sizing: border-box; color: rgb(0, 0, 0); font-family: Roboto, -apple-system, BlinkMacSystemFont, &quot;Apple Color Emoji&quot;, &quot;Segoe UI&quot;, Oxygen, Ubuntu, Cantarell, &quot;Fira Sans&quot;, &quot;Droid Sans&quot;, &quot;Helvetica Neue&quot;, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: pre-wrap; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial\"><br style=\"box-sizing: border-box; color: rgb(0, 0, 0); font-family: Roboto, -apple-system, BlinkMacSystemFont, &quot;Apple Color Emoji&quot;, &quot;Segoe UI&quot;, Oxygen, Ubuntu, Cantarell, &quot;Fira Sans&quot;, &quot;Droid Sans&quot;, &quot;Helvetica Neue&quot;, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: pre-wrap; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial\"><span style=\"color: rgb(0, 0, 0); font-family: Roboto, -apple-system, BlinkMacSystemFont, &quot;Apple Color Emoji&quot;, &quot;Segoe UI&quot;, Oxygen, Ubuntu, Cantarell, &quot;Fira Sans&quot;, &quot;Droid Sans&quot;, &quot;Helvetica Neue&quot;, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: pre-wrap; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important\">В связи с вышеизложенным просим Вас сообщить процедуру включения в Реестр ОВП ПАО «Транснефть» систем антикоррозийных покрытий предназначенных для защиты </span><br style=\"box-sizing: border-box; color: rgb(0, 0, 0); font-family: Roboto, -apple-system, BlinkMacSystemFont, &quot;Apple Color Emoji&quot;, &quot;Segoe UI&quot;, Oxygen, Ubuntu, Cantarell, &quot;Fira Sans&quot;, &quot;Droid Sans&quot;, &quot;Helvetica Neue&quot;, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: pre-wrap; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial\"><span style=\"color: rgb(0, 0, 0); font-family: Roboto, -apple-system, BlinkMacSystemFont, &quot;Apple Color Emoji&quot;, &quot;Segoe UI&quot;, Oxygen, Ubuntu, Cantarell, &quot;Fira Sans&quot;, &quot;Droid Sans&quot;, &quot;Helvetica Neue&quot;, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: pre-wrap; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important\">- наружных поверхностей резервуаров;</span><br style=\"box-sizing: border-box; color: rgb(0, 0, 0); font-family: Roboto, -apple-system, BlinkMacSystemFont, &quot;Apple Color Emoji&quot;, &quot;Segoe UI&quot;, Oxygen, Ubuntu, Cantarell, &quot;Fira Sans&quot;, &quot;Droid Sans&quot;, &quot;Helvetica Neue&quot;, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: pre-wrap; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial\"><span style=\"color: rgb(0, 0, 0); font-family: Roboto, -apple-system, BlinkMacSystemFont, &quot;Apple Color Emoji&quot;, &quot;Segoe UI&quot;, Oxygen, Ubuntu, Cantarell, &quot;Fira Sans&quot;, &quot;Droid Sans&quot;, &quot;Helvetica Neue&quot;, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: pre-wrap; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important\">- внутренних поверхностей резервуаров;</span><br style=\"box-sizing: border-box; color: rgb(0, 0, 0); font-family: Roboto, -apple-system, BlinkMacSystemFont, &quot;Apple Color Emoji&quot;, &quot;Segoe UI&quot;, Oxygen, Ubuntu, Cantarell, &quot;Fira Sans&quot;, &quot;Droid Sans&quot;, &quot;Helvetica Neue&quot;, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: pre-wrap; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial\"><span style=\"color: rgb(0, 0, 0); font-family: Roboto, -apple-system, BlinkMacSystemFont, &quot;Apple Color Emoji&quot;, &quot;Segoe UI&quot;, Oxygen, Ubuntu, Cantarell, &quot;Fira Sans&quot;, &quot;Droid Sans&quot;, &quot;Helvetica Neue&quot;, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: pre-wrap; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important\">- портовых сооружения.</span><br style=\"box-sizing: border-box; color: rgb(0, 0, 0); font-family: Roboto, -apple-system, BlinkMacSystemFont, &quot;Apple Color Emoji&quot;, &quot;Segoe UI&quot;, Oxygen, Ubuntu, Cantarell, &quot;Fira Sans&quot;, &quot;Droid Sans&quot;, &quot;Helvetica Neue&quot;, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: pre-wrap; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial\"><br style=\"box-sizing: border-box; color: rgb(0, 0, 0); font-family: Roboto, -apple-system, BlinkMacSystemFont, &quot;Apple Color Emoji&quot;, &quot;Segoe UI&quot;, Oxygen, Ubuntu, Cantarell, &quot;Fira Sans&quot;, &quot;Droid Sans&quot;, &quot;Helvetica Neue&quot;, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: pre-wrap; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial\"><span style=\"color: rgb(0, 0, 0); font-family: Roboto, -apple-system, BlinkMacSystemFont, &quot;Apple Color Emoji&quot;, &quot;Segoe UI&quot;, Oxygen, Ubuntu, Cantarell, &quot;Fira Sans&quot;, &quot;Droid Sans&quot;, &quot;Helvetica Neue&quot;, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: pre-wrap; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important\">Так же просим сообщить возможность включения в Реестр покрытий Рем -Колор с оформлением все разрешительной документации на официального представителя ООО «ХХХ»</span><br style=\"box-sizing: border-box; color: rgb(0, 0, 0); font-family: Roboto, -apple-system, BlinkMacSystemFont, &quot;Apple Color Emoji&quot;, &quot;Segoe UI&quot;, Oxygen, Ubuntu, Cantarell, &quot;Fira Sans&quot;, &quot;Droid Sans&quot;, &quot;Helvetica Neue&quot;, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: pre-wrap; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial\">&nbsp;</p>",
+        "isPinned": false
+      },
+      {
+        "id": 8814536,
+        "dateTime": {
+          "date": "08-12-2024",
+          "time": "21:41",
+          "datetime": "2024-12-08T21:41Z",
+          "dateTimeUtcSeconds": "2024-12-08T21:41:58+0000",
+          "dateTimeUtcWithSeconds": "2024-12-08T21:41:58+0000"
+        },
+        "type": "None",
+        "owner": {
+          "id": "user:1",
+          "name": "Саликов Рамиль"
+        },
+        "description": "<p>Направление ТУ и ПМИ на экспертизу в ООО «НИИ Транснефть»</p>",
+        "isPinned": false
+      }
+    ]
+  },
+  "19323_files": {
+    "result": "success",
+    "files": [
+      {
+        "id": 916722,
+        "size": 0,
+        "name": "Ссылка 6",
+        "link": "https://tonal.planfix.ru/?action=client&id=563338"
+      },
+      {
+        "id": 916724,
+        "size": 190,
+        "name": "Письмо №19323-10-12-2024 для ООО \"НИИ ТРАНСНЕФТЬ\" касательно .pdf"
+      },
+      {
+        "id": 916730,
+        "size": 190,
+        "name": "Письмо №19323-10-12-2024 для ООО \"НИИ ТРАНСНЕФТЬ\" касательно РЕМ-ПОКС 2К ЭП-0607AS,РЕМ-ПОКС 2К ЭП-0607HS,РЕМ-ПУР 2К УР-1604.pdf"
+      },
+      {
+        "id": 916890,
+        "size": 320,
+        "name": "Письмо №19323-11-12-2024 для ООО \"НИИ ТРАНСНЕФТЬ\" касательно РЕМ-ПОКС 2К ЭП-0607AS,РЕМ-ПОКС 2К ЭП-0607HS,РЕМ-ПУР 2К УР-1604.docx"
+      },
+      {
+        "id": 916900,
+        "size": 439,
+        "name": "Письмо №19323-11-12-2024 для ООО _НИИ ТРАНСНЕФТЬ.pdf"
+      }
+    ]
+  },
+  "21211": {
+    "result": "success",
+    "task": {
+      "id": 21211,
+      "name": "Вхождение в реестр ЕАЭС Вхождение в реестр АК Транснефть 2025 год-10-02-2025 16:02-№ 21211ПЛАН РАБОТ",
+      "description": "<p><b>ОТВЕТ : ПЛАН РАБОТ по включению системы антикоррозионного покрытия (категория С3, С4, срок службы 20 лет) для наружной поверхности резервуаров в Реестр ОВП ПАО «Транснефть»</b></p>\n<p>&nbsp;</p>\n<p>&nbsp;</p>\n<div>\n Коллеги, добрый день!\n</div>\n<p>&nbsp;</p>\n<p>&nbsp;</p>\n<div>\n на данный момент в данном реестре нас нет, т.к . не было такой необходимости\\запросов\n</div>\n<div>\n &nbsp;\n</div>\n<div>\n В случае возникновения необходимости (понимание ДЛЯ ЧЕГО ЭТО НУЖНО) этот процесс можем организовать.\n</div>\n<div>\n &nbsp;\n</div>\n<div>\n Ориентировочные сроки включения 2-3 месяца.\n</div>\n<div>\n &nbsp;\n</div>\n<div>\n &nbsp;\n</div>\n<div>\n ----------------\n</div>\n<div>\n Кому: vlad.motarykin@yandex.com (vlad.motarykin@yandex.com), cheslavski@rem-color.by (cheslavski@rem-color.by), vlad-motarykin@yandex.ru (vlad-motarykin@yandex.ru), yury.pavlov@tonaly.ru (yury.pavlov@tonaly.ru);\n</div>\n<div>\n Тема: ПЛАН РАБОТ по включению системы антикоррозионного покрытия (категория С3, С4, срок службы 20 лет) для наружной поверхности резервуаров в Реестр ОВП ПАО «Транснефть»;\n</div>\n<div>\n 18.12.2024, 17:06, \"Рамиль\" &lt;rml@tonaly.ru&gt;:\n</div>",
+      "priority": "NotUrgent",
+      "status": {
+        "id": 2,
+        "name": "В работе",
+        "color": "#3377C3",
+        "isActive": true,
+        "hasDeadline": true,
+        "isAppliedIndividually": false,
+        "texts": [
+          {
+            "lang": "Ru",
+            "name": "В работе"
+          },
+          {
+            "lang": "En",
+            "name": "In progress"
+          }
+        ]
+      },
+      "assigner": {
+        "id": "user:1",
+        "name": "Саликов Рамиль"
+      },
+      "parent": {
+        "id": 19307
+      },
+      "project": {
+        "id": 19294
+      },
+      "counterparty": {
+        "id": "contact:2282",
+        "name": "НАУЧНО-ИССЛЕДОВАТЕЛЬСКИЙ ИНСТИТУТ ТРУБОПРОВОДНОГО ТРАНСПОРТА"
+      },
+      "dateTime": {
+        "date": "10-02-2025",
+        "time": "13:02",
+        "datetime": "2025-02-10T13:02Z",
+        "dateTimeUtcSeconds": "2025-02-10T13:02:25+0000",
+        "dateTimeUtcWithSeconds": "2025-02-10T13:02:25+0000"
+      },
+      "startDateTime": {
+        "date": "13-12-2025",
+        "time": "06:00",
+        "datetime": "2025-12-13T06:00Z",
+        "dateTimeUtcSeconds": "2025-12-13T06:00:00+0000",
+        "dateTimeUtcWithSeconds": "2025-12-13T06:00:00+0000"
+      },
+      "endDateTime": {
+        "date": "13-12-2025",
+        "time": "00:00",
+        "datetime": "2025-12-13T00:00Z",
+        "dateTimeUtcSeconds": "2025-12-13T00:00:00+0000",
+        "dateTimeUtcWithSeconds": "2025-12-13T00:00:00+0000"
+      },
+      "dateOfLastUpdate": {
+        "date": "13-12-2025",
+        "time": "06:00",
+        "datetime": "2025-12-13T06:00Z",
+        "dateTimeUtcSeconds": "2025-12-13T06:00:53+0000",
+        "dateTimeUtcWithSeconds": "2025-12-13T06:00:53+0000"
+      },
+      "assignees": {
+        "users": [
+          {
+            "id": "user:1",
+            "name": "Саликов Рамиль"
+          }
+        ],
+        "groups": []
+      },
+      "files": []
+    }
+  },
+  "21211_comments": {
+    "result": "success",
+    "comments": [
+      {
+        "id": 8858442,
+        "dateTime": {
+          "date": "07-03-2025",
+          "time": "13:25",
+          "datetime": "2025-03-07T13:25Z",
+          "dateTimeUtcSeconds": "2025-03-07T13:25:04+0000",
+          "dateTimeUtcWithSeconds": "2025-03-07T13:25:04+0000"
+        },
+        "type": "Comment",
+        "owner": {
+          "id": "contact:943",
+          "name": "Чеславский Вячеслав"
+        },
+        "description": "<div>\n На след неделе едут по этому вопросу \"сертификатчики \"в ТПП (торгово-промышленную палату), чтобы определить алгоритм\n</div>\n<div>\n сообщу как и что . сам пока жду инфу.\n</div>\n<div>\n  \n</div>\n<div>\n  \n</div>\n<div>\n  \n</div>\n<div>\n  \n</div>\n<div>\n ----------------\n</div>\n<div>\n Кому: cheslavski@rem-color.by (cheslavski@rem-color.by);\n</div>\n<div>\n Тема: Вхождение в реестр ЕАЭС Вхождение в реестр АК Транснефть 2025 год-10-02-2025 16:02-№ 21211ПЛАН РАБОТ;\n</div>\n<div>\n 07.03.2025, 16:16, \"Рамиль\" &lt;rml@tonaly.ru&gt;:\n</div>",
+        "isPinned": false
+      },
+      {
+        "id": 8858440,
+        "dateTime": {
+          "date": "07-03-2025",
+          "time": "13:16",
+          "datetime": "2025-03-07T13:16Z",
+          "dateTimeUtcSeconds": "2025-03-07T13:16:47+0000",
+          "dateTimeUtcWithSeconds": "2025-03-07T13:16:47+0000"
+        },
+        "type": "Comment",
+        "owner": {
+          "id": "user:1",
+          "name": "Саликов Рамиль"
+        },
+        "description": "<p>Слава, подались в реестр?</p>\n<p>&nbsp;</p>\n<p>Пришли по-возможности копии каких-либо документов, подтверждающих начало процедуры.</p>",
+        "isPinned": false
+      },
+      {
+        "id": 8847026,
+        "dateTime": {
+          "date": "12-02-2025",
+          "time": "12:47",
+          "datetime": "2025-02-12T12:47Z",
+          "dateTimeUtcSeconds": "2025-02-12T12:47:28+0000",
+          "dateTimeUtcWithSeconds": "2025-02-12T12:47:28+0000"
+        },
+        "type": "Comment",
+        "owner": {
+          "id": "user:1",
+          "name": "Саликов Рамиль"
+        },
+        "description": "<p>Принял, благодарю Слав!</p>",
+        "isPinned": false
+      },
+      {
+        "id": 8846520,
+        "dateTime": {
+          "date": "12-02-2025",
+          "time": "07:57",
+          "datetime": "2025-02-12T07:57Z",
+          "dateTimeUtcSeconds": "2025-02-12T07:57:05+0000",
+          "dateTimeUtcWithSeconds": "2025-02-12T07:57:05+0000"
+        },
+        "type": "Comment",
+        "owner": {
+          "id": "contact:943",
+          "name": "Чеславский Вячеслав"
+        },
+        "description": "<b>⚡ОТВЕТ НА ВОПРОС: Вхождение в реестр ЕАС ⚡ Вхождение в реестр АК Транснефть 2025 год-10-02-2025 16:02-№ 21211ПЛАН РАБОТ по включению системы антикоррозионного покрытия (категория С3, С4, срок службы 20 лет) для наружной поверхности резервуаров в Реестр ОВП ПАО «Трансне</b><br/><br/><div>\n - все\n</div>\n<div>\n  \n</div>\n<div>\n Рамиль, доброго дня!\n</div>\n<div>\n отдел сертификации уже инициировал этот вопрос\n</div>\n<div>\n  \n</div>\n<div>\n срок вхождения\\получения доков не менее 3 месяцев.\n</div>\n<div>\n  \n</div>\n<div>\n  \n</div>\n<div>\n  \n</div>\n<div>\n ----------------\n</div>\n<div>\n Кому: cheslavski@rem-color.by (cheslavski@rem-color.by), vlad-motarykin@yandex.ru (vlad-motarykin@yandex.ru);\n</div>\n<div>\n Тема: Вхождение в реестр ЕАС Вхождение в реестр АК Транснефть 2025 год-10-02-2025 16:02-№ 21211ПЛАН РАБОТ по включению системы антикоррозионного покрытия (категория С3, С4, срок службы 20 лет) для наружной поверхности резервуаров в Реестр ОВП ПАО «Трансне;\n</div>\n<div>\n 10.02.2025, 16:24, \"Рамиль\" &lt;rml@tonaly.ru&gt;:\n</div>",
+        "isPinned": false
+      },
+      {
+        "id": 8845674,
+        "dateTime": {
+          "date": "10-02-2025",
+          "time": "13:21",
+          "datetime": "2025-02-10T13:21Z",
+          "dateTimeUtcSeconds": "2025-02-10T13:21:00+0000",
+          "dateTimeUtcWithSeconds": "2025-02-10T13:21:00+0000"
+        },
+        "type": "Comment",
+        "owner": {
+          "id": "contact:599",
+          "name": "Владислав"
+        },
+        "description": "<b>Re: Вхождение в реестр ЕАС Вхождение в реестр АК Транснефть 2025 год-10-02-2025 16:02-№ 21211ПЛАН РАБОТ по включению системы антикоррозионного покрытия (категория С3, С4, срок службы 20 лет) для наружной поверхности резервуаров в Реестр ОВП ПАО «Трансне</b><br/><br/><div>\n Добрый день. Изучим Вопрос и в ближайшее время дам ответ.\n</div>\n<div>\n  \n</div>\n<div>\n ----------------\n</div>\n<div>\n Кому: cheslavski@rem-color.by (cheslavski@rem-color.by), vlad-motarykin@yandex.ru (vlad-motarykin@yandex.ru);\n</div>\n<div>\n Тема: Вхождение в реестр ЕАС Вхождение в реестр АК Транснефть 2025 год-10-02-2025 16:02-№ 21211ПЛАН РАБОТ по включению системы антикоррозионного покрытия (категория С3, С4, срок службы 20 лет) для наружной поверхности резервуаров в Реестр ОВП ПАО «Трансне;\n</div>\n<div>\n 10.02.2025, 16:15, \"Рамиль\" &lt;rml@tonaly.ru&gt;:\n</div>",
+        "isPinned": false
+      },
+      {
+        "id": 8845654,
+        "dateTime": {
+          "date": "10-02-2025",
+          "time": "13:05",
+          "datetime": "2025-02-10T13:05Z",
+          "dateTimeUtcSeconds": "2025-02-10T13:05:23+0000",
+          "dateTimeUtcWithSeconds": "2025-02-10T13:05:23+0000"
+        },
+        "type": "Comment",
+        "owner": {
+          "id": "user:1",
+          "name": "Саликов Рамиль"
+        },
+        "description": "<p>Вячеслав по Евразийский реестр промышленных товаров государств - членов Евразийского экономического союза.</p>\n<p>&nbsp;</p>\n<p>Это запросили с Транснефти, ННК (Хабаровский НПЗ), ОЗНА и все чаще спрашивают!</p>\n<p>&nbsp;</p>\n<p>Прошу начать процедуру!</p>\n<p>&nbsp;</p>\n<p>Сообщи о сроках подачи и ответа.</p>",
+        "isPinned": false
+      },
+      {
+        "id": 8845642,
+        "dateTime": {
+          "date": "10-02-2025",
+          "time": "13:02",
+          "datetime": "2025-02-10T13:02Z",
+          "dateTimeUtcSeconds": "2025-02-10T13:02:25+0000",
+          "dateTimeUtcWithSeconds": "2025-02-10T13:02:25+0000"
+        },
+        "type": "None",
+        "owner": {
+          "id": "user:1",
+          "name": "Саликов Рамиль"
+        },
+        "description": "<p><b>ОТВЕТ : ПЛАН РАБОТ по включению системы антикоррозионного покрытия (категория С3, С4, срок службы 20 лет) для наружной поверхности резервуаров в Реестр ОВП ПАО «Транснефть»</b></p>\n<p>&nbsp;</p>\n<p>&nbsp;</p>\n<div>\n Коллеги, добрый день!\n</div>\n<p>&nbsp;</p>\n<p>&nbsp;</p>\n<div>\n на данный момент в данном реестре нас нет, т.к . не было такой необходимости\\запросов\n</div>\n<div>\n &nbsp;\n</div>\n<div>\n В случае возникновения необходимости (понимание ДЛЯ ЧЕГО ЭТО НУЖНО) этот процесс можем организовать.\n</div>\n<div>\n &nbsp;\n</div>\n<div>\n Ориентировочные сроки включения 2-3 месяца.\n</div>\n<div>\n &nbsp;\n</div>\n<div>\n &nbsp;\n</div>\n<div>\n ----------------\n</div>\n<div>\n Кому: vlad.motarykin@yandex.com (vlad.motarykin@yandex.com), cheslavski@rem-color.by (cheslavski@rem-color.by), vlad-motarykin@yandex.ru (vlad-motarykin@yandex.ru), yury.pavlov@tonaly.ru (yury.pavlov@tonaly.ru);\n</div>\n<div>\n Тема: ПЛАН РАБОТ по включению системы антикоррозионного покрытия (категория С3, С4, срок службы 20 лет) для наружной поверхности резервуаров в Реестр ОВП ПАО «Транснефть»;\n</div>\n<div>\n 18.12.2024, 17:06, \"Рамиль\" &lt;rml@tonaly.ru&gt;:\n</div>",
+        "isPinned": false
+      }
+    ]
+  },
+  "21211_files": {
+    "result": "success",
+    "files": []
+  },
+  "23511": {
+    "result": "success",
+    "task": {
+      "id": 23511,
+      "name": "⚡пластины ТРАНСНЕФТЬ. Определить кол-во⚡",
+      "description": "<div>\n Рамиль, Елена, доброго дня !\n</div>\n<div>\n</div>\n<div>\n в продолжении нашего разговора с Рамилем\n</div>\n<div>\n</div>\n<div>\n НАПОМНЮ\n</div>\n<div>\n после проведения первичных испытаний были вопросу по удару\n</div>\n<div>\n</div>\n<div>\n Повторили исследование\n</div>\n<div>\n <div>\n  На пластинках с толщиной 290-310 мкм 0607 HS удар выдержала 20, 30 и 40.\n </div>\n</div>\n<div>\n</div>\n<div><img class=\"ckeditor-direct-upload-image ckeditor-direct-upload-image-949286\" src=\"https://tonal.planfix.ru/filelink/%D0%98%D0%B7%D0%BE%D0%B1%D1%80%D0%B0%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5+WhatsApp+2025-04-22+%D0%B2+13.04.11_5eece567.jpg?action=getfile&amp;uniqueid=949286&amp;auth=4a5cf2922a96ca7719ccb3c5fd6fd7b5\">\n</div>\n<div>\n</div>\n<div>\n Что дальше делаем?\n</div>\n<div>\n получается по тестам все норм , нужно отправлять партию в лабу. ВОПРОС по внешнему виду с учетом требований ТРАНСНЕФТИ помню\\знаем.\n</div>\n<div>\n Соответственно нам нужно перекрашивать все для создания ОЖИДАЕМОГО визуала.\n</div>\n<div>\n Если так, то ждем точное кол-во пластин с учетом запасных\\тестовых и тд\n</div>\n<div>\n</div>\n<div>\n</div>\n<div>\n</div>\n<div>\n</div>\n<div>\n</div>\n<div>\n</div>\n<div>\n</div>\n<div>\n</div>\n<div>\n</div>\n<div>\n C уважением,\n</div>\n<div style=\"background-color:rgb( 255 , 255 , 255 );color:rgb( 0 , 0 , 0 );font-family:'ys text' , 'arial' , sans-serif;font-size:16px;font-style:normal;font-weight:400;text-decoration-style:initial;text-transform:none;white-space:normal;word-spacing:0px\">\n Начальник отдела продаж,\n</div>\n<div style=\"background-color:rgb( 255 , 255 , 255 );color:rgb( 0 , 0 , 0 );font-family:'ys text' , 'arial' , sans-serif;font-size:16px;font-style:normal;font-weight:400;text-decoration-style:initial;text-transform:none;white-space:normal;word-spacing:0px\">\n Чеславский Вячеслав\n</div>\n<div style=\"background-color:rgb( 255 , 255 , 255 );color:rgb( 0 , 0 , 0 );font-family:'ys text' , 'arial' , sans-serif;font-size:16px;font-style:normal;font-weight:400;text-decoration-style:initial;text-transform:none;white-space:normal;word-spacing:0px\">\n</div>\n<div style=\"background-color:rgb( 255 , 255 , 255 );color:rgb( 0 , 0 , 0 );font-family:'ys text' , 'arial' , sans-serif;font-size:16px;font-style:normal;font-weight:400;text-decoration-style:initial;text-transform:none;white-space:normal;word-spacing:0px\"><img src=\"https://avatars.mds.yandex.net/get-mail-signature/1526739/50c2e500df9944c2c87f0f266264e8ad/orig\" style=\";width:285px\">\n</div>\n<div style=\"background-color:rgb( 255 , 255 , 255 );color:rgb( 0 , 0 , 0 );font-family:'ys text' , 'arial' , sans-serif;font-size:16px;font-style:normal;font-weight:400;text-decoration-style:initial;text-transform:none;white-space:normal;word-spacing:0px\">\n СП \"Рем-Колор\" ООО\n</div>\n<div style=\"background-color:rgb( 255 , 255 , 255 );color:rgb( 0 , 0 , 0 );font-family:'ys text' , 'arial' , sans-serif;font-size:16px;font-style:normal;font-weight:400;text-decoration-style:initial;text-transform:none;white-space:normal;word-spacing:0px\">\n ООО \"LPF Technology\"\n</div>\n<div style=\"background-color:rgb( 255 , 255 , 255 );color:rgb( 0 , 0 , 0 );font-family:'ys text' , 'arial' , sans-serif;font-size:16px;font-style:normal;font-weight:400;text-decoration-style:initial;text-transform:none;white-space:normal;word-spacing:0px\">\n Моб. тел.: +37544-7339549\n</div>\n<div style=\"background-color:rgb( 255 , 255 , 255 );color:rgb( 0 , 0 , 0 );font-family:'ys text' , 'arial' , sans-serif;font-size:16px;font-style:normal;font-weight:400;text-decoration-style:initial;text-transform:none;white-space:normal;word-spacing:0px\">\n</div>\n<div style=\"background-color:rgb( 255 , 255 , 255 );color:rgb( 0 , 0 , 0 );font-family:'ys text' , 'arial' , sans-serif;font-size:16px;font-style:normal;font-weight:400;text-decoration-style:initial;text-transform:none;white-space:normal;word-spacing:0px\"><a href=\"http://www.rem-color.by/\" target=\"_blank\">www.rem-color.by</a>\n</div>\n<div style=\"background-color:rgb( 255 , 255 , 255 );color:rgb( 0 , 0 , 0 );font-family:'ys text' , 'arial' , sans-serif;font-size:16px;font-style:normal;font-weight:400;text-decoration-style:initial;text-transform:none;white-space:normal;word-spacing:0px\"><a href=\"http://www.lpf.by/\" target=\"_blank\">www.lpf.by</a>\n</div>\n<div>\n</div>",
+      "priority": "NotUrgent",
+      "status": {
+        "id": 2,
+        "name": "В работе",
+        "color": "#3377C3",
+        "isActive": true,
+        "hasDeadline": true,
+        "isAppliedIndividually": false,
+        "texts": [
+          {
+            "lang": "Ru",
+            "name": "В работе"
+          },
+          {
+            "lang": "En",
+            "name": "In progress"
+          }
+        ]
+      },
+      "assigner": {
+        "id": "contact:943",
+        "name": "Чеславский Вячеслав"
+      },
+      "project": {
+        "id": 7651
+      },
+      "counterparty": {
+        "id": "contact:99",
+        "name": "Рем Колор"
+      },
+      "dateTime": {
+        "date": "13-05-2025",
+        "time": "08:27",
+        "datetime": "2025-05-13T08:27Z",
+        "dateTimeUtcSeconds": "2025-05-13T08:27:30+0000",
+        "dateTimeUtcWithSeconds": "2025-05-13T08:27:30+0000"
+      },
+      "dateOfLastUpdate": {
+        "date": "13-05-2025",
+        "time": "12:23",
+        "datetime": "2025-05-13T12:23Z",
+        "dateTimeUtcSeconds": "2025-05-13T12:23:43+0000",
+        "dateTimeUtcWithSeconds": "2025-05-13T12:23:43+0000"
+      },
+      "assignees": {
+        "users": [
+          {
+            "id": "user:1",
+            "name": "Саликов Рамиль"
+          }
+        ],
+        "groups": []
+      },
+      "files": [
+        {
+          "id": 949286,
+          "size": 94,
+          "name": "Изображение WhatsApp 2025-04-22 в 13.04.11_5eece567.jpg"
+        },
+        {
+          "id": 949288,
+          "size": 94,
+          "name": "Изображение WhatsApp 2025-04-22 в 13.04.11_0abff294.jpg"
+        }
+      ]
+    }
+  },
+  "23511_comments": {
+    "result": "success",
+    "comments": [
+      {
+        "id": 8912984,
+        "dateTime": {
+          "date": "17-07-2025",
+          "time": "13:31",
+          "datetime": "2025-07-17T13:31Z",
+          "dateTimeUtcSeconds": "2025-07-17T13:31:19+0000",
+          "dateTimeUtcWithSeconds": "2025-07-17T13:31:19+0000"
+        },
+        "type": "Comment",
+        "owner": {
+          "id": "contact:943",
+          "name": "Чеславский Вячеслав"
+        },
+        "description": "<div>\n Рамиль, привет!\n</div>\n<div>\n</div>\n<div>\n Давай еще раз зафиксируем сколько <strong>штук пластин</strong> и на <strong>какие показатели</strong> мы хотим испытать ПОВТОРНО ?\n</div>\n<div>\n</div>\n<div>\n</div>\n<div>\n ----------------\n</div>\n<div>\n Кому: <a href=\"mailto:cheslavski@rem-color.by\">cheslavski@rem-color.by</a> (<a href=\"mailto:cheslavski@rem-color.by\">cheslavski@rem-color.by</a>);\n</div>\n<div>\n Тема: ⚡пластины ТРАНСНЕФТЬ. Определить кол-во⚡;\n</div>\n<div>\n 17.07.2025, 14:53, \"Рамиль\" &lt;<a href=\"mailto:rml@tonaly.ru\">rml@tonaly.ru</a>&gt;:\n</div>",
+        "isPinned": false
+      },
+      {
+        "id": 8912980,
+        "dateTime": {
+          "date": "17-07-2025",
+          "time": "11:53",
+          "datetime": "2025-07-17T11:53Z",
+          "dateTimeUtcSeconds": "2025-07-17T11:53:20+0000",
+          "dateTimeUtcWithSeconds": "2025-07-17T11:53:20+0000"
+        },
+        "type": "Comment",
+        "owner": {
+          "id": "user:1",
+          "name": "Саликов Рамиль"
+        },
+        "description": "<p>Слава, добрый день!</p>\n<p>&nbsp;</p>\n<p>Как дела по пластинам и испытаниям на Транснефть ?</p>",
+        "isPinned": false
+      },
+      {
+        "id": 8891206,
+        "dateTime": {
+          "date": "23-05-2025",
+          "time": "07:43",
+          "datetime": "2025-05-23T07:43Z",
+          "dateTimeUtcSeconds": "2025-05-23T07:43:37+0000",
+          "dateTimeUtcWithSeconds": "2025-05-23T07:43:37+0000"
+        },
+        "type": "Comment",
+        "owner": {
+          "id": "user:1",
+          "name": "Саликов Рамиль"
+        },
+        "description": "<p>Вячеслав, как тут продвигаемся? есть ли вопросы или нужна ли помощь в чем-либо?</p>",
+        "isPinned": false
+      },
+      {
+        "id": 8890468,
+        "dateTime": {
+          "date": "22-05-2025",
+          "time": "09:22",
+          "datetime": "2025-05-22T09:22Z",
+          "dateTimeUtcSeconds": "2025-05-22T09:22:52+0000",
+          "dateTimeUtcWithSeconds": "2025-05-22T09:22:52+0000"
+        },
+        "type": "Comment",
+        "owner": {
+          "id": "contact:943",
+          "name": "Чеславский Вячеслав"
+        },
+        "description": "Доброго дня!  \n<div>\n Спасибо !<br>\n <div><br><br>--<br>Отправлено из мобильной Яндекс Почты<br><br>22.05.2025, 12:20, \"Рамиль\" &lt;rml@tonaly.ru&gt;:<br>\n  <blockquote><span class=\"40b925c39a79b11b865eee14faadf404planfix-response-anchor-tonal-1884338-8890466\"></span>\n  </blockquote>\n </div>\n</div>",
+        "isPinned": false
+      },
+      {
+        "id": 8890466,
+        "dateTime": {
+          "date": "22-05-2025",
+          "time": "09:20",
+          "datetime": "2025-05-22T09:20Z",
+          "dateTimeUtcSeconds": "2025-05-22T09:20:04+0000",
+          "dateTimeUtcWithSeconds": "2025-05-22T09:20:04+0000"
+        },
+        "type": "Comment",
+        "owner": {
+          "id": "user:1",
+          "name": "Саликов Рамиль"
+        },
+        "description": "",
+        "isPinned": false
+      },
+      {
+        "id": 8890464,
+        "dateTime": {
+          "date": "22-05-2025",
+          "time": "09:18",
+          "datetime": "2025-05-22T09:18Z",
+          "dateTimeUtcSeconds": "2025-05-22T09:18:50+0000",
+          "dateTimeUtcWithSeconds": "2025-05-22T09:18:50+0000"
+        },
+        "type": "Comment",
+        "owner": {
+          "id": "user:1",
+          "name": "Саликов Рамиль"
+        },
+        "description": "<p>Вячеслав, добрый день!</p>\n<p>&nbsp;</p>\n<p>во вложении методика по удвру в том числе при минусах</p>",
+        "isPinned": false
+      },
+      {
+        "id": 8886456,
+        "dateTime": {
+          "date": "14-05-2025",
+          "time": "08:38",
+          "datetime": "2025-05-14T08:38Z",
+          "dateTimeUtcSeconds": "2025-05-14T08:38:59+0000",
+          "dateTimeUtcWithSeconds": "2025-05-14T08:38:59+0000"
+        },
+        "type": "Comment",
+        "owner": {
+          "id": "user:1",
+          "name": "Саликов Рамиль"
+        },
+        "description": "Слава, доброе утро! <br>Вот что прошу сделать:<br><br><br>Наружное и внутреннее АКП<br><br>Тайбер. Испытываем на 5-ти образцах. <br><br><br>Эриксен. Испытываем на 5-ти образцах. Каждый образец нагружается до максимальных значениях , при которых происходит разрушение покрытия <br><br> Удар.<br><br>Плюс 20 оС. 15 образцов<br><br>при 4 Дж - 5 образцов- 5 точек на образце. <br><br>при 5 Дж - 5 образцов в 5 точках на образце<br><br>при 6 Дж - на 5 образцах - 5 точках. <br><br>Если выдержали испытания - на этих же образцах - удар при 7 Дж в 5 точках<br><br><br>Минус 40 оС. 15 образцов<br><br>при 3 Дж - на 5 образцах - 5 точек на образце<br><br>при 4 Дж - на 5 образцах - 5 точек на образце<br><br>при 5 Дж - на 5 образцах - 5 точках. <br><br>Если выдержали испытания - на этих же образцах - удар при 6 Дж в 5 точках<br><br>‼️ не округлять энергию удара/ высоту падения груза в меньшую сторону! В большую можно!<br><br>‼️ размерность энергии удара - Дж. <br>Лакокрасочники/ химики привыкли энергию удара измерять в см = высоте падения груза. <br>Это не правильно. В физике энергия измеряется в Джоулях. <br><br><br><br>——————————————————<br>Портовые АКП<br><br>Тайбер. Испытываем все 5 образцов. <br><br>Плюс 20 оС. 15 образцов. <br><br>при 4 Дж - 5 образцов - 5 точек на образце<br><br>при 5 Дж - 5 образцов - 5 точек на образце<br><br>при 6 Дж - 5 образцов - 5 точек на образце. <br><br>Если выдержали испытания - на этих же образцах - удар при 7 Дж в 5 точках<br><br><br>0 оС. 15 образцов. <br><br>при 3 Дж - 5 образцов - 5 точек на образце<br><br>при 4 Дж - 5 образцов - 5 точек на образце<br><br>при 5 Дж - 5 образов - 5 точек. <br><br>Если выдержали испытания - на этих же образцах - удар при 6 Дж в 5 точках",
+        "isPinned": false
+      },
+      {
+        "id": 8886102,
+        "dateTime": {
+          "date": "13-05-2025",
+          "time": "15:11",
+          "datetime": "2025-05-13T15:11Z",
+          "dateTimeUtcSeconds": "2025-05-13T15:11:48+0000",
+          "dateTimeUtcWithSeconds": "2025-05-13T15:11:48+0000"
+        },
+        "type": "Comment",
+        "owner": {
+          "id": "user:1",
+          "name": "Саликов Рамиль"
+        },
+        "description": "Вячеслав, напишу сегодня ответ. <br>Ok. нам надо не формально испытать и самих себя убедить что все ок, а гарантированно получить 100% результат по всем показателям и не по одной пластине. Цена вопроса - от 10 млн при не прохождении тестов.",
+        "isPinned": false
+      },
+      {
+        "id": 8886100,
+        "dateTime": {
+          "date": "13-05-2025",
+          "time": "14:31",
+          "datetime": "2025-05-13T14:31Z",
+          "dateTimeUtcSeconds": "2025-05-13T14:31:23+0000",
+          "dateTimeUtcWithSeconds": "2025-05-13T14:31:23+0000"
+        },
+        "type": "Comment",
+        "owner": {
+          "id": "contact:943",
+          "name": "Чеславский Вячеслав"
+        },
+        "description": "<div>\n Рамиль, Юрий, добрый день!\n</div>\n<div>\n  \n</div>\n<div>\n <div>\n  Все проверяли по одному образцу.\n </div>\n <div>\n  В каждой точке били один раз, больше некуда было.\n </div>\n <div>\n  Энергия удара 3,9, так как с высоты 20 получается 3,924. При округлении 3,9.\n </div>\n <div>\n   \n </div>\n <div>\n  При минусе не били. Сбросьте методику\n </div>\n <div>\n   \n </div>\n</div>\n<div>\n  \n</div>\n<div>\n  \n</div>\n<div>\n  \n</div>\n<div>\n ----------------\n</div>\n<div>\n Кому: vlad.motarykin@yandex.com (vlad.motarykin@yandex.com), cheslavski@rem-color.by (cheslavski@rem-color.by), yury.pavlov@tonaly.ru (yury.pavlov@tonaly.ru);\n</div>\n<div>\n Тема: ⚡пластины ТРАНСНЕФТЬ. Определить кол-во⚡;\n</div>\n<div>\n 13.05.2025, 16:22, \"Рамиль\" &lt;rml@tonaly.ru&gt;:\n</div>",
+        "isPinned": false
+      },
+      {
+        "id": 8886088,
+        "dateTime": {
+          "date": "13-05-2025",
+          "time": "13:22",
+          "datetime": "2025-05-13T13:22Z",
+          "dateTimeUtcSeconds": "2025-05-13T13:22:21+0000",
+          "dateTimeUtcWithSeconds": "2025-05-13T13:22:21+0000"
+        },
+        "type": "Comment",
+        "owner": {
+          "id": "user:1",
+          "name": "Саликов Рамиль"
+        },
+        "description": "<p>Вячеслав, это две системы - наружка и внутрянка?<br>1. Сколько образцов ударили?<br>Сколько точек сделали на каждую энергию удара?<br>2. Внутрянку не стали бить больше 4 Дж?<br>Почему ударили 3,9 Дж, а не 4,0 Дж?<br>При минусе не били?</p>\n<p>3. По эластичности и таберу - сколько образцов испытали?<br><br>Вячеслав, прошу написать результаты в разрезе каждого образца</p>",
+        "isPinned": false
+      },
+      {
+        "id": 8885642,
+        "dateTime": {
+          "date": "13-05-2025",
+          "time": "08:27",
+          "datetime": "2025-05-13T08:27Z",
+          "dateTimeUtcSeconds": "2025-05-13T08:27:30+0000",
+          "dateTimeUtcWithSeconds": "2025-05-13T08:27:30+0000"
+        },
+        "type": "None",
+        "owner": {
+          "id": "contact:943",
+          "name": "Чеславский Вячеслав"
+        },
+        "description": "<div>\n Рамиль, Елена, доброго дня !\n</div>\n<div>\n</div>\n<div>\n в продолжении нашего разговора с Рамилем\n</div>\n<div>\n</div>\n<div>\n НАПОМНЮ\n</div>\n<div>\n после проведения первичных испытаний были вопросу по удару\n</div>\n<div>\n</div>\n<div>\n Повторили исследование\n</div>\n<div>\n <div>\n  На пластинках с толщиной 290-310 мкм 0607 HS удар выдержала 20, 30 и 40.\n </div>\n</div>\n<div>\n</div>\n<div><img class=\"ckeditor-direct-upload-image ckeditor-direct-upload-image-949286\" src=\"https://tonal.planfix.ru/filelink/%D0%98%D0%B7%D0%BE%D0%B1%D1%80%D0%B0%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5+WhatsApp+2025-04-22+%D0%B2+13.04.11_5eece567.jpg?action=getfile&amp;uniqueid=949286&amp;auth=4a5cf2922a96ca7719ccb3c5fd6fd7b5\">\n</div>\n<div>\n</div>\n<div>\n Что дальше делаем?\n</div>\n<div>\n получается по тестам все норм , нужно отправлять партию в лабу. ВОПРОС по внешнему виду с учетом требований ТРАНСНЕФТИ помню\\знаем.\n</div>\n<div>\n Соответственно нам нужно перекрашивать все для создания ОЖИДАЕМОГО визуала.\n</div>\n<div>\n Если так, то ждем точное кол-во пластин с учетом запасных\\тестовых и тд\n</div>\n<div>\n</div>\n<div>\n</div>\n<div>\n</div>\n<div>\n</div>\n<div>\n</div>\n<div>\n</div>\n<div>\n</div>\n<div>\n</div>\n<div>\n</div>\n<div>\n C уважением,\n</div>\n<div style=\"background-color:rgb( 255 , 255 , 255 );color:rgb( 0 , 0 , 0 );font-family:'ys text' , 'arial' , sans-serif;font-size:16px;font-style:normal;font-weight:400;text-decoration-style:initial;text-transform:none;white-space:normal;word-spacing:0px\">\n Начальник отдела продаж,\n</div>\n<div style=\"background-color:rgb( 255 , 255 , 255 );color:rgb( 0 , 0 , 0 );font-family:'ys text' , 'arial' , sans-serif;font-size:16px;font-style:normal;font-weight:400;text-decoration-style:initial;text-transform:none;white-space:normal;word-spacing:0px\">\n Чеславский Вячеслав\n</div>\n<div style=\"background-color:rgb( 255 , 255 , 255 );color:rgb( 0 , 0 , 0 );font-family:'ys text' , 'arial' , sans-serif;font-size:16px;font-style:normal;font-weight:400;text-decoration-style:initial;text-transform:none;white-space:normal;word-spacing:0px\">\n</div>\n<div style=\"background-color:rgb( 255 , 255 , 255 );color:rgb( 0 , 0 , 0 );font-family:'ys text' , 'arial' , sans-serif;font-size:16px;font-style:normal;font-weight:400;text-decoration-style:initial;text-transform:none;white-space:normal;word-spacing:0px\"><img src=\"https://avatars.mds.yandex.net/get-mail-signature/1526739/50c2e500df9944c2c87f0f266264e8ad/orig\" style=\";width:285px\">\n</div>\n<div style=\"background-color:rgb( 255 , 255 , 255 );color:rgb( 0 , 0 , 0 );font-family:'ys text' , 'arial' , sans-serif;font-size:16px;font-style:normal;font-weight:400;text-decoration-style:initial;text-transform:none;white-space:normal;word-spacing:0px\">\n СП \"Рем-Колор\" ООО\n</div>\n<div style=\"background-color:rgb( 255 , 255 , 255 );color:rgb( 0 , 0 , 0 );font-family:'ys text' , 'arial' , sans-serif;font-size:16px;font-style:normal;font-weight:400;text-decoration-style:initial;text-transform:none;white-space:normal;word-spacing:0px\">\n ООО \"LPF Technology\"\n</div>\n<div style=\"background-color:rgb( 255 , 255 , 255 );color:rgb( 0 , 0 , 0 );font-family:'ys text' , 'arial' , sans-serif;font-size:16px;font-style:normal;font-weight:400;text-decoration-style:initial;text-transform:none;white-space:normal;word-spacing:0px\">\n Моб. тел.: +37544-7339549\n</div>\n<div style=\"background-color:rgb( 255 , 255 , 255 );color:rgb( 0 , 0 , 0 );font-family:'ys text' , 'arial' , sans-serif;font-size:16px;font-style:normal;font-weight:400;text-decoration-style:initial;text-transform:none;white-space:normal;word-spacing:0px\">\n</div>\n<div style=\"background-color:rgb( 255 , 255 , 255 );color:rgb( 0 , 0 , 0 );font-family:'ys text' , 'arial' , sans-serif;font-size:16px;font-style:normal;font-weight:400;text-decoration-style:initial;text-transform:none;white-space:normal;word-spacing:0px\"><a href=\"http://www.rem-color.by/\" target=\"_blank\">www.rem-color.by</a>\n</div>\n<div style=\"background-color:rgb( 255 , 255 , 255 );color:rgb( 0 , 0 , 0 );font-family:'ys text' , 'arial' , sans-serif;font-size:16px;font-style:normal;font-weight:400;text-decoration-style:initial;text-transform:none;white-space:normal;word-spacing:0px\"><a href=\"http://www.lpf.by/\" target=\"_blank\">www.lpf.by</a>\n</div>\n<div>\n</div>",
+        "isPinned": false
+      }
+    ]
+  },
+  "23511_files": {
+    "result": "success",
+    "files": [
+      {
+        "id": 949286,
+        "size": 94,
+        "name": "Изображение WhatsApp 2025-04-22 в 13.04.11_5eece567.jpg"
+      },
+      {
+        "id": 949288,
+        "size": 94,
+        "name": "Изображение WhatsApp 2025-04-22 в 13.04.11_0abff294.jpg"
+      },
+      {
+        "id": 950952,
+        "size": 187,
+        "name": "2025-05-22 12.17.06.jpg"
+      },
+      {
+        "id": 950954,
+        "size": 322,
+        "name": "2025-05-22 12.17.29.jpg"
+      }
+    ]
+  }
+}

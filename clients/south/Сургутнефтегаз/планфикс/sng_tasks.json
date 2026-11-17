@@ -1,0 +1,104 @@
+{
+  "result": "success",
+  "tasks": [
+    {
+      "id": 31295,
+      "name": "Сургутнефтегаз согласование к поставке",
+      "status": {
+        "id": 2,
+        "name": "В работе",
+        "color": "#3377C3",
+        "isActive": true,
+        "hasDeadline": true,
+        "isAppliedIndividually": false,
+        "texts": [
+          {
+            "lang": "Ru",
+            "name": "В работе"
+          },
+          {
+            "lang": "En",
+            "name": "In progress"
+          }
+        ]
+      },
+      "counterparty": {
+        "id": "contact:5278",
+        "name": "СУРГУТНЕФТЕГАЗ"
+      },
+      "dateTime": {
+        "date": "08-06-2026",
+        "time": "11:19",
+        "datetime": "2026-06-08T11:19Z",
+        "dateTimeUtcSeconds": "2026-06-08T11:19:22+0000",
+        "dateTimeUtcWithSeconds": "2026-06-08T11:19:22+0000"
+      }
+    },
+    {
+      "id": 31817,
+      "name": "на №31295-234 от 16.06.2026",
+      "status": {
+        "id": 2,
+        "name": "В работе",
+        "color": "#3377C3",
+        "isActive": true,
+        "hasDeadline": true,
+        "isAppliedIndividually": false,
+        "texts": [
+          {
+            "lang": "Ru",
+            "name": "В работе"
+          },
+          {
+            "lang": "En",
+            "name": "In progress"
+          }
+        ]
+      },
+      "counterparty": {
+        "id": "contact:5278",
+        "name": "СУРГУТНЕФТЕГАЗ"
+      },
+      "dateTime": {
+        "date": "07-07-2026",
+        "time": "09:38",
+        "datetime": "2026-07-07T09:38Z",
+        "dateTimeUtcSeconds": "2026-07-07T09:38:52+0000",
+        "dateTimeUtcWithSeconds": "2026-07-07T09:38:52+0000"
+      }
+    },
+    {
+      "id": 32617,
+      "name": "Письмо исходящее от 21.08.2026 №01-51-59-2990 для ООО _ТОНАЛЬ_ _На №31295-234 от 16.06.202_(44402933v2)_.pdf",
+      "status": {
+        "id": 2,
+        "name": "В работе",
+        "color": "#3377C3",
+        "isActive": true,
+        "hasDeadline": true,
+        "isAppliedIndividually": false,
+        "texts": [
+          {
+            "lang": "Ru",
+            "name": "В работе"
+          },
+          {
+            "lang": "En",
+            "name": "In progress"
+          }
+        ]
+      },
+      "counterparty": {
+        "id": "contact:5278",
+        "name": "СУРГУТНЕФТЕГАЗ"
+      },
+      "dateTime": {
+        "date": "24-08-2026",
+        "time": "04:12",
+        "datetime": "2026-08-24T04:12Z",
+        "dateTimeUtcSeconds": "2026-08-24T04:12:07+0000",
+        "dateTimeUtcWithSeconds": "2026-08-24T04:12:07+0000"
+      }
+    }
+  ]
+}

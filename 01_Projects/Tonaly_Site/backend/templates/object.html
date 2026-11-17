@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+{% block title %}Описать объект | Tonal{% endblock %}
+{% block content %}
+<section class="page-intro">
+    <div class="container">
+        <h1>Описать объект</h1>
+        <p>Три ответа из опросного листа. Список схем сужается по месту, основанию и сроку до ремонта. Как устроена шкала — на странице <a href="/guide">«Как выбрать систему»</a>.</p>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container object-layout">
+        <form id="object-form" class="object-form" method="get" action="/object">
+            <fieldset>
+                <legend>1. Где стоит объект</legend>
+                <div class="object-options">
+                    {% for value, label in places %}
+                    <label class="object-choice">
+                        <input type="radio" name="place" value="{{ value }}" {% if place == value %}checked{% endif %}>
+                        <span>{{ label }}</span>
+                    </label>
+                    {% endfor %}
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>2. Основание</legend>
+                <div class="object-options">
+                    {% for value, label in substrates %}
+                    <label class="object-choice">
+                        <input type="radio" name="substrate" value="{{ value }}" {% if substrate == value %}checked{% endif %}>
+                        <span>{{ label }}</span>
+                    </label>
+                    {% endfor %}
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>3. Срок до первого ремонта</legend>
+                <div class="object-options">
+                    {% for value, label in lives %}
+                    <label class="object-choice">
+                        <input type="radio" name="life" value="{{ value }}" {% if life == value %}checked{% endif %}>
+                        <span>{{ label }}</span>
+                    </label>
+                    {% endfor %}
+                </div>
+            </fieldset>
+            <noscript><button type="submit" class="btn-primary">Показать схемы</button></noscript>
+        </form>
+        <div id="object-results" class="object-results">
+            {% include "object_results.html" %}
+        </div>
+    </div>
+</section>
+<script>
+(function () {
+    var form = document.getElementById("object-form");
+    var box = document.getElementById("object-results");
+    if (!form || !box) return;
+    var timer = 0;
+    function refresh() {
+        var params = new URLSearchParams(new FormData(form));
+        var query = params.toString();
+        history.replaceState(null, "", query ? ("/object?" + query) : "/object");
+        fetch("/object/match?" + query, {headers: {"Accept": "text/html"}})
+            .then(function (response) { return response.text(); })
+            .then(function (html) { box.innerHTML = html; })
+            .catch(function () { form.submit(); });
+    }
+    form.addEventListener("change", function () {
+        clearTimeout(timer);
+        timer = setTimeout(refresh, 60);
+    });
+})();
+</script>
+{% endblock %}

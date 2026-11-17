@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Входные цены с НДС — кг и литр</title>
+<style>
+  @page { size: A4; margin: 12mm 14mm 14mm 14mm; }
+  * { box-sizing: border-box; }
+  body {
+    font-family: "Calibri", "Arial", sans-serif;
+    font-size: 10.5pt;
+    line-height: 1.35;
+    color: #1a1a1a;
+    margin: 0;
+  }
+  .head { display: flex; justify-content: space-between; align-items: flex-start; gap: 24px; }
+  .brand img { height: 38px; width: auto; display: block; margin-bottom: 6px; }
+  .brand p { margin: 0; }
+  .muted { color: #5c6770; font-size: 9pt; }
+  .meta { text-align: right; font-size: 10pt; }
+  .meta p { margin: 0; }
+  hr.rule { border: none; border-top: 2px solid #1B365D; margin: 10px 0 12px; }
+  h1 {
+    font-size: 13.5pt;
+    letter-spacing: 0.03em;
+    color: #1B365D;
+    text-align: center;
+    margin: 0 0 4px;
+    font-weight: 700;
+  }
+  .sub { text-align: center; margin: 0 0 12px; font-size: 10.5pt; }
+  table { width: 100%; border-collapse: collapse; margin: 6px 0 8px; }
+  th, td { border: 1px solid #c5ced6; padding: 5px 7px; vertical-align: top; }
+  th {
+    background: #1B365D;
+    color: #fff;
+    font-weight: 600;
+    font-size: 9pt;
+    text-align: left;
+  }
+  td.num, th.num { text-align: right; white-space: nowrap; }
+  .note { font-size: 9.5pt; margin: 6px 0; }
+  h2 { font-size: 11pt; color: #1B365D; margin: 12px 0 4px; }
+</style>
+</head>
+<body>
+  <div class="head">
+    <div class="brand">
+      <img src="file:///Users/ramil/Documents/WORK/Бизнес/Image_all/Image_all/Логотип,%20подпись,%20печать/TONAL.png" alt="TONAL">
+      <p><strong>ООО «ТОНАЛЬ»</strong></p>
+      <p class="muted">Внутренний лист для сверки. Клиенту не направлять.</p>
+    </div>
+    <div class="meta">
+      <p>21 октября 2026 г.</p>
+      <p class="muted">Объект: Динская ТЭС<br>Заявка: КубаньПолимерГаз, задача 33572</p>
+    </div>
+  </div>
+  <hr class="rule">
+  <h1>ВХОДНЫЕ ЦЕНЫ С НДС 22%</h1>
+  <p class="sub">За килограмм и за литр. Источник — счёт СП «Рем-Колор» № 7182 от 19 октября 2026 г.</p>
+  <p>В счёте цены указаны <strong>за кг</strong>, ставка НДС — 0. Ниже к ним начислен НДС 22%. Цена за литр = цена за кг с НДС × плотность из технического листа.</p>
+  <table>
+    <thead>
+      <tr>
+        <th>Наименование</th>
+        <th class="num">Вход без НДС, ₽/кг</th>
+        <th class="num">Вход с НДС, ₽/кг</th>
+        <th class="num">Плотность, кг/л</th>
+        <th class="num">Вход с НДС, ₽/л</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Комплект Rem-Pox 0607 HS 2K, серый<br><span class="muted">основа + отвердитель, 20+2 кг</span></td>
+        <td class="num">569,31</td>
+        <td class="num">694,56</td>
+        <td class="num">1,40–1,50</td>
+        <td class="num">972,38–1 041,84</td>
+      </tr>
+      <tr>
+        <td>Комплект Rem-Pur 1604 2K CR, RAL 7047<br><span class="muted">основа и отвердитель по одной цене</span></td>
+        <td class="num">990,57</td>
+        <td class="num">1 208,50</td>
+        <td class="num">1,10–1,35</td>
+        <td class="num">1 329,35–1 631,48</td>
+      </tr>
+      <tr>
+        <td>Растворитель Рем-Сол-2</td>
+        <td class="num">356,55</td>
+        <td class="num">434,99</td>
+        <td class="num">0,859</td>
+        <td class="num">373,83</td>
+      </tr>
+      <tr>
+        <td>Растворитель Рем-Сол-3</td>
+        <td class="num">385,68</td>
+        <td class="num">470,53</td>
+        <td class="num">0,886</td>
+        <td class="num">416,70</td>
+      </tr>
+      <tr>
+        <td>Рем-Пур 210, RAL 7047 и RAL 7004<br><span class="muted">основа и отвердитель по одной цене</span></td>
+        <td class="num">725,86</td>
+        <td class="num">885,55</td>
+        <td class="num">около 1,4</td>
+        <td class="num">1 239,77</td>
+      </tr>
+      <tr>
+        <td>Рем-Пур 210, RAL 5015<br><span class="muted">основа и отвердитель по одной цене</span></td>
+        <td class="num">768,59</td>
+        <td class="num">937,68</td>
+        <td class="num">около 1,4</td>
+        <td class="num">1 312,75</td>
+      </tr>
+      <tr>
+        <td>Рем-Пур 210, RAL 1021<br><span class="muted">основа и отвердитель по одной цене</span></td>
+        <td class="num">945,62</td>
+        <td class="num">1 153,66</td>
+        <td class="num">около 1,4</td>
+        <td class="num">1 615,12</td>
+      </tr>
+    </tbody>
+  </table>
+  <h2>Откуда цифры</h2>
+  <p class="note">Комплект 0607: в счёте основа 508,32 ₽/кг и отвердитель Harter EP1 M4 — 1 179,25 ₽/кг. 569,31 ₽/кг — цена килограмма комплекта 20+2 кг.</p>
+  <p class="note">Плотности из технических листов. 0607 HS — 1,4–1,5 г/см³, в зависимости от цвета. Rem-Pur 1604 — 1,10–1,35 г/см³, в зависимости от цвета. Рем-Пур 210 — около 1,4 г/см³, в зависимости от цвета. Рем-Сол-2 — 859,4 кг/м³. Рем-Сол-3 — 885,6 кг/м³.</p>
+  <p class="note">У жёлтого и красного плотность обычно выше, чем у серого. Литр RAL 1021 может стоить больше 1 615,12 ₽.</p>
+</body>
+</html>

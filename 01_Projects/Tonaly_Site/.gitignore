@@ -1,0 +1,17 @@
+# Python
+venv/
+__pycache__/
+*.pyc
+*.db
+
+# Cabinet passwords (plain text + hashes)
+backend/data/cabinets_secrets.json
+backend/data/cabinets_passwords.txt
+backend/data/kite_requests.jsonl
+
+# macOS
+.DS_Store
+
+# IDE
+.vscode/
+.idea/

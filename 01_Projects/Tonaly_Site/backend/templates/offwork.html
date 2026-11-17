@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block title %}Вне работы | Tonal{% endblock %}
+{% block body_class %}page-offwork page-offwork--sunset{% endblock %}
+{% block hero %}
+<section class="hero-section offwork-hero">
+    <div class="container">
+        <p class="hero-kicker">Вне работы</p>
+        <h1>Личные проекты рядом с поставками ЛКМ</h1>
+        <p>Сейчас здесь — обучение кайту и каталог Eleveight. Катаемся у ст. Благовещенская: Кизилташский лиман и море рядом.</p>
+    </div>
+</section>
+{% endblock %}
+{% block content %}
+<section class="section">
+    <div class="container">
+        <div class="offwork-grid">
+            <a href="/offwork/kiteboarding" class="offwork-card">
+                <img src="/img/offwork/spit.jpg" alt="Пляж у станицы Благовещенская">
+                <span class="offwork-card-body">
+                    <p class="offwork-card-kicker">Кайт · обучение</p>
+                    <h2>Кайтбординг</h2>
+                    <p>С нуля до самостоятельного катания. Инструктор Роман — индивидуальные занятия, безопасность и спокойный темп.</p>
+                    <span class="offwork-card-more">Открыть страницу →</span>
+                </span>
+            </a>
+            <a href="/offwork/eleveight" class="offwork-card">
+                <img src="/img/offwork/eleveight/rs-v10-2027.jpg" alt="Кайт Eleveight RS">
+                <span class="offwork-card-body">
+                    <p class="offwork-card-kicker">Снаряжение · заказ</p>
+                    <h2>Eleveight</h2>
+                    <p>Кайты, доски, планки и винги. Заказ через заявку Роману: размер и цену подтверждаем в переписке.</p>
+                    <span class="offwork-card-more">Открыть каталог →</span>
+                </span>
+            </a>
+        </div>
+        <p class="photo-credit">Фото: Анапская пересыпь у ст. Благовещенская — Wikimedia Commons, CC BY-SA.</p>
+    </div>
+</section>
+{% endblock %}

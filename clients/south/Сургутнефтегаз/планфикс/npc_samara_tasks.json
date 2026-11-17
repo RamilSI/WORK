@@ -1,0 +1,71 @@
+{
+  "result": "success",
+  "tasks": [
+    {
+      "id": 32639,
+      "name": "ООО НПЦ Самара",
+      "status": {
+        "id": 2,
+        "name": "В работе",
+        "color": "#3377C3",
+        "isActive": true,
+        "hasDeadline": true,
+        "isAppliedIndividually": false,
+        "texts": [
+          {
+            "lang": "Ru",
+            "name": "В работе"
+          },
+          {
+            "lang": "En",
+            "name": "In progress"
+          }
+        ]
+      },
+      "counterparty": {
+        "id": "contact:5439",
+        "name": "НАУЧНО-ПРОИЗВОДСТВЕННЫЙ ЦЕНТР САМАРА"
+      },
+      "dateTime": {
+        "date": "25-08-2026",
+        "time": "09:45",
+        "datetime": "2026-08-25T09:45Z",
+        "dateTimeUtcSeconds": "2026-08-25T09:45:05+0000",
+        "dateTimeUtcWithSeconds": "2026-08-25T09:45:05+0000"
+      }
+    },
+    {
+      "id": 32949,
+      "name": "Оборудование ТЭЦ",
+      "status": {
+        "id": 2,
+        "name": "В работе",
+        "color": "#3377C3",
+        "isActive": true,
+        "hasDeadline": true,
+        "isAppliedIndividually": false,
+        "texts": [
+          {
+            "lang": "Ru",
+            "name": "В работе"
+          },
+          {
+            "lang": "En",
+            "name": "In progress"
+          }
+        ]
+      },
+      "counterparty": {
+        "id": "contact:5439",
+        "name": "НАУЧНО-ПРОИЗВОДСТВЕННЫЙ ЦЕНТР САМАРА"
+      },
+      "dateTime": {
+        "date": "11-09-2026",
+        "time": "04:41",
+        "datetime": "2026-09-11T04:41Z",
+        "dateTimeUtcSeconds": "2026-09-11T04:41:58+0000",
+        "dateTimeUtcWithSeconds": "2026-09-11T04:41:58+0000"
+      }
+    }
+  ]
+}

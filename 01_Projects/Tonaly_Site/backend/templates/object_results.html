@@ -1,0 +1,27 @@
+{% if not result.ready %}
+<p class="section-lead">Ответьте, где стоит объект. Список схем появится сразу и будет короче с каждым следующим ответом.</p>
+{% else %}
+<p class="object-count">Подходит сейчас: {{ result.fit|length }}{% if result.blast %} · со струёй ещё {{ result.blast|length }}{% endif %}</p>
+{% if result.note %}<p class="object-note">{{ result.note }}</p>{% endif %}
+{% if result.fit %}
+<div class="catalog-list">
+    {% for scheme in result.fit %}
+    {% include "object_card.html" %}
+    {% endfor %}
+</div>
+{% elif not result.blast %}
+<p class="section-lead">В каталоге нет схемы под эту комбинацию. Опишите объект инженеру, ответы уже можно сохранить в переписке.</p>
+{% endif %}
+{% if result.blast %}
+<h3 class="object-subhead">Нужна струйная очистка Sa 2½</h3>
+<p class="section-lead">Ручного инструмента для этих схем мало. Если струя на объекте возможна, они остаются в выборе.</p>
+<div class="catalog-list">
+    {% for scheme in result.blast %}
+    {% include "object_card.html" %}
+    {% endfor %}
+</div>
+{% endif %}
+{% if result.fit or result.blast %}
+<p class="object-footnote">Это ориентир из каталога. Спецификацию подтверждаем по объекту, продукту и проекту.</p>
+{% endif %}
+{% endif %}

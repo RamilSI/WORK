@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0b1210">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<title>Мой плеер</title>
+<link rel="manifest" href="/player/manifest.webmanifest">
+<link rel="icon" href="/player/icon.svg">
+<style>
+  :root { --bg:#0b1210; --card:#16201c; --acc:#3dd68c; --text:#eef6f1; --muted:#8aa297; }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; min-height: 100dvh; color: var(--text);
+    font-family: ui-rounded, "SF Pro Text", system-ui, sans-serif;
+    background: radial-gradient(900px 500px at 50% -10%, #1a3d2c, var(--bg));
+    padding: 20px 16px calc(24px + env(safe-area-inset-bottom));
+  }
+  h1 { font-size: 1.25rem; margin: 0 0 4px; }
+  .sub { color: var(--muted); margin: 0 0 20px; font-size: .92rem; }
+  .art {
+    width: min(72vw, 280px); aspect-ratio: 1; margin: 8px auto 20px;
+    border-radius: 28px; display: grid; place-items: center;
+    background: linear-gradient(145deg, #2d8f63, #123226);
+    box-shadow: 0 20px 50px #0006; font-size: 4rem;
+  }
+  .title { text-align: center; font-size: 1.15rem; font-weight: 700; min-height: 2.6em; }
+  .time { display: flex; justify-content: space-between; color: var(--muted); font-size: .8rem; }
+  input[type=range] { width: 100%; accent-color: var(--acc); }
+  .controls { display: flex; justify-content: center; align-items: center; gap: 22px; margin: 18px 0; }
+  button {
+    border: 0; background: #22352c; color: var(--text); border-radius: 999px;
+    width: 56px; height: 56px; font-size: 1.3rem; cursor: pointer;
+  }
+  #play { width: 76px; height: 76px; background: var(--acc); color: #062113; font-size: 1.8rem; font-weight: 800; }
+  .row { display: flex; gap: 8px; flex-wrap: wrap; margin: 10px 0 16px; }
+  .btn { background: var(--acc); color: #062113; border: 0; border-radius: 12px; padding: 12px 14px; font-weight: 700; }
+  .ghost { background: #22352c; color: var(--text); }
+  input[type=file] { display: none; }
+  .list { background: var(--card); border-radius: 16px; padding: 6px 10px; }
+  .item { padding: 12px 4px; border-bottom: 1px solid #2a3a33; cursor: pointer; }
+  .item:last-child { border-bottom: 0; }
+  .item.on { color: var(--acc); }
+  .hint { color: var(--muted); font-size: .85rem; margin-top: 16px; line-height: 1.4; }
+</style>
+</head>
+<body>
+  <h1>Мой плеер</h1>
+  <p class="sub">Твои файлы с телефона. Без Сбера и интернета.</p>
+  <div class="art" id="art">♪</div>
+  <div class="title" id="name">Добавь MP3 из Загрузок</div>
+  <input id="seek" type="range" min="0" max="1000" value="0">
+  <div class="time"><span id="cur">0:00</span><span id="dur">0:00</span></div>
+  <div class="controls">
+    <button id="prev" type="button">⏮</button>
+    <button id="play" type="button">▶</button>
+    <button id="next" type="button">⏭</button>
+  </div>
+  <div class="row">
+    <label class="btn">Добавить MP3<input id="pick" type="file" accept="audio/*" multiple></label>
+    <button class="btn ghost" id="clear" type="button">Очистить список</button>
+  </div>
+  <div class="list" id="list"></div>
+  <p class="hint">
+    Чтобы это стало иконкой на экране: в Chrome нажми меню ⋮ → <b>Добавить на главный экран</b>.
+    Потом открой MP3 из «Мои файлы» или добавь их кнопкой выше.
+  </p>
+  <audio id="audio"></audio>
+<script>
+const audio = document.getElementById("audio");
+const nameEl = document.getElementById("name");
+const listEl = document.getElementById("list");
+const seek = document.getElementById("seek");
+const tracks = [];
+let index = -1;
+
+const fmt = s => {
+  if (!isFinite(s)) return "0:00";
+  const m = Math.floor(s / 60), sec = Math.floor(s % 60);
+  return m + ":" + String(sec).padStart(2, "0");
+};
+
+function render() {
+  listEl.innerHTML = tracks.map((t, i) =>
+    `<div class="item${i===index?" on":""}" data-i="${i}">${t.name}</div>`
+  ).join("") || '<div class="item">Список пуст</div>';
+}
+
+function playAt(i) {
+  if (!tracks[i]) return;
+  if (audio.src) URL.revokeObjectURL(audio.src);
+  index = i;
+  audio.src = URL.createObjectURL(tracks[i].file);
+  nameEl.textContent = tracks[i].name;
+  audio.play();
+  document.getElementById("play").textContent = "❚❚";
+  render();
+  if (navigator.mediaSession) {
+    navigator.mediaSession.metadata = new MediaMetadata({ title: tracks[i].name, artist: "Мой плеер" });
+  }
+}
+
+document.getElementById("pick").onchange = e => {
+  [...e.target.files].forEach(file => tracks.push({name: file.name, file}));
+  if (index < 0 && tracks.length) playAt(0);
+  else render();
+};
+document.getElementById("clear").onclick = () => {
+  tracks.splice(0);
+  audio.pause(); audio.src = "";
+  index = -1; nameEl.textContent = "Добавь MP3 из Загрузок";
+  document.getElementById("play").textContent = "▶";
+  render();
+};
+document.getElementById("play").onclick = () => {
+  if (!audio.src) return;
+  if (audio.paused) { audio.play(); document.getElementById("play").textContent = "❚❚"; }
+  else { audio.pause(); document.getElementById("play").textContent = "▶"; }
+};
+document.getElementById("prev").onclick = () => { if (index > 0) playAt(index - 1); };
+document.getElementById("next").onclick = () => { if (index + 1 < tracks.length) playAt(index + 1); };
+listEl.onclick = e => {
+  const item = e.target.closest("[data-i]");
+  if (item) playAt(Number(item.dataset.i));
+};
+seek.oninput = () => {
+  if (audio.duration) audio.currentTime = seek.value / 1000 * audio.duration;
+};
+audio.ontimeupdate = () => {
+  document.getElementById("cur").textContent = fmt(audio.currentTime);
+  document.getElementById("dur").textContent = fmt(audio.duration);
+  if (audio.duration) seek.value = audio.currentTime / audio.duration * 1000;
+};
+audio.onended = () => { if (index + 1 < tracks.length) playAt(index + 1); };
+if (navigator.mediaSession) {
+  navigator.mediaSession.setActionHandler("previoustrack", () => document.getElementById("prev").click());
+  navigator.mediaSession.setActionHandler("nexttrack", () => document.getElementById("next").click());
+  navigator.mediaSession.setActionHandler("play", () => audio.play());
+  navigator.mediaSession.setActionHandler("pause", () => audio.pause());
+}
+if ("serviceWorker" in navigator) navigator.serviceWorker.register("/player/sw.js");
+render();
+</script>
+</body>
+</html>

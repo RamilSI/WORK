@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+{% block title %}Eleveight · каталог | Вне работы{% endblock %}
+{% block body_class %}page-offwork page-offwork--kite{% endblock %}
+{% block hero %}
+<section class="hero-section kite-hero">
+    <div class="container">
+        <p class="hero-kicker">Вне работы · Eleveight</p>
+        <h1>Каталог Eleveight</h1>
+        <p>Кайты, доски, планки и винги. Размер и цену подтверждаем в заявке Роману.</p>
+        <div class="hero-btns">
+            <a href="/offwork/kiteboarding#signup" class="btn-primary">Оставить заявку</a>
+            <a href="#kites" class="btn-secondary">Смотреть линейку</a>
+        </div>
+    </div>
+</section>
+{% endblock %}
+{% block content %}
+<section class="section">
+    <div class="container">
+        <p class="offwork-crumb"><a href="/offwork">Вне работы</a> / Eleveight</p>
+        <p class="section-lead">Линейка как на kitemagazin.ru. Откройте модель — там размеры, для кого она и видео, если производитель его выложил. Заказ — заявка Роману, без корзины.</p>
+    </div>
+</section>
+
+{% for group in groups %}
+<section id="{{ group.key }}" class="section{% if loop.index is even %} bg-paper{% endif %}">
+    <div class="container">
+        <header class="brand-group-head">
+            <h2>{{ group.title }}</h2>
+            {% if group.description %}<p>{{ group.description }}</p>{% endif %}
+        </header>
+        <div class="catalog-list">
+            {% for product in group.products %}
+            <article class="catalog-row elv-row">
+                <a href="/offwork/eleveight/{{ product.slug }}" class="catalog-row-link">
+                    <span class="catalog-row-photo">
+                        {% if product.image %}
+                        <img src="{{ product.image }}" alt="{{ product.name }}">
+                        {% endif %}
+                    </span>
+                    <span class="catalog-row-main">
+                        <span class="catalog-row-top">
+                            <strong class="catalog-row-name">{{ product.name }}</strong>
+                            {% if product.badge %}<span class="chip">{{ product.badge }}</span>{% endif %}
+                            {% if product.video %}<span class="chip chip-video">видео</span>{% endif %}
+                        </span>
+                        <span class="catalog-row-desc">{{ product.short_desc }}</span>
+                        {% if product.meta %}<span class="catalog-row-meta"><span>{{ product.meta }}</span></span>{% endif %}
+                    </span>
+                </a>
+                <div class="catalog-row-actions">
+                    <a href="/offwork/kiteboarding?order={{ product.slug }}#signup" class="catalog-row-tds" title="Заявка на {{ product.name }}">Заказать</a>
+                    <a href="/offwork/eleveight/{{ product.slug }}" class="catalog-row-more" title="Подробнее">→</a>
+                </div>
+            </article>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endfor %}
+
+<section id="order" class="section">
+    <div class="container about-layout">
+        <div class="about-block">
+            <h2>Заказ</h2>
+            <p>Оставьте заявку на странице Романа: модель, размер и как с вами связаться. Телефон там же, если удобнее набрать самим.</p>
+        </div>
+        <div class="about-cta">
+            <a href="/offwork/kiteboarding#signup" class="btn-primary">Оставить заявку</a>
+            <a href="/offwork/kiteboarding" class="btn-ghost">Обучение кайту</a>
+        </div>
+    </div>
+</section>
+{% endblock %}

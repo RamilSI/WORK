@@ -1,0 +1,19 @@
+<article class="catalog-row scheme-row">
+    <a href="{{ scheme.href }}" class="catalog-row-link">
+        <span class="catalog-row-main">
+            <span class="catalog-row-top">
+                <strong class="catalog-row-name">{{ scheme.title }}</strong>
+                {% if scheme.corrosivity %}<span class="chip">{{ scheme.corrosivity }}</span>{% endif %}
+            </span>
+            <span class="catalog-row-desc">{{ scheme.purpose }}</span>
+            <span class="catalog-row-meta">
+                {% if scheme.total_dft %}<span>{{ scheme.total_dft }} мкм</span>{% endif %}
+                {% if scheme.durability %}<span>{{ scheme.durability }}</span>{% endif %}
+                {% if scheme.rem_code %}<span>{{ scheme.rem_code }}</span>{% endif %}
+            </span>
+        </span>
+    </a>
+    <div class="catalog-row-actions">
+        <a href="{{ scheme.href }}" class="catalog-row-more">→</a>
+    </div>
+</article>

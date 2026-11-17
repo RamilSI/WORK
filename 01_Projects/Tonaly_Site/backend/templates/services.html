@@ -1,0 +1,247 @@
+{% extends "base.html" %}
+{% block title %}Услуги | Tonal{% endblock %}
+{% block content %}
+<section class="page-intro">
+    <div class="container">
+        <h1>Услуги</h1>
+        <p>Инспекция лакокрасочного покрытия и выполнение работ по нанесению промышленных систем — от диагностики до сдачи объекта.</p>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <div class="services-overview">
+            <a href="#inspection" class="services-overview-card">
+                <span class="icon" aria-hidden="true">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+                        <circle cx="11" cy="11" r="7"/>
+                        <path d="M20 20l-3.5-3.5"/>
+                        <path d="M8 11h6M11 8v6"/>
+                    </svg>
+                </span>
+                <h2>Инспекция ЛКП</h2>
+                <p>Контроль качества подготовки поверхности и покрытия сертифицированными инспекторами АСИ и Frosio.</p>
+            </a>
+            <a href="#application" class="services-overview-card">
+                <span class="icon" aria-hidden="true">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+                        <path d="M4 20l8-8"/>
+                        <path d="M14 4l6 6-8 2-4-4 6-4z"/>
+                        <path d="M4 20h6"/>
+                    </svg>
+                </span>
+                <h2>Нанесение ЛКП</h2>
+                <p>Подготовка поверхности и нанесение антикоррозионных систем на металлоконструкциях, резервуарах и промышленных объектах.</p>
+            </a>
+            <a href="#tools" class="services-overview-card">
+                <h2>Цифровые сервисы</h2>
+                <p>Схемы покрытий и подбор системы по объекту. Калькулятор расхода — в работе.</p>
+            </a>
+        </div>
+    </div>
+</section>
+
+<section id="inspection" class="section bg-paper">
+    <div class="container">
+        <h2 class="section-title">Инспекция лакокрасочного покрытия</h2>
+        <p class="section-lead catalog-panel-lead">Независимый контроль на всех этапах антикоррозионных работ: входной контроль материалов, подготовка поверхности, нанесение слоёв и приёмка готового покрытия. В штате — инспекторы АСИ и Frosio.</p>
+
+        <div class="process-grid">
+            <article class="process-step">
+                <span class="process-num">01</span>
+                <h3>Входной контроль</h3>
+                <p>Проверка партии материалов, срока годности, условий хранения и соответствия спецификации.</p>
+            </article>
+            <article class="process-step">
+                <span class="process-num">02</span>
+                <h3>Подготовка поверхности</h3>
+                <p>Степень очистки, профиль шероховатости, запылённость, соли и климатические условия перед окраской.</p>
+            </article>
+            <article class="process-step">
+                <span class="process-num">03</span>
+                <h3>Контроль нанесения</h3>
+                <p>Толщина мокрого и сухого слоя, межслойные интервалы, режимы оборудования и условия на площадке.</p>
+            </article>
+            <article class="process-step">
+                <span class="process-num">04</span>
+                <h3>Приёмка покрытия</h3>
+                <p>Внешний вид, ТСП, адгезия, сплошность. Фотоотчёт, дефектная ведомость и рекомендации.</p>
+            </article>
+        </div>
+
+        <div class="service-offer-grid">
+            <article class="service-offer-card">
+                <span class="icon" aria-hidden="true">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+                        <path d="M3 21h18M5 21V8l7-4 7 4v13M9 21v-6h6v6"/>
+                        <path d="M9 10h6M9 14h4"/>
+                    </svg>
+                </span>
+                <h3>Инспекция на объекте</h3>
+                <p>Выезд специалиста: оценка покрытий, дефектов и соответствия проектной системе.</p>
+                <ul class="service-offer-list">
+                    <li>Визуальная и измерительная диагностика</li>
+                    <li>Контроль hold-point при производстве работ</li>
+                    <li>Фотоотчёт и рекомендации по восстановлению</li>
+                </ul>
+                <a href="/contacts" class="btn-primary">Заказать выезд</a>
+            </article>
+            <article class="service-offer-card">
+                <span class="icon" aria-hidden="true">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+                        <rect x="2" y="3" width="20" height="14" rx="1"/>
+                        <path d="M8 21h8M12 17v4"/>
+                        <circle cx="12" cy="10" r="2.5"/>
+                    </svg>
+                </span>
+                <h3>Удалённая инспекция</h3>
+                <p>Анализ по фото, видео и технической документации без выезда на объект.</p>
+                <ul class="service-offer-list">
+                    <li>Экспертная оценка состояния покрытия</li>
+                    <li>Консультация по системе и материалам</li>
+                    <li>План корректирующих работ</li>
+                </ul>
+                <a href="/contacts" class="btn-primary">Отправить запрос</a>
+            </article>
+            <article class="service-offer-card">
+                <span class="icon" aria-hidden="true">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+                        <path d="M12 3l8 4v5c0 5-3.4 8.6-8 10-4.6-1.4-8-5-8-10V7l8-4z"/>
+                        <path d="M9 12l2 2 4-4"/>
+                    </svg>
+                </span>
+                <h3>Авторский надзор</h3>
+                <p>Сопровождение подрядчика на площадке, чтобы система была нанесена по спецификации.</p>
+                <ul class="service-offer-list">
+                    <li>Согласование технологии и hold-point</li>
+                    <li>Контроль режимов нанесения</li>
+                    <li>Гарантийное сопровождение после сдачи</li>
+                </ul>
+                <a href="/contacts" class="btn-primary">Запросить сопровождение</a>
+            </article>
+            <article class="service-offer-card">
+                <span class="icon" aria-hidden="true">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                        <path d="M14 2v6h6M9 13h6M9 17h4"/>
+                    </svg>
+                </span>
+                <h3>Техническая документация</h3>
+                <p>ТКП, спецификации и комплекты для тендеров, согласования и исполнительной документации.</p>
+                <ul class="service-offer-list">
+                    <li>Спецификации материалов и слоёв</li>
+                    <li>Акты контроля и отчёты инспекции</li>
+                    <li>Сопровождение до поставки и сдачи</li>
+                </ul>
+                <a href="/contacts" class="btn-primary">Запросить ТКП</a>
+            </article>
+        </div>
+    </div>
+</section>
+
+<section id="application" class="section">
+    <div class="container">
+        <h2 class="section-title">Нанесение лакокрасочных покрытий</h2>
+        <p class="section-lead catalog-panel-lead">Выполняем работы по подготовке поверхности и нанесению промышленных антикоррозионных систем Rem Color, Akzo Nobel и WEG. Можем закрыть объект под ключ: материал, нанесение и инспекция.</p>
+
+        <div class="process-grid process-grid--four">
+            <article class="process-step">
+                <span class="process-num">01</span>
+                <h3>Обследование</h3>
+                <p>Осмотр объекта, объёмы, доступ, агрессивность среды и действующее покрытие.</p>
+            </article>
+            <article class="process-step">
+                <span class="process-num">02</span>
+                <h3>Подготовка</h3>
+                <p>Абразивоструйная или механическая очистка до требуемой степени ISO 8501.</p>
+            </article>
+            <article class="process-step">
+                <span class="process-num">03</span>
+                <h3>Нанесение</h3>
+                <p>Грунт, промежуточные и финишные слои по согласованной схеме и толщинам.</p>
+            </article>
+            <article class="process-step">
+                <span class="process-num">04</span>
+                <h3>Сдача</h3>
+                <p>Контроль качества, исполнительная документация и при необходимости гарантийный надзор.</p>
+            </article>
+        </div>
+
+        <div class="service-offer-grid">
+            <article class="service-offer-card">
+                <span class="icon" aria-hidden="true">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+                        <path d="M4 20h16M6 20V8h4v12M14 20V5h4v15"/>
+                        <path d="M8 8V5M16 5V3"/>
+                    </svg>
+                </span>
+                <h3>Новое строительство</h3>
+                <p>Окраска металлоконструкций, резервуаров, трубопроводов и оборудования по проектной системе.</p>
+                <ul class="service-offer-list">
+                    <li>Цеховое и площадочное нанесение</li>
+                    <li>Соблюдение межслойных интервалов и ТСП</li>
+                    <li>Материалы со склада в Новороссийске и Самаре</li>
+                </ul>
+                <a href="/contacts" class="btn-primary">Запросить расчёт</a>
+            </article>
+            <article class="service-offer-card">
+                <span class="icon" aria-hidden="true">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+                        <path d="M3 21h18M5 21V8l7-4 7 4v13"/>
+                        <path d="M9 14l2 2 4-4"/>
+                    </svg>
+                </span>
+                <h3>Ремонт и восстановление</h3>
+                <p>Локальный и полный ремонт покрытий с подбором совместимой системы под существующие слои.</p>
+                <ul class="service-offer-list">
+                    <li>Дефектовка и карта объёмов</li>
+                    <li>Совместимость с ранее нанесёнными ЛКМ</li>
+                    <li>Работы без остановки смежных участков</li>
+                </ul>
+                <a href="/contacts" class="btn-primary">Описать объект</a>
+            </article>
+            <article class="service-offer-card service-offer-card--wide">
+                <span class="icon" aria-hidden="true">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+                        <path d="M4 6h16M4 12h10M4 18h14"/>
+                        <path d="M18 10l3 2-3 2v-4z"/>
+                    </svg>
+                </span>
+                <div>
+                    <h3>Комплекс «материал + нанесение + инспекция»</h3>
+                    <p>Один подрядчик на систему покрытия, производство работ и контроль качества. Схемы Rem Color как замена Akzo, WEG и других производителей — под условия объекта и норматив.</p>
+                    <ul class="service-offer-list">
+                        <li>Подбор системы и расчёт объёмов</li>
+                        <li>Поставка материалов и выполнение работ</li>
+                        <li>Инспекция АСИ / Frosio и сдача заказчику</li>
+                    </ul>
+                    <div class="about-cta">
+                        <a href="/schemes" class="btn-ghost">Схемы покрытий</a>
+                        <a href="/contacts" class="btn-primary">Запросить комплексное ТКП</a>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
+
+<section id="tools" class="section bg-paper">
+    <div class="container">
+        <h2 class="section-title">Цифровые сервисы</h2>
+        <div class="services-overview services-overview--3">
+            <a href="/schemes" class="services-overview-card">
+                <h2>Схемы покрытий</h2>
+                <p>Системы Rem Color как замена Akzo, WEG и других — слои, ТСП и категория среды.</p>
+            </a>
+            <a href="/object" class="services-overview-card">
+                <h2>Описать объект</h2>
+                <p>Три ответа по месту, основанию и сроку — список схем становится короче.</p>
+            </a>
+            <a href="/guide" class="services-overview-card">
+                <h2>Как выбрать систему</h2>
+                <p>Среда, срок до ремонта и подготовка стали — до марки банки.</p>
+            </a>
+        </div>
+    </div>
+</section>
+{% endblock %}

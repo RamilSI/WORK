@@ -1,0 +1,7 @@
+https://www.youtube.com/watch?v=BEEvTpKOGnA
+
+$ /opt/homebrew/bin/yt-dlp --no-color --newline --no-mtime --no-update --no-warnings --retries 8 --fragment-retries 8 --socket-timeout 30 --force-ipv4 --buffer-size 32K --trim-filenames 180 --ffmpeg-location /opt/homebrew/bin --add-header User-Agent:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36 -o /Users/ramil/Downloads/%(title).80B [%(id).40B].%(ext)s --concurrent-fragments 16 --http-chunk-size 10M --referer https://www.youtube.com/watch?v=BEEvTpKOGnA --js-runtimes deno:/opt/homebrew/bin/deno --no-playlist -f bv*[height<=1080]+ba/b[height<=1080]/b --merge-output-format mp4 https://www.youtube.com/watch?v=BEEvTpKOGnA
+[youtube] Extracting URL: https://www.youtube.com/watch?v=BEEvTpKOGnA
+[youtube] BEEvTpKOGnA: Downloading webpage
+[youtube] BEEvTpKOGnA: Downloading visionos player API JSON
+ERROR: [youtube] BEEvTpKOGnA: Video unavailable

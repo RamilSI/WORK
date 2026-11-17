@@ -1,0 +1,1691 @@
+[
+  {
+    "name": "КОНТРАСТ-ЮГ",
+    "short": "ООО \"КОНТРАСТ-ЮГ\"",
+    "city": "Ставрополь",
+    "district": "СКФО",
+    "role": "Подрядчик АКЗ",
+    "inn": "2635242905",
+    "email": "kontrastyug@bk.ru",
+    "phone": "",
+    "status": "кабинет заведён",
+    "object": "Работы АКЗ, СКФО",
+    "local": "Контраст ЮГ",
+    "sources": [
+      "Компании.xlsx",
+      "локальные папки"
+    ],
+    "cabinet": true,
+    "slug": "kontrast-yug",
+    "note": "Подрядчик АКЗ, Ставрополь. Есть локальная папка и файл по Осетии.",
+    "has_media": false
+  },
+  {
+    "name": "АФИПСКИЙ НЕФТЕПЕРЕРАБАТЫВАЮЩИЙ ЗАВОД",
+    "short": "ООО \"АФИПСКИЙ НПЗ\"",
+    "city": "Краснодар",
+    "district": "ЮФО",
+    "role": "Заказчик",
+    "inn": "7704214548",
+    "email": "",
+    "phone": "+7 (8617) 303-110",
+    "status": "кабинет заведён",
+    "object": "Комплекс гидрокрекинга",
+    "local": "Афипский НПЗ",
+    "sources": [
+      "Компании.xlsx",
+      "локальные папки"
+    ],
+    "cabinet": true,
+    "slug": "afips-npz",
+    "note": "Афипский НПЗ, комплекс гидрокрекинга. Есть в «О компании».",
+    "has_media": false
+  },
+  {
+    "name": "ГУП РЕСПУБЛИКИ КРЫМ ЧЕРНОМОРНЕФТЕГАЗ",
+    "short": "ГУП РК \"ЧЕРНОМОРНЕФТЕГАЗ\"",
+    "city": "Крым",
+    "district": "ЮФО",
+    "role": "Заказчик",
+    "inn": "9102048801",
+    "email": "",
+    "phone": "",
+    "status": "кабинет заведён",
+    "object": "Резервуары, Крым",
+    "local": "Черноморнефтегаз",
+    "sources": [
+      "Компании.xlsx",
+      "локальные папки"
+    ],
+    "cabinet": true,
+    "slug": "chernomorneftegaz",
+    "note": "Черноморнефтегаз, Крым. На сайте — резервуары Симферополя.",
+    "has_media": false
+  },
+  {
+    "name": "КТК-Р",
+    "short": "АО \"КТК-Р\"",
+    "city": "Новороссийск",
+    "district": "ЮФО",
+    "role": "Заказчик",
+    "inn": "2310040800",
+    "email": "",
+    "phone": "",
+    "status": "кабинет заведён",
+    "object": "КТК Новороссийск",
+    "local": "КТК",
+    "sources": [
+      "Компании.xlsx",
+      "локальные папки"
+    ],
+    "cabinet": true,
+    "slug": "ktk-r",
+    "note": "Каспийский трубопроводный консорциум, Новороссийск. Есть в «О компании».",
+    "has_media": false
+  },
+  {
+    "name": "ЧЕРНОМОРТРАНСНЕФТЬ",
+    "short": "АО \"ЧЕРНОМОРТРАНСНЕФТЬ\"",
+    "city": "Новороссийск",
+    "district": "ЮФО",
+    "role": "Заказчик",
+    "inn": "2315072242",
+    "email": "stat@nvr.transneft.ru",
+    "phone": "",
+    "status": "кабинет заведён",
+    "object": "Объекты Черномортранснефть",
+    "local": "",
+    "sources": [
+      "Компании.xlsx"
+    ],
+    "cabinet": true,
+    "slug": "chernomortransneft",
+    "note": "Черномортранснефть. Есть в «О компании».",
+    "has_media": false
+  },
+  {
+    "name": "ДелоПортс",
+    "short": "ООО \"ДЕЛОПОРТС\"",
+    "city": "Новороссийск",
+    "district": "ЮФО",
+    "role": "Заказчик",
+    "inn": "7706420120",
+    "email": "",
+    "phone": "",
+    "status": "кабинет заведён",
+    "object": "Цеховая окраска металлоконструкций",
+    "local": "ДелоПортс",
+    "sources": [
+      "Компании.xlsx",
+      "локальные папки"
+    ],
+    "cabinet": true,
+    "slug": "delo-ports",
+    "note": "Дело Порт, Новороссийск. Есть видео и фото цеховой окраски.",
+    "has_media": true
+  },
+  {
+    "name": "ИПП",
+    "short": "ООО \"ИПП\"",
+    "city": "Новороссийск",
+    "district": "ЮФО",
+    "role": "Заказчик",
+    "inn": "2315999816",
+    "email": "ipp@novipp.ru",
+    "phone": "",
+    "status": "кабинет заведён",
+    "object": "Резервуарный парк",
+    "local": "",
+    "sources": [
+      "Компании.xlsx"
+    ],
+    "cabinet": true,
+    "slug": "ipp",
+    "note": "ИПП, резервуарный парк. Есть фото сопровождения и контроля толщины.",
+    "has_media": true
+  },
+  {
+    "name": "ООО \"НМТ\"",
+    "short": "ООО \"НМТ\"",
+    "city": "Новороссийск",
+    "district": "ЮФО",
+    "role": "Заказчик",
+    "inn": "",
+    "email": "",
+    "phone": "",
+    "status": "кабинет заведён",
+    "object": "Резервуарный парк",
+    "local": "",
+    "sources": [
+      "Компании.xlsx"
+    ],
+    "cabinet": true,
+    "slug": "nmt",
+    "note": "НМТ. На сайте «О компании» — вместе с ИПП, резервуарный парк.",
+    "has_media": false
+  },
+  {
+    "name": "ПАО \"НМТП\"",
+    "short": "ПАО \"НМТП\"",
+    "city": "Новороссийск",
+    "district": "ЮФО",
+    "role": "Завод",
+    "inn": "",
+    "email": "",
+    "phone": "",
+    "status": "кабинет заведён",
+    "object": "Этажерки НМТП",
+    "local": "НМТП",
+    "sources": [
+      "Компании.xlsx",
+      "локальные папки"
+    ],
+    "cabinet": true,
+    "slug": "nmtp",
+    "note": "Новороссийский морской торговый порт. Есть фото этажерок.",
+    "has_media": true
+  },
+  {
+    "name": "ОТЭКО",
+    "short": "АО \"ОТЭКО\"",
+    "city": "Тамань",
+    "district": "ЮФО",
+    "role": "Заказчик",
+    "inn": "7713321151",
+    "email": "",
+    "phone": "",
+    "status": "кабинет заведён",
+    "object": "Таманский терминал навалочных грузов",
+    "local": "",
+    "sources": [
+      "Компании.xlsx"
+    ],
+    "cabinet": true,
+    "slug": "oteko",
+    "note": "Таманский терминал навалочных грузов. Есть в «О компании».",
+    "has_media": false
+  },
+  {
+    "name": "МАХАЧКАЛИНСКИЙ МОРСКОЙ ТОРГОВЫЙ ПОРТ",
+    "short": "АО \"ММТП\"",
+    "city": "Дагестан",
+    "district": "СКФО",
+    "role": "Заказчик",
+    "inn": "0573008521",
+    "email": "",
+    "phone": "",
+    "status": "карточка в Excel",
+    "object": "",
+    "local": "",
+    "sources": [
+      "Компании.xlsx"
+    ],
+    "cabinet": false,
+    "slug": "",
+    "note": "",
+    "has_media": false
+  },
+  {
+    "name": "НЕВИННОМЫССКИЙ АЗОТ",
+    "short": "АО \"НЕВИННОМЫССКИЙ АЗОТ\"",
+    "city": "Невинномыск",
+    "district": "СКФО",
+    "role": "Заказчик",
+    "inn": "2631015563",
+    "email": "",
+    "phone": "",
+    "status": "карточка в Excel",
+    "object": "",
+    "local": "",
+    "sources": [
+      "Компании.xlsx"
+    ],
+    "cabinet": false,
+    "slug": "",
+    "note": "",
+    "has_media": false
+  },
+  {
+    "name": "НЕВГИДРОМЕТ",
+    "short": "ООО \"НЕВГИДРОМЕТ\"",
+    "city": "Невинномыск",
+    "district": "СКФО",
+    "role": "Завод",
+    "inn": "2631041228",
+    "email": "",
+    "phone": "",
+    "status": "карточка в Excel",
+    "object": "",
+    "local": "",
+    "sources": [
+      "Компании.xlsx"
+    ],
+    "cabinet": false,
+    "slug": "",
+    "note": "",
+    "has_media": false
+  },
+  {
+    "name": "СТАВРОПОЛЬКРАЙВОДОКАНАЛ",
+    "short": "ГУП СК \"СТАВРОПОЛЬКРАЙВОДОКАНАЛ\"",
+    "city": "Ставрополь",
+    "district": "СКФО",
+    "role": "Заказчик",
+    "inn": "2635040105",
+    "email": "",
+    "phone": "",
+    "status": "карточка в Excel",
+    "object": "",
+    "local": "",
+    "sources": [
+      "Компании.xlsx"
+    ],
+    "cabinet": false,
+    "slug": "",
+    "note": "",
+    "has_media": false
+  },
+  {
+    "name": "СТАВРОЛЕН",
+    "short": "ООО \"СТАВРОЛЕН\"",
+    "city": "Ставрополь",
+    "district": "СКФО",
+    "role": "Заказчик",
+    "inn": "2624022320",
+    "email": "stavrolen@lukoil.com",
+    "phone": "+7-86559-25008",
+    "status": "карточка в Excel",
+    "object": "",
+    "local": "",
+    "sources": [
+      "Компании.xlsx"
+    ],
+    "cabinet": false,
+    "slug": "",
+    "note": "",
+    "has_media": false
+  },
+  {
+    "name": "СТАВРОПОЛЬНЕФТЕГАЗ",
+    "short": "СТАВРОПОЛЬНЕФТЕГАЗ",
+    "city": "Ставрополь",
+    "district": "СКФО",
+    "role": "Заказчик",
+    "inn": "",
+    "email": "",
+    "phone": "",
+    "status": "карточка в Excel",
+    "object": "",
+    "local": "",
+    "sources": [
+      "Компании.xlsx"
+    ],
+    "cabinet": false,
+    "slug": "",
+    "note": "",
+    "has_media": false
+  },
+  {
+    "name": "ЮЦСС",
+    "short": "АО \"ЮЦСС\"",
+    "city": "Астрахань",
+    "district": "ЮФО",
+    "role": "Завод",
+    "inn": "3023004670",
+    "email": "",
+    "phone": "",
+    "status": "карточка в Excel",
+    "object": "",
+    "local": "",
+    "sources": [
+      "Компании.xlsx"
+    ],
+    "cabinet": false,
+    "slug": "",
+    "note": "",
+    "has_media": false
+  },
+  {
+    "name": "БУРОВАЯ КОМПАНИЯ ЕВРАЗИЯ ШЕЛЬФ",
+    "short": "ООО \"БКЕ ШЕЛЬФ\"",
+    "city": "Астрахань",
+    "district": "ЮФО",
+    "role": "Заказчик",
+    "inn": "3008011426",
+    "email": "",
+    "phone": "+7 (8512) 391008",
+    "status": "карточка в Excel",
+    "object": "",
+    "local": "",
+    "sources": [
+      "Компании.xlsx"
+    ],
+    "cabinet": false,
+    "slug": "",
+    "note": "",
+    "has_media": false
+  },
+  {
+    "name": "ГИДРОТЕХСЕРВИС",
+    "short": "ООО \"ГИДРОТЕХСЕРВИС\"",
+    "city": "Астрахань",
+    "district": "ЮФО",
+    "role": "Завод",
+    "inn": "3007009270",
+    "email": "",
+    "phone": "",
+    "status": "карточка в Excel",
+    "object": "",
+    "local": "",
+    "sources": [
+      "Компании.xlsx"
+    ],
+    "cabinet": false,
+    "slug": "",
+    "note": "",
+    "has_media": false
+  },
+  {
+    "name": "КИП-ЭЛЕКТРОМОНТАЖ",
+    "short": "ООО \"КИП-ЭЛЕКТРОМОНТАЖ\"",
+    "city": "Астрахань",
+    "district": "ЮФО",
+    "role": "Завод",
+    "inn": "3448057936",
+    "email": "",
+    "phone": "",
+    "status": "карточка в Excel",
+    "object": "",
+    "local": "",
+    "sources": [
+      "Компании.xlsx"
+    ],
+    "cabinet": false,
+    "slug": "",
+    "note": "",
+    "has_media": false
+  },
+  {
+    "name": "ЛУКОЙЛ-НИЖНЕВОЛЖСКНЕФТЬ",
+    "short": "ООО \"ЛУКОЙЛ-НИЖНЕВОЛЖСКНЕФТЬ\"",
+    "city": "Астрахань",
+    "district": "ЮФО",
+    "role": "Заказчик",
+    "inn": "3444070534",
+    "email": "nvn@lukoil.com",
+    "phone": "+78512402720",
+    "status": "карточка в Excel",
+    "object": "",
+    "local": "",
+    "sources": [
+      "Компании.xlsx"
+    ],
+    "cabinet": false,
+    "slug": "",
+    "note": "",
+    "has_media": false
+  },
+  {
+    "name": "ПИКЭНЕРГОТРАНС",
+    "short": "ООО \"ПИКЭНЕРГОТРАНС\"",
+    "city": "Батайск",
+    "district": "ЮФО",
+    "role": "Завод",
+    "inn": "6141053599",
+    "email": "",
+    "phone": "",
+    "status": "карточка в Excel",
+    "object": "",
+    "local": "",
+    "sources": [
+      "Компании.xlsx"
+    ],
+    "cabinet": false,
+    "slug": "",
+    "note": "",
+    "has_media": false
+  },
+  {
+    "name": "ВЗМК",
+    "short": "ЗАО \"ЗМК\"",
+    "city": "Волгоград",
+    "district": "ЮФО",
+    "role": "Завод",
+    "inn": "3461008945",
+    "email": "",
+    "phone": "",
+    "status": "карточка в Excel",
+    "object": "",
+    "local": "",
+    "sources": [
+      "Компании.xlsx"
+    ],
+    "cabinet": false,
+    "slug": "",
+    "note": "",
+    "has_media": false
+  },
+  {
+    "name": "ОТКРЫТОЕ АКЦИОНЕРНОЕ ОБЩЕСТВО \"ВОЛГОГРАДНЕФТЕМАШ\"",
+    "short": "ОАО \"ВОЛГОГРАДНЕФТЕМАШ\"",
+    "city": "Волгоград",
+    "district": "ЮФО",
+    "role": "Завод",
+    "inn": "3446003396",
+    "email": "",
+    "phone": "",
+    "status": "есть локальная папка",
+    "object": "",
+    "local": "Волгограднефтемаш",
+    "sources": [
+      "Компании.xlsx",
+      "локальные папки"
+    ],
+    "cabinet": false,
+    "slug": "",
+    "note": "",
+    "has_media": false
+  },
+  {
+    "name": "ЕВРОХИМ-ВОЛГАКАЛИЙ",
+    "short": "ООО \"ЕВРОХИМ-ВОЛГАКАЛИЙ\"",
+    "city": "Волгоград",
+    "district": "ЮФО",
+    "role": "Заказчик",
+    "inn": "7710473036",
+    "email": "",
+    "phone": "",
+    "status": "карточка в Excel",
+    "object": "",
+    "local": "",
+    "sources": [
+      "Компании.xlsx"
+    ],
+    "cabinet": false,
+    "slug": "",
+    "note": "",
+    "has_media": false
+  },
+  {
+    "name": "ЗАВОД МОНТАЖНЫХ ЗАГОТОВОК",
+    "short": "ООО \"ЗМЗ\"",
+    "city": "Волгоград",
+    "district": "ЮФО",
+    "role": "Завод",
+    "inn": "3448055946",
+    "email": "rysuhina@zmz34.ru",
+    "phone": "",
+    "status": "карточка в Excel",
+    "object": "",
+    "local": "",
+    "sources": [
+      "Компании.xlsx"
+    ],
+    "cabinet": false,
+    "slug": "",
+    "note": "",
+    "has_media": false
+  },
+  {
+    "name": "ЛУКОЙЛ-ВОЛГОГРАДНЕФТЕПЕРЕРАБОТКА",
+    "short": "ООО \"ЛУКОЙЛ-ВОЛГОГРАДНЕФТЕПЕРЕРАБОТКА\"",
+    "city": "Волгоград",
+    "district": "ЮФО",
+    "role": "Заказчик",
+    "inn": "3448017919",
+    "email": "",
+    "phone": "",
+    "status": "карточка в Excel",
+    "object": "",
+    "local": "",
+    "sources": [
+      "Компании.xlsx"
+    ],
+    "cabinet": false,
+    "slug": "",
+    "note": "",
+    "has_media": false
+  },
+  {
+    "name": "ВОЛГОГРАДСКИЙ ЗАВОД РЕЗЕРВУАРНЫХ КОНСТРУКЦИЙ",
+    "short": "ООО ПО \"ВЗРК\"",
+    "city": "Волгоград",
+    "district": "ЮФО",
+    "role": "Завод",
+    "inn": "3435307346",
+    "email": "",
+    "phone": "",
+    "status": "карточка в Excel",
+    "object": "",
+    "local": "",
+    "sources": [
+      "Компании.xlsx"
+    ],
+    "cabinet": false,
+    "slug": "",
+    "note": "",
+    "has_media": false
+  },
+  {
+    "name": "ООО \"КНГК-ИНПЗ\"",
+    "short": "ООО \"КНГК-ИНПЗ\"",
+    "city": "Ильский",
+    "district": "ЮФО",
+    "role": "Заказчик",
+    "inn": "",
+    "email": "",
+    "phone": "",
+    "status": "карточка в Excel",
+    "object": "",
+    "local": "",
+    "sources": [
+      "Компании.xlsx"
+    ],
+    "cabinet": false,
+    "slug": "",
+    "note": "",
+    "has_media": false
+  },
+  {
+    "name": "КАМЫШИНСКИЙ ОПЫТНЫЙ ЗАВОД",
+    "short": "ООО \"КАМЫШИНСКИЙ ОПЫТНЫЙ ЗАВОД\"",
+    "city": "Камышин",
+    "district": "ЮФО",
+    "role": "Завод",
+    "inn": "3436011278",
+    "email": "",
+    "phone": "",
+    "status": "есть локальная папка",
+    "object": "",
+    "local": "Камышинский опытный завод",
+    "sources": [
+      "Компании.xlsx",
+      "локальные папки"
+    ],
+    "cabinet": false,
+    "slug": "",
+    "note": "",
+    "has_media": false
+  },
+  {
+    "name": "Арутюнян Гарий Рафаэлович",
+    "short": "ИП Арутюнян Гарий Рафаэлович",
+    "city": "Краснодар",
+    "district": "ЮФО",
+    "role": "Заказчик",
+    "inn": "231004126628",
+    "email": "",
+    "phone": "",
+    "status": "карточка в Excel",
+    "object": "",
+    "local": "",
+    "sources": [
+      "Компании.xlsx"
+    ],
+    "cabinet": false,
+    "slug": "",
+    "note": "",
+    "has_media": false
+  },
+  {
+    "name": "ЗИСКОН",
+    "short": "ООО \"ЗИСКОН\"",
+    "city": "Краснодар",
+    "district": "ЮФО",
+    "role": "Завод",
+    "inn": "6658437129",
+    "email": "",
+    "phone": "",
+    "status": "карточка в Excel",
+    "object": "",
+    "local": "",
+    "sources": [
+      "Компании.xlsx"
+    ],
+    "cabinet": false,
+    "slug": "",
+    "note": "",
+    "has_media": false
+  },
+  {
+    "name": "КУБАНЬ СТРОЙ",
+    "short": "ООО \"КУБАНЬ СТРОЙ\"",
+    "city": "Краснодар",
+    "district": "ЮФО",
+    "role": "Завод",
+    "inn": "2303024364",
+    "email": "",
+    "phone": "",
+    "status": "карточка в Excel",
+    "object": "",
+    "local": "",
+    "sources": [
+      "Компании.xlsx"
+    ],
+    "cabinet": false,
+    "slug": "",
+    "note": "",
+    "has_media": false
+  },
+  {
+    "name": "ПРОМЫШЛЕННОЕ СТРОИТЕЛЬСТВО",
+    "short": "ООО \"ПРОМЫШЛЕННОЕ СТРОИТЕЛЬСТВО\"",
+    "city": "Краснодар",
+    "district": "ЮФО",
+    "role": "Подрядчик АКЗ",
+    "inn": "2310091770",
+    "email": "",
+    "phone": "",
+    "status": "карточка в Excel",
+    "object": "",
+    "local": "",
+    "sources": [
+      "Компании.xlsx"
+    ],
+    "cabinet": false,
+    "slug": "",
+    "note": "",
+    "has_media": false
+  },
+  {
+    "name": "ООО \"РОМЕКС-КУБАНЬ\"",
+    "short": "ООО \"РОМЕКС-КУБАНЬ\"",
+    "city": "Краснодар",
+    "district": "ЮФО",
+    "role": "Проектировщик",
+    "inn": "",
+    "email": "",
+    "phone": "",
+    "status": "карточка в Excel",
+    "object": "",
+    "local": "",
+    "sources": [
+      "Компании.xlsx"
+    ],
+    "cabinet": false,
+    "slug": "",
+    "note": "",
+    "has_media": false
+  },
+  {
+    "name": "ПРОМСТРОЙ-ГАРАНТ",
+    "short": "ООО \"СК \"ПРОМСТРОЙ-ГАРАНТ\"",
+    "city": "Краснодар",
+    "district": "ЮФО",
+    "role": "Подрядчик АКЗ",
+    "inn": "2308245511",
+    "email": "Alfa-aktiv@bk.ru",
+    "phone": ":8861-212-61-75",
+    "status": "карточка в Excel",
+    "object": "",
+    "local": "",
+    "sources": [
+      "Компании.xlsx"
+    ],
+    "cabinet": false,
+    "slug": "",
+    "note": "",
+    "has_media": false
+  },
+  {
+    "name": "СМУ-ИЗОЛЯЦИЯ",
+    "short": "ООО \"СМУ-ИЗОЛЯЦИЯ\"",
+    "city": "Краснодар",
+    "district": "ЮФО",
+    "role": "Подрядчик АКЗ",
+    "inn": "2308063046",
+    "email": "",
+    "phone": "",
+    "status": "карточка в Excel",
+    "object": "",
+    "local": "",
+    "sources": [
+      "Компании.xlsx"
+    ],
+    "cabinet": false,
+    "slug": "",
+    "note": "",
+    "has_media": false
+  },
+  {
+    "name": "СП ГРУПП",
+    "short": "ООО \"СП ГРУПП\"",
+    "city": "Краснодар",
+    "district": "ЮФО",
+    "role": "Подрядчик АКЗ",
+    "inn": "2311207690",
+    "email": "",
+    "phone": "",
+    "status": "карточка в Excel",
+    "object": "",
+    "local": "",
+    "sources": [
+      "Компании.xlsx"
+    ],
+    "cabinet": false,
+    "slug": "",
+    "note": "",
+    "has_media": false
+  },
+  {
+    "name": "СТАЛЬСТРОЙ-ЮГ",
+    "short": "ООО \"СТАЛЬСТРОЙ-ЮГ\"",
+    "city": "Краснодар",
+    "district": "ЮФО",
+    "role": "Подрядчик АКЗ",
+    "inn": "2309126997",
+    "email": "",
+    "phone": "",
+    "status": "карточка в Excel",
+    "object": "",
+    "local": "",
+    "sources": [
+      "Компании.xlsx"
+    ],
+    "cabinet": false,
+    "slug": "",
+    "note": "",
+    "has_media": false
+  },
+  {
+    "name": "ТИМБЕРГРИН",
+    "short": "ООО \"ТИМБЕРГРИН\"",
+    "city": "Краснодар",
+    "district": "ЮФО",
+    "role": "Завод",
+    "inn": "2368009766",
+    "email": "",
+    "phone": "",
+    "status": "карточка в Excel",
+    "object": "",
+    "local": "",
+    "sources": [
+      "Компании.xlsx"
+    ],
+    "cabinet": false,
+    "slug": "",
+    "note": "",
+    "has_media": false
+  },
+  {
+    "name": "ХИМЗАЩИТА",
+    "short": "ООО \"ХИМЗАЩИТА\"",
+    "city": "Краснодар",
+    "district": "ЮФО",
+    "role": "Подрядчик АКЗ",
+    "inn": "2308035264",
+    "email": "",
+    "phone": "",
+    "status": "карточка в Excel",
+    "object": "",
+    "local": "",
+    "sources": [
+      "Компании.xlsx"
+    ],
+    "cabinet": false,
+    "slug": "",
+    "note": "",
+    "has_media": false
+  },
+  {
+    "name": "ЭНЕРГЕТИКА",
+    "short": "ООО \"ЭНЕРГЕТИКА\"",
+    "city": "Краснодар",
+    "district": "ЮФО",
+    "role": "Генподряд",
+    "inn": "2311060158",
+    "email": "",
+    "phone": "",
+    "status": "карточка в Excel",
+    "object": "",
+    "local": "",
+    "sources": [
+      "Компании.xlsx"
+    ],
+    "cabinet": false,
+    "slug": "",
+    "note": "",
+    "has_media": false
+  },
+  {
+    "name": "ЭНЕРГОНЕФТЕГАЗ-КОМПЛЕКС",
+    "short": "ООО \"ЭНЕРГОНЕФТЕГАЗ-КОМПЛЕКС\"",
+    "city": "Краснодар",
+    "district": "ЮФО",
+    "role": "Генподряд",
+    "inn": "2311246956",
+    "email": "",
+    "phone": "",
+    "status": "карточка в Excel",
+    "object": "",
+    "local": "",
+    "sources": [
+      "Компании.xlsx"
+    ],
+    "cabinet": false,
+    "slug": "",
+    "note": "",
+    "has_media": false
+  },
+  {
+    "name": "ЮГСТРОЙКУБАНЬ",
+    "short": "ООО \"ЮГСТРОЙКУБАНЬ\"",
+    "city": "Краснодар",
+    "district": "ЮФО",
+    "role": "Подрядчик АКЗ",
+    "inn": "2312257397",
+    "email": "",
+    "phone": "",
+    "status": "карточка в Excel",
+    "object": "",
+    "local": "",
+    "sources": [
+      "Компании.xlsx"
+    ],
+    "cabinet": false,
+    "slug": "",
+    "note": "",
+    "has_media": false
+  },
+  {
+    "name": "ЮЖНЫЙ ЗАВОД МЕТАЛЛОКОНСТРУКЦИЙ",
+    "short": "ООО \"ЮЗМ\"",
+    "city": "Краснодар",
+    "district": "ЮФО",
+    "role": "Завод",
+    "inn": "2309166703",
+    "email": "",
+    "phone": "",
+    "status": "карточка в Excel",
+    "object": "",
+    "local": "",
+    "sources": [
+      "Компании.xlsx"
+    ],
+    "cabinet": false,
+    "slug": "",
+    "note": "",
+    "has_media": false
+  },
+  {
+    "name": "ЮГТЕРМИНАЛПРОЕКТ",
+    "short": "ООО \"ЮТП\"",
+    "city": "Краснодар",
+    "district": "ЮФО",
+    "role": "Проектировщик",
+    "inn": "7705893589",
+    "email": "",
+    "phone": "",
+    "status": "карточка в Excel",
+    "object": "",
+    "local": "",
+    "sources": [
+      "Компании.xlsx"
+    ],
+    "cabinet": false,
+    "slug": "",
+    "note": "",
+    "has_media": false
+  },
+  {
+    "name": "ГРУППА КОМПАНИЙ ИНТЕРМЕТАЛЛ",
+    "short": "ООО ГК \"ИНТЕРМЕТАЛЛ\"",
+    "city": "Краснодар",
+    "district": "ЮФО",
+    "role": "Генподряд",
+    "inn": "2311315575",
+    "email": "",
+    "phone": "",
+    "status": "карточка в Excel",
+    "object": "",
+    "local": "",
+    "sources": [
+      "Компании.xlsx"
+    ],
+    "cabinet": false,
+    "slug": "",
+    "note": "",
+    "has_media": false
+  },
+  {
+    "name": "Руки Мастера",
+    "short": "Руки Мастера",
+    "city": "Краснодар",
+    "district": "ЮФО",
+    "role": "Подрядчик АКЗ",
+    "inn": "",
+    "email": "",
+    "phone": "",
+    "status": "карточка в Excel",
+    "object": "",
+    "local": "",
+    "sources": [
+      "Компании.xlsx"
+    ],
+    "cabinet": false,
+    "slug": "",
+    "note": "",
+    "has_media": false
+  },
+  {
+    "name": "МОРСКОЙ НЕФТЯНОЙ ТЕРМИНАЛ",
+    "short": "АО \"МОРСКОЙ НЕФТЯНОЙ ТЕРМИНАЛ\"",
+    "city": "Крым",
+    "district": "ЮФО",
+    "role": "Заказчик",
+    "inn": "9108123533",
+    "email": "",
+    "phone": "",
+    "status": "карточка в Excel",
+    "object": "",
+    "local": "",
+    "sources": [
+      "Компании.xlsx"
+    ],
+    "cabinet": false,
+    "slug": "",
+    "note": "",
+    "has_media": false
+  },
+  {
+    "name": "ФГКУ КОМБИНАТ \"ГВАРДЕЙСКИЙ\" РОСРЕЗЕРВА",
+    "short": "ФГКУ КОМБИНАТ \"ГВАРДЕЙСКИЙ\" РОСРЕЗЕРВА",
+    "city": "Крым",
+    "district": "ЮФО",
+    "role": "Заказчик",
+    "inn": "9107000553",
+    "email": "",
+    "phone": "",
+    "status": "карточка в Excel",
+    "object": "",
+    "local": "",
+    "sources": [
+      "Компании.xlsx"
+    ],
+    "cabinet": false,
+    "slug": "",
+    "note": "",
+    "has_media": false
+  },
+  {
+    "name": "КСК",
+    "short": "АО \"КСК\"",
+    "city": "Новороссийск",
+    "district": "ЮФО",
+    "role": "Заказчик",
+    "inn": "2315006923",
+    "email": "",
+    "phone": "",
+    "status": "карточка в Excel",
+    "object": "",
+    "local": "",
+    "sources": [
+      "Компании.xlsx"
+    ],
+    "cabinet": false,
+    "slug": "",
+    "note": "",
+    "has_media": false
+  },
+  {
+    "name": "НОВОРОСЛЕСЭКСПОРТ",
+    "short": "АО \"НЛЭ\"",
+    "city": "Новороссийск",
+    "district": "ЮФО",
+    "role": "Заказчик",
+    "inn": "2315014794",
+    "email": "referent@nle.ru",
+    "phone": "",
+    "status": "карточка в Excel",
+    "object": "",
+    "local": "",
+    "sources": [
+      "Компании.xlsx"
+    ],
+    "cabinet": false,
+    "slug": "",
+    "note": "",
+    "has_media": false
+  },
+  {
+    "name": "БУНКЕРОВОЧНАЯ КОМПАНИЯ ЛЕСНОЙ ПОРТ",
+    "short": "БУНКЕРОВОЧНАЯ КОМПАНИЯ ЛЕСНОЙ ПОРТ",
+    "city": "Новороссийск",
+    "district": "ЮФО",
+    "role": "Заказчик",
+    "inn": "2315086485",
+    "email": "",
+    "phone": "",
+    "status": "карточка в Excel",
+    "object": "",
+    "local": "",
+    "sources": [
+      "Компании.xlsx"
+    ],
+    "cabinet": false,
+    "slug": "",
+    "note": "",
+    "has_media": false
+  },
+  {
+    "name": "ИП \"Мехов\"",
+    "short": "ИП \"Мехов\"",
+    "city": "Новороссийск",
+    "district": "ЮФО",
+    "role": "Подрядчик АКЗ",
+    "inn": "",
+    "email": "",
+    "phone": "",
+    "status": "карточка в Excel",
+    "object": "",
+    "local": "",
+    "sources": [
+      "Компании.xlsx"
+    ],
+    "cabinet": false,
+    "slug": "",
+    "note": "",
+    "has_media": false
+  },
+  {
+    "name": "АССТЕК-Н",
+    "short": "ООО \"АССТЕК-Н\"",
+    "city": "Новороссийск",
+    "district": "ЮФО",
+    "role": "Генподряд",
+    "inn": "2315997304",
+    "email": "",
+    "phone": "",
+    "status": "карточка в Excel",
+    "object": "",
+    "local": "",
+    "sources": [
+      "Компании.xlsx"
+    ],
+    "cabinet": false,
+    "slug": "",
+    "note": "",
+    "has_media": false
+  },
+  {
+    "name": "НИИ ТЕХНОЛОГИИ",
+    "short": "ООО \"НИИТ\"",
+    "city": "Новороссийск",
+    "district": "ЮФО",
+    "role": "Генподряд",
+    "inn": "2315221977",
+    "email": "",
+    "phone": "",
+    "status": "карточка в Excel",
+    "object": "",
+    "local": "",
+    "sources": [
+      "Компании.xlsx"
+    ],
+    "cabinet": false,
+    "slug": "",
+    "note": "",
+    "has_media": false
+  },
+  {
+    "name": "НОВОРОСТЕХФЛОТ",
+    "short": "ООО \"НОВОРОСТЕХФЛОТ\"",
+    "city": "Новороссийск",
+    "district": "ЮФО",
+    "role": "Подрядчик АКЗ",
+    "inn": "2315114799",
+    "email": "",
+    "phone": "",
+    "status": "карточка в Excel",
+    "object": "",
+    "local": "",
+    "sources": [
+      "Компании.xlsx"
+    ],
+    "cabinet": false,
+    "slug": "",
+    "note": "",
+    "has_media": false
+  },
+  {
+    "name": "ПОРТКОМПЛЕКТИМПЕКС",
+    "short": "ООО \"ПОРТКОМПЛЕКТИМПЕКС\"",
+    "city": "Новороссийск",
+    "district": "ЮФО",
+    "role": "Генподряд",
+    "inn": "2315024633",
+    "email": "",
+    "phone": "",
+    "status": "карточка в Excel",
+    "object": "",
+    "local": "",
+    "sources": [
+      "Компании.xlsx"
+    ],
+    "cabinet": false,
+    "slug": "",
+    "note": "",
+    "has_media": false
+  },
+  {
+    "name": "ПРОМ ЭКСПЕРТ",
+    "short": "ООО \"ПРОМ ЭКСПЕРТ\"",
+    "city": "Новороссийск",
+    "district": "ЮФО",
+    "role": "Подрядчик АКЗ",
+    "inn": "2308111395",
+    "email": "",
+    "phone": "",
+    "status": "карточка в Excel",
+    "object": "",
+    "local": "",
+    "sources": [
+      "Компании.xlsx"
+    ],
+    "cabinet": false,
+    "slug": "",
+    "note": "",
+    "has_media": false
+  },
+  {
+    "name": "СК-БАРКА",
+    "short": "ООО \"СК-БАРКА\"",
+    "city": "Новороссийск",
+    "district": "ЮФО",
+    "role": "Подрядчик АКЗ",
+    "inn": "2315219865",
+    "email": "",
+    "phone": "89883313855",
+    "status": "карточка в Excel",
+    "object": "",
+    "local": "",
+    "sources": [
+      "Компании.xlsx"
+    ],
+    "cabinet": false,
+    "slug": "",
+    "note": "",
+    "has_media": false
+  },
+  {
+    "name": "ПУБЛИЧНОЕ АКЦИОНЕРНОЕ ОБЩЕСТВО \"НОВОРОССИЙСКИЙ КОМБИНАТ ХЛЕБОПРОДУКТОВ\"",
+    "short": "ПАО \"НКХП\"",
+    "city": "Новороссийск",
+    "district": "ЮФО",
+    "role": "Заказчик",
+    "inn": "2315014748",
+    "email": "",
+    "phone": "",
+    "status": "карточка в Excel",
+    "object": "",
+    "local": "",
+    "sources": [
+      "Компании.xlsx"
+    ],
+    "cabinet": false,
+    "slug": "",
+    "note": "",
+    "has_media": false
+  },
+  {
+    "name": "ТОРГОВЫЙ ДОМ ЮГСНАБ",
+    "short": "ТД \"ЮГСНАБ\" (ООО)",
+    "city": "Новороссийск",
+    "district": "ЮФО",
+    "role": "Генподряд",
+    "inn": "2321015250",
+    "email": "",
+    "phone": "",
+    "status": "карточка в Excel",
+    "object": "",
+    "local": "",
+    "sources": [
+      "Компании.xlsx"
+    ],
+    "cabinet": false,
+    "slug": "",
+    "note": "",
+    "has_media": false
+  },
+  {
+    "name": "НОВОШАХТИНСКИЙ ЗАВОД НЕФТЕПРОДУКТОВ",
+    "short": "АО \"НЗНП\"",
+    "city": "Ростов-на-Дону",
+    "district": "ЮФО",
+    "role": "Заказчик",
+    "inn": "6151012111",
+    "email": "",
+    "phone": "",
+    "status": "карточка в Excel",
+    "object": "",
+    "local": "",
+    "sources": [
+      "Компании.xlsx"
+    ],
+    "cabinet": false,
+    "slug": "",
+    "note": "",
+    "has_media": false
+  },
+  {
+    "name": "Баркас",
+    "short": "Баркас",
+    "city": "Ростов-на-Дону",
+    "district": "ЮФО",
+    "role": "Подрядчик АКЗ",
+    "inn": "",
+    "email": "",
+    "phone": "",
+    "status": "карточка в Excel",
+    "object": "",
+    "local": "",
+    "sources": [
+      "Компании.xlsx"
+    ],
+    "cabinet": false,
+    "slug": "",
+    "note": "",
+    "has_media": false
+  },
+  {
+    "name": "ЮЖТЕХМОНТАЖ",
+    "short": "ЗАО \"ЮЖТЕХМОНТАЖ\"",
+    "city": "Ростов-на-Дону",
+    "district": "ЮФО",
+    "role": "Генподряд",
+    "inn": "6164100492",
+    "email": "",
+    "phone": "",
+    "status": "карточка в Excel",
+    "object": "",
+    "local": "",
+    "sources": [
+      "Компании.xlsx"
+    ],
+    "cabinet": false,
+    "slug": "",
+    "note": "",
+    "has_media": false
+  },
+  {
+    "name": "ЛАЗЕР-КМ",
+    "short": "ООО \"ЛАЗЕР-КМ\"",
+    "city": "Ростов-на-Дону",
+    "district": "ЮФО",
+    "role": "Клиент",
+    "inn": "6154138867",
+    "email": "laser.kmn@gmail.com",
+    "phone": "",
+    "status": "карточка в Excel",
+    "object": "",
+    "local": "",
+    "sources": [
+      "Компании.xlsx"
+    ],
+    "cabinet": false,
+    "slug": "",
+    "note": "",
+    "has_media": false
+  },
+  {
+    "name": "ЛЕГИОН СТРОЙ",
+    "short": "ООО \"ЛЕГИОН СТРОЙ\"",
+    "city": "Ростов-на-Дону",
+    "district": "ЮФО",
+    "role": "Завод",
+    "inn": "6165229428",
+    "email": "",
+    "phone": "",
+    "status": "есть локальная папка",
+    "object": "",
+    "local": "Легион Ростов / Легион Строй",
+    "sources": [
+      "Компании.xlsx",
+      "локальные папки"
+    ],
+    "cabinet": false,
+    "slug": "",
+    "note": "",
+    "has_media": false
+  },
+  {
+    "name": "МИАЛ-ДОН",
+    "short": "ООО \"МИАЛ-ДОН\"",
+    "city": "Ростов-на-Дону",
+    "district": "ЮФО",
+    "role": "Завод",
+    "inn": "6166095953",
+    "email": "",
+    "phone": "",
+    "status": "карточка в Excel",
+    "object": "",
+    "local": "",
+    "sources": [
+      "Компании.xlsx"
+    ],
+    "cabinet": false,
+    "slug": "",
+    "note": "",
+    "has_media": false
+  },
+  {
+    "name": "РОСТОВСКИЙ ЗАВОД РЕЗЕРВУАРНЫХ КОНСТРУКЦИЙ-ЮТМ",
+    "short": "ООО \"РЗРК-ЮТМ\"",
+    "city": "Ростов-на-Дону",
+    "district": "ЮФО",
+    "role": "Генподряд",
+    "inn": "6166091660",
+    "email": "",
+    "phone": "",
+    "status": "карточка в Excel",
+    "object": "",
+    "local": "",
+    "sources": [
+      "Компании.xlsx"
+    ],
+    "cabinet": false,
+    "slug": "",
+    "note": "",
+    "has_media": false
+  },
+  {
+    "name": "СИЛВЕЙ",
+    "short": "ООО \"СИЛВЕЙ\"",
+    "city": "Ростов-на-Дону",
+    "district": "ЮФО",
+    "role": "Завод",
+    "inn": "6154137310",
+    "email": "",
+    "phone": "",
+    "status": "карточка в Excel",
+    "object": "",
+    "local": "",
+    "sources": [
+      "Компании.xlsx"
+    ],
+    "cabinet": false,
+    "slug": "",
+    "note": "",
+    "has_media": false
+  },
+  {
+    "name": "СНАБ-ЭНЕРГО ЦЕНТР",
+    "short": "ООО \"СНАБ-ЭНЕРГО ЦЕНТР\"",
+    "city": "Ростов-на-Дону",
+    "district": "ЮФО",
+    "role": "Генподряд",
+    "inn": "6101004612",
+    "email": "",
+    "phone": "",
+    "status": "карточка в Excel",
+    "object": "",
+    "local": "",
+    "sources": [
+      "Компании.xlsx"
+    ],
+    "cabinet": false,
+    "slug": "",
+    "note": "",
+    "has_media": false
+  },
+  {
+    "name": "СТРОЙМОНТАЖ",
+    "short": "ООО \"СТРОЙМОНТАЖ\"",
+    "city": "Ростов-на-Дону",
+    "district": "ЮФО",
+    "role": "Генподряд",
+    "inn": "6165193010",
+    "email": "info@strojmontazh.com",
+    "phone": "",
+    "status": "карточка в Excel",
+    "object": "",
+    "local": "",
+    "sources": [
+      "Компании.xlsx"
+    ],
+    "cabinet": false,
+    "slug": "",
+    "note": "",
+    "has_media": false
+  },
+  {
+    "name": "ТАГГЕРТ",
+    "short": "ООО \"ТАГГЕРТ\"",
+    "city": "Ростов-на-Дону",
+    "district": "ЮФО",
+    "role": "Завод",
+    "inn": "5029105301",
+    "email": "",
+    "phone": "",
+    "status": "карточка в Excel",
+    "object": "",
+    "local": "",
+    "sources": [
+      "Компании.xlsx"
+    ],
+    "cabinet": false,
+    "slug": "",
+    "note": "",
+    "has_media": false
+  },
+  {
+    "name": "ФОСАГРО-ДОН",
+    "short": "ООО \"ФОСАГРО-ДОН\"",
+    "city": "Ростов-на-Дону",
+    "district": "ЮФО",
+    "role": "Заказчик",
+    "inn": "6161032815",
+    "email": "",
+    "phone": "",
+    "status": "карточка в Excel",
+    "object": "",
+    "local": "",
+    "sources": [
+      "Компании.xlsx"
+    ],
+    "cabinet": false,
+    "slug": "",
+    "note": "",
+    "has_media": false
+  },
+  {
+    "name": "ЦЕНТР ИННОВАЦИОННЫХ ТЕХНОЛОГИЙ И МАТЕРИАЛОВ",
+    "short": "ООО \"ЦИТ-М\"",
+    "city": "Ростов-на-Дону",
+    "district": "ЮФО",
+    "role": "Заказчик",
+    "inn": "6143082595",
+    "email": "",
+    "phone": "",
+    "status": "карточка в Excel",
+    "object": "",
+    "local": "",
+    "sources": [
+      "Компании.xlsx"
+    ],
+    "cabinet": false,
+    "slug": "",
+    "note": "",
+    "has_media": false
+  },
+  {
+    "name": "ЮГ-ЭКОАУДИТ",
+    "short": "ООО \"ЮГ-ЭКОАУДИТ\"",
+    "city": "Ростов-на-Дону",
+    "district": "ЮФО",
+    "role": "Проектировщик",
+    "inn": "6164110317",
+    "email": "",
+    "phone": "",
+    "status": "карточка в Excel",
+    "object": "",
+    "local": "",
+    "sources": [
+      "Компании.xlsx"
+    ],
+    "cabinet": false,
+    "slug": "",
+    "note": "",
+    "has_media": false
+  },
+  {
+    "name": "ЮТЭК",
+    "short": "ООО \"ЮТЭК\"",
+    "city": "Ростов-на-Дону",
+    "district": "ЮФО",
+    "role": "Заказчик",
+    "inn": "6144014559",
+    "email": "",
+    "phone": "",
+    "status": "карточка в Excel",
+    "object": "",
+    "local": "",
+    "sources": [
+      "Компании.xlsx"
+    ],
+    "cabinet": false,
+    "slug": "",
+    "note": "",
+    "has_media": false
+  },
+  {
+    "name": "ГЛОБАЛ-МАРИН",
+    "short": "ООО \"ГЛОБАЛ-МАРИН\"",
+    "city": "Севастополь",
+    "district": "ЮФО",
+    "role": "Клиент",
+    "inn": "9204004458",
+    "email": "",
+    "phone": "+ 78692 999 709",
+    "status": "карточка в Excel",
+    "object": "",
+    "local": "",
+    "sources": [
+      "Компании.xlsx"
+    ],
+    "cabinet": false,
+    "slug": "",
+    "note": "",
+    "has_media": false
+  },
+  {
+    "name": "СЛАВЯНСК ЭКО",
+    "short": "ООО \"СЛАВЯНСК ЭКО\"",
+    "city": "Славянск-на-Кубани",
+    "district": "ЮФО",
+    "role": "Заказчик",
+    "inn": "2370000496",
+    "email": "",
+    "phone": "",
+    "status": "карточка в Excel",
+    "object": "",
+    "local": "",
+    "sources": [
+      "Компании.xlsx"
+    ],
+    "cabinet": false,
+    "slug": "",
+    "note": "",
+    "has_media": false
+  },
+  {
+    "name": "ГИДРОТЕХНИКА",
+    "short": "ООО \"ГИДРОТЕХНИКА\"",
+    "city": "Сочи",
+    "district": "ЮФО",
+    "role": "Проектировщик",
+    "inn": "2319044461",
+    "email": "",
+    "phone": "",
+    "status": "карточка в Excel",
+    "object": "",
+    "local": "",
+    "sources": [
+      "Компании.xlsx"
+    ],
+    "cabinet": false,
+    "slug": "",
+    "note": "",
+    "has_media": false
+  },
+  {
+    "name": "ТАМАНЬНЕФТЕГАЗ",
+    "short": "АО \"ТНГ\"",
+    "city": "Тамань",
+    "district": "ЮФО",
+    "role": "Заказчик",
+    "inn": "2352013076",
+    "email": "",
+    "phone": "",
+    "status": "карточка в Excel",
+    "object": "",
+    "local": "",
+    "sources": [
+      "Компании.xlsx"
+    ],
+    "cabinet": false,
+    "slug": "",
+    "note": "",
+    "has_media": false
+  },
+  {
+    "name": "МОРСКОЙ ТЕРМИНАЛ ТАМАНЬ",
+    "short": "ООО \"МОРСКОЙ ТЕРМИНАЛ \"ТАМАНЬ\"",
+    "city": "Тамань",
+    "district": "ЮФО",
+    "role": "Заказчик",
+    "inn": "2352044518",
+    "email": "",
+    "phone": "",
+    "status": "карточка в Excel",
+    "object": "",
+    "local": "",
+    "sources": [
+      "Компании.xlsx"
+    ],
+    "cabinet": false,
+    "slug": "",
+    "note": "",
+    "has_media": false
+  },
+  {
+    "name": "ТАМАНСКИЙ ЗАВОД ПЕРЕРАБОТКИ МАСЛОСЕМЯН",
+    "short": "ООО \"ТЗПМ\"",
+    "city": "Тамань",
+    "district": "ЮФО",
+    "role": "Заказчик",
+    "inn": "2352049724",
+    "email": "",
+    "phone": "+7 (918) 057-02-56, +7 (989) 197-54-43",
+    "status": "карточка в Excel",
+    "object": "",
+    "local": "",
+    "sources": [
+      "Компании.xlsx"
+    ],
+    "cabinet": false,
+    "slug": "",
+    "note": "",
+    "has_media": false
+  },
+  {
+    "name": "РН-ТУАПСИНСКИЙ НЕФТЕПЕРЕРАБАТЫВАЮЩИЙ ЗАВОД",
+    "short": "ООО \"РН-ТУАПСИНСКИЙ НПЗ\"",
+    "city": "Туапсе",
+    "district": "ЮФО",
+    "role": "Заказчик",
+    "inn": "2365004375",
+    "email": "sekretary@rn-tnpz.ru",
+    "phone": "",
+    "status": "карточка в Excel",
+    "object": "",
+    "local": "",
+    "sources": [
+      "Компании.xlsx"
+    ],
+    "cabinet": false,
+    "slug": "",
+    "note": "",
+    "has_media": false
+  }
+]

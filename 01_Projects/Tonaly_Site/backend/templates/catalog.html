@@ -1,0 +1,225 @@
+{% extends "base.html" %}
+{% block title %}Каталог | Tonal{% endblock %}
+{% block content %}
+<section class="page-intro">
+    <div class="container">
+        <h1>Каталог</h1>
+        <p>Материалы Rem Color, Akzo Nobel, TALATU и окрасочное оборудование. Схемы покрытий — в <a href="/applications">Применении</a>. Инспекция и работы по АКЗ — в <a href="/services">Сервисах</a>.</p>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <div class="services-overview services-overview--4 catalog-hub">
+            <a href="/catalog?brand=akzo" class="services-overview-card">
+                <h2>Akzo Nobel</h2>
+                <p>{{ akzo_count }} позиций: Intergard, Interzone, Interthane и другие семейства.</p>
+            </a>
+            <a href="/catalog?brand=rem-color" class="services-overview-card">
+                <h2>Rem Color</h2>
+                <p>{{ rem_count }} позиций: эпоксид, полиуретан, цинк — рабочие системы под объект.</p>
+            </a>
+            <a href="/catalog?brand=talatu" class="services-overview-card">
+                <h2>TALATU</h2>
+                <p>{{ talatu_count }} позиции: термостойкие грунт-эмали THERM 5510 и THERM SIO 8520.</p>
+            </a>
+            <a href="/catalog?brand=equipment" class="services-overview-card">
+                <h2>Оборудование</h2>
+                <p>{{ equipment_count }} позиций: пистолеты, сопла XHD, фильтры и рукава.</p>
+            </a>
+        </div>
+        <div class="catalog-brand-tabs">
+            <button class="catalog-brand-tab active" type="button" data-brand="rem-color">Rem Color ({{ rem_count }})</button>
+            <button class="catalog-brand-tab" type="button" data-brand="akzo">Akzo Nobel ({{ akzo_count }})</button>
+            <button class="catalog-brand-tab" type="button" data-brand="talatu">TALATU ({{ talatu_count }})</button>
+            <button class="catalog-brand-tab" type="button" data-brand="equipment">Оборудование ({{ equipment_count }})</button>
+        </div>
+
+            <div id="brand-rem-color" class="catalog-brand-panel">
+                {% for group in rem_groups %}
+                <section class="brand-group" id="rem-{{ group.key }}">
+                    <header class="brand-group-head">
+                        <h2>{{ group.title }}</h2>
+                        {% if group.description %}<p>{{ group.description }}</p>{% endif %}
+                    </header>
+                    <div class="catalog-list">
+                        {% for product in group.products %}
+                        <article class="catalog-row">
+                            <a href="/product/{{ product.slug }}" class="catalog-row-link">
+                                <span class="catalog-row-photo">
+                                    <img src="/img/{{ product.slug }}-can.png" alt="">
+                                </span>
+                                <span class="catalog-row-main">
+                                    <span class="catalog-row-top">
+                                        <strong class="catalog-row-name">{{ product.name }}</strong>
+                                        {% if product.badge %}<span class="chip">{{ product.badge }}</span>{% endif %}
+                                    </span>
+                                    <span class="catalog-row-desc">{{ product.short_desc }}</span>
+                                    <span class="catalog-row-meta">
+                                        <span>{{ product.type }}</span>
+                                        {% if product.binder %}<span>{{ product.binder }}</span>{% endif %}
+                                        {% if product.purpose %}<span>{{ product.purpose }}</span>{% endif %}
+                                    </span>
+                                </span>
+                            </a>
+                            <div class="catalog-row-actions">
+                                <a href="/docs/{{ product.tds_file }}" class="catalog-row-tds" target="_blank" rel="noopener">TDS</a>
+                                <a href="/product/{{ product.slug }}" class="catalog-row-more">→</a>
+                            </div>
+                        </article>
+                        {% endfor %}
+                    </div>
+                </section>
+                {% endfor %}
+            </div>
+
+            <div id="brand-akzo" class="catalog-brand-panel is-hidden">
+                {% if akzo_groups %}
+                    {% for group in akzo_groups %}
+                    <section class="brand-group" id="akzo-{{ group.key }}">
+                        <header class="brand-group-head">
+                            <h2>{{ group.title }}</h2>
+                            {% if group.description %}<p>{{ group.description }}</p>{% endif %}
+                        </header>
+                        <div class="catalog-list catalog-list--akzo">
+                            {% for product in group.products %}
+                            <article class="catalog-row catalog-row--akzo">
+                                <div class="catalog-akzo-main">
+                                    <a href="/product/{{ product.slug }}" class="catalog-akzo-line">{{ product.name }}</a>
+                                    {% if product.analog %}
+                                    <span class="catalog-akzo-chips">
+                                        <a href="/product/{{ product.analog.rem_slug }}" class="catalog-akzo-analog" title="Аналог {{ product.analog.brand_label or 'Rem Color' }}">
+                                            <span>аналог</span>{{ product.analog.rem_short }}
+                                        </a>
+                                        {% for extra in product.analog.also %}
+                                        <a href="/product/{{ extra.rem_slug }}" class="catalog-akzo-analog catalog-akzo-analog--quiet" title="{{ extra.brand_label or 'Rem Color' }}">
+                                            {{ extra.rem_short }}
+                                        </a>
+                                        {% endfor %}
+                                    </span>
+                                    {% endif %}
+                                </div>
+                                <div class="catalog-row-actions">
+                                    <a href="/docs/{{ product.tds_file }}" class="catalog-row-tds" target="_blank" rel="noopener">TDS</a>
+                                    <a href="/product/{{ product.slug }}" class="catalog-row-more">→</a>
+                                </div>
+                            </article>
+                            {% endfor %}
+                        </div>
+                    </section>
+                    {% endfor %}
+                {% else %}
+                    <p class="section-lead catalog-empty">Каталог Akzo Nobel в процессе переноса. Следующий этап — топ-семейства INTERGARD, INTERZONE, INTERTHANE и др.</p>
+                {% endif %}
+            </div>
+
+            <div id="brand-talatu" class="catalog-brand-panel is-hidden">
+                <p class="section-lead catalog-panel-lead">Термостойкие грунт-эмали TALATU: силикон до +600&nbsp;°C и силикон-акрил до +300&nbsp;°C.</p>
+                {% for group in talatu_groups %}
+                <section class="brand-group" id="talatu-{{ group.key }}">
+                    <header class="brand-group-head">
+                        <h2>{{ group.title }}</h2>
+                        {% if group.description %}<p>{{ group.description }}</p>{% endif %}
+                    </header>
+                    <div class="catalog-list">
+                        {% for product in group.products %}
+                        <article class="catalog-row">
+                            <a href="/product/{{ product.slug }}" class="catalog-row-link">
+                                <span class="catalog-row-photo">
+                                    <img src="/img/{{ product.slug }}-can.png" alt="">
+                                </span>
+                                <span class="catalog-row-main">
+                                    <span class="catalog-row-top">
+                                        <strong class="catalog-row-name">{{ product.name }}</strong>
+                                        {% if product.badge %}<span class="chip">{{ product.badge }}</span>{% endif %}
+                                    </span>
+                                    <span class="catalog-row-desc">{{ product.short_desc }}</span>
+                                    <span class="catalog-row-meta">
+                                        <span>{{ product.type }}</span>
+                                        {% if product.binder %}<span>{{ product.binder }}</span>{% endif %}
+                                        {% if product.purpose %}<span>{{ product.purpose }}</span>{% endif %}
+                                    </span>
+                                </span>
+                            </a>
+                            <div class="catalog-row-actions">
+                                <a href="/docs/{{ product.tds_file }}" class="catalog-row-tds" target="_blank" rel="noopener">TDS</a>
+                                <a href="/product/{{ product.slug }}" class="catalog-row-more">→</a>
+                            </div>
+                        </article>
+                        {% endfor %}
+                    </div>
+                </section>
+                {% endfor %}
+            </div>
+
+            <div id="brand-equipment" class="catalog-brand-panel is-hidden">
+                <p class="section-lead catalog-panel-lead">Пистолет HANDOK AH7000 (аналог Graco XTR7), оригинальные сопла XHD и расходники: фильтры в ручку, фильтр насоса 244067, рукав 1/2&Prime; на 500&nbsp;бар. Сопло и комплект подтверждаем под материал и объект.</p>
+                {% for group in equipment_groups %}
+                <section class="brand-group" id="eq-{{ group.key }}">
+                    <header class="brand-group-head">
+                        <h2>{{ group.title }}</h2>
+                        {% if group.description %}<p>{{ group.description }}</p>{% endif %}
+                    </header>
+                    <div class="catalog-list">
+                        {% for product in group.products %}
+                        <article class="catalog-row">
+                            <a href="/product/{{ product.slug }}" class="catalog-row-link{% if not product.has_image %} catalog-row-link--no-img{% endif %}">
+                                {% if product.has_image %}
+                                <span class="catalog-row-photo">
+                                    <img src="{{ product.image }}" alt="">
+                                </span>
+                                {% endif %}
+                                <span class="catalog-row-main">
+                                    <span class="catalog-row-top">
+                                        <strong class="catalog-row-name">{{ product.name }}</strong>
+                                        {% if product.badge %}<span class="chip">{{ product.badge }}</span>{% endif %}
+                                    </span>
+                                    <span class="catalog-row-desc">{{ product.short_desc }}</span>
+                                    <span class="catalog-row-meta">
+                                        {% if product.family %}<span>{{ product.family }}</span>{% endif %}
+                                        {% if product.type %}<span>{{ product.type }}</span>{% endif %}
+                                        {% if product.part_no %}<span>{{ product.part_no }}</span>{% endif %}
+                                        {% if product.purpose %}<span>{{ product.purpose }}</span>{% endif %}
+                                    </span>
+                                </span>
+                            </a>
+                            <div class="catalog-row-actions">
+                                {% if product.tds_file %}
+                                <a href="/docs/{{ product.tds_file }}" class="catalog-row-tds" target="_blank" rel="noopener">PDF</a>
+                                {% endif %}
+                                <a href="/product/{{ product.slug }}" class="catalog-row-more">→</a>
+                            </div>
+                        </article>
+                        {% endfor %}
+                    </div>
+                </section>
+                {% endfor %}
+            </div>
+    </div>
+</section>
+<script>
+    document.querySelectorAll('.catalog-brand-tab').forEach(tab => {
+        tab.addEventListener('click', function() {
+            document.querySelectorAll('.catalog-brand-tab').forEach(t => t.classList.remove('active'));
+            this.classList.add('active');
+            const brandId = 'brand-' + this.dataset.brand;
+            document.querySelectorAll('.catalog-brand-panel').forEach(p => {
+                p.classList.toggle('is-hidden', p.id !== brandId);
+            });
+            const url = new URL(window.location);
+            url.searchParams.set('brand', this.dataset.brand);
+            history.replaceState(null, '', url.pathname + url.search);
+        });
+    });
+
+    // Открываем вкладку по ?brand= из URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const brandParam = urlParams.get('brand');
+    if (brandParam) {
+        const targetTab = document.querySelector('.catalog-brand-tab[data-brand="' + brandParam + '"]');
+        if (targetTab) {
+            targetTab.click();
+        }
+    }
+</script>
+{% endblock %}

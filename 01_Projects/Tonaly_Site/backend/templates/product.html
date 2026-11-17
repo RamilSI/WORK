@@ -1,0 +1,172 @@
+{% extends "base.html" %}
+{% block title %}{{ product.name }} | Tonal{% endblock %}
+{% block content %}
+<section class="section">
+    <div class="container">
+        <nav class="breadcrumb">
+            <a href="/">Главная</a> / <a href="/catalog{% if product.brand == 'akzo' %}?brand=akzo{% elif product.brand == 'talatu' %}?brand=talatu{% elif product.kind == 'equipment' %}?brand=equipment{% endif %}">Каталог</a> / {{ product.name }}
+        </nav>
+
+        <div class="product-head">
+            {% if product.badge %}<span class="chip">{{ product.badge }}</span>{% endif %}
+            <h1>{{ product.name }}</h1>
+
+            {% if product.short_desc or product.body_paragraphs or product.analog %}
+            <div class="product-description-panel">
+                {% if product.short_desc %}
+                <p class="product-lead">{{ product.short_desc }}</p>
+                {% endif %}
+                {% if product.body_paragraphs %}
+                <div class="product-body">
+                    {% for para in product.body_paragraphs %}
+                    <p>{{ para }}</p>
+                    {% endfor %}
+                </div>
+                {% endif %}
+                {% if product.analog %}
+                <div class="product-analog">
+                    <p class="product-analog-notice">
+                        {% if product.analog.notice %}
+                        <span class="product-analog-prefix">{{ product.analog.notice }}</span>
+                        {% else %}
+                        <span class="product-analog-prefix">Внимание! протестирован аналог:</span>
+                        {% endif %}
+                        <a href="/product/{{ product.analog.rem_slug }}">{{ product.analog.link_label }}</a>
+                        <span class="product-analog-brand">({{ product.analog.brand_label or 'REM COLOR' }})</span>
+                    </p>
+                    {% if product.analog.note %}
+                    <p class="product-analog-note">{{ product.analog.note }}</p>
+                    {% endif %}
+                    {% for extra in product.analog.also %}
+                    <p class="product-analog-also">
+                        <a href="/product/{{ extra.rem_slug }}">{{ extra.link_label }}</a>
+                        <span class="product-analog-brand">({{ extra.brand_label or 'REM COLOR' }})</span>
+                    </p>
+                    {% endfor %}
+                </div>
+                {% endif %}
+            </div>
+            {% endif %}
+        </div>
+
+        <div class="product-layout{% if not product.has_image %} product-layout--solo{% endif %}">
+            {% if product.has_image %}
+            <div class="product-image">
+                <img src="{{ product.image if product.image else '/img/' ~ product.slug ~ '-can.png' }}" alt="{{ product.name }}">
+            </div>
+            {% endif %}
+            <div class="product-info">
+                <div class="product-tags">
+                    {% if product.application_tag %}
+                    <span class="product-tag"><span class="tag-label">Назначение:</span> {{ product.application_tag }}</span>
+                    {% endif %}
+                    {% if product.binder %}
+                    <span class="product-tag"><span class="tag-label">Основа:</span> {{ product.binder }}</span>
+                    {% endif %}
+                    {% if product.kind != 'equipment' %}
+                    <span class="product-tag"><span class="tag-label">Поверхность:</span> Металл</span>
+                    {% endif %}
+                    {% if product.type %}
+                    <span class="product-tag"><span class="tag-label">Тип:</span> {{ product.type }}</span>
+                    {% endif %}
+                    {% if product.part_no %}
+                    <span class="product-tag"><span class="tag-label">Артикул:</span> {{ product.part_no }}</span>
+                    {% endif %}
+                </div>
+
+                <div class="product-actions">
+                    <a href="/contacts" class="btn-primary">Запросить коммерческое предложение</a>
+                    {% if product.tds_file %}
+                    <a href="/docs/{{ product.tds_file }}" class="btn-ghost" target="_blank" rel="noopener">{{ product.docs_label or 'Технический лист (PDF)' }}</a>
+                    {% endif %}
+                    {% if product.slug == "rem-pox-0607-hs" %}
+                    <a href="/compare/rem-pox-0607-hs-izolep" class="btn-ghost">Сравнение с Изолэп и Akzo</a>
+                    <a href="/brochure/rem-pox-0607-hs-velesgard" class="btn-ghost">Брошюра вместо Велефорс Мастик</a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+
+        {% if product.specs %}
+        <div class="product-block">
+            <h2>Основные характеристики</h2>
+            <div class="specs-panel">
+                <table class="specs-table">
+                    {% for spec in product.specs %}
+                    <tr>
+                        <td>{{ spec.name }}</td>
+                        <td>{{ spec.value }}</td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
+        {% endif %}
+
+        {% if product.application and product.application.strip() != (product.short_desc or '').strip() and product.application.strip() != (product.description or '').strip() %}
+        <div class="product-block">
+            <h2>Область применения</h2>
+            <p>{{ product.application }}</p>
+        </div>
+        {% endif %}
+
+        {% if product.benefits %}
+        <div class="product-block">
+            <h2>Особенности</h2>
+            <ul class="benefits-list">
+                {% for benefit in product.benefits %}
+                <li>{{ benefit }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+
+        {% if product.schemes %}
+        <div class="product-block">
+            <h2>Схемы с этим материалом</h2>
+            <div class="related-grid">
+                {% for scheme in product.schemes %}
+                <a class="related-item" href="/schemes/{{ scheme.slug }}">
+                    <div>
+                        <h3>{{ scheme.title }}</h3>
+                        <span>{{ scheme.code }}{% if scheme.total_dft %} · {{ scheme.total_dft }} мкм{% endif %}</span>
+                    </div>
+                </a>
+                {% endfor %}
+            </div>
+        </div>
+        {% endif %}
+
+        {% if product.related %}
+        <div class="product-block">
+            <h2>{% if product.kind == 'equipment' %}Сопутствующее оборудование{% else %}Сопутствующие материалы{% endif %}</h2>
+            <div class="related-grid">
+                {% for related in product.related %}
+                <a class="related-item" href="/product/{{ related.slug }}">
+                    {% if related.has_image %}<img src="{{ related.image if related.image else '/img/' ~ related.slug ~ '-can.png' }}" alt="{{ related.name }}">{% endif %}
+                    <div>
+                        <h3>{{ related.name }}</h3>
+                        <span>Открыть карточку</span>
+                    </div>
+                </a>
+                {% endfor %}
+            </div>
+        </div>
+        {% endif %}
+    </div>
+</section>
+
+<div id="imageModal" class="modal" onclick="this.classList.remove('is-open')">
+    <img class="modal-content" id="imgFull" alt="">
+</div>
+<script>
+    {% if product.has_image %}
+    document.querySelector('.product-image').onclick = function() {
+        var modal = document.getElementById('imageModal');
+        var img = this.querySelector('img');
+        document.getElementById('imgFull').src = img.src;
+        modal.classList.add('is-open');
+    };
+    {% endif %}
+</script>
+{% endblock %}

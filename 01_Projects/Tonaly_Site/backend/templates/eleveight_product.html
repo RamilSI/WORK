@@ -1,0 +1,103 @@
+{% extends "base.html" %}
+{% block title %}{{ product.name }} | Eleveight{% endblock %}
+{% block body_class %}page-offwork page-offwork--kite{% endblock %}
+{% block content %}
+<section class="section">
+    <div class="container">
+        <p class="offwork-crumb"><a href="/offwork">Вне работы</a> / <a href="/offwork/eleveight">Eleveight</a> / {{ product.name }}</p>
+
+        <div class="product-head">
+            {% if product.badge %}<span class="chip">{{ product.badge }}</span>{% endif %}
+            {% if product.meta %}<span class="chip">{{ product.meta }}</span>{% endif %}
+            <h1>{{ product.name }}</h1>
+            <p class="product-lead">{{ product.short_desc }}</p>
+        </div>
+
+        <div class="product-layout elv-product">
+            {% if product.image %}
+            <div class="product-image">
+                <img src="{{ product.image }}" alt="{{ product.name }}">
+            </div>
+            {% endif %}
+            <div class="product-info">
+                {% if product.who %}
+                <p class="elv-who"><strong>Кому:</strong> {{ product.who }}</p>
+                {% endif %}
+                {% if product.sizes %}
+                <p class="elv-sizes"><strong>Размеры:</strong> {{ product.sizes | join(" · ") }}</p>
+                {% endif %}
+                {% if product.facts %}
+                <ul class="elv-facts">
+                    {% for fact in product.facts %}
+                    <li>{{ fact }}</li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+                <div class="product-actions">
+                    <a href="/offwork/kiteboarding?order={{ product.slug }}#signup" class="btn-primary">Заказать Роману</a>
+                    <a href="/offwork/eleveight#{{ product.category }}" class="btn-ghost">К линейке</a>
+                </div>
+            </div>
+        </div>
+
+        {% if product.body_paragraphs %}
+        <div class="product-description-panel elv-body">
+            {% for para in product.body_paragraphs %}
+            <p>{{ para }}</p>
+            {% endfor %}
+        </div>
+        {% endif %}
+
+        {% if product.video %}
+        <div class="elv-video-wrap">
+            <h2>Как это выглядит</h2>
+            <div class="elv-video">
+                <iframe
+                    src="https://www.youtube-nocookie.com/embed/{{ product.video }}"
+                    title="{{ product.video_title or product.name }}"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen
+                    loading="lazy"
+                ></iframe>
+            </div>
+            {% if product.video_title %}<p class="photo-credit">{{ product.video_title }}</p>{% endif %}
+        </div>
+        {% endif %}
+
+        <div class="about-cta elv-order">
+            <a href="/offwork/kiteboarding?order={{ product.slug }}#signup" class="btn-primary">Оставить заявку</a>
+            {% if product.official %}
+            <a href="{{ product.official }}" class="btn-ghost" target="_blank" rel="noopener">Страница производителя</a>
+            {% endif %}
+        </div>
+    </div>
+</section>
+
+{% if related %}
+<section class="section bg-paper">
+    <div class="container">
+        <h2 class="section-title">Ещё в этой линейке</h2>
+        <div class="catalog-list">
+            {% for item in related %}
+            <article class="catalog-row elv-row">
+                <a href="/offwork/eleveight/{{ item.slug }}" class="catalog-row-link">
+                    <span class="catalog-row-photo">
+                        {% if item.image %}<img src="{{ item.image }}" alt="">{% endif %}
+                    </span>
+                    <span class="catalog-row-main">
+                        <span class="catalog-row-top">
+                            <strong class="catalog-row-name">{{ item.name }}</strong>
+                        </span>
+                        <span class="catalog-row-desc">{{ item.short_desc }}</span>
+                    </span>
+                </a>
+                <div class="catalog-row-actions">
+                    <a href="/offwork/eleveight/{{ item.slug }}" class="catalog-row-more">→</a>
+                </div>
+            </article>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endif %}
+{% endblock %}

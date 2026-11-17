@@ -1,0 +1,109 @@
+{
+  "result": "success",
+  "tasks": [
+    {
+      "id": 6358,
+      "name": "Новая закупка АО \"ГКНПЦ ИМ. М.В. ХРУНИЧЕВА\" - \"Краска ВД-АК-1180 фасадная, Владимирская область\".",
+      "status": {
+        "id": 3,
+        "name": "Завершенная",
+        "color": "#85878E",
+        "isActive": false,
+        "hasDeadline": false,
+        "isAppliedIndividually": false,
+        "texts": [
+          {
+            "lang": "Ru",
+            "name": "Завершенная"
+          },
+          {
+            "lang": "En",
+            "name": "Completed"
+          }
+        ]
+      },
+      "counterparty": {
+        "id": "contact:1852",
+        "name": "ГОСУДАРСТВЕННЫЙ КОСМИЧЕСКИЙ НАУЧНО-ПРОИЗВОДСТВЕННЫЙ ЦЕНТР ИМЕНИ М.В. ХРУНИЧЕВА"
+      }
+    },
+    {
+      "id": 21119,
+      "name": "Новая закупка АО \"ГКНПЦ ИМ. М.В. ХРУНИЧЕВА\" - \"Поставка жидкости смазочно-охлаждающей (СОЖ), Владимирская область\"",
+      "status": {
+        "id": 1,
+        "name": "Новая",
+        "color": "#3377C3",
+        "isActive": true,
+        "hasDeadline": true,
+        "isAppliedIndividually": false,
+        "texts": [
+          {
+            "lang": "Ru",
+            "name": "Новая"
+          },
+          {
+            "lang": "En",
+            "name": "New"
+          }
+        ]
+      },
+      "counterparty": {
+        "id": "contact:1532",
+        "name": "ЭТП ГПБ"
+      }
+    },
+    {
+      "id": 26345,
+      "name": "Новая закупка АО \"ГКНПЦ ИМ. М.В. ХРУНИЧЕВА\" - \"Масло синтетическое, Владимирская область\"",
+      "status": {
+        "id": 3,
+        "name": "Завершенная",
+        "color": "#85878E",
+        "isActive": false,
+        "hasDeadline": false,
+        "isAppliedIndividually": false,
+        "texts": [
+          {
+            "lang": "Ru",
+            "name": "Завершенная"
+          },
+          {
+            "lang": "En",
+            "name": "Completed"
+          }
+        ]
+      },
+      "counterparty": {
+        "id": "contact:1532",
+        "name": "ЭТП ГПБ"
+      }
+    },
+    {
+      "id": 32639,
+      "name": "ООО НПЦ Самара",
+      "status": {
+        "id": 2,
+        "name": "В работе",
+        "color": "#3377C3",
+        "isActive": true,
+        "hasDeadline": true,
+        "isAppliedIndividually": false,
+        "texts": [
+          {
+            "lang": "Ru",
+            "name": "В работе"
+          },
+          {
+            "lang": "En",
+            "name": "In progress"
+          }
+        ]
+      },
+      "counterparty": {
+        "id": "contact:5439",
+        "name": "НАУЧНО-ПРОИЗВОДСТВЕННЫЙ ЦЕНТР САМАРА"
+      }
+    }
+  ]
+}

@@ -1,0 +1,200 @@
+{
+  "5278": {
+    "id": 5278,
+    "name": "СУРГУТНЕФТЕГАЗ",
+    "lastname": "",
+    "site": "",
+    "email": "",
+    "isCompany": true,
+    "phones": [
+      {
+        "number": "",
+        "maskedNumber": "",
+        "type": 1
+      }
+    ]
+  },
+  "372": {
+    "id": 372,
+    "name": "ТРАНСНЕФТЬ - ДРУЖБА",
+    "lastname": "",
+    "site": "",
+    "email": "",
+    "isCompany": true,
+    "phones": [
+      {
+        "number": "",
+        "maskedNumber": "",
+        "type": 1
+      }
+    ]
+  },
+  "422": {
+    "id": 422,
+    "name": "ЧЕРНОМОРТРАНСНЕФТЬ",
+    "lastname": "",
+    "site": "",
+    "email": "stat@nvr.transneft.ru",
+    "isCompany": true,
+    "phones": [
+      {
+        "number": "",
+        "maskedNumber": "",
+        "type": 1
+      }
+    ]
+  },
+  "2212": {
+    "id": 2212,
+    "name": "ТРАНСНЕФТЬ - СИБИРЬ",
+    "lastname": "",
+    "site": "",
+    "email": "",
+    "isCompany": true,
+    "phones": [
+      {
+        "number": "",
+        "maskedNumber": "",
+        "type": 1
+      }
+    ]
+  },
+  "199": {
+    "id": 199,
+    "name": "ЭЛЕКТРОЩИТ - ТМ САМАРА",
+    "lastname": "",
+    "site": "",
+    "email": "",
+    "isCompany": true,
+    "phones": []
+  },
+  "400": {
+    "id": 400,
+    "name": "САМАРАТРАНССТРОЙ",
+    "lastname": "",
+    "site": "",
+    "email": "samarasts@list.ru",
+    "isCompany": true,
+    "phones": [
+      {
+        "number": "",
+        "maskedNumber": "",
+        "type": 1
+      }
+    ]
+  },
+  "532": {
+    "id": 532,
+    "name": "САМАРАНЕФТЕХИМПРОЕКТ",
+    "lastname": "",
+    "site": "",
+    "email": "",
+    "isCompany": true,
+    "phones": [
+      {
+        "number": "",
+        "maskedNumber": "",
+        "type": 1
+      }
+    ]
+  },
+  "569": {
+    "id": 569,
+    "name": "СамараНИПИнефть",
+    "lastname": "",
+    "site": "",
+    "email": "",
+    "isCompany": true,
+    "phones": [
+      {
+        "number": "",
+        "maskedNumber": "",
+        "type": 1
+      }
+    ]
+  },
+  "994": {
+    "id": 994,
+    "name": "САМАРАНЕФТЕГАЗПРОЕКТ",
+    "lastname": "",
+    "site": "",
+    "email": "",
+    "isCompany": true,
+    "phones": [
+      {
+        "number": "",
+        "maskedNumber": "",
+        "type": 1
+      }
+    ]
+  },
+  "1218": {
+    "id": 1218,
+    "name": "САМАРА-СИГНАЛ",
+    "lastname": "",
+    "site": "",
+    "email": "",
+    "isCompany": true,
+    "phones": [
+      {
+        "number": "",
+        "maskedNumber": "",
+        "type": 1
+      }
+    ]
+  },
+  "2041": {
+    "id": 2041,
+    "name": "САМАРА-СКАН",
+    "lastname": "",
+    "site": "http://center-scan.ru",
+    "email": "",
+    "isCompany": true,
+    "phones": [
+      {
+        "number": "",
+        "maskedNumber": "",
+        "type": 1
+      }
+    ]
+  },
+  "2188": {
+    "id": 2188,
+    "name": "САМАРАНЕФТЕГАЗ",
+    "lastname": "",
+    "site": "",
+    "email": "",
+    "isCompany": true,
+    "phones": [
+      {
+        "number": "",
+        "maskedNumber": "",
+        "type": 1
+      }
+    ]
+  },
+  "2967": {
+    "id": 2967,
+    "name": "Мир Красок-Самара",
+    "lastname": "",
+    "site": "",
+    "email": "mirkrasok-samara@mail.ru",
+    "isCompany": false,
+    "phones": []
+  },
+  "5439": {
+    "id": 5439,
+    "name": "НАУЧНО-ПРОИЗВОДСТВЕННЫЙ ЦЕНТР САМАРА",
+    "lastname": "",
+    "site": "http://npcsamara.ru",
+    "email": "offise@npcsamara.ru",
+    "isCompany": true,
+    "phones": [
+      {
+        "number": "88469320323",
+        "maskedNumber": "8(846)9320323",
+        "type": 2
+      }
+    ]
+  }
+}

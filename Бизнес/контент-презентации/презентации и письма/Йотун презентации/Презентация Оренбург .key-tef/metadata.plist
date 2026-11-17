@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>templateMetadata</key>
+	<dict>
+		<key>templateLocale</key>
+		<string>ru</string>
+		<key>templateName</key>
+		<string>White</string>
+		<key>templateVersion</key>
+		<string>65ed06644f847670c163997fd3ceddc9</string>
+	</dict>
+</dict>
+</plist>

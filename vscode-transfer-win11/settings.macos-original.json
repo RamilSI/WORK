@@ -1,0 +1,122 @@
+{
+    "liveServer.settings.donotVerifyTags": true,
+    "liveServer.settings.donotShowInfoMsg": true,
+    "editor.linkedEditing": true,
+    "[html]": {
+        "editor.defaultFormatter": "vscode.html-language-features"
+    },
+    "git.autofetch": true,
+    "workbench.editorAssociations": {
+        "*.pdf": "pdf.preview"
+    },
+
+    "editor.multiCursorModifier": "ctrlCmd",
+    "git.confirmSync": false,
+    "gitlens.advanced.messages": {
+        "suppressFileNotUnderSourceControlWarning": true
+    },
+    "emmet.excludeLanguages": [
+        "markdown",
+        "php"
+    ],
+    "vscode-edge-devtools.mirrorEdits": true,
+    "editor.wordWrap": "on",
+    "bracket-pair-colorizer-2.depreciation-notice": false,
+    "kite.showWelcomeNotificationOnStartup": false,
+    "open-php-html-js-in-browser.selectedBrowser": "",
+    "jupyter.interactiveWindowMode": "perFile",
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "editor.renderWhitespace": "all",
+    "editor.fontSize": 14,
+    "editor.fontFamily": "Monaco, 'Courier New'",
+    "editor.hover.enabled": "off",
+    "workbench.editor.closeEmptyGroups": false,
+    "editor.formatOnSave": true,
+    "editor.accessibilitySupport": "off",
+    "liveSassCompile.settings.generateMap": false,
+    "vscodeGoogleTranslate.preferredLanguage": "English",
+    "sync.gist": "2a33fc434dd7d02e67e6c0d7a6aa806b",
+  
+    "eslint.alwaysShowStatus": true,
+    "eslint.format.enable": true,
+    "eslint.lintTask.enable": true,
+    "[typescript]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "workbench.iconTheme": "material-icon-theme",
+
+    "php.validate.enable": false,
+    "pretty-formatter.braceLine": true,
+    "pretty-formatter.bracePadding": true,
+    "pretty-formatter.commentLine": true,
+    "pretty-formatter.comments": true,
+    "pretty-formatter.compressedCss": true,
+    "pretty-formatter.correct": true,
+    "pretty-formatter.cssInsertLines": true,
+    "pretty-formatter.elseLine": true,
+    "pretty-formatter.forceAttribute": true,
+    "pretty-formatter.functionName": true,
+    "pretty-formatter.braces": true, 
+    
+    "extensions.autoCheckUpdates": false,
+    "update.enableWindowsBackgroundUpdates": false,
+    "extensions.autoUpdate": false,
+    "update.showReleaseNotes": false,
+    "update.mode": "none",
+
+    "debug.inlineValues": "on",
+    "debug.autoExpandLazyVariables": "on",
+
+    "editor.minimap.enabled": false,
+    "terminal.integrated.cursorStyle": "line",
+    "terminal.integrated.cursorBlinking": true,
+    "window.commandCenter": false,
+    "workbench.startupEditor": "none",
+    "files.autoSave": "afterDelay",
+    "explorer.autoReveal": false,
+    "explorer.compactFolders": false,
+    "breadcrumbs.enabled": false,
+    "terminal.integrated.defaultProfile.windows": "Command Prompt",
+
+     // Controls if quick suggestions should show up while typing
+     "editor.quickSuggestions": {
+        "other": true,
+        "comments": false,
+        "strings": false
+    },
+
+     // Controls whether suggestions should be accepted on commit characters. For example, in JavaScript, the semi-colon (`;`) can be a commit character that accepts a suggestion and types that character.
+    "editor.acceptSuggestionOnCommitCharacter": true,
+
+    // Controls if suggestions should be accepted on 'Enter' - in addition to 'Tab'. Helps to avoid ambiguity between inserting new lines or accepting suggestions. The value 'smart' means only accept a suggestion with Enter when it makes a textual change
+    "editor.acceptSuggestionOnEnter": "on",
+    "files.associations": {
+        "*.json": "shellscript"
+    },
+    "emmet.triggerExpansionOnTab": true,
+    "roo-cline.debug": false,
+    "roo-cline.allowedCommands": [
+        "git log",
+        "git diff",
+        "git show"
+    ],
+    "roo-cline.deniedCommands": [],
+    "terminal.integrated.commandsToSkipShell": [
+        "gigacode.new.agentManagerOpen",
+        "gigacode.new.agentManager.showTerminal",
+        "gigacode.new.agentManager.runScript"
+    ],
+    "sourcecraft-code-assist.debug": false,
+    "sourcecraft-code-assist.allowedCommands": [
+        "npm test",
+        "npm install",
+        "tsc",
+        "git log",
+        "git diff",
+        "git show"
+    ],
+    "sourcecraft-code-assist.deniedCommands": [],
+    "workbench.preferredLightColorTheme": "Quiet Light",
+    "workbench.preferredHighContrastLightColorTheme": "Bearded Theme HC Brewing Storm"
+}

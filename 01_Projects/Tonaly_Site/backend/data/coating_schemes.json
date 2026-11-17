@@ -1,0 +1,750 @@
+[
+  {
+    "slug": "shop-alkyd-306",
+    "category": "shop",
+    "code": "1-306.50(50)",
+    "title": "Алкидный грунт цеха",
+    "purpose": "Однокомпонентный быстросохнущий модифицированный алкидный грунт для домонтажной окраски.",
+    "corrosivity": "C1–C2, хранение",
+    "durability": "межоперационная защита",
+    "total_dft": 50,
+    "temperature": "",
+    "competitor": {
+      "brand": "Akzo Nobel",
+      "code": "1-306.50(50)",
+      "layers": [
+        {"name": "Interprime 306", "slug": "interprime-306", "role": "Грунт", "dft": 50, "coats": 1}
+      ]
+    },
+    "rem": {
+      "brand": "Rem Color",
+      "code": "RC-0605.50(50)",
+      "layers": [
+        {"name": "Rem-Lux 0605", "slug": "rem-lux-0605", "role": "Грунт", "dft": 50, "coats": 1}
+      ]
+    },
+    "others": [
+      {"brand": "WEG", "note": "Быстросохнущие алкидные грунты цеха той же ТСП"}
+    ],
+    "advantages": [
+      "1K алкид из линейки Rem Color вместо импортного Interprime 306",
+      "Та же логика: быстрый грунт цеха 50 мкм",
+      "Поставка со склада и техсопровождение без импортного цикла"
+    ],
+    "notes": "На tonaly.ru для Interprime 306 указан также водный аналог РЕМ-АКВА ВД-АК 015 — его пока нет в каталоге rml-s.ru. Здесь показан ближайший 1K алкид из текущего ассортимента Rem Color."
+  },
+  {
+    "slug": "shop-zinc-5927",
+    "category": "shop",
+    "code": "1-5927.15(15)",
+    "title": "Цинк-силикатный межоперационный грунт",
+    "purpose": "Межоперационная защита после струйной очистки, тонкий цинк-силикатный слой.",
+    "corrosivity": "цех / транспортировка",
+    "durability": "межоперационная защита",
+    "total_dft": 15,
+    "temperature": "",
+    "competitor": {
+      "brand": "Akzo Nobel",
+      "code": "1-5927.15(15)",
+      "layers": [
+        {"name": "Interplate 5927", "slug": "interplate-5927", "role": "Межоперационный грунт", "dft": 15, "coats": 1}
+      ]
+    },
+    "rem": {
+      "brand": "Rem Color",
+      "code": "RC-7606.40(40)",
+      "layers": [
+        {"name": "Rem-Zink 7606", "slug": "rem-zink-7606", "role": "Цинконаполненный грунт", "dft": 40, "coats": 1}
+      ]
+    },
+    "others": [
+      {"brand": "WEG", "note": "Цинк-силикатные / цинконаполненные shop-primer той же функции"}
+    ],
+    "advantages": [
+      "Протестированный цинконаполненный аналог Rem Color",
+      "Катодная защита стали на этапе хранения и монтажа",
+      "Можно перекрывать эпоксидными схемами Rem-Pox"
+    ],
+    "notes": "Interplate 5927 — неорганический цинк-силикат 15 мкм. Rem-Zink 7606 — эпоксидный цинк, рабочая ТСП выше. Это функциональная замена shop-primer, не полная копия связующего. Для проектов с жёстким требованием к Zn-silicate схему нужно согласовать."
+  },
+  {
+    "slug": "shop-epoxy-2509",
+    "category": "shop",
+    "code": "1-2509.75(75)",
+    "title": "Эпоксидный грунт цеха",
+    "purpose": "Эпоксидное покрытие для домонтажной окраски, 75 мкм.",
+    "corrosivity": "C2–C3, хранение",
+    "durability": "до монтажа",
+    "total_dft": 75,
+    "temperature": "",
+    "competitor": {
+      "brand": "Akzo Nobel",
+      "code": "1-2509.75(75)",
+      "layers": [
+        {"name": "Intergard 2509", "slug": "intergard-2509", "role": "Грунт", "dft": 75, "coats": 1}
+      ]
+    },
+    "rem": {
+      "brand": "Rem Color",
+      "code": "RC-0607HS.75(75)",
+      "layers": [
+        {"name": "Rem-Pox 0607 HS", "slug": "rem-pox-0607-hs", "role": "Грунт-эмаль", "dft": 75, "coats": 1}
+      ]
+    },
+    "others": [
+      {"brand": "WEG", "note": "Эпоксидные грунты цеха (WEGPOXI) 60–80 мкм"}
+    ],
+    "advantages": [
+      "Протестированный аналог Intergard 2509 — Rem-Pox 0607 HS",
+      "High Solids, та же толщина слоя",
+      "Дальше перекрывается Rem-Pur 210 без смены логики системы"
+    ],
+    "notes": ""
+  },
+  {
+    "slug": "shop-epoxy-1052",
+    "category": "shop",
+    "code": "1-1052.75(75)",
+    "title": "Универсальный эпоксидный грунт цеха",
+    "purpose": "Двухкомпонентный быстросохнущий антикоррозионный эпоксидный грунт.",
+    "corrosivity": "C2–C3",
+    "durability": "до монтажа",
+    "total_dft": 75,
+    "temperature": "",
+    "competitor": {
+      "brand": "Akzo Nobel",
+      "code": "1-1052.75(75)",
+      "layers": [
+        {"name": "Interseal 1052", "slug": "interseal-1052", "role": "Грунт", "dft": 75, "coats": 1}
+      ]
+    },
+    "rem": {
+      "brand": "Rem Color",
+      "code": "RC-0607HS.75(75)",
+      "layers": [
+        {"name": "Rem-Pox 0607 HS", "slug": "rem-pox-0607-hs", "role": "Грунт-эмаль", "dft": 75, "coats": 1}
+      ]
+    },
+    "others": [
+      {"brand": "WEG", "note": "Универсальные эпоксидные грунт-эмали WEGPOXI той же ТСП"}
+    ],
+    "advantages": [
+      "Протестированный аналог Interseal 1052",
+      "Один материал и в цехе, и в атмосферных схемах C3–C5",
+      "Меньше номенклатуры на складе подрядчика"
+    ],
+    "notes": ""
+  },
+  {
+    "slug": "direct-345",
+    "category": "direct",
+    "code": "2-345.100(100)",
+    "title": "Грунт-эмаль 3 в 1",
+    "purpose": "Однослойная эпоксидная грунт-эмаль по стали, 100 мкм.",
+    "corrosivity": "C2–C3",
+    "durability": "5–10 лет",
+    "total_dft": 100,
+    "temperature": "",
+    "competitor": {
+      "brand": "Akzo Nobel",
+      "code": "2-345.100(100)",
+      "layers": [
+        {"name": "Intergard 345", "slug": "intergard-345", "role": "Грунт-эмаль", "dft": 100, "coats": 1}
+      ]
+    },
+    "rem": {
+      "brand": "Rem Color",
+      "code": "RC-0607HS.100(100)",
+      "layers": [
+        {"name": "Rem-Pox 0607 HS", "slug": "rem-pox-0607-hs", "role": "Грунт-эмаль", "dft": 100, "coats": 1}
+      ]
+    },
+    "others": [
+      {"brand": "WEG", "note": "Direct-to-metal эпоксидные грунт-эмали 80–120 мкм"}
+    ],
+    "advantages": [
+      "Один слой вместо грунта + эмали на простых объектах",
+      "High Solids, меньше растворителя",
+      "При росте агрессивности среды схема наращивается финишем Rem-Pur 210"
+    ],
+    "notes": ""
+  },
+  {
+    "slug": "exterior-epoxy-740",
+    "category": "exterior",
+    "code": "3-740.50(50)",
+    "title": "Эпоксидный финиш, тонкий слой",
+    "purpose": "Двухкомпонентное эпоксидное финишное покрытие 50 мкм.",
+    "corrosivity": "C2–C3, внутри помещений",
+    "durability": "средний",
+    "total_dft": 50,
+    "temperature": "−60…+120 °C",
+    "competitor": {
+      "brand": "Akzo Nobel",
+      "code": "3-740.50(50)",
+      "layers": [
+        {"name": "Intergard 740", "slug": "intergard-740", "role": "Финиш", "dft": 50, "coats": 1}
+      ]
+    },
+    "rem": {
+      "brand": "Rem Color",
+      "code": "RC-0607AS.50(50)",
+      "layers": [
+        {"name": "Rem-Pox 0607 AS", "slug": "rem-pox-0607-as", "role": "Грунт-эмаль", "dft": 50, "coats": 1}
+      ]
+    },
+    "others": [
+      {"brand": "WEG", "note": "Эпоксидные финиши для внутренних зон"}
+    ],
+    "advantages": [
+      "Атмосферостойкая эпоксидная модификация Rem-Pox 0607 AS",
+      "Та же ТСП 50 мкм",
+      "Для наружных УФ-нагрузок лучше нарастить Rem-Pur 210"
+    ],
+    "notes": "На tonaly.ru у Intergard 740 указан аналог ЭП-152 (REM COLOR), которого пока нет отдельной карточкой. Здесь — ближайшая эпоксидная грунт-эмаль с атмосферостойкой модификацией."
+  },
+  {
+    "slug": "exterior-alkyd-gf-pf",
+    "category": "exterior",
+    "code": "3-306.50.665.50(100)",
+    "title": "Алкидная система, замена ГФ/ПФ",
+    "purpose": "5–7 лет для C3, C4. Простые алкидные решения (замена «ГФ-ПФ»).",
+    "corrosivity": "C3–C4",
+    "durability": "5–7 лет",
+    "total_dft": 100,
+    "temperature": "−60…+120 °C",
+    "competitor": {
+      "brand": "Akzo Nobel",
+      "code": "3-306.50.665.50(100)",
+      "layers": [
+        {"name": "Interprime 306", "slug": "interprime-306", "role": "Грунт", "dft": 50, "coats": 1},
+        {"name": "Interlac 665", "slug": "interlac-665", "role": "Финиш", "dft": 50, "coats": 1}
+      ]
+    },
+    "rem": {
+      "brand": "Rem Color",
+      "code": "RC-0605.50.1607.50(100)",
+      "layers": [
+        {"name": "Rem-Lux 0605", "slug": "rem-lux-0605", "role": "Грунт", "dft": 50, "coats": 1},
+        {"name": "Rem-Lux 1607", "slug": "rem-lux-1607", "role": "Финиш", "dft": 50, "coats": 1}
+      ]
+    },
+    "others": [
+      {"brand": "WEG", "note": "Алкидные грунт + эмаль той же ТСП для C3"}
+    ],
+    "advantages": [
+      "Протестированный аналог Interlac 665 — Rem-Lux 1607",
+      "Привычная 1K логика вместо ГФ/ПФ",
+      "Быстрый ремонт и перекрас на гражданских объектах"
+    ],
+    "notes": ""
+  },
+  {
+    "slug": "exterior-c3-c4-200",
+    "category": "exterior",
+    "code": "3-1052.140.870.60(200)",
+    "title": "Эпоксид + ПУ, 15–20 лет C3–C4",
+    "purpose": "15–20 лет для C3, C4. Базовая промышленная схема.",
+    "corrosivity": "C3–C4",
+    "durability": "15–20 лет",
+    "total_dft": 200,
+    "temperature": "−60…+120 °C",
+    "competitor": {
+      "brand": "Akzo Nobel",
+      "code": "3-1052.140.870.60(200)",
+      "layers": [
+        {"name": "Interseal 1052", "slug": "interseal-1052", "role": "Грунт / промежуточный", "dft": 140, "coats": 1},
+        {"name": "Interthane 870", "slug": "interthane-870", "role": "Финиш", "dft": 60, "coats": 1}
+      ]
+    },
+    "rem": {
+      "brand": "Rem Color",
+      "code": "RC-0607HS.140.210.60(200)",
+      "layers": [
+        {"name": "Rem-Pox 0607 HS", "slug": "rem-pox-0607-hs", "role": "Грунт / промежуточный", "dft": 140, "coats": 1},
+        {"name": "Rem-Pur 210", "slug": "rem-pur-210", "role": "Финиш", "dft": 60, "coats": 1}
+      ]
+    },
+    "others": [
+      {"brand": "WEG", "note": "WEGPOXI + WEGTHANE, ТСП ~200 мкм"},
+      {"brand": "Jotun", "note": "Эпоксидный грунт/мастик + полиуретановый Hardtop"},
+      {"brand": "Hempel", "note": "Hempadur + Hempathane той же ТСП"}
+    ],
+    "advantages": [
+      "Протестированные аналоги обоих слоёв (1052 → 0607 HS, 870 → Rem-Pur 210)",
+      "Та же общая ТСП 200 мкм и логика «эпоксид + УФ-стойкий ПУ»",
+      "Схема легко масштабируется в C4–C5 увеличением эпоксидного слоя"
+    ],
+    "notes": ""
+  },
+  {
+    "slug": "exterior-c3-c4-160",
+    "category": "exterior",
+    "code": "3-1052.100.990SG.60(160)",
+    "title": "Эпоксид + ПУ, 10–15 лет C3–C4",
+    "purpose": "10–15 лет для C3, C4. Облегчённая атмосферная схема.",
+    "corrosivity": "C3–C4",
+    "durability": "10–15 лет",
+    "total_dft": 160,
+    "temperature": "−60…+120 °C",
+    "competitor": {
+      "brand": "Akzo Nobel",
+      "code": "3-1052.100.990SG.60(160)",
+      "layers": [
+        {"name": "Interseal 1052", "slug": "interseal-1052", "role": "Грунт", "dft": 100, "coats": 1},
+        {"name": "Interthane 990SG", "slug": "interthane-990sg", "role": "Финиш", "dft": 60, "coats": 1}
+      ]
+    },
+    "rem": {
+      "brand": "Rem Color",
+      "code": "RC-0607HS.100.210.60(160)",
+      "layers": [
+        {"name": "Rem-Pox 0607 HS", "slug": "rem-pox-0607-hs", "role": "Грунт", "dft": 100, "coats": 1},
+        {"name": "Rem-Pur 210", "slug": "rem-pur-210", "role": "Финиш", "dft": 60, "coats": 1}
+      ]
+    },
+    "others": [
+      {"brand": "WEG", "note": "Эпоксид + полиуретан ~160 мкм"}
+    ],
+    "advantages": [
+      "Протестированные аналоги 1052 и 990SG",
+      "Меньше материала, чем у схемы 200 мкм, при сохранении ПУ-финиша",
+      "Подходит для металлоконструкций цехов и эстакад C3"
+    ],
+    "notes": ""
+  },
+  {
+    "slug": "exterior-c3-c4-115",
+    "category": "exterior",
+    "code": "3-2509.75.990SG.40(115)",
+    "title": "Тонкая эпоксид + ПУ, 5–10 лет",
+    "purpose": "5–10 лет для C3, C4.",
+    "corrosivity": "C3–C4",
+    "durability": "5–10 лет",
+    "total_dft": 115,
+    "temperature": "−60…+120 °C",
+    "competitor": {
+      "brand": "Akzo Nobel",
+      "code": "3-2509.75.990SG.40(115)",
+      "layers": [
+        {"name": "Intergard 2509", "slug": "intergard-2509", "role": "Грунт", "dft": 75, "coats": 1},
+        {"name": "Interthane 990SG", "slug": "interthane-990sg", "role": "Финиш", "dft": 40, "coats": 1}
+      ]
+    },
+    "rem": {
+      "brand": "Rem Color",
+      "code": "RC-0607HS.75.210.40(115)",
+      "layers": [
+        {"name": "Rem-Pox 0607 HS", "slug": "rem-pox-0607-hs", "role": "Грунт", "dft": 75, "coats": 1},
+        {"name": "Rem-Pur 210", "slug": "rem-pur-210", "role": "Финиш", "dft": 40, "coats": 1}
+      ]
+    },
+    "others": [
+      {"brand": "WEG", "note": "Облегчённые эпоксид-ПУ системы ~110–120 мкм"}
+    ],
+    "advantages": [
+      "Протестированные аналоги обоих слоёв",
+      "Экономичная схема для C3 при ограниченном бюджете",
+      "Толщины совпадают с исходной спецификацией Akzo"
+    ],
+    "notes": ""
+  },
+  {
+    "slug": "exterior-c4-c5-250",
+    "category": "exterior",
+    "code": "3-670HS.200.990SG.50(250)",
+    "title": "High Solids эпоксид + ПУ, C4–C5",
+    "purpose": "15–20 лет для C4, C5.",
+    "corrosivity": "C4–C5",
+    "durability": "15–20 лет",
+    "total_dft": 250,
+    "temperature": "−60…+120 °C",
+    "competitor": {
+      "brand": "Akzo Nobel",
+      "code": "3-670HS.200.990SG.50(250)",
+      "layers": [
+        {"name": "Interseal 670HS", "slug": "interseal-670hs", "role": "Грунт / промежуточный", "dft": 200, "coats": 1},
+        {"name": "Interthane 990SG", "slug": "interthane-990sg", "role": "Финиш", "dft": 50, "coats": 1}
+      ]
+    },
+    "rem": {
+      "brand": "Rem Color",
+      "code": "RC-0607HS.200.210.50(250)",
+      "layers": [
+        {"name": "Rem-Pox 0607 HS", "slug": "rem-pox-0607-hs", "role": "Грунт / промежуточный", "dft": 200, "coats": 1},
+        {"name": "Rem-Pur 210", "slug": "rem-pur-210", "role": "Финиш", "dft": 50, "coats": 1}
+      ]
+    },
+    "others": [
+      {"brand": "WEG", "note": "High-build WEGPOXI + WEGTHANE, ТСП ~250 мкм"},
+      {"brand": "Hempel", "note": "Толстослойный эпоксид + полиуретан C5"}
+    ],
+    "advantages": [
+      "Протестированный аналог Interseal 670HS — ключевой материал C4–C5",
+      "Общая ТСП 250 мкм сохраняется",
+      "Меньше слоёв за счёт high-build эпоксида"
+    ],
+    "notes": "670HS часто кладут в 1–2 прохода. Для Rem-Pox 0607 HS 200 мкм уточняйте максимальную ТСП за слой по TDS."
+  },
+  {
+    "slug": "exterior-c4-c5-240",
+    "category": "exterior",
+    "code": "3-1052.180.990SG.60(240)",
+    "title": "Эпоксид 1052 + ПУ, C4–C5",
+    "purpose": "15–20 лет для C4, C5.",
+    "corrosivity": "C4–C5",
+    "durability": "15–20 лет",
+    "total_dft": 240,
+    "temperature": "−60…+120 °C",
+    "competitor": {
+      "brand": "Akzo Nobel",
+      "code": "3-1052.180.990SG.60(240)",
+      "layers": [
+        {"name": "Interseal 1052", "slug": "interseal-1052", "role": "Грунт / промежуточный", "dft": 180, "coats": 1},
+        {"name": "Interthane 990SG", "slug": "interthane-990sg", "role": "Финиш", "dft": 60, "coats": 1}
+      ]
+    },
+    "rem": {
+      "brand": "Rem Color",
+      "code": "RC-0607HS.180.210.60(240)",
+      "layers": [
+        {"name": "Rem-Pox 0607 HS", "slug": "rem-pox-0607-hs", "role": "Грунт / промежуточный", "dft": 180, "coats": 1},
+        {"name": "Rem-Pur 210", "slug": "rem-pur-210", "role": "Финиш", "dft": 60, "coats": 1}
+      ]
+    },
+    "others": [
+      {"brand": "WEG", "note": "Эпоксид-ПУ системы C5 ~240 мкм"}
+    ],
+    "advantages": [
+      "Та же пара «универсальный эпоксид + ПУ», что и в схеме 200 мкм, с запасом по ТСП",
+      "Протестированные аналоги обоих слоёв",
+      "Удобно унифицировать с цеховым грунтом 1052 / 0607 HS"
+    ],
+    "notes": ""
+  },
+  {
+    "slug": "exterior-c5-4000",
+    "category": "exterior",
+    "code": "3-4000USP.75.475HS.135.990SG.50(260)",
+    "title": "Сверхвысокий срок службы, C5",
+    "purpose": "C5, сверхвысокий срок службы. Грунт + high-build эпоксид + ПУ.",
+    "corrosivity": "C5",
+    "durability": "сверхвысокий",
+    "total_dft": 260,
+    "temperature": "−60…+120 °C",
+    "competitor": {
+      "brand": "Akzo Nobel",
+      "code": "3-4000USP.75.475HS.135.990SG.50(260)",
+      "layers": [
+        {"name": "Intershield 4000USP", "slug": "intershield-4000usp", "role": "Грунт", "dft": 75, "coats": 1},
+        {"name": "Intergard 475HS", "slug": "intergard-475hs", "role": "Промежуточный", "dft": 135, "coats": 1},
+        {"name": "Interthane 990SG", "slug": "interthane-990sg", "role": "Финиш", "dft": 50, "coats": 1}
+      ]
+    },
+    "rem": {
+      "brand": "Rem Color",
+      "code": "RC-0607HS.75.0607HS.135.210.50(260)",
+      "layers": [
+        {"name": "Rem-Pox 0607 HS", "slug": "rem-pox-0607-hs", "role": "Грунт", "dft": 75, "coats": 1},
+        {"name": "Rem-Pox 0607 HS", "slug": "rem-pox-0607-hs", "role": "Промежуточный", "dft": 135, "coats": 1},
+        {"name": "Rem-Pur 210", "slug": "rem-pur-210", "role": "Финиш", "dft": 50, "coats": 1}
+      ]
+    },
+    "others": [
+      {"brand": "WEG", "note": "Трёхслойные C5-системы WEGPOXI + WEGTHANE"},
+      {"brand": "Jotun", "note": "Barrier / Jotamastic / Hardtop high-durability"}
+    ],
+    "advantages": [
+      "Оба эпоксидных слоя Akzo закрываются протестированным Rem-Pox 0607 HS",
+      "Общая ТСП 260 мкм сохраняется",
+      "Меньше SKU: грунт и промежуточный — один материал"
+    ],
+    "notes": "Intershield 4000USP — специализированный грунт. Rem-Pox 0607 HS закрывает его как протестированный аналог; при требованиях к абразивостойкому Intershield схему лучше подтвердить тестом на объекте."
+  },
+  {
+    "slug": "exterior-c5-zinc-epoxy",
+    "category": "exterior",
+    "code": "3-52E.60.475HS.100.990SG.50(210)",
+    "title": "Цинк-эпоксид + эпоксид + ПУ, C5",
+    "purpose": "C5, сверхвысокий срок службы. Катодный грунт.",
+    "corrosivity": "C5",
+    "durability": "сверхвысокий",
+    "total_dft": 210,
+    "temperature": "−60…+120 °C",
+    "competitor": {
+      "brand": "Akzo Nobel",
+      "code": "3-52E.60.475HS.100.990SG.50(210)",
+      "layers": [
+        {"name": "Interzinc 52E", "slug": "interzinc-52e", "role": "Цинковый грунт", "dft": 60, "coats": 1},
+        {"name": "Intergard 475HS", "slug": "intergard-475hs", "role": "Промежуточный", "dft": 100, "coats": 1},
+        {"name": "Interthane 990SG", "slug": "interthane-990sg", "role": "Финиш", "dft": 50, "coats": 1}
+      ]
+    },
+    "rem": {
+      "brand": "Rem Color",
+      "code": "RC-7606.60.0607HS.100.210.50(210)",
+      "layers": [
+        {"name": "Rem-Zink 7606", "slug": "rem-zink-7606", "role": "Цинковый грунт", "dft": 60, "coats": 1},
+        {"name": "Rem-Pox 0607 HS", "slug": "rem-pox-0607-hs", "role": "Промежуточный", "dft": 100, "coats": 1},
+        {"name": "Rem-Pur 210", "slug": "rem-pur-210", "role": "Финиш", "dft": 50, "coats": 1}
+      ]
+    },
+    "others": [
+      {"brand": "WEG", "note": "Цинк-эпоксид + эпоксид + ПУ (типовая C5 WEG)"},
+      {"brand": "Jotun", "note": "Barrier + Jotamastic + Hardtop"},
+      {"brand": "Hempel", "note": "Hempadur Zinc + Hempadur + Hempathane"}
+    ],
+    "advantages": [
+      "Протестированные аналоги цинка, эпоксида и ПУ",
+      "Классическая ISO 12944 логика C5 без смены числа слоёв",
+      "Прямая замена типовых систем WEG / Jotun / Hempel той же ТСП"
+    ],
+    "notes": ""
+  },
+  {
+    "slug": "exterior-bridge",
+    "category": "exterior",
+    "code": "3-52.50.200HS.140.990SG.60(250)",
+    "title": "Транспортное строительство, мосты",
+    "purpose": "Схемы для транспортного строительства (мосты).",
+    "corrosivity": "C4–C5, мосты",
+    "durability": "высокий / сверхвысокий",
+    "total_dft": 250,
+    "temperature": "−60…+120 °C",
+    "competitor": {
+      "brand": "Akzo Nobel",
+      "code": "3-52.50.200HS.140.990SG.60(250)",
+      "layers": [
+        {"name": "Interzinc 52", "slug": "interzinc-52", "role": "Цинковый грунт", "dft": 50, "coats": 1},
+        {"name": "Intercure 200HS", "slug": "intercure-200hs", "role": "Промежуточный", "dft": 140, "coats": 1},
+        {"name": "Interthane 990SG", "slug": "interthane-990sg", "role": "Финиш", "dft": 60, "coats": 1}
+      ]
+    },
+    "rem": {
+      "brand": "Rem Color",
+      "code": "RC-7606.50.0607HS.140.210.60(250)",
+      "layers": [
+        {"name": "Rem-Zink 7606", "slug": "rem-zink-7606", "role": "Цинковый грунт", "dft": 50, "coats": 1},
+        {"name": "Rem-Pox 0607 HS", "slug": "rem-pox-0607-hs", "role": "Промежуточный", "dft": 140, "coats": 1},
+        {"name": "Rem-Pur 210", "slug": "rem-pur-210", "role": "Финиш", "dft": 60, "coats": 1}
+      ]
+    },
+    "others": [
+      {"brand": "WEG", "note": "Мостовые цинк-эпоксид-ПУ системы ~250 мкм"},
+      {"brand": "Teknos", "note": "Схемы транспортного строительства той же ТСП"}
+    ],
+    "advantages": [
+      "Протестированные аналоги Interzinc 52 и Intercure 200HS",
+      "ТСП 250 мкм как в исходной мостовой спецификации",
+      "Можно сопровождать инспекцией АСИ / Frosio на объекте"
+    ],
+    "notes": ""
+  },
+  {
+    "slug": "exterior-galvanized",
+    "category": "exterior",
+    "code": "3-200.50.990SG.60(110)",
+    "title": "По оцинкованному металлу",
+    "purpose": "Покрытия по оцинкованному металлу.",
+    "corrosivity": "C3–C4, цинк",
+    "durability": "средний / высокий",
+    "total_dft": 110,
+    "temperature": "−60…+120 °C",
+    "competitor": {
+      "brand": "Akzo Nobel",
+      "code": "3-200.50.990SG.60(110)",
+      "layers": [
+        {"name": "Intercure 200", "slug": "intercure-200", "role": "Грунт по цинку", "dft": 50, "coats": 1},
+        {"name": "Interthane 990SG", "slug": "interthane-990sg", "role": "Финиш", "dft": 60, "coats": 1}
+      ]
+    },
+    "rem": {
+      "brand": "Rem Color",
+      "code": "RC-0607.50.210.60(110)",
+      "layers": [
+        {"name": "Rem-Pox 0607", "slug": "rem-pox-0607", "role": "Грунт по цинку", "dft": 50, "coats": 1},
+        {"name": "Rem-Pur 210", "slug": "rem-pur-210", "role": "Финиш", "dft": 60, "coats": 1}
+      ]
+    },
+    "others": [
+      {"brand": "WEG", "note": "Эпоксидный tie-coat + ПУ по горячему цинку"}
+    ],
+    "advantages": [
+      "Тонкий эпоксидный tie-coat + УФ-стойкий финиш",
+      "Не перегружает цинковое покрытие лишней ТСП",
+      "Полиуретановый слой — протестированный аналог Interthane"
+    ],
+    "notes": "Перед нанесением на горячий цинк нужна подготовка поверхности (sweep / химическое обезжиривание) — как в исходной схеме Akzo."
+  },
+  {
+    "slug": "cui-670hs",
+    "category": "cui",
+    "code": "4-670HS.2x125(250)",
+    "title": "Под теплоизоляцией, до +120 °C",
+    "purpose": "t экспл. до +120 °C. Универсальное покрытие для внутренних и наружных работ, в том числе CUI.",
+    "corrosivity": "CUI / под изоляцией",
+    "durability": "высокий",
+    "total_dft": 250,
+    "temperature": "до +120 °C",
+    "competitor": {
+      "brand": "Akzo Nobel",
+      "code": "4-670HS.2x125(250)",
+      "layers": [
+        {"name": "Interseal 670HS", "slug": "interseal-670hs", "role": "Основной слой", "dft": 125, "coats": 2}
+      ]
+    },
+    "rem": {
+      "brand": "Rem Color",
+      "code": "RC-0607HS.2x125(250)",
+      "layers": [
+        {"name": "Rem-Pox 0607 HS", "slug": "rem-pox-0607-hs", "role": "Основной слой", "dft": 125, "coats": 2}
+      ]
+    },
+    "others": [
+      {"brand": "WEG", "note": "Толстослойные эпоксиды под изоляцию ~250 мкм"}
+    ],
+    "advantages": [
+      "Протестированный аналог Interseal 670HS",
+      "Два прохода по 125 мкм, общая ТСП 250 мкм",
+      "Один материал на грунт и тело покрытия"
+    ],
+    "notes": ""
+  },
+  {
+    "slug": "heat-228hs",
+    "category": "heat",
+    "code": "5-228HS.2x100(200)",
+    "title": "Термостойкая эпоксидная, до +230 °C",
+    "purpose": "t эксплуатации от −60 °C до +230 °C.",
+    "corrosivity": "атмосфера / трубы",
+    "durability": "высокий",
+    "total_dft": 200,
+    "temperature": "−60…+230 °C",
+    "competitor": {
+      "brand": "Akzo Nobel",
+      "code": "5-228HS.2x100(200)",
+      "layers": [
+        {"name": "Intertherm 228HS", "slug": "intertherm-228hs", "role": "Термостойкий слой", "dft": 100, "coats": 2}
+      ]
+    },
+    "rem": {
+      "brand": "Rem Color",
+      "code": "RC-0607HS.2x100(200)",
+      "layers": [
+        {"name": "Rem-Pox 0607 HS", "slug": "rem-pox-0607-hs", "role": "Основной слой", "dft": 100, "coats": 2}
+      ]
+    },
+    "others": [
+      {"brand": "WEG", "note": "Фенол-эпоксидные / HS эпоксиды для горячих труб"}
+    ],
+    "advantages": [
+      "Протестированный аналог Intertherm 228HS",
+      "Та же ТСП 2×100 мкм",
+      "Для интервала выше +230 °C нужна отдельная силиконовая схема — её в Rem Color пока нет"
+    ],
+    "notes": "Замена закрывает «горячий эпоксид» до ~230 °C. Схемы Intertherm 50 / Interzinc 22 + силикон (+200…+650 °C) в каталог Rem Color не переносим — это другой класс материалов."
+  },
+  {
+    "slug": "heat-2340upc",
+    "category": "heat",
+    "code": "5-2340UPC.2x100(200)",
+    "title": "Универсальное покрытие труб, до +205 °C",
+    "purpose": "t эксплуатации от −198 °C до +205 °C (кратковременно до +230 °C).",
+    "corrosivity": "трубопроводы / CUI",
+    "durability": "высокий",
+    "total_dft": 200,
+    "temperature": "−198…+205 °C",
+    "competitor": {
+      "brand": "Akzo Nobel",
+      "code": "5-2340UPC.2x100(200)",
+      "layers": [
+        {"name": "Interbond 2340UPC", "slug": "interbond-2340upc", "role": "UPC", "dft": 100, "coats": 2}
+      ]
+    },
+    "rem": {
+      "brand": "Rem Color",
+      "code": "RC-0607HS.2x100(200)",
+      "layers": [
+        {"name": "Rem-Pox 0607 HS", "slug": "rem-pox-0607-hs", "role": "Основной слой", "dft": 100, "coats": 2}
+      ]
+    },
+    "others": [
+      {"brand": "WEG", "note": "Универсальные эпоксидные системы для труб"}
+    ],
+    "advantages": [
+      "Протестированный аналог Interbond 2340UPC",
+      "Два слоя по 100 мкм",
+      "Подходит как рабочая альтернатива, пока UPC-класс не выделен отдельной позицией Rem Color"
+    ],
+    "notes": "Криогенный край диапазона (−198 °C) у UPC шире, чем у стандартного эпоксида. Для LNG / cryo схему подтверждаем отдельно."
+  },
+  {
+    "slug": "immersion-954",
+    "category": "immersion",
+    "code": "7-954.2x250(500)",
+    "title": "Погружение и splash zone",
+    "purpose": "Износоустойчивые схемы для погружения и зоны переменного смачивания.",
+    "corrosivity": "Im2 / splash",
+    "durability": "высокий",
+    "total_dft": 500,
+    "temperature": "",
+    "competitor": {
+      "brand": "Akzo Nobel",
+      "code": "Interzone 954",
+      "layers": [
+        {"name": "Interzone 954", "slug": "interzone-954", "role": "Толстослойный эпоксид", "dft": 250, "coats": 2}
+      ]
+    },
+    "rem": {
+      "brand": "Rem Color",
+      "code": "RC-0607HS.2x250(500)",
+      "layers": [
+        {"name": "Rem-Pox 0607 HS", "slug": "rem-pox-0607-hs", "role": "Толстослойный эпоксид", "dft": 250, "coats": 2}
+      ]
+    },
+    "others": [
+      {"brand": "WEG", "note": "High-build эпоксиды для погружения / причалов"},
+      {"brand": "Jotun", "note": "Jotamastic high-build / splash zone"}
+    ],
+    "advantages": [
+      "Протестированный аналог Interzone 954 и 954GF",
+      "Толстослойная эпоксидная защита без финиша",
+      "Типовая замена WEG/Jotun high-build в гидротехнике"
+    ],
+    "notes": "Номер исходной схемы на tonaly.ru в HTML разбит; толщины взяты по типовой практике Interzone 954 (2×200–250 мкм). Финальную ТСП подтверждаем по регламенту объекта."
+  },
+  {
+    "slug": "tanks-850",
+    "category": "tanks",
+    "code": "6-850",
+    "title": "Внутренняя защита резервуаров",
+    "purpose": "Химстойкое внутреннее покрытие ёмкостей.",
+    "corrosivity": "Im1 / резервуар",
+    "durability": "высокий",
+    "total_dft": 300,
+    "temperature": "",
+    "competitor": {
+      "brand": "Akzo Nobel",
+      "code": "Interline 850",
+      "layers": [
+        {"name": "Interline 850", "slug": "interline-850", "role": "Лайнинг", "dft": 150, "coats": 2}
+      ]
+    },
+    "rem": {
+      "brand": "Rem Color",
+      "code": "RC-0607AS.2x150(300)",
+      "layers": [
+        {"name": "Rem-Pox 0607 AS", "slug": "rem-pox-0607-as", "role": "Лайнинг", "dft": 150, "coats": 2}
+      ]
+    },
+    "others": [
+      {"brand": "WEG", "note": "Эпоксидные лайнинги резервуаров WEG (Novolac / tank lining)"}
+    ],
+    "advantages": [
+      "Протестированный аналог Interline 850 — Rem-Pox 0607 AS",
+      "Двухслойный лайнинг без смены логики работ",
+      "Для сильных кислот / Novolac (Interline 994, Ceilcote) нужен отдельный подбор"
+    ],
+    "notes": "ТСП 2×150 мкм — рабочая отправная точка. Для конкретного продукта в резервуаре (нефть, химия, вода) толщину и число слоёв подтверждаем по листу химстойкости."
+  }
+]

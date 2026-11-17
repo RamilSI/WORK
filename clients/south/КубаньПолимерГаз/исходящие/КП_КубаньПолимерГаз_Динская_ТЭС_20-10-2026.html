@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>КП — ООО «КубаньПолимерГаз», Динская ТЭС</title>
+<style>
+  @page { size: A4; margin: 14mm 16mm 16mm 16mm; }
+  * { box-sizing: border-box; }
+  body {
+    font-family: "Calibri", "Arial", sans-serif;
+    font-size: 11pt;
+    line-height: 1.35;
+    color: #1a1a1a;
+    margin: 0;
+  }
+  .head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 24px;
+  }
+  .brand img { height: 42px; width: auto; display: block; margin-bottom: 8px; }
+  .brand p, .to p { margin: 0; }
+  .muted { color: #5c6770; font-size: 9.5pt; }
+  .to { text-align: right; font-size: 10.5pt; max-width: 46%; }
+  hr.rule { border: none; border-top: 2px solid #1B365D; margin: 12px 0 14px; }
+  h1 {
+    font-size: 14pt;
+    letter-spacing: 0.04em;
+    color: #1B365D;
+    text-align: center;
+    margin: 0 0 4px;
+    font-weight: 700;
+  }
+  .sub {
+    text-align: center;
+    margin: 0 0 14px;
+    font-size: 11pt;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 8px 0 10px;
+  }
+  th, td {
+    border: 1px solid #c5ced6;
+    padding: 6px 8px;
+    vertical-align: top;
+  }
+  th {
+    background: #1B365D;
+    color: #fff;
+    font-weight: 600;
+    font-size: 10pt;
+    text-align: left;
+  }
+  td.num, th.num { text-align: right; white-space: nowrap; }
+  td.ctr { text-align: center; }
+  tr.total td {
+    font-weight: 700;
+    background: #F4F7FA;
+    border-top: 2px solid #1B365D;
+  }
+  .note { font-size: 10pt; margin: 8px 0; }
+  h2 { font-size: 11.5pt; color: #1B365D; margin: 16px 0 6px; }
+  .sign { margin-top: 28px; }
+  .sign p { margin: 0 0 2px; }
+  .gap { height: 36px; }
+</style>
+</head>
+<body>
+  <div class="head">
+    <div class="brand">
+      <img src="file:///Users/ramil/Documents/WORK/Бизнес/Image_all/Image_all/Логотип,%20подпись,%20печать/TONAL.png" alt="TONAL">
+      <p><strong>ООО «ТОНАЛЬ»</strong></p>
+      <p class="muted">Новороссийск, ул. Видова, 212, офис 57<br>
+      Самара, ул. 22-го Партсъезда, 1<br>
+      +7 (918) 49-06-109 · inbox@tonaly.ru · tonaly.ru<br>
+      ИНН 2315998033 · КПП 231501001</p>
+    </div>
+    <div class="to">
+      <p><strong>ООО «КубаньПолимерГаз»</strong></p>
+      <p>Специалисту по снабжению<br>Панарину Алексею Алексеевичу</p>
+      <p class="muted">kubanpolimergaz@mail.ru<br>8 (861) 211-25-63</p>
+    </div>
+  </div>
+  <hr class="rule">
+  <p class="muted" style="margin:0 0 12px;">20 октября 2026 г.</p>
+  <h1>КОММЕРЧЕСКОЕ ПРЕДЛОЖЕНИЕ</h1>
+  <p class="sub">Объект: <strong>Динская ТЭС</strong></p>
+  <p>Добрый день!</p>
+  <p>Направляем цены на материалы по вашей заявке. Цены указаны в рублях и <strong>включают НДС 22%</strong>.</p>
+  <table>
+    <thead>
+      <tr>
+        <th class="ctr" style="width:36px;">№</th>
+        <th>Наименование</th>
+        <th class="num">Кол-во, кг</th>
+        <th class="num">Цена, ₽/кг</th>
+        <th class="num">Сумма, ₽</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="ctr">1</td>
+        <td>Грунт-эмаль Rem-Pox 0607 HS 2K<br><span class="muted">комплект: основа + отвердитель</span></td>
+        <td class="num">450</td>
+        <td class="num">951,55</td>
+        <td class="num">428 197,50</td>
+      </tr>
+      <tr>
+        <td class="ctr">2</td>
+        <td>Растворитель Рем-Сол-2</td>
+        <td class="num">90</td>
+        <td class="num">595,93</td>
+        <td class="num">53 633,70</td>
+      </tr>
+      <tr>
+        <td class="ctr">3</td>
+        <td>Эмаль Rem-Pur 1604 2K CR<br><span class="muted">комплект: основа + отвердитель, RAL 7047</span></td>
+        <td class="num">210</td>
+        <td class="num">1 655,64</td>
+        <td class="num">347 684,40</td>
+      </tr>
+      <tr>
+        <td class="ctr">4</td>
+        <td>Растворитель Рем-Сол-3</td>
+        <td class="num">42</td>
+        <td class="num">644,62</td>
+        <td class="num">27 074,04</td>
+      </tr>
+      <tr class="total">
+        <td></td>
+        <td colspan="3">Итого с НДС 22%</td>
+        <td class="num">856 589,64</td>
+      </tr>
+    </tbody>
+  </table>
+  <p class="note">В том числе НДС 22% — 154 466,98 ₽.</p>
+  <h2>Дополнительно: грунт-эмаль Рем-Пур 210, 40 кг</h2>
+  <p class="note">В заявке цвет не указан. Цена зависит от RAL. В итог выше эти 40 кг не входят.</p>
+  <table>
+    <thead>
+      <tr>
+        <th>Цвет</th>
+        <th class="num">Кол-во, кг</th>
+        <th class="num">Цена, ₽/кг</th>
+        <th class="num">Сумма, ₽</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>RAL 7047 или RAL 7004</td>
+        <td class="num">40</td>
+        <td class="num">1 213,20</td>
+        <td class="num">48 528,00</td>
+      </tr>
+      <tr>
+        <td>RAL 5015</td>
+        <td class="num">40</td>
+        <td class="num">1 284,62</td>
+        <td class="num">51 384,80</td>
+      </tr>
+      <tr>
+        <td>RAL 1021</td>
+        <td class="num">40</td>
+        <td class="num">1 580,51</td>
+        <td class="num">63 220,40</td>
+      </tr>
+    </tbody>
+  </table>
+  <p class="note">Срок поставки и отгрузка — по согласованию. Цены действуют на указанный объём.</p>
+  <div class="sign">
+    <p>С уважением,</p>
+    <div class="gap"></div>
+    <p><strong>Саликов Рамиль</strong></p>
+    <p>Технический директор ООО «ТОНАЛЬ»</p>
+    <p class="muted">+7 (918) 49-39-548 · rml@tonaly.ru</p>
+  </div>
+</body>
+</html>

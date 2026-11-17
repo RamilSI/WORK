@@ -1,0 +1,18 @@
+{
+  "result": "success",
+  "contact": {
+    "id": 5439,
+    "name": "НАУЧНО-ПРОИЗВОДСТВЕННЫЙ ЦЕНТР САМАРА",
+    "description": "ОБЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ \"НАУЧНО-ПРОИЗВОДСТВЕННЫЙ ЦЕНТР \"САМАРА\"",
+    "site": "http://npcsamara.ru",
+    "email": "offise@npcsamara.ru",
+    "isCompany": true,
+    "phones": [
+      {
+        "number": "88469320323",
+        "maskedNumber": "8(846)9320323",
+        "type": 2
+      }
+    ]
+  }
+}

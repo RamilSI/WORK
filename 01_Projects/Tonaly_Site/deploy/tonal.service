@@ -1,0 +1,14 @@
+[Unit]
+Description=Tonal site (uvicorn)
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/root/tonal/backend
+ExecStart=/usr/bin/python3 -m uvicorn main:app --host 127.0.0.1 --port 8000 --proxy-headers --forwarded-allow-ips=*
+Restart=on-failure
+RestartSec=3
+Environment=PYTHONUNBUFFERED=1
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,156 @@
+@charset "UTF-8";
+/*Обнуление*/
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+:focus, :active {
+  outline: none;
+}
+
+a:focus, a:active {
+  outline: none;
+}
+
+nav, footer, header, aside {
+  display: block;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 14px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+input, button, textarea {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+  font-size: 30px;
+  margin: 200px;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a, a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+/*--------------------*/
+body {
+  font-size: 18px;
+}
+
+body h1 {
+  font-size: 34px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  padding: 40px;
+  margin: auto;
+  text-align: center;
+}
+
+body h3 {
+  font-size: 24px;
+  text-align: center;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.conteiner {
+  background-color: antiquewhite;
+  margin-top: 45px;
+  margin-left: 45px;
+  max-width: 1600px;
+}
+
+.content__title {
+  background-color: aqua;
+  border: solid 5px greenyellow;
+  width: auto;
+}
+
+.content__text {
+  border: solid 3px gold;
+}
+
+.content__photo {
+  background-color: blueviolet;
+}
+
+.content__equipment {
+  background-color: darkgoldenrod;
+}
+
+.content__abzac {
+  border: solid 3px sienna;
+}
+
+.content__remark {
+  background-color: red;
+}
+
+.content__test {
+  background-color: greenyellow;
+}
+
+.content__summary {
+  background-color: fuchsia;
+}
+
+.to-do {
+  border: solid 5px darkorange;
+}
+
+.to-do__geolocation {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  background-color: #63d3a4;
+}
+
+.title span {
+  font-size: 12px;
+  font-style: italic;
+  background-color: palegreen;
+}

@@ -1,0 +1,6 @@
+[
+  {
+    "key": "cmd+alt+e",
+    "command": "sourcecraft-code-assist.popoutButtonClicked"
+  }
+]

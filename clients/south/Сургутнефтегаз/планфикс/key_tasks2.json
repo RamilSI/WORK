@@ -1,0 +1,1173 @@
+{
+  "32639": {
+    "result": "success",
+    "task": {
+      "id": 32639,
+      "name": "ООО НПЦ Самара",
+      "description": "",
+      "status": {
+        "id": 2,
+        "name": "В работе",
+        "color": "#3377C3",
+        "isActive": true,
+        "hasDeadline": true,
+        "isAppliedIndividually": false,
+        "texts": [
+          {
+            "lang": "Ru",
+            "name": "В работе"
+          },
+          {
+            "lang": "En",
+            "name": "In progress"
+          }
+        ]
+      },
+      "assigner": {
+        "id": "user:23",
+        "name": "Пониматкин Евгений"
+      },
+      "project": {
+        "id": 32758
+      },
+      "counterparty": {
+        "id": "contact:5439",
+        "name": "НАУЧНО-ПРОИЗВОДСТВЕННЫЙ ЦЕНТР САМАРА"
+      },
+      "dateTime": {
+        "date": "25-08-2026",
+        "time": "09:45",
+        "datetime": "2026-08-25T09:45Z",
+        "dateTimeUtcSeconds": "2026-08-25T09:45:05+0000",
+        "dateTimeUtcWithSeconds": "2026-08-25T09:45:05+0000"
+      },
+      "startDateTime": {
+        "date": "07-09-2026",
+        "time": "00:00",
+        "datetime": "2026-09-07T00:00Z",
+        "dateTimeUtcSeconds": "2026-09-07T00:00:00+0000",
+        "dateTimeUtcWithSeconds": "2026-09-07T00:00:00+0000"
+      },
+      "endDateTime": {
+        "date": "11-09-2026",
+        "time": "00:00",
+        "datetime": "2026-09-11T00:00Z",
+        "dateTimeUtcSeconds": "2026-09-11T00:00:00+0000",
+        "dateTimeUtcWithSeconds": "2026-09-11T00:00:00+0000"
+      },
+      "dateOfLastUpdate": {
+        "date": "11-09-2026",
+        "time": "06:22",
+        "datetime": "2026-09-11T06:22Z",
+        "dateTimeUtcSeconds": "2026-09-11T06:22:26+0000",
+        "dateTimeUtcWithSeconds": "2026-09-11T06:22:26+0000"
+      },
+      "assignees": {
+        "users": [
+          {
+            "id": "user:24",
+            "name": "Дмитриева Алёна Викторовна"
+          },
+          {
+            "id": "user:23",
+            "name": "Пониматкин Евгений"
+          },
+          {
+            "id": "user:1",
+            "name": "Саликов Рамиль"
+          }
+        ],
+        "groups": []
+      },
+      "files": [
+        {
+          "id": 1027164,
+          "size": 171,
+          "name": "Письмо №32639-28-08-2026 для ООО \"НПЦ \"САМАРА\" касательно .pdf"
+        },
+        {
+          "id": 1027168,
+          "size": 171,
+          "name": "Письмо №32639-28-08-2026 для ООО \"НПЦ \"САМАРА\" касательно .pdf"
+        },
+        {
+          "id": 1027166,
+          "size": 321,
+          "name": "Письмо №32639-28-08-2026 для ООО \"НПЦ \"САМАРА\" касательно .docx"
+        },
+        {
+          "id": 1027076,
+          "size": 214,
+          "name": "pismo_№32617-27-08-2026_dlya_pao__surgutneftegaz__kasatelno_(120224_v19).pdf"
+        },
+        {
+          "id": 1027172,
+          "size": 172,
+          "name": "Письмо №32639-28-08-2026 для ООО \"НПЦ \"САМАРА\" касательно .pdf"
+        },
+        {
+          "id": 1027170,
+          "size": 321,
+          "name": "Письмо №32639-28-08-2026 для ООО \"НПЦ \"САМАРА\" касательно .docx"
+        },
+        {
+          "id": 1027174,
+          "size": 321,
+          "name": "Письмо №32639-28-08-2026 для ООО \"НПЦ \"САМАРА\" касательно .docx"
+        },
+        {
+          "id": 1027180,
+          "size": 321,
+          "name": "Письмо №32639-28-08-2026 для ООО \"НПЦ \"САМАРА\" касательно .docx"
+        }
+      ]
+    }
+  },
+  "32639_comments": {
+    "result": "success",
+    "comments": [
+      {
+        "id": 9046490,
+        "dateTime": {
+          "date": "14-09-2026",
+          "time": "11:14",
+          "datetime": "2026-09-14T11:14Z",
+          "dateTimeUtcSeconds": "2026-09-14T11:14:54+0000",
+          "dateTimeUtcWithSeconds": "2026-09-14T11:14:54+0000"
+        },
+        "owner": {
+          "id": "contact:3753",
+          "name": "Марина Александровна Добрикова"
+        },
+        "description": "<div>\n <div><br>Добрый день, Евгений.\n </div>\n <div>\n  Письмо во вложении.<br>\n </div>\n <div>\n  <div>\n   <div>\n    --<br><em> С уважением,</em>\n   </div>\n   <div><em>начальник отдела технического сопровождения испытаний, к.х.н.</em>\n   </div>\n   <div><em>ООО «Научно-производственный центр «Самара»</em>\n   </div>\n   <div><em>Добрикова Марина Александровна<br><span><span><span><span><span><span class=\"js-phone-number\">+7(846)932-03-23</span></span></span></span></span></span></em>\n   </div>\n   <div><em><span><span><span><span><span><span class=\"js-phone-number\">+7(927)004-28-06</span></span></span></span></span></span></em>\n   </div>\n  </div>\n </div><br>\n <div>\n  <blockquote style=\"border-left:1px solid #0857A6;margin:10px;padding:0 0 0 10px\"><span>От кого: Евгений &lt;<a href=\"mailto:samara@tonaly.ru\">samara@tonaly.ru</a>&gt;<br>Кому:<a href=\"mailto:dobrikova@npcsamara.ru\">dobrikova@npcsamara.ru</a><br>Дата: Понедельник, 14 сентября 2026, 14:44 +04:00</span><br>\n  </blockquote>\n </div>\n</div>"
+      },
+      {
+        "id": 9046426,
+        "dateTime": {
+          "date": "14-09-2026",
+          "time": "10:44",
+          "datetime": "2026-09-14T10:44Z",
+          "dateTimeUtcSeconds": "2026-09-14T10:44:06+0000",
+          "dateTimeUtcWithSeconds": "2026-09-14T10:44:06+0000"
+        },
+        "owner": {
+          "id": "user:23",
+          "name": "Пониматкин Евгений"
+        },
+        "description": ""
+      },
+      {
+        "id": 9046422,
+        "dateTime": {
+          "date": "14-09-2026",
+          "time": "10:43",
+          "datetime": "2026-09-14T10:43Z",
+          "dateTimeUtcSeconds": "2026-09-14T10:43:13+0000",
+          "dateTimeUtcWithSeconds": "2026-09-14T10:43:13+0000"
+        },
+        "owner": {
+          "id": "user:23",
+          "name": "Пониматкин Евгений"
+        },
+        "description": ""
+      },
+      {
+        "id": 9046408,
+        "dateTime": {
+          "date": "14-09-2026",
+          "time": "10:36",
+          "datetime": "2026-09-14T10:36Z",
+          "dateTimeUtcSeconds": "2026-09-14T10:36:20+0000",
+          "dateTimeUtcWithSeconds": "2026-09-14T10:36:20+0000"
+        },
+        "owner": {
+          "id": "user:23",
+          "name": "Пониматкин Евгений"
+        },
+        "description": ""
+      },
+      {
+        "id": 9045572,
+        "dateTime": {
+          "date": "14-09-2026",
+          "time": "05:39",
+          "datetime": "2026-09-14T05:39Z",
+          "dateTimeUtcSeconds": "2026-09-14T05:39:32+0000",
+          "dateTimeUtcWithSeconds": "2026-09-14T05:39:32+0000"
+        },
+        "owner": {
+          "id": "user:23",
+          "name": "Пониматкин Евгений"
+        },
+        "description": "Дл! По поводу ТСП внутренних покрытий в 310 мкм. Конкуренты заходят с ТСП 280 мкм. В ТЗ нет требования 20 лет срок службы. Есть 6 лет. Может наоборот, уменьшить толщину исходя из этих требований? Это потом поможет в конкуренции с другими поставщиками в плане ценообразования."
+      },
+      {
+        "id": 9045128,
+        "dateTime": {
+          "date": "11-09-2026",
+          "time": "11:00",
+          "datetime": "2026-09-11T11:00Z",
+          "dateTimeUtcSeconds": "2026-09-11T11:00:53+0000",
+          "dateTimeUtcWithSeconds": "2026-09-11T11:00:53+0000"
+        },
+        "owner": {
+          "id": "user:5",
+          "name": "Цвиренко Елена Владиславовна"
+        },
+        "description": "<p>Рамиль, Евгений, на 23.09 среда вторая половина дня у меня запланированы переговоры с Минском по этому вопросу</p>\n<p>Алена тебе полезно будет присутствовать ,</p>\n<p>Ставь себе уведомление</p>\n<p><br></p>"
+      },
+      {
+        "id": 9044890,
+        "dateTime": {
+          "date": "11-09-2026",
+          "time": "06:22",
+          "datetime": "2026-09-11T06:22Z",
+          "dateTimeUtcSeconds": "2026-09-11T06:22:26+0000",
+          "dateTimeUtcWithSeconds": "2026-09-11T06:22:26+0000"
+        },
+        "owner": {
+          "id": "user:1",
+          "name": "Саликов Рамиль"
+        },
+        "description": "<p>Задача в текущей проработке проекта</p>"
+      },
+      {
+        "id": 9043578,
+        "dateTime": {
+          "date": "07-09-2026",
+          "time": "12:51",
+          "datetime": "2026-09-07T12:51Z",
+          "dateTimeUtcSeconds": "2026-09-07T12:51:52+0000",
+          "dateTimeUtcWithSeconds": "2026-09-07T12:51:52+0000"
+        },
+        "owner": {
+          "id": "user:23",
+          "name": "Пониматкин Евгений"
+        },
+        "description": "Добрый день. По договору на СНГ ( письмо 692) и по письму 694 какое решение? И сегодня есть счёт на изготовление пластин для тестов. Это к 692 письму."
+      },
+      {
+        "id": 9043400,
+        "dateTime": {
+          "date": "07-09-2026",
+          "time": "07:12",
+          "datetime": "2026-09-07T07:12Z",
+          "dateTimeUtcSeconds": "2026-09-07T07:12:48+0000",
+          "dateTimeUtcWithSeconds": "2026-09-07T07:12:48+0000"
+        },
+        "owner": {
+          "id": "contact:3753",
+          "name": "Марина Александровна Добрикова"
+        },
+        "description": "<b>Re: КП</b><br><br>\n<div>\n <div>\n  Добрый день, Евгения.\n </div>\n <div>\n  Отправляю Вам договор, спецификации и счета н аоплату.\n </div>\n <div>\n  Просьба подписать договор, спецификации и прислать сканы.\n </div>\n <div>\n  Требования к образцам указаны в спецификациях.<br><br>\n </div>\n <div>\n  <div>\n   <div>\n    --<br><em> С уважением,</em>\n   </div>\n   <div><em>начальник отдела технического сопровождения испытаний, к.х.н.</em>\n   </div>\n   <div><em>ООО «Научно-производственный центр «Самара»</em>\n   </div>\n   <div><em>Добрикова Марина Александровна<br><span><span><span><span><span><span class=\"js-phone-number\">+7(846)932-03-23</span></span></span></span></span></span></em>\n   </div>\n   <div><em><span><span><span><span><span><span class=\"js-phone-number\">+7(927)004-28-06</span></span></span></span></span></span></em>\n   </div>\n  </div>\n </div><br>\n <div>\n  <blockquote style=\"border-left:1px solid #0857A6;margin:10px;padding:0 0 0 10px\"><span>От кого: Марина Александровна Добрикова &lt;<a href=\"mailto:dobrikova@npcsamara.ru\">dobrikova@npcsamara.ru</a>&gt;<br>Кому: Евгений &lt;<a href=\"mailto:samara@tonaly.ru\">samara@tonaly.ru</a>&gt;<br>Дата: Вторник, 1 сентября 2026, 16:39 +04:00</span><br>\n   <div>\n    <div>\n     <div>\n      <div>\n       <div>\n        <div>\n         <div>\n          Просьба зарегистрировать письмо во вложении.<br><br>\n          <div>\n           <div>\n            <div>\n             --<br><em> С уважением,</em>\n            </div>\n            <div><em>начальник отдела технического сопровождения испытаний, к.х.н.</em>\n            </div>\n            <div><em>ООО «Научно-производственный центр «Самара»</em>\n            </div>\n            <div><em>Добрикова Марина Александровна<br><span><span><span><span><span><span class=\"js-phone-number_mr_css_attr\">+7(846)932-03-23</span></span></span></span></span></span></em>\n            </div>\n            <div><em><span><span><span><span><span><span class=\"js-phone-number_mr_css_attr\">+7(927)004-28-06</span></span></span></span></span></span></em>\n            </div>\n           </div>\n          </div>\n          <div>\n           <div>\n            <blockquote style=\"border-left:1px solid #0857A6;margin:10px;padding:0 0 0 10px\"><span><span>От кого: Евгений &lt;<a href=\"mailto:samara@tonaly.ru\">samara@tonaly.ru</a>&gt;<br>Кому:<a href=\"mailto:dobrikova@npcsamara.ru\">dobrikova@npcsamara.ru</a><br>Дата: Вторник, 1 сентября 2026, 10:04 +04:00</span></span>\n             <div>\n             </div>\n            </blockquote>\n           </div>\n          </div>\n         </div>\n        </div>\n       </div>\n      </div>\n     </div>\n    </div>\n   </div>\n  </blockquote>\n </div>\n</div>"
+      },
+      {
+        "id": 9043116,
+        "dateTime": {
+          "date": "04-09-2026",
+          "time": "17:27",
+          "datetime": "2026-09-04T17:27Z",
+          "dateTimeUtcSeconds": "2026-09-04T17:27:17+0000",
+          "dateTimeUtcWithSeconds": "2026-09-04T17:27:17+0000"
+        },
+        "owner": {
+          "id": "user:1",
+          "name": "Саликов Рамиль"
+        },
+        "description": "<p>Конечно да!</p>\n<blockquote>\n Запускаем процспроцесс? Ещё нужно учесть время на образцы\n</blockquote>"
+      },
+      {
+        "id": 9043108,
+        "dateTime": {
+          "date": "04-09-2026",
+          "time": "15:38",
+          "datetime": "2026-09-04T15:38Z",
+          "dateTimeUtcSeconds": "2026-09-04T15:38:18+0000",
+          "dateTimeUtcWithSeconds": "2026-09-04T15:38:18+0000"
+        },
+        "owner": {
+          "id": "user:23",
+          "name": "Пониматкин Евгений"
+        },
+        "description": "Запускаем процспроцесс? Ещё нужно учесть время на образцы"
+      },
+      {
+        "id": 9043106,
+        "dateTime": {
+          "date": "04-09-2026",
+          "time": "15:36",
+          "datetime": "2026-09-04T15:36Z",
+          "dateTimeUtcSeconds": "2026-09-04T15:36:09+0000",
+          "dateTimeUtcWithSeconds": "2026-09-04T15:36:09+0000"
+        },
+        "owner": {
+          "id": "user:23",
+          "name": "Пониматкин Евгений"
+        },
+        "description": "Задают вопрос о ваших планах. В декабре в СНГ желатльно подать пложительное заключение на ЛКМ."
+      },
+      {
+        "id": 9043104,
+        "dateTime": {
+          "date": "04-09-2026",
+          "time": "15:26",
+          "datetime": "2026-09-04T15:26Z",
+          "dateTimeUtcSeconds": "2026-09-04T15:26:58+0000",
+          "dateTimeUtcWithSeconds": "2026-09-04T15:26:58+0000"
+        },
+        "owner": {
+          "id": "user:1",
+          "name": "Саликов Рамиль"
+        },
+        "description": "<p>И что сказали?</p>\n<blockquote>\n Мне звонили. Я же с ними в контакте.\n</blockquote>"
+      },
+      {
+        "id": 9043102,
+        "dateTime": {
+          "date": "04-09-2026",
+          "time": "14:48",
+          "datetime": "2026-09-04T14:48Z",
+          "dateTimeUtcSeconds": "2026-09-04T14:48:58+0000",
+          "dateTimeUtcWithSeconds": "2026-09-04T14:48:58+0000"
+        },
+        "owner": {
+          "id": "user:23",
+          "name": "Пониматкин Евгений"
+        },
+        "description": "Мне звонили. Я же с ними в контакте."
+      },
+      {
+        "id": 9043100,
+        "dateTime": {
+          "date": "04-09-2026",
+          "time": "14:47",
+          "datetime": "2026-09-04T14:47Z",
+          "dateTimeUtcSeconds": "2026-09-04T14:47:44+0000",
+          "dateTimeUtcWithSeconds": "2026-09-04T14:47:44+0000"
+        },
+        "owner": {
+          "id": "user:1",
+          "name": "Саликов Рамиль"
+        },
+        "description": "<p>Кому звонили?</p>\n<blockquote>\n Дд! Сегодня с НПЦ звонили по вопросу аккредитации СНГ. Какое решние принято?\n</blockquote>"
+      },
+      {
+        "id": 9043090,
+        "dateTime": {
+          "date": "04-09-2026",
+          "time": "14:21",
+          "datetime": "2026-09-04T14:21Z",
+          "dateTimeUtcSeconds": "2026-09-04T14:21:50+0000",
+          "dateTimeUtcWithSeconds": "2026-09-04T14:21:50+0000"
+        },
+        "owner": {
+          "id": "user:23",
+          "name": "Пониматкин Евгений"
+        },
+        "description": "Дд! Сегодня с НПЦ звонили по вопросу аккредитации СНГ. Какое решние принято?"
+      },
+      {
+        "id": 9042084,
+        "dateTime": {
+          "date": "03-09-2026",
+          "time": "10:09",
+          "datetime": "2026-09-03T10:09Z",
+          "dateTimeUtcSeconds": "2026-09-03T10:09:52+0000",
+          "dateTimeUtcWithSeconds": "2026-09-03T10:09:52+0000"
+        },
+        "owner": {
+          "id": "user:23",
+          "name": "Пониматкин Евгений"
+        },
+        "description": "Дд! <br>2вопроса.<br>1.Присвоили номер входящму письму и передали его в НПЦ? <br>2. Какое решение по проведению лаб. Работ? Согласовано или несогласовано? <br>Время идёт. В декабре нужно получить положительные заключения. <br>И так же нужно учитывать время на изготовление образцов. <br>"
+      },
+      {
+        "id": 9041288,
+        "dateTime": {
+          "date": "01-09-2026",
+          "time": "12:40",
+          "datetime": "2026-09-01T12:40Z",
+          "dateTimeUtcSeconds": "2026-09-01T12:40:09+0000",
+          "dateTimeUtcWithSeconds": "2026-09-01T12:40:09+0000"
+        },
+        "owner": {
+          "id": "contact:3753",
+          "name": "Марина Александровна Добрикова"
+        },
+        "description": "<b>Re: КП</b><br><br>\n<div>\n Просьба зарегистрировать письмо во вложении.<br><br>\n <div>\n  <div>\n   <div>\n    --<br><em> С уважением,</em>\n   </div>\n   <div><em>начальник отдела технического сопровождения испытаний, к.х.н.</em>\n   </div>\n   <div><em>ООО «Научно-производственный центр «Самара»</em>\n   </div>\n   <div><em>Добрикова Марина Александровна<br><span><span><span><span><span><span class=\"js-phone-number\">+7(846)932-03-23</span></span></span></span></span></span></em>\n   </div>\n   <div><em><span><span><span><span><span><span class=\"js-phone-number\">+7(927)004-28-06</span></span></span></span></span></span></em>\n   </div>\n  </div>\n </div><br>\n <div>\n  <blockquote style=\"border-left:1px solid #0857A6;margin:10px;padding:0 0 0 10px\"><span>От кого: Евгений &lt;<a href=\"mailto:samara@tonaly.ru\">samara@tonaly.ru</a>&gt;<br>Кому:<a href=\"mailto:dobrikova@npcsamara.ru\">dobrikova@npcsamara.ru</a><br>Дата: Вторник, 1 сентября 2026, 10:04 +04:00</span><br>\n  </blockquote>\n </div>\n</div>"
+      },
+      {
+        "id": 9041036,
+        "dateTime": {
+          "date": "01-09-2026",
+          "time": "07:14",
+          "datetime": "2026-09-01T07:14Z",
+          "dateTimeUtcSeconds": "2026-09-01T07:14:09+0000",
+          "dateTimeUtcWithSeconds": "2026-09-01T07:14:09+0000"
+        },
+        "owner": {
+          "id": "user:23",
+          "name": "Пониматкин Евгений"
+        },
+        "description": "Они, я так понимаю, добыча и очистка. Готовых поодуктов у них нет. Поэтому тратиться н антистатик смысла нет."
+      },
+      {
+        "id": 9041034,
+        "dateTime": {
+          "date": "01-09-2026",
+          "time": "07:11",
+          "datetime": "2026-09-01T07:11Z",
+          "dateTimeUtcSeconds": "2026-09-01T07:11:52+0000",
+          "dateTimeUtcWithSeconds": "2026-09-01T07:11:52+0000"
+        },
+        "owner": {
+          "id": "contact:3753",
+          "name": "Марина Александровна Добрикова"
+        },
+        "description": "<div>\n <div style=\"text-align:justify\"><span style=\"font-size:11pt\"><span style=\"line-height:115%\"><span style=\"font-family:Calibri,sans-serif\"><span style=\"font-size:12.0pt\"><span style=\"line-height:115%\"><span style=\"font-family:&quot;Times New Roman&quot;,serif\">Для проведения испытаний <u>внутреннего покрытия</u> (одной системы материалов) Заказчик предоставляет следующие образцы:</span></span></span></span></span></span>\n </div>\n <p style=\"text-align:justify\"><span style=\"font-size:14pt\"><span style=\"font-family:&quot;Times New Roman&quot;,serif\"><span style=\"font-size:12.0pt\">- пластины типоразмером 150х75х4 мм - 40 шт;</span></span></span></p>\n <p style=\"text-align:justify\"><span style=\"font-size:14pt\"><span style=\"line-height:115%\"><span style=\"font-family:&quot;Times New Roman&quot;,serif\"><span style=\"font-size:12.0pt\"><span style=\"line-height:115%\">- пластины типоразмером 150х70х(0,8-1) мм — 3 шт;</span></span></span></span></span></p>\n <p style=\"text-align:justify\"><span style=\"font-size:14pt\"><span style=\"line-height:115%\"><span style=\"font-family:&quot;Times New Roman&quot;,serif\"><span style=\"font-size:12.0pt\"><span style=\"line-height:115%\">- пластины типоразмером 100х100х(толщина не более 3) мм — 3 шт.</span></span></span></span></span></p>\n <div style=\"text-align:justify\"><span style=\"font-size:11pt\"><span style=\"line-height:115%\"><span style=\"font-family:Calibri,sans-serif\"><span style=\"font-size:12.0pt\"><span style=\"line-height:115%\"><span style=\"font-family:&quot;Times New Roman&quot;,serif\">Для проведения испытаний <u>наружного покрытия</u> (одной системы материалов) Заказчик предоставляет следующие образцы:</span></span></span></span></span></span>\n </div>\n <p style=\"text-align:justify\"><span style=\"font-size:14pt\"><span style=\"font-family:&quot;Times New Roman&quot;,serif\"><span style=\"font-size:12.0pt\">- пластины типоразмером 150х75х4 мм - 50 шт;</span></span></span></p>\n <p style=\"text-align:justify\"><span style=\"font-size:14pt\"><span style=\"line-height:115%\"><span style=\"font-family:&quot;Times New Roman&quot;,serif\"><span style=\"font-size:12.0pt\"><span style=\"line-height:115%\">- пластины типоразмером 100х100х(толщина не более 3) мм — 3 шт.</span></span></span></span></span></p><br>\n <div>\n  <div>\n   <div>\n    --<br><em> С уважением,</em>\n   </div>\n   <div><em>начальник отдела технического сопровождения испытаний, к.х.н.</em>\n   </div>\n   <div><em>ООО «Научно-производственный центр «Самара»</em>\n   </div>\n   <div><em>Добрикова Марина Александровна<br><span><span><span><span><span><span class=\"js-phone-number\">+7(846)932-03-23</span></span></span></span></span></span></em>\n   </div>\n   <div><em><span><span><span><span><span><span class=\"js-phone-number\">+7(927)004-28-06</span></span></span></span></span></span></em>\n   </div>\n  </div>\n </div><br>\n <div>\n  <blockquote style=\"border-left:1px solid #0857A6;margin:10px;padding:0 0 0 10px\"><span>От кого: Марина Александровна Добрикова &lt;<a href=\"mailto:dobrikova@npcsamara.ru\">dobrikova@npcsamara.ru</a>&gt;<br>Кому: Евгений &lt;<a href=\"mailto:samara@tonaly.ru\">samara@tonaly.ru</a>&gt;<br>Дата: Вторник, 1 сентября 2026, 09:50 +04:00</span><br>\n   <div>\n    <div>\n     <div>\n      <div>\n       <div>\n        <div>\n         <div>\n          Добрый день, Евгений.\n         </div>\n         <div>\n          КП во вложении\n         </div>\n         <div>\n         </div>\n         <div>\n          <div>\n           <div>\n            --<br><em> С уважением,</em>\n           </div>\n           <div><em>начальник отдела технического сопровождения испытаний, к.х.н.</em>\n           </div>\n           <div><em>ООО «Научно-производственный центр «Самара»</em>\n           </div>\n           <div><em>Добрикова Марина Александровна<br><span><span><span><span><span><span class=\"js-phone-number_mr_css_attr\">+7(846)932-03-23</span></span></span></span></span></span></em>\n           </div>\n           <div><em><span><span><span><span><span><span class=\"js-phone-number_mr_css_attr\">+7(927)004-28-06</span></span></span></span></span></span></em>\n           </div>\n          </div>\n         </div>\n        </div>\n       </div>\n      </div>\n     </div>\n    </div>\n   </div>\n  </blockquote>\n </div>\n</div>"
+      },
+      {
+        "id": 9041032,
+        "dateTime": {
+          "date": "01-09-2026",
+          "time": "07:11",
+          "datetime": "2026-09-01T07:11Z",
+          "dateTimeUtcSeconds": "2026-09-01T07:11:27+0000",
+          "dateTimeUtcWithSeconds": "2026-09-01T07:11:27+0000"
+        },
+        "owner": {
+          "id": "user:1",
+          "name": "Саликов Рамиль"
+        },
+        "description": "<p>Жэнь, они бензины и керосины не делают? так то и диз топливо считается светлым..</p>\n<p>сделаю сегодня корректировку</p>\n<p>по наружке можно одну - 240 мкм...</p>"
+      },
+      {
+        "id": 9041026,
+        "dateTime": {
+          "date": "01-09-2026",
+          "time": "07:07",
+          "datetime": "2026-09-01T07:07Z",
+          "dateTimeUtcSeconds": "2026-09-01T07:07:53+0000",
+          "dateTimeUtcWithSeconds": "2026-09-01T07:07:53+0000"
+        },
+        "owner": {
+          "id": "user:23",
+          "name": "Пониматкин Евгений"
+        },
+        "description": "Добрый день! Внутрянка на светлые продукты СНГ не нужна. Поэтому нужно рассматривать одну схему под тёмные, и нужно принять решние по схемам наружки- 2 схемы или 1?"
+      },
+      {
+        "id": 9040684,
+        "dateTime": {
+          "date": "01-09-2026",
+          "time": "05:50",
+          "datetime": "2026-09-01T05:50Z",
+          "dateTimeUtcSeconds": "2026-09-01T05:50:31+0000",
+          "dateTimeUtcWithSeconds": "2026-09-01T05:50:31+0000"
+        },
+        "owner": {
+          "id": "contact:3753",
+          "name": "Марина Александровна Добрикова"
+        },
+        "description": "<div>\n Добрый день, Евгений.\n</div>\n<div>\n КП во вложении\n</div>\n<div>\n</div>\n<div>\n <div>\n  <div>\n   --<br><em> С уважением,</em>\n  </div>\n  <div><em>начальник отдела технического сопровождения испытаний, к.х.н.</em>\n  </div>\n  <div><em>ООО «Научно-производственный центр «Самара»</em>\n  </div>\n  <div><em>Добрикова Марина Александровна<br><span><span><span><span><span><span class=\"js-phone-number\">+7(846)932-03-23</span></span></span></span></span></span></em>\n  </div>\n  <div><em><span><span><span><span><span><span class=\"js-phone-number\">+7(927)004-28-06</span></span></span></span></span></span></em>\n  </div>\n </div>\n</div>"
+      },
+      {
+        "id": 9039918,
+        "dateTime": {
+          "date": "28-08-2026",
+          "time": "07:45",
+          "datetime": "2026-08-28T07:45Z",
+          "dateTimeUtcSeconds": "2026-08-28T07:45:12+0000",
+          "dateTimeUtcWithSeconds": "2026-08-28T07:45:12+0000"
+        },
+        "owner": {
+          "id": "user:23",
+          "name": "Пониматкин Евгений"
+        },
+        "description": "Ты в копии"
+      },
+      {
+        "id": 9039914,
+        "dateTime": {
+          "date": "28-08-2026",
+          "time": "07:39",
+          "datetime": "2026-08-28T07:39Z",
+          "dateTimeUtcSeconds": "2026-08-28T07:39:27+0000",
+          "dateTimeUtcWithSeconds": "2026-08-28T07:39:27+0000"
+        },
+        "owner": {
+          "id": "user:23",
+          "name": "Пониматкин Евгений"
+        },
+        "description": "Да, с Планфикса"
+      },
+      {
+        "id": 9039912,
+        "dateTime": {
+          "date": "28-08-2026",
+          "time": "07:38",
+          "datetime": "2026-08-28T07:38Z",
+          "dateTimeUtcSeconds": "2026-08-28T07:38:36+0000",
+          "dateTimeUtcWithSeconds": "2026-08-28T07:38:36+0000"
+        },
+        "owner": {
+          "id": "user:1",
+          "name": "Саликов Рамиль"
+        },
+        "description": "<p>Отправил Жень, в нпц ?</p>\n<p><br></p>\n<p><br></p>"
+      },
+      {
+        "id": 9039802,
+        "dateTime": {
+          "date": "28-08-2026",
+          "time": "01:17",
+          "datetime": "2026-08-28T01:17Z",
+          "dateTimeUtcSeconds": "2026-08-28T01:17:32+0000",
+          "dateTimeUtcWithSeconds": "2026-08-28T01:17:32+0000"
+        },
+        "owner": {
+          "id": "user:23",
+          "name": "Пониматкин Евгений"
+        },
+        "description": ""
+      },
+      {
+        "id": 9038740,
+        "dateTime": {
+          "date": "25-08-2026",
+          "time": "09:45",
+          "datetime": "2026-08-25T09:45Z",
+          "dateTimeUtcSeconds": "2026-08-25T09:45:05+0000",
+          "dateTimeUtcWithSeconds": "2026-08-25T09:45:05+0000"
+        },
+        "owner": {
+          "id": "user:23",
+          "name": "Пониматкин Евгений"
+        },
+        "description": ""
+      }
+    ]
+  },
+  "32639_files": {
+    "result": "success",
+    "files": [
+      {
+        "id": 1027076,
+        "size": 214,
+        "name": "pismo_№32617-27-08-2026_dlya_pao__surgutneftegaz__kasatelno_(120224_v19).pdf"
+      },
+      {
+        "id": 1027164,
+        "size": 171,
+        "name": "Письмо №32639-28-08-2026 для ООО \"НПЦ \"САМАРА\" касательно .pdf"
+      },
+      {
+        "id": 1027166,
+        "size": 321,
+        "name": "Письмо №32639-28-08-2026 для ООО \"НПЦ \"САМАРА\" касательно .docx"
+      },
+      {
+        "id": 1027168,
+        "size": 171,
+        "name": "Письмо №32639-28-08-2026 для ООО \"НПЦ \"САМАРА\" касательно .pdf"
+      },
+      {
+        "id": 1027170,
+        "size": 321,
+        "name": "Письмо №32639-28-08-2026 для ООО \"НПЦ \"САМАРА\" касательно .docx"
+      },
+      {
+        "id": 1027172,
+        "size": 172,
+        "name": "Письмо №32639-28-08-2026 для ООО \"НПЦ \"САМАРА\" касательно .pdf"
+      },
+      {
+        "id": 1027174,
+        "size": 321,
+        "name": "Письмо №32639-28-08-2026 для ООО \"НПЦ \"САМАРА\" касательно .docx"
+      },
+      {
+        "id": 1027180,
+        "size": 321,
+        "name": "Письмо №32639-28-08-2026 для ООО \"НПЦ \"САМАРА\" касательно .docx"
+      },
+      {
+        "id": 1027594,
+        "size": 214,
+        "name": "Исх 692 - Тональ.pdf"
+      },
+      {
+        "id": 1028844,
+        "size": 207,
+        "name": "договор 1-01-54_26 ООО ТОНАЛЬ.pdf"
+      },
+      {
+        "id": 1028846,
+        "size": 222,
+        "name": "спецификация 1  резервуары внутрянка.pdf"
+      },
+      {
+        "id": 1028848,
+        "size": 223,
+        "name": "спецификация 2  резервуары наружка.pdf"
+      },
+      {
+        "id": 1028850,
+        "size": 223,
+        "name": "спецификация 3  резервуары наружка.pdf"
+      },
+      {
+        "id": 1028852,
+        "size": 248,
+        "name": "счет на оплату покупателю №1305 от 07.09.2026 г Тональ.pdf"
+      },
+      {
+        "id": 1028854,
+        "size": 248,
+        "name": "счет на оплату покупателю №1304 от 07.09.2026 г Тональ.pdf"
+      },
+      {
+        "id": 1028856,
+        "size": 247,
+        "name": "счет на оплату покупателю №1303 от 07.09.2026 г Тональ.pdf"
+      },
+      {
+        "id": 1030096,
+        "size": 321,
+        "name": "Скидка.docx"
+      },
+      {
+        "id": 1030098,
+        "size": 321,
+        "name": "Скидка(1).docx"
+      },
+      {
+        "id": 1030112,
+        "size": 183,
+        "name": "Исх 740 - Тональ.pdf"
+      }
+    ]
+  },
+  "31817": {
+    "result": "success",
+    "task": {
+      "id": 31817,
+      "name": "на №31295-234 от 16.06.2026",
+      "description": "Добрый день!<br><br>Прошу рассмотреть.<br><br><br>-----Original Message-----<br>From: Gubkina13k111@surgutneftegas.ru &lt;Gubkina13k111@surgutneftegas.ru&gt; <br>Sent: Tuesday, July 7, 2026 3:12 PM<br>To: Басырова Ирина Евгеньевна &lt;Basyrova_IE@surgutneftegas.ru&gt;<br>Subject: Xerox Scan<br><br>Please open the scanned attachment<br><br>Number of Images: 1<br>Attachment File Type: PDF<br><br>Device Name: 14994012<br>Device Location: UMTOP 109<br><br>",
+      "status": {
+        "id": 2,
+        "name": "В работе",
+        "color": "#3377C3",
+        "isActive": true,
+        "hasDeadline": true,
+        "isAppliedIndividually": false,
+        "texts": [
+          {
+            "lang": "Ru",
+            "name": "В работе"
+          },
+          {
+            "lang": "En",
+            "name": "In progress"
+          }
+        ]
+      },
+      "assigner": {
+        "id": "contact:5337",
+        "name": "Басырова Ирина Евгеньевна"
+      },
+      "counterparty": {
+        "id": "contact:5278",
+        "name": "СУРГУТНЕФТЕГАЗ"
+      },
+      "dateTime": {
+        "date": "07-07-2026",
+        "time": "09:38",
+        "datetime": "2026-07-07T09:38Z",
+        "dateTimeUtcSeconds": "2026-07-07T09:38:52+0000",
+        "dateTimeUtcWithSeconds": "2026-07-07T09:38:52+0000"
+      },
+      "dateOfLastUpdate": {
+        "date": "15-09-2026",
+        "time": "08:37",
+        "datetime": "2026-09-15T08:37Z",
+        "dateTimeUtcSeconds": "2026-09-15T08:37:01+0000",
+        "dateTimeUtcWithSeconds": "2026-09-15T08:37:01+0000"
+      },
+      "assignees": {
+        "users": [
+          {
+            "id": "user:23",
+            "name": "Пониматкин Евгений"
+          },
+          {
+            "id": "user:1",
+            "name": "Саликов Рамиль"
+          }
+        ],
+        "groups": []
+      },
+      "files": [
+        {
+          "id": 1018480,
+          "size": 25,
+          "name": "Xerox Scan_07072026151136.pdf"
+        }
+      ]
+    }
+  },
+  "31817_comments": {
+    "result": "success",
+    "comments": [
+      {
+        "id": 9047026,
+        "dateTime": {
+          "date": "15-09-2026",
+          "time": "08:36",
+          "datetime": "2026-09-15T08:36Z",
+          "dateTimeUtcSeconds": "2026-09-15T08:36:42+0000",
+          "dateTimeUtcWithSeconds": "2026-09-15T08:36:42+0000"
+        },
+        "owner": {
+          "id": "user:1",
+          "name": "Саликов Рамиль"
+        },
+        "description": "<p>Жень, тут сам пройди регистрацию: пусть тендеры присылают на inbox@tonaly.ru</p>"
+      },
+      {
+        "id": 9024098,
+        "dateTime": {
+          "date": "07-07-2026",
+          "time": "16:39",
+          "datetime": "2026-07-07T16:39Z",
+          "dateTimeUtcSeconds": "2026-07-07T16:39:31+0000",
+          "dateTimeUtcWithSeconds": "2026-07-07T16:39:31+0000"
+        },
+        "owner": {
+          "id": "user:1",
+          "name": "Саликов Рамиль"
+        },
+        "description": "<p>Да</p>\n<blockquote>\n Т. е. согласованно?\n</blockquote>"
+      },
+      {
+        "id": 9024096,
+        "dateTime": {
+          "date": "07-07-2026",
+          "time": "16:39",
+          "datetime": "2026-07-07T16:39Z",
+          "dateTimeUtcSeconds": "2026-07-07T16:39:11+0000",
+          "dateTimeUtcWithSeconds": "2026-07-07T16:39:11+0000"
+        },
+        "owner": {
+          "id": "user:23",
+          "name": "Пониматкин Евгений"
+        },
+        "description": "Т. е. согласованно?"
+      },
+      {
+        "id": 9024094,
+        "dateTime": {
+          "date": "07-07-2026",
+          "time": "16:37",
+          "datetime": "2026-07-07T16:37Z",
+          "dateTimeUtcSeconds": "2026-07-07T16:37:25+0000",
+          "dateTimeUtcWithSeconds": "2026-07-07T16:37:25+0000"
+        },
+        "owner": {
+          "id": "user:1",
+          "name": "Саликов Рамиль"
+        },
+        "description": "<p>Хорошо бы чтобы ты сам вел этот проект полностью</p>\n<blockquote>\n <p>Я могу заниматься этим вопросом или кто то другой будет это решать?</p>\n</blockquote>"
+      },
+      {
+        "id": 9024092,
+        "dateTime": {
+          "date": "07-07-2026",
+          "time": "15:58",
+          "datetime": "2026-07-07T15:58Z",
+          "dateTimeUtcSeconds": "2026-07-07T15:58:57+0000",
+          "dateTimeUtcWithSeconds": "2026-07-07T15:58:57+0000"
+        },
+        "owner": {
+          "id": "user:23",
+          "name": "Пониматкин Евгений"
+        },
+        "description": "<p>Я могу заниматься этим вопросом или кто то другой будет это решать?</p>"
+      },
+      {
+        "id": 9023846,
+        "dateTime": {
+          "date": "07-07-2026",
+          "time": "10:01",
+          "datetime": "2026-07-07T10:01Z",
+          "dateTimeUtcSeconds": "2026-07-07T10:01:13+0000",
+          "dateTimeUtcWithSeconds": "2026-07-07T10:01:13+0000"
+        },
+        "owner": {
+          "id": "user:23",
+          "name": "Пониматкин Евгений"
+        },
+        "description": "<p>Дд! Это регистрация на тендерной площадке. Ее видимо придется пройти.</p>"
+      },
+      {
+        "id": 9023844,
+        "dateTime": {
+          "date": "07-07-2026",
+          "time": "09:58",
+          "datetime": "2026-07-07T09:58Z",
+          "dateTimeUtcSeconds": "2026-07-07T09:58:30+0000",
+          "dateTimeUtcWithSeconds": "2026-07-07T09:58:30+0000"
+        },
+        "owner": {
+          "id": "user:1",
+          "name": "Саликов Рамиль"
+        },
+        "description": "Жень, тут письмо пришло от снг, но нам зачем сейчас тендеры? Мы же на входдение в реестр писали?"
+      },
+      {
+        "id": 9023816,
+        "dateTime": {
+          "date": "07-07-2026",
+          "time": "09:38",
+          "datetime": "2026-07-07T09:38Z",
+          "dateTimeUtcSeconds": "2026-07-07T09:38:52+0000",
+          "dateTimeUtcWithSeconds": "2026-07-07T09:38:52+0000"
+        },
+        "owner": {
+          "id": "contact:5337",
+          "name": "Басырова Ирина Евгеньевна"
+        },
+        "description": "Добрый день!<br><br>Прошу рассмотреть.<br><br><br>-----Original Message-----<br>From: Gubkina13k111@surgutneftegas.ru &lt;Gubkina13k111@surgutneftegas.ru&gt; <br>Sent: Tuesday, July 7, 2026 3:12 PM<br>To: Басырова Ирина Евгеньевна &lt;Basyrova_IE@surgutneftegas.ru&gt;<br>Subject: Xerox Scan<br><br>Please open the scanned attachment<br><br>Number of Images: 1<br>Attachment File Type: PDF<br><br>Device Name: 14994012<br>Device Location: UMTOP 109<br><br>"
+      }
+    ]
+  },
+  "31817_files": {
+    "result": "success",
+    "files": [
+      {
+        "id": 1018480,
+        "size": 25,
+        "name": "Xerox Scan_07072026151136.pdf"
+      }
+    ]
+  },
+  "32617": {
+    "result": "success",
+    "task": {
+      "id": 32617,
+      "name": "Письмо исходящее от 21.08.2026 №01-51-59-2990 для ООО _ТОНАЛЬ_ _На №31295-234 от 16.06.202_(44402933v2)_.pdf",
+      "description": "<div>\n <p>Текст сообщения:</p>\n <p>Прошу обратным сообщением подтвердить получение письма и сообщить входящий номер.</p>\n <p><span style=\"color:#1F497D\">&nbsp;</span></p>\n <p><span style=\"color:#1F497D\">&nbsp;</span></p>\n</div>",
+      "status": {
+        "id": 2,
+        "name": "В работе",
+        "color": "#3377C3",
+        "isActive": true,
+        "hasDeadline": true,
+        "isAppliedIndividually": false,
+        "texts": [
+          {
+            "lang": "Ru",
+            "name": "В работе"
+          },
+          {
+            "lang": "En",
+            "name": "In progress"
+          }
+        ]
+      },
+      "assigner": {
+        "id": "contact:5321",
+        "name": "Богданов Владимир Леонидович"
+      },
+      "counterparty": {
+        "id": "contact:5278",
+        "name": "СУРГУТНЕФТЕГАЗ"
+      },
+      "dateTime": {
+        "date": "24-08-2026",
+        "time": "04:12",
+        "datetime": "2026-08-24T04:12Z",
+        "dateTimeUtcSeconds": "2026-08-24T04:12:07+0000",
+        "dateTimeUtcWithSeconds": "2026-08-24T04:12:07+0000"
+      },
+      "dateOfLastUpdate": {
+        "date": "15-09-2026",
+        "time": "08:36",
+        "datetime": "2026-09-15T08:36Z",
+        "dateTimeUtcSeconds": "2026-09-15T08:36:54+0000",
+        "dateTimeUtcWithSeconds": "2026-09-15T08:36:54+0000"
+      },
+      "assignees": {
+        "users": [
+          {
+            "id": "user:1",
+            "name": "Саликов Рамиль"
+          }
+        ],
+        "groups": []
+      },
+      "files": [
+        {
+          "id": 1026246,
+          "size": 623,
+          "name": "Письмо исходящее от 21.08.2026 №01-51-59-2990 для ООО _ТОНАЛЬ_ _На №31295-234 от 16.06.202_(44402933v2)_.pdf"
+        }
+      ]
+    }
+  },
+  "32617_comments": null,
+  "32617_files": {
+    "result": "success",
+    "files": [
+      {
+        "id": 1026246,
+        "size": 623,
+        "name": "Письмо исходящее от 21.08.2026 №01-51-59-2990 для ООО _ТОНАЛЬ_ _На №31295-234 от 16.06.202_(44402933v2)_.pdf"
+      },
+      {
+        "id": 1026514,
+        "size": 8,
+        "name": "НПЦ Самара.docx"
+      },
+      {
+        "id": 1026682,
+        "size": 8,
+        "name": "НПЦ Самара(2).docx"
+      },
+      {
+        "id": 1026728,
+        "size": 8,
+        "name": "НПЦ Самара — копия.docx"
+      },
+      {
+        "id": 1027000,
+        "size": 195,
+        "name": "Письмо №32617-27-08-2026 для ПАО \"СУРГУТНЕФТЕГАЗ\" касательно .pdf"
+      },
+      {
+        "id": 1027002,
+        "size": 322,
+        "name": "Письмо №32617-27-08-2026 для ПАО \"СУРГУТНЕФТЕГАЗ\" касательно .docx"
+      }
+    ]
+  },
+  "32949": {
+    "result": "success",
+    "task": {
+      "id": 32949,
+      "name": "Оборудование ТЭЦ",
+      "description": "",
+      "status": {
+        "id": 2,
+        "name": "В работе",
+        "color": "#3377C3",
+        "isActive": true,
+        "hasDeadline": true,
+        "isAppliedIndividually": false,
+        "texts": [
+          {
+            "lang": "Ru",
+            "name": "В работе"
+          },
+          {
+            "lang": "En",
+            "name": "In progress"
+          }
+        ]
+      },
+      "assigner": {
+        "id": "user:1",
+        "name": "Саликов Рамиль"
+      },
+      "parent": {
+        "id": 32639
+      },
+      "project": {
+        "id": 32758
+      },
+      "counterparty": {
+        "id": "contact:5439",
+        "name": "НАУЧНО-ПРОИЗВОДСТВЕННЫЙ ЦЕНТР САМАРА"
+      },
+      "dateTime": {
+        "date": "11-09-2026",
+        "time": "04:41",
+        "datetime": "2026-09-11T04:41Z",
+        "dateTimeUtcSeconds": "2026-09-11T04:41:58+0000",
+        "dateTimeUtcWithSeconds": "2026-09-11T04:41:58+0000"
+      },
+      "startDateTime": {
+        "date": "28-09-2026",
+        "time": "20:59",
+        "datetime": "2026-09-28T20:59Z",
+        "dateTimeUtcSeconds": "2026-09-28T20:59:00+0000",
+        "dateTimeUtcWithSeconds": "2026-09-28T20:59:00+0000"
+      },
+      "endDateTime": {
+        "date": "28-09-2026",
+        "time": "00:00",
+        "datetime": "2026-09-28T00:00Z",
+        "dateTimeUtcSeconds": "2026-09-28T00:00:00+0000",
+        "dateTimeUtcWithSeconds": "2026-09-28T00:00:00+0000"
+      },
+      "dateOfLastUpdate": {
+        "date": "15-09-2026",
+        "time": "08:22",
+        "datetime": "2026-09-15T08:22Z",
+        "dateTimeUtcSeconds": "2026-09-15T08:22:04+0000",
+        "dateTimeUtcWithSeconds": "2026-09-15T08:22:04+0000"
+      },
+      "assignees": {
+        "users": [
+          {
+            "id": "user:24",
+            "name": "Дмитриева Алёна Викторовна"
+          }
+        ],
+        "groups": []
+      },
+      "files": [
+        {
+          "id": 1029072,
+          "size": 251,
+          "name": "Исх 694 - ООО ТОНАЛЬ (1).pdf"
+        }
+      ]
+    }
+  },
+  "32949_comments": {
+    "result": "success",
+    "comments": [
+      {
+        "id": 9047180,
+        "dateTime": {
+          "date": "15-09-2026",
+          "time": "13:54",
+          "datetime": "2026-09-15T13:54Z",
+          "dateTimeUtcSeconds": "2026-09-15T13:54:35+0000",
+          "dateTimeUtcWithSeconds": "2026-09-15T13:54:35+0000"
+        },
+        "owner": {
+          "id": "contact:943",
+          "name": "Чеславский Вячеслав"
+        },
+        "description": "<div>\n Рамиль, привет !\n</div>\n<div>\n</div>\n<div>\n в отпуске эту неделю\n</div>\n<div>\n</div>\n<div>\n коллеги завтра подготовят инфу мне\n</div>\n<div>\n отправлю тебе, что есть \\чего нет по документам\n</div>\n<div>\n</div>\n<div>\n</div>\n<div>\n</div>\n<div>\n</div>\n<div>\n ----------------\n</div>\n<div>\n Кому: cheslavski@rem-color.by (cheslavski@rem-color.by), yury.pavlov@tonaly.ru (yury.pavlov@tonaly.ru);\n</div>\n<div>\n Тема: Оборудование ТЭЦ;\n</div>\n<div>\n 15.09.2026, 11:21, \"Рамиль\" &lt;rml@tonaly.ru&gt;:\n</div>"
+      },
+      {
+        "id": 9047020,
+        "dateTime": {
+          "date": "15-09-2026",
+          "time": "08:21",
+          "datetime": "2026-09-15T08:21Z",
+          "dateTimeUtcSeconds": "2026-09-15T08:21:57+0000",
+          "dateTimeUtcWithSeconds": "2026-09-15T08:21:57+0000"
+        },
+        "owner": {
+          "id": "user:1",
+          "name": "Саликов Рамиль"
+        },
+        "description": "<p>Слава, добрый день!</p>\n<p>&nbsp;</p>\n<p>Есть новости по запросу?</p>"
+      },
+      {
+        "id": 9045172,
+        "dateTime": {
+          "date": "11-09-2026",
+          "time": "15:25",
+          "datetime": "2026-09-11T15:25Z",
+          "dateTimeUtcSeconds": "2026-09-11T15:25:31+0000",
+          "dateTimeUtcWithSeconds": "2026-09-11T15:25:31+0000"
+        },
+        "owner": {
+          "id": "user:1",
+          "name": "Саликов Рамиль"
+        },
+        "description": "Слова, вроде как все должно держать, проверяли и сами. \n<p>Дайте ответ положительный на схему ( пропишите) !</p>"
+      },
+      {
+        "id": 9045152,
+        "dateTime": {
+          "date": "11-09-2026",
+          "time": "12:58",
+          "datetime": "2026-09-11T12:58Z",
+          "dateTimeUtcSeconds": "2026-09-11T12:58:48+0000",
+          "dateTimeUtcWithSeconds": "2026-09-11T12:58:48+0000"
+        },
+        "owner": {
+          "id": "user:24",
+          "name": "Дмитриева Алёна Викторовна"
+        },
+        "description": "{event46}: {logintype2} <a href='https://tonal.planfix.ru/?action=user&id=41702'>Пониматкин Евгений</a>, {logintype2} <a href='https://tonal.planfix.ru/?action=user&id=29020'>Саликов Рамиль</a>"
+      },
+      {
+        "id": 9044830,
+        "dateTime": {
+          "date": "11-09-2026",
+          "time": "04:41",
+          "datetime": "2026-09-11T04:41Z",
+          "dateTimeUtcSeconds": "2026-09-11T04:41:58+0000",
+          "dateTimeUtcWithSeconds": "2026-09-11T04:41:58+0000"
+        },
+        "owner": {
+          "id": "user:1",
+          "name": "Саликов Рамиль"
+        },
+        "description": ""
+      },
+      {
+        "id": 9044008,
+        "dateTime": {
+          "date": "08-09-2026",
+          "time": "09:55",
+          "datetime": "2026-09-08T09:55Z",
+          "dateTimeUtcSeconds": "2026-09-08T09:55:13+0000",
+          "dateTimeUtcWithSeconds": "2026-09-08T09:55:13+0000"
+        },
+        "owner": {
+          "id": "contact:943",
+          "name": "Чеславский Вячеслав"
+        },
+        "description": "<div>\n Рамиль, доброго дня!\n</div>\n<div>\n</div>\n<div>\n запрос приянт в работу!\n</div>\n<div>\n</div>\n<div>\n</div>\n<div>\n</div>\n<div>\n ----------------\n</div>\n<div>\n Кому: cheslavski@rem-color.by (cheslavski@rem-color.by), yury.pavlov@tonaly.ru (yury.pavlov@tonaly.ru);\n</div>\n<div>\n Тема: ООО НПЦ Самара;\n</div>\n<div>\n 08.09.2026, 12:34, \"Рамиль\" &lt;rml@tonaly.ru&gt;:\n</div>"
+      },
+      {
+        "id": 9043994,
+        "dateTime": {
+          "date": "08-09-2026",
+          "time": "09:34",
+          "datetime": "2026-09-08T09:34Z",
+          "dateTimeUtcSeconds": "2026-09-08T09:34:49+0000",
+          "dateTimeUtcWithSeconds": "2026-09-08T09:34:49+0000"
+        },
+        "owner": {
+          "id": "user:1",
+          "name": "Саликов Рамиль"
+        },
+        "description": "<p>Слава, добрый день!</p>\n<p><br></p>\n<p>Прошу ответить по запросу касательно работы покрытия рем колор в средах ТГК.</p>\n<p><br></p>\n<p><br></p>"
+      },
+      {
+        "id": 9043584,
+        "dateTime": {
+          "date": "07-09-2026",
+          "time": "12:59",
+          "datetime": "2026-09-07T12:59Z",
+          "dateTimeUtcSeconds": "2026-09-07T12:59:26+0000",
+          "dateTimeUtcWithSeconds": "2026-09-07T12:59:26+0000"
+        },
+        "owner": {
+          "id": "user:23",
+          "name": "Пониматкин Евгений"
+        },
+        "description": ""
+      }
+    ]
+  },
+  "32949_files": {
+    "result": "success",
+    "files": [
+      {
+        "id": 1029072,
+        "size": 251,
+        "name": "Исх 694 - ООО ТОНАЛЬ (1).pdf"
+      }
+    ]
+  }
+}
